@@ -1,0 +1,9 @@
+/* pages/test/test.wxss */
+page{
+  background-color: #f2f5f8;
+}
+.twoBtn_box{
+  background-color: #fff;
+  padding: 15rpx 20rpx;
+
+}

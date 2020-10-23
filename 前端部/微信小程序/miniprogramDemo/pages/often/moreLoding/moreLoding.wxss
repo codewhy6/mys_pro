@@ -1,0 +1,9 @@
+/* pages/often/moreLoding/moreLoding.wxss */
+.moreLoading{
+  width: 100%;
+  font-size: 32rpx;
+  text-align: center;
+  color: #333;
+  margin-bottom: 40rpx;
+  display: block;
+}

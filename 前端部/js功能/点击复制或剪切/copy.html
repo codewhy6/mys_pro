@@ -1,0 +1,75 @@
+<!--
+ * @Description: 点击复制（可以是文本，图片链接，视屏地址等）
+ * @fileName: 
+ * @Author: Cheng Linmao
+ * @Date: 2020-04-15 14:07:42
+ * @LastEditors: Cheng Linmao
+ * @LastEditTime: 2020-04-20 19:47:54
+ *用法：1、需要引入 <script type="text/javascript" src="js/clipboard.min.js"></script>插件才可复制
+        2、 data-clipboard-target="#groupCode"； '#groupCode'设置的是要复制/剪切标签的id值（保证唯一性;也可以是标签选择器或类选择器：如data-clipboard-target=".groupCode",data-clipboard-target="input"）
+        3、 data-clipboard-action="copy"； 'copy'为复制，'cut' 为剪切
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="author" content="Tencent-CP" />
+   <meta name="format-detection" content="telephone=no" />
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+   <meta name="Description" content="" />
+   <meta name="Keywords" content="" />
+   <title>复制文本/剪切文本</title>
+</head>
+
+<body>
+   <div class="alert_text"><input id="groupCode" value="egdswfirugwhoklfelwo"
+         style="width: 6rem; background:#eeeeee;  color:#f56d2f;display: inline-block;" re />
+   </div>
+   <!--data-clipboard-action="copy" 有两个属性 copy为复制，cut为剪切  -->
+   <!-- data-clipboard-target="#groupCode" 需要复制标签内容的id -->
+   <button class="sure" id="copy" onclick="" data-clipboard-target="#groupCode"
+      data-clipboard-action="copy">复制邀请码</button>
+   <button class="sure" id="cut" onclick="" data-clipboard-target="#groupCode"
+      data-clipboard-action="cut">剪切邀请码</button>
+   <script type="text/javascript" src="js/clipboard.min.js"></script>
+   <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+   <script type="text/javascript">
+      /**
+         * @Description: 复制input框文本邀请码
+         * @Author: ChengLinMao
+         * @Date: 2020-02-21 17:38:01
+         * input框样式未去除，且value值可以是超链接，图片，视屏地址等，
+         */
+
+      let clipboard = new ClipboardJS('#copy')
+      clipboard.on('success', function (e) {
+         console.log("复制成功")
+
+      });
+      clipboard.on('error', function (e) {
+         console.log("复制失败")
+      });
+
+         /**
+      * @Description: 剪切input框文本邀请码
+      * @Author: ChengLinMao
+      * @Date: 2020-02-21 17:38:01
+      * input框样式未去除，且value值可以是超链接，图片，视屏地址等，
+      * 注***：input设置了readonly属性不可剪切
+      */
+         let clipboardCut = new ClipboardJS('#cut')
+         clipboardCut.on('success', function (e) {
+            console.log("剪切成功")
+         });
+         clipboardCut.on('error', function (e) {
+            console.log("剪切成功")
+         });
+   </script>
+</body>
+
+</html>

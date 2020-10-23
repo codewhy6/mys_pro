@@ -1,0 +1,27 @@
+<!--pages/home/home.wxml-->
+<view class="home_wrap">
+	<view class="home_inner">
+		<image class="home_bg" src="{{offlineImgUrl}}home_bg.png"></image>
+		<!-- 搜索栏 -->
+		<view class="home_search">
+			<view class="home_search_left">
+				<image class="home_logo" src="{{offlineImgUrl}}home_logo.png"></image>
+			</view>
+			<view class="home_search_right">
+				<input type="text" class="home_input" placeholder="请输入关键字" placeholder-style="color:#b9d0f3"></input>
+			</view>
+		</view>
+		<!-- 轮播图 -->
+		<!-- <view class="home_swiper">
+			<view class="swiper_box">
+				<swiper>
+					<swiper-item>
+						<image></image>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view> -->
+	</view>
+</view>
+
+<component-oneBtn></component-oneBtn>

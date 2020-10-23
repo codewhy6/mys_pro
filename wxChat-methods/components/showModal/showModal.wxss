@@ -1,0 +1,43 @@
+
+.NonExistent{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+}
+
+
+.tc_tempen{
+  margin: 50rpx auto 0;
+  width: 580rpx;
+}
+.tc_tempen .closeWarp{
+  height: 77rpx;
+  
+}
+.tc_tempen .closeWarp image{
+  width: 46rpx;
+  height: 46rpx;
+  float: right;
+}
+.tc_tempen .content{
+  height: 300rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 100rpx 50rpx 50rpx;
+}
+.tc_tempen .content image{
+  height: 99rpx;
+  width: 112rpx;
+  display: block;
+  margin: 0 auto;
+}
+.tc_tempen .content .text{
+  font-size: 28rpx;
+  color: #333333;
+  text-align: center;
+  margin-top:53rpx;
+}

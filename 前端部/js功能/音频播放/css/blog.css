@@ -1,0 +1,32 @@
+.blogTit{
+    padding: 59px 0 56px;
+    text-align: center;
+    background: url(../images/signBg.png) no-repeat center;
+    background-size: 100% 100%;
+	font-size: 32px;
+	color: #333333;
+}
+.blogs{
+    background: #FFF;
+}
+
+@media (min-width: 200px) {
+.blogs { padding: 20px 0;}
+.blogList {margin-top: 0px;}
+.blogTit {padding: 25px 0 ;font-size:16px;}
+}
+
+@media (min-width: 768px) {
+.blogs { padding: 30px 0;}
+.blogTit {padding: 35px 0 ;font-size:20px;}
+}
+
+@media (min-width: 992px) {
+.blogs { padding: 50px 0;}
+.blogTit {padding: 50px 0 ;font-size:25px;}
+}
+
+@media (min-width: 1200px) {
+.blogs { padding: 50px 0 70px;}
+.blogTit {padding: 59px 0 56px;font-size: 32px;font-weight:bold;}
+}

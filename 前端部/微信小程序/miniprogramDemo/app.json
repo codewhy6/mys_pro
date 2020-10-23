@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/css/textarea/textarea",
+    "pages/css/css",
+    "pages/css/button/button",
+    "pages/often/often",
+    "pages/specialFunction/specialFunction",
+    "pages/often/components/components",
+    "pages/often/sendSms/sendSms",
+    "pages/often/moreLoding/moreLoding",
+    "pages/often/callPhone/callPhone",
+    "pages/often/updateBackground/updateBackground",
+    "pages/often/uploadImg/uploadImg",
+    "pages/oftenComponent/oftenComponent",
+    "pages/oftenComponent/button/button",
+    "pages/ceshicavans/ceshicavans",
+    "pages/oftenComponent/noData/noData",
+    "pages/add/add",
+    "pages/often/anchorPoint/anchorPoint",
+    "pages/often/nullData/nullData",
+    "pages/often/openCamera/openCamera",
+    "pages/oftenComponent/bindwx/bindwx"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ]
+}

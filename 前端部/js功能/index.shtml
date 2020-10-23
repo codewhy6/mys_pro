@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	
+    	.container{
+    		color:#333;
+    		margin:20px auto;
+			width:1200px;
+			margin:10px auto;
+    	}
+    	
+    	.demoList{
+    		padding:5px 0;
+    	}
+    	.demoList a{
+    		color: #333;
+    		text-align: left;
+    		font-size:16px;
+    		display:block;
+    		background-color:#f7f7f7;
+    		padding:5px;
+    		margin-bottom:15px;
+			text-decoration:none;
+    	}
+    	.demoList a:hover{color:#007AFF;}
+    </style>
+</head>
+<body>
+<h1 class="container">引导页</h1>
+<div class="demoList container">
+	<a href="jquery幸运观众头像抽奖代码/demo.html" target="_blank">1.jquery幸运观众头像抽奖代码</a>
+	<a href="拼图游戏2/index.html" target="_blank">2.拼图游戏</a>
+	<a href="摇一摇/index.html" target="_blank">3.手机摇一摇</a>
+	<a href="跨页面跳转到指定模块/index.html" target="_blank">4.跨页面跳转到指定模块</a>
+	<a href="文字抖动+雪花效果/shake.html" target="_blank">5.文字抖动</a>
+	<a href="文字抖动+雪花效果/404.html" target="_blank">6.无信号雪花效果</a>
+</div>  
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+

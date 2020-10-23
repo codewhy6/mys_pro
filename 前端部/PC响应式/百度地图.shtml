@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>百度地图</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3aP8bIzc4QK35ALv44TM9h5We3NcsRU3"></script>
+	<style type="text/css">
+		.center{width:1200px;margin:0 auto;}
+		.bread{margin-bottom:20px;}
+		/*地图的父级  父级的宽高等于地图的宽高*/
+		.mapWarp{
+			height: 500px;
+			width:1200px;
+			margin:0 auto;
+		}
+		#allmap{height: 100%;}
+		/*说明样式*/
+		h2{
+			margin: 30px 0;
+		}
+		a{
+			color: #F00;
+		}
+	</style>
+</head>
+<body>
+<!--面包屑导航-->
+<div class="bread center">
+	<div class="container">
+		<div class="breadcrumbs after">
+			<div class="wraps">
+				<a href="index.shtml">首页</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--面包屑导航-->  
+<!--ditu -->
+<div class="mapWarp container">
+	<div id="allmap"></div>
+</div>
+
+<div class="center">
+	<h2>百度地图</h2>
+	<dl>
+		<dt>用法：</dt>
+		<dd>1、用script引入"http://api.map.baidu.com/api?v=2.0&ak=3aP8bIzc4QK35ALv44TM9h5We3NcsRU3"</dd>
+		<dd>2、 new BMap.Map('包裹地图 的div的id')</dd>
+		<dd>3、更多的地图实例<a href="http://lbsyun.baidu.com/jsdemo.htm#lite_2_0">点击跳转</a></dd>
+	</dl>
+</div>
+<script type="text/javascript">
+var map = new BMap.Map('allmap');
+// 创建地图实例
+var point = new BMap.Point(116.404, 39.915);//填写定位坐标 引入项目中时需填写实际地址坐标
+// 创建点坐标
+map.centerAndZoom(point, 11);
+// 初始化地图， 设置中心点坐标和地图级别
+var marker = new BMap.Marker(point);
+map.addOverlay(marker);
+map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+</body>
+</html>
+

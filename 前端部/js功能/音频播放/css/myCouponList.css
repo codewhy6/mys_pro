@@ -1,0 +1,133 @@
+.no_coupon {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.no_coupon img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.coupon_list_item {
+    background-color: #fff;
+    border-radius: 10px;
+    border: solid 1px #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.coupon_symbol {
+    width: 280px;
+    height: 80px;
+    background: url(../images/coupon_active.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+}
+
+.coupon_symbol_left,
+.coupon_symbol_right {
+    width: 50%;
+    text-align: center;
+}
+
+.coupon_symbol_left {
+    font-size: 24px;
+    color: #fff;
+}
+
+.coupon_symbol_right {
+    font-size: 20px;
+    color: #ec902f;
+}
+
+.coupon_date {
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.coupon_state button {
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 22px;
+    border: solid 1px #0099ff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #028eec;
+}
+
+.coupon_state button:hover {
+    background: #0099ff;
+    color: #fff;
+}
+
+.coupon_state {
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+    color: #797979;
+}
+
+.inactive .coupon_symbol {
+    background: url(../images/coupon_inactive.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.inactive .coupon_symbol_right {
+    color: #999;
+}
+
+.inactive .coupon_date {
+    color: #797979;
+}
+
+@media (min-width: 200px) {
+    .coupon_list {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .coupon_date {
+        width: 40%;
+        margin: 0px;
+    }
+    .coupon_state {
+        width: 20%;
+        text-align: center;
+        font-size: 18px;
+        color: #797979;
+    }
+    .coupon_list_item {
+        background-color: #fff;
+        border-radius: 10px;
+        border: solid 1px #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 15px;
+        margin-bottom: 30px;
+        flex-wrap: nowrap;
+        padding: 20px 15px;
+        cursor: pointer;
+    }
+    .coupon_list_item:hover {
+        /* border: 1px solid #0099ff; */
+    }
+    .coupon_list {
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+ <text class="title">CSS样式兼容性</text>
+ <view class="index_list">
+  <text bindtap="skippingTextarea">1、IOS系统textarea层级穿透</text>
+ </view>
+ <view class="index_list">
+  <text bindtap="skippingButton">2、button按钮去除边框和圆角</text>
+ </view>
+</view>
+

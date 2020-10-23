@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <title>关于钦城</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+/*股东*/
+.picScroll-left{width:1200px;height:395px;margin:auto;overflow:hidden; position:relative;padding-bottom:90px;}
+.picScroll-left .bd{width:1020px;margin:auto;}
+.picScroll-left .prev,.picScroll-left .next{ display:block; width:60px; height:40px;overflow:hidden;}
+.picScroll-left .prev{ background: url(images/about-prev.jpg);position: absolute;top: 160px;left:0px;z-index: 12;}
+.picScroll-left .prev:hover{background: url(images/about-prev1.jpg);}
+.picScroll-left .next{ background: url(images/about-next.jpg);position: absolute;top: 160px;right:0px;z-index: 12;}
+.picScroll-left .next:hover{background: url(images/about-next1.jpg);}
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{width:280px; height:395px;margin:0 30px; float:left; _display:inline; overflow:hidden; text-align:center;}
+.picScroll-left .bd ul li .pic{ text-align:center;border:1px solid #eeeeee;}
+.picScroll-left .bd ul li .pic a{width:100%;height:100%;display:block;}
+.picScroll-left .bd ul li .pic img{ width:280px; height:360px; display:block; }
+.picScroll-left .bd ul li .title{width: 222px;height: 50px;line-height: 50px;text-align: center;background: #fff;display: block;position: relative;z-index: 20;margin: -25px auto;box-shadow: 0px 2px 5px #ebf3fc;}
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<div class="about-gd">
+		<div class="picScroll-left">
+			<a class="prev"></a>
+			<a class="next"></a>
+			<div class="bd">
+				<ul class="picList">
+					<li>
+						<div class="pic"><a href="javascript:;" target="_blank"><img src="images/about-pic4.jpg" /></a></div>
+						<div class="title"><a href="javascript:;" target="_blank">张晓明</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="javascript:;" target="_blank"><img src="images/about-pic5.jpg" /></a></div>
+						<div class="title"><a href="javascript:;" target="_blank">孙承辉</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="javascript:;" target="_blank"><img src="images/about-pic6.jpg" /></a></div>
+						<div class="title"><a href="javascript:;" target="_blank">刘璇</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="javascript:;" target="_blank"><img src="images/about-pic4.jpg" /></a></div>
+						<div class="title"><a href="javascript:;" target="_blank">张晓明</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="javascript:;" target="_blank"><img src="images/about-pic5.jpg" /></a></div>
+						<div class="title"><a href="javascript:;" target="_blank">孙承辉</a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="container">
+	<dl>
+		<dt>用法：</dt>
+		<dd>源项目是pc端，不是响应式</dd>
+		<dd>复制css</dd>
+		<dd>复制html代码</dd>
+		<dd>引入jquery.SuperSlide.2.1.1.js</dd>
+		<dd>复制js代码</dd>
+	</dl>
+</div>
+<!--底部 开始-->
+<!--#include file="include/bottom.html" -->
+<!--底部 结束-->
+
+
+<script type="text/javascript">
+
+//股东轮播
+jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:false,effect:"left",autoPlay:true,vis:3,pnLoop: true});
+</script>
+
+</body>
+</html>
+

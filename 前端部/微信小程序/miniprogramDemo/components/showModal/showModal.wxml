@@ -1,0 +1,12 @@
+<!--components/showModal.wxml-->
+
+<view class='NonExistent' wx:if="{{show}}">
+   <view class='tc_tempen'>
+      <view class='closeWarp' bindtap='danger'><image src='../../images/close_TC.png' bindtap="closeModal"></image></view>
+      <view class='content'>
+        <image src='../../images/danger_icon.png'></image>
+        <view class='text'>{{message}}</view>
+      </view>
+   </view>
+</view>
+

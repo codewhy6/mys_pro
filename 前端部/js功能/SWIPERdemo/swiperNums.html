@@ -1,0 +1,184 @@
+<!--
+ * @Description: 轮播缩略图
+ * @fileName: swiperNums.html
+ * @Author: ZhangChen
+ * @Date: 2020-01-09 11:27:04
+ * @LastEditors: ZhangChen
+ * @LastEditTime: 2020-09-29 08:37:33
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司,http://www.chemguan.com/">
+    <meta name="copyright" content="九州奇士">
+    <title>轮播数字分页</title>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 写响应式网站引入bootstrap.min.js,非响应式不需要引入 -->
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <!-- <script type="text/javascript" src="js/utils/regExp.js"></script> -->
+    <!-- <script type="text/javascript" src="js/utils/util.js"></script> -->
+    <!-- <script type="text/javascript" src="js/utils/http.js"></script> -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+
+
+    <!-- swiper  -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <!--[if lt IE 10]>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/2.7.0/idangerous.swiper.js"></script>
+    <![endif]-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <!--[if lt IE 10]>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/2.7.0/idangerous.swiper.css" rel="stylesheet">
+    <![endif]-->
+    <!-- swiper  -->
+
+
+    <link rel="stylesheet" href="css/pulicStyle.css">
+
+    <link rel="stylesheet" href="./css/swiperNums.css">
+</head>
+
+<body>
+    <!--头部 开始-->
+    <div id="header"></div>
+    <!--头部 结束-->
+
+    <!-- 轮播 -->
+    <div class="container">
+        <div class="swiperNums_box">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" />
+                    </div>
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" /></div>
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" /></div>
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" /></div>
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" /></div>
+                    <div class="swiper-slide my_swiperNums_slide"><img src="images/pd_img_s.png" /></div>
+                </div>
+                <!-- <div class="swiper-button-prev swiper-button-white color_main_bg"></div> -->
+                <!-- <div class="swiper-button-next swiper-button-white color_main_bg"></div> -->
+            </div>
+
+            <!-- 轮播数字按钮区域 -->
+            <div class="swiperNums_btn_box">
+                <!-- 轮播数字下标 -->
+                <div class="swiper_num_box">
+                    <img src="./images/swiper_btn_right.png" alt="swiper_jt"
+                        class="swiperNums_swiper_btns my_swiperNums_btn_prev">
+                    <span class="current_num">1</span>
+                    <span>/</span>
+                    <span class="total_num">3</span>
+                    <img src="./images/swiper_btn_right.png" alt="swiper_jt"
+                        class="swiperNums_swiper_btns my_swiperNums_btn_next">
+                </div>
+            </div>
+        </div>
+        <!--底部 开始-->
+        <div id="footer"></div>
+        <!--底部 结束-->
+        <script type="text/javascript">
+            $(function () {
+                var swiperNums = ''
+                if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[
+                    1].replace(/[ ]/g, "").replace("MSIE", "")) < 10) {
+                    $('.my_swiperNums_slide').addClass('ie')
+                    //--  IE8 如果需要前进后退按钮 --
+                    $('.my_swiperNums_btn_prev').click(function (e) {
+                        e.preventDefault();
+                        swiperNums.swipePrev();
+                        var current_index2 = parseInt($('.swiper_num_box .current_num').text()) - 1
+                        var slidersCount = $('.my_swiperNums_slide img').length - 6
+                        // console.log(slidersCount);
+                        if (current_index2 < 1) {
+                            current_index2 = slidersCount
+                        }
+                        $('.swiper_num_box .current_num').text(current_index2)
+                    });
+                    $('.my_swiperNums_btn_next').click(function (e) {
+                        e.preventDefault();
+                        swiperNums.swipeNext();
+                        var current_index = parseInt($('.swiper_num_box .current_num').text()) + 1
+                        var slidersCount = $('.my_swiperNums_slide img').length - 6
+                        // console.log(slidersCount);
+                        if (current_index > slidersCount) {
+                            current_index = 1
+                        }
+                        $('.swiper_num_box .current_num').text(current_index)
+                    });
+
+                    $('.swiper_num_box').css({
+                        'background-color': 'pink',
+                        'opacity': '0.5'
+                    })
+                    swiperNums = new Swiper(' .swiperNums_box .swiper-container', {
+                        // autoplay: 2000,//可选选项，自动滑动
+                        loop: true,//可选选项，开启循环
+                        slidesPerView: 3,
+                        onInit: function (swiper) {
+                            $('.current_num').text('1')
+                        },
+                        // centeredSlides: true,
+                    });
+
+                    $('.swiper_num_box .total_num').text(swiperNums.slides.length - 6)
+                } else {
+                    swiperNums = new Swiper('.swiperNums_box .swiper-container', {
+                        spaceBetween: 10,
+                        slidesPerView: 3,
+                        loop: true,
+                        oninit: function (swiper) {
+                            $('.current_num').text('1')
+                        },
+                        onSlideChangeStart: function () {
+                            // console.log(this.activeIndex);
+
+
+                        },
+                    });
+                    $('.current_num').text('1')
+
+                    $('.swiper_num_box .total_num').text(swiperNums.slides.length - 6)
+                    /**
+                     * @Description: 轮播缩略图的点击事件
+                     * @Author: ZhangChen
+                     * @Date: 2020-09-08 15:32:42
+                     */
+                    $("body").on("click", ".my_swiperNums_btn_next", function () {
+                        swiperNums.slideNext()
+                        var current_index = parseInt($('.swiper_num_box .current_num').text()) + 1
+                        var slidersCount = $('.my_swiperNums_slide img').length - 6
+                        // console.log(slidersCount);
+                        if (current_index > slidersCount) {
+                            current_index = 1
+                        }
+                        $('.swiper_num_box .current_num').text(current_index)
+                    })
+                    $("body").on("click", ".my_swiperNums_btn_prev", function () {
+                        swiperNums.slidePrev()
+                        var current_index2 = parseInt($('.swiper_num_box .current_num').text()) - 1
+                        var slidersCount = $('.my_swiperNums_slide img').length - 6
+                        // console.log(slidersCount);
+                        if (current_index2 < 1) {
+                            current_index2 = slidersCount
+                        }
+                        $('.swiper_num_box .current_num').text(current_index2)
+                    })
+
+                }
+
+
+
+            })
+        </script>
+</body>
+
+</html>

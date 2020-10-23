@@ -1,0 +1,43 @@
+1、苹果全面屏底部有留白 问题
+    添加：
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover" />
+2.侧边栏收起后再展开底部会产生横向滚动条：
+    利用width:calc（100 % -  容器宽度）解决
+
+3、关于element ui组件的样式问题 和获取index
+
+    //Element ui 中 table组件 获取各行的index
+
+    scope.$index ：获取当前行的下标
+    scope.row：获取当前行的对象
+
+
+//table组件
+:row-style="tableRowStyle"      // 修改table tr行的背景色
+:header-cell-style="tableHeaderColor"   // 修改table header的背景色
+
+4. 小程序button点击会出现灰背景
+    hover-class=“btn-hover” 添加此属性即可去除点击时背景色
+
+
+5. 移动端ios无法点击问题
+    将 click 事件直接绑定到目标​元素（​​即 .target）上
+    将目标​元素换成 <a> 或者 button 等可点击的​元素（因为这两个元素默认添加了cursor: pointer;样式）
+    ​将 click 事件委托到​​​​​非 document 或 body 的​​父级元素上
+    给目标元素添加cursor:pointer
+
+6.layui弹窗 位置修改方法 
+  如果本页面弹窗都在一个位置(中间或者底部)，可改变 layui样式  .layui-m-layermain .layui-m-layersection 里面的  vertical-align: middle;属性
+  如果位置不一样，可添加类名 给此类名 position:absolute; 定位
+  
+ 7.iOS 系统input 的 readonly 属性 或许会没有用，用  -webkit-user-select :none  样式 解决。
+ 
+ 8. 如果你想关闭最新弹出的层，直接获取layer.index即可
+  layer.close(layer.index); //它获取的始终是最新弹出的某个层，值是由layer内部动态递增计算的
+  
+9. 响应式页面通过bootstrap的栅格系统
+  将需要换行的元素设置col-xs-xx 实现在不同屏幕下的自适应
+  container的两边会有一个15px的内边距
+  container-fluid类没有内边距
+  container类在屏幕宽度小于等于767px的时候，宽度=屏幕宽度的，也就是100%
+  container-fluid类不管屏幕宽度大小，一直是100%

@@ -1,0 +1,7 @@
+<view class="container">
+ <text class="title">上传图片</text>
+ <view>
+  <component-uploadImg id="uploadingImg" bind:pullComment="getUploadImgCount"></component-uploadImg>
+  <button bindtap="uploadImgBtn">上传图片</button>
+ </view>
+</view>

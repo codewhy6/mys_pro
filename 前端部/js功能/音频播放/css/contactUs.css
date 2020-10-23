@@ -1,0 +1,147 @@
+.contactUs{
+    background: url(../images/signBg.png) no-repeat top center;
+    background-size: 100% auto;
+}
+.toptitle{
+    text-align: center;
+	font-size: 32px;
+    color: #333333;
+    padding: 46px 0 49px;
+}
+.contactUs .container{
+	background-color: #ffffff;
+	box-shadow: 0px 12px 28px 2px 
+		rgba(179, 182, 194, 0.16);
+    border-radius: 10px;
+    background:#FFF url(../images/contactus.png) no-repeat center;
+    background-size: 140% auto;
+    margin-bottom: 70px;
+    padding-bottom: 50px;
+}
+.contactUs .container .tit{
+    width: 748px;
+    margin: 0 auto;
+	font-size: 20px;
+    color: #333333;
+    padding-top: 50px;
+    text-align: center;
+}
+.contactUs .container .from{
+    width: 880px;
+    margin: 53px auto 0;
+}
+.contactUs .container .from ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.contactUs .container .from .subject{
+    margin-bottom: 30px;
+}
+.contactUs .container .from ul li{
+    width: 48%;
+}
+.contactUs .container .from input{
+    width: 100%;
+	height: 54px;
+	background-color: #f7f7f7;
+    border-radius: 4px;
+    padding: 0 15px;
+    border:1px solid #f7f7f7;
+}
+.contactUs .container .from input.error,.contactUs .container .from textarea.error{
+    border:1px solid #ef3345;
+}
+.contactUs .container .from textarea{
+    width: 100%;
+	height: 200px;
+	background-color: #f7f7f7;
+    border-radius: 4px;
+    padding: 20px 15px;
+    border:1px solid #f7f7f7;
+}
+.tipText{
+    text-align: center;
+    font-size: 16px;
+	color: #797979;
+}
+.tipText a{
+    font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+}
+.submitWarp{
+    text-align: center;
+    margin-top: 38px;
+}
+.submitWarp button{
+	width: 360px;
+	height: 56px;
+	background: linear-gradient(-62deg, 
+		#12c5ec 0%, 
+		rgba(18, 197, 236, 0.89) 100%), 
+	linear-gradient(
+		#0099ff, 
+		#0099ff);
+	background-blend-mode: normal, 
+		normal;
+	box-shadow: 0px 2px 9px 1px 
+		rgba(0, 153, 255, 0.25);
+    border-radius: 28px;
+    font-size: 20px;
+	font-weight: bold;
+    color: #ffffff;
+    border: none;
+}
+.submitWarp button:hover{
+    background:transparent;
+    border: 1px solid #0099ff;
+    color: #0099ff;
+}
+
+
+@media (min-width: 200px) {
+.contactUs {background-size: 100% 90px;}
+.toptitle {font-size: 20px;padding: 15px 0;}
+.contactUs .container {margin-bottom: 25px;padding:0 15px 25px;}
+.contactUs .container .from { width: 100%; margin: 25px auto 0;}
+.contactUs .container .tit {width: 100%;font-size: 16px;padding-top: 25px;}
+.submitWarp button {width: 250px;height: 35px;font-size: 14px;}
+.contactUs .container .from ul li {width: 100%;margin-bottom: 20px;}
+.contactUs .container .from ul {margin-bottom: 20px;}
+.contactUs .container .from ul li:last-child{margin-bottom: 0;}
+.contactUs .container .from input {height: 40px;}
+.contactUs .container .from .subject { margin-bottom: 20px;}
+}
+
+@media (min-width: 768px) {
+.contactUs {background-size: 100% 130px;}
+.toptitle {font-size: 24px;padding: 25px 0;}
+.contactUs .container {margin-bottom: 35px;padding:0 20px 35px;}
+.contactUs .container .from { width: 100%; margin: 35px auto 0;}
+.contactUs .container .tit {width: 100%;font-size: 18px;padding-top: 35px;}
+.submitWarp button {width: 250px;height: 45px;font-size: 16px;}
+.contactUs .container .from ul li {width: 48%;margin-bottom: 0;}
+.contactUs .container .from input {height: 45px;}
+.contactUs .container .from ul {margin-bottom: 30px;}
+.contactUs .container .from .subject { margin-bottom: 30px;}
+}
+
+@media (min-width: 992px) {
+.contactUs {background-size: 100% 150px;}
+.toptitle {font-size: 28px;padding: 35px 0;}
+.contactUs .container {margin-bottom: 50px;padding:0 0 40px;}
+.contactUs .container .from { width: 880px; margin: 53px auto 0;}
+.contactUs .container .tit {width: 748px;font-size: 20px;padding-top: 50px;}
+.submitWarp button {width: 300px;height: 50px;font-size: 18px;}
+.contactUs .container .from input {height: 50px;}
+}
+
+@media (min-width: 1200px) {
+.contactUs {background-size: 100% 181px;}
+.toptitle {font-size: 32px;padding: 46px 0 49px;}
+.contactUs .container {margin-bottom: 70px;padding:0 0 50px;}
+.submitWarp button {width: 360px;height: 56px;font-size: 20px;}
+.contactUs .container .from input {height: 54px;}
+}

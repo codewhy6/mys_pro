@@ -1,0 +1,1246 @@
+/*
+ * @Description: 公共的样式写在这个文件中
+ * @fileName: pulicStyle.css
+ * @Author: caochen
+ * @Date: 2020-06-05 15:13:24
+ */
+
+header {
+    box-shadow: 0px 1px 30px 0px rgba(68, 68, 68, 0.1);
+}
+
+header .top {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    color: #333333;
+}
+
+header .headPortrait {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    border-radius:50%;
+}
+
+header .headPortrait img {
+    width: 34px;
+    height: 34px;
+    border-radius:50%;
+}
+
+header .centerBox,
+footer .conterBox {
+    width: 1520px;
+    margin: 0 auto;
+    /* box-shadow: 0px 1px 0px 0px rgba(68, 68, 68, 0.1); */
+}
+
+header .logoLine {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+header .logoLine .logo {
+    width: 240px;
+}
+
+header .logoLine .logo img {
+    width: 240px;
+}
+
+header .logoLine .topSeach {
+    width: 760px;
+    height: 64px;
+    background-color: #f5f5f5;
+    border-radius: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logoLine .topSeach input {
+    width: calc(100% - 135px);
+    height: 64px;
+    padding: 0 30px;
+    font-size: 18px;
+    color: #a7a7a7;
+}
+
+header .logoLine .topSeach button {
+    width: 130px;
+    height: 56px;
+    background-image: linear-gradient(-62deg, #12c5ec 0%, rgba(18, 197, 236, 0.89) 100%), linear-gradient( #0099ff, #0099ff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 2px 9px 1px rgba(0, 153, 255, 0.25);
+    border-radius: 28px;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+header .logoLine .riIcon {
+    display: flex;
+    justify-content: space-between;
+    width: 286px;
+    align-items: center;
+}
+
+header .logoLine .riIcon .collectionWarp {
+    margin-right: 50px;
+}
+
+header .logoLine .riIcon ul {
+    margin: 0;
+}
+
+header .logoLine .riIcon .choseText {
+    background: url(../images/downArrow.png) no-repeat 95% 50%;
+    background-size: 14px 8px;
+    padding-right: 20px;
+    width: 90px;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+header .logoLine .riIcon .listWarp {
+    position: relative;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits {
+    position: absolute;
+    top: 100%;
+    left: -34%;
+    width: 220px;
+    z-index: 50;
+    display: none;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits ul {
+    padding: 0 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #eee;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li {
+    padding: 23px 0;
+    border-bottom: 1px solid #eee;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 14px;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(1) i {
+    background: url(../images/topListIcon1.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(2) i {
+    background: url(../images/topListIcon2.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(3) i {
+    background: url(../images/topListIcon3.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(4) i {
+    background: url(../images/topListIcon4.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(5) i {
+    background: url(../images/topListIcon5.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(6) i {
+    background: url(../images/topListIcon6.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(7) i {
+    background: url(../images/topListIcon7.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(8) i {
+    background: url(../images/topListIcon8.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits li a {
+    font-size: 18px;
+    color: #333333;
+}
+
+header .logoLine .riIcon .listWarp .Iconlsits .sj {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 12px solid #fff;
+    margin: 0 auto;
+}
+
+header .logoLine .riIcon .collection {
+    width: 28px;
+    height: 26px;
+    background: url(../images/collection.png) no-repeat center;
+    background-size: 100% 100%;
+}
+
+header .logoLine .riIcon .collection.on {
+    background: url(../images/collectionH.png) no-repeat center;
+    background-size: 100% 100%;
+}
+
+header .logoLine .riIcon .shopCar {
+    width: 28px;
+    height: 26px;
+    background: url(../images/shopCar.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+header .logoLine .riIcon .shopCar span {
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    display: inline-block;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    background: #ef3345;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.top_cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.shopCart_emperty {
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    width: 470px;
+    padding-top: 40px;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    display: none;
+}
+
+.shopCart_emperty_div {
+    padding: 80px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 12px 28px 2px rgba(179, 182, 194, 0.16);
+}
+
+.top_icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -10px;
+    box-shadow: 0px 12px 28px 2px rgba(179, 182, 194, 0.16);
+}
+
+.shopCart_p1 {
+    color: #797979;
+    font-size: 18px;
+    margin: 20px 0 90px;
+}
+
+.shop_disc_top {
+    background-image: linear-gradient(-62deg, #0099ff 0%, #10c0ee 100%), linear-gradient( #0099ff, #0099ff);
+    box-shadow: 0px 2px 9px 1px rgba(113, 141, 160, 0.25);
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    width: 60%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: 1px solid transparent;
+}
+
+.shop_disc_top:hover {
+    border: 1px solid #0099ff;
+    background: transparent;
+    color: #0099ff;
+}
+
+.shopCart_have {
+    box-sizing: border-box;
+}
+
+.shopCart_have_div {
+    padding: 15px 15px 25px;
+}
+
+.shopCart_have_list {
+    max-height: 375px;
+    overflow: auto;
+}
+
+.shopCart_have_list::-webkit-scrollbar,
+.webPush::-webkit-scrollbar {
+    width: 8px;
+    height: 425px;
+    /**/
+}
+
+.shopCart_have_list::-webkit-scrollbar-track,
+.webPush::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border-radius: 4px;
+}
+
+.shopCart_have_list::-webkit-scrollbar-thumb,
+.webPush::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 98px;
+    background-color: #e4e4e4;
+    border-radius: 4px;
+}
+
+.shopCart_have_list>li {
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.shopCart_have_list>li a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.shopCart_del {
+    width: 20px;
+    height: 20px;
+    background: url(../images/del_icon01.png) center center no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.shopCart_del:hover {
+    background: url(../images/del_icon02.png) center center no-repeat;
+}
+
+.shopCart_price {
+    font-size: 24px;
+    color: #666;
+    margin-top: 25px;
+}
+
+.shopCart_price span {
+    font-weight: bold;
+}
+
+.shop_cart_tipBtn_top {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.shopCart_have_pic {
+    width: 90px;
+    height: 90px;
+}
+
+.shopCart_have_pic img {
+    width: 90px;
+    height: 90px;
+}
+
+.shopCart_have_right {
+    width: 78%;
+    text-align: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.shopCart_have_right_p1 {
+    font-size: 18px;
+    color: #666;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.shopCart_have_right_p2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.shopCart_have_right_span1 {
+    color: #999;
+    margin-left: 20px;
+    text-decoration: line-through;
+}
+
+.shop_cart_tipBtn0 {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.shop_cart_tipBtn1,
+.shop_cart_tipBtn2:hover {
+    background: #fff;
+    color: #0099ff;
+    border: 1px solid #0099ff;
+}
+
+.shop_cart_tipBtn1:hover,
+.shop_cart_tipBtn2 {
+    background-image: linear-gradient(-62deg, #0099ff 0%, #10c0ee 100%), linear-gradient( #0099ff, #0099ff);
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.shop_cart_tipBtn2 i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 87px;
+    height: 23px;
+    background: url(../images/Paypal.png) center center no-repeat;
+    background-size: 100% 100%;
+    margin-left: 15px;
+}
+
+.shop_cart_tipBtn2:hover i {
+    background: url(../images/paypal01.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.back_top2 {
+    display: none;
+}
+
+@media(min-width:200px) and (max-width:767px) {
+    .shopCart_emperty {
+        width: 300px;
+        padding-top: 10px;
+        right: -5px;
+    }
+    .shopCart_have_pic {
+        width: 70px;
+        height: 70px;
+    }
+    .shopCart_have_pic img {
+        width: 70px;
+        height: 70px;
+    }
+    .shopCart_have_right {
+        width: 72%;
+    }
+    .shopCart_have_right_p1 {
+        font-size: 16px;
+        height: 45px;
+    }
+    .shopCart_have_right_p2 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+    .shopCart_have_list {
+        max-height: 240px;
+    }
+    .shop_cart_tipBtn0 {
+        font-size: 16px;
+        padding: 8px;
+        margin-top: 15px;
+    }
+    .shop_cart_tipBtn2 i {
+        width: 80px;
+        height: 18px;
+    }
+    p,
+    div,
+    ul,
+    li,
+    span,
+    i,
+    em,
+    img {
+        cursor: pointer;
+    }
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    p,
+    div,
+    ul,
+    li,
+    span,
+    i,
+    em,
+    img {
+        cursor: pointer;
+    }
+}
+
+@media(min-width:768px) {
+    .top_cart:hover .shopCart_emperty {
+        display: block;
+    }
+    /* .shopCart_emperty{right:-165px;} */
+    header .logoLine .riIcon .listWarp .Iconlsits li:hover a {
+        color: #0099ff;
+    }
+}
+
+@media(min-width:1880px) {
+    .shopCart_emperty {
+        right: -60px;
+    }
+}
+
+header nav {
+    padding: 20px 0 35px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    width: 12.5%;
+    text-align: center;
+}
+
+.bigTitle {
+    font-size: 32px;
+    color: #333333;
+    text-align: center;
+    position: relative;
+}
+
+.bigTitle img {
+    margin: 0 20px;
+}
+
+.bigTitle .subscribe {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.bigTitle .subscribe {
+    font-size: 18px;
+    color: #333333;
+}
+
+.bigTitle .subscribe img {
+    margin: 0;
+}
+
+.bigTitle .subscribe span {
+    margin: 0 13px;
+}
+
+footer {
+    background: url(../images/footBg.png) no-repeat center;
+    background-size: 100% 100%;
+    padding: 70px 0;
+}
+
+footer .conterBox {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .conterBox .footLe {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .conterBox .footLe .footOne {
+    width: 50%;
+}
+
+footer .conterBox .footLe .footTwo {
+    width: 50%;
+}
+
+footer .conterBox .footRi {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .conterBox .footRi .footThree {
+    width: 50%;
+}
+
+footer .conterBox .footRi .footFour {
+    width: 50%;
+}
+
+footer .footSeach {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer .footSeach input {
+    width: calc(100% - 100px);
+    height: 40px;
+    background-color: #FFF;
+    padding: 0 15px;
+    color: #D1D1D1;
+}
+
+footer .footSeach button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-image: linear-gradient(to right, #0DBAF1, #019CFE);
+    color: #FFF;
+    font-size: 16px;
+}
+
+footer .footTit {
+    font-size: 20px;
+    color: #FFF;
+    margin-bottom: 48px;
+}
+
+footer .footTit1 {
+    font-size: 20px;
+    color: #FFF;
+    margin-bottom: 22px;
+    margin-top: 40px;
+}
+
+footer ul li {
+    color: rgba(255, 255, 255, .4);
+}
+
+footer ul li a {
+    display: block;
+    color: #FFF;
+    opacity: 0.4;
+    padding: 10px 0;
+}
+
+footer ol {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+footer ol li {
+    margin-right: 45px;
+}
+
+footer ol.ol li {
+    margin-right: 16px;
+}
+
+footer ol.ol li:last-child {
+    margin-right: 0;
+}
+
+footer ul li a:hover {
+    opacity: 1;
+    color: #FFF;
+}
+
+footer ul li a:focus {
+    opacity: 0.4;
+    color: #FFF;
+}
+
+footer .last {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+footer .last .text {
+    color: rgba(255, 255, 255, .4);
+    margin-left: 54px;
+}
+
+footer .last .text a {
+    color: rgba(255, 255, 255, .4);
+    cursor:default;
+}
+
+/* footer .last .text a:hover {
+    color: rgba(255, 255, 255, 1);
+} */
+
+.backTop {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.topMenu {
+    width: 30px;
+    height: 22px;
+    background: url(../images/menu.png) no-repeat center;
+    background-size: 100% 100%;
+    margin-left: 50px;
+}
+
+.pay_tipsinfo {
+    font-size: 14px;
+    color: #ef3345;
+    padding: 5px;
+    display: none;
+}
+
+@media (min-width: 200px) {
+    /* body{
+        padding-top:100px;
+    }
+    header .centerBox{
+        position: fixed;
+        width:100%;
+        box-sizing:border-box;
+        left:0;
+        top:0;
+        background-color:#fff;
+        z-index:100;
+    } */
+    header .centerBox,
+    footer .conterBox {
+        width: 100%;
+    }
+    header .logoLine .riIcon {
+        justify-content: flex-end;
+        width: 70%;
+    }
+    header .logoLine .riIconMoble {
+        justify-content: flex-end;
+        width: 20%;
+    }
+    header .logoLine {
+        padding: 8px 15px;
+    }
+    header .logoLine .topSeach {
+        width: 70%;
+        height: 35px;
+    }
+    header .logoLine {
+        display: flex;
+    }
+    header .logoLine .logo {
+        width: 30%;
+    }
+    header .logoLine .logo img {
+        width: 100%;
+    }
+    .topMenu {
+        margin-left: 20px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits ul {
+        padding: 0 10px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits {
+        width: 150px;
+    }
+    header .logoLine .riIcon .choseText {
+        font-size: 14px;
+        width: auto;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li {
+        padding: 10px 0;
+    }
+    header .logoLine .topSeach button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    header .logoLine .riIcon .collectionWarp {
+        margin-right: 20px;
+    }
+    header .logoLine .topSeach input {
+        width: calc(100% - 80px);
+        height: 35px;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    header nav {
+        padding: 0;
+        display: none;
+        position: relative;
+    }
+    header nav ul li {
+        width: 100%;
+        padding: 12px 0;
+        font-size:20px;
+    }
+    header nav ul li a {
+        display: block;
+        color:#333;
+    }
+    .bigTitle img {
+        margin: 0 10px;
+    }
+    .bigTitle {
+        font-size: 18px;
+    }
+    footer .conterBox .footLe {
+        width: 100%;
+        padding: 0 15px;
+    }
+    footer .conterBox .footRi {
+        width: 100%;
+        padding: 0 15px;
+    }
+    footer ol li {
+        margin-right: 15px;
+    }
+    footer ol {
+        width: 100%;
+        justify-content: center;
+    }
+    footer .last .text {
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 15px;
+        width: 100%;
+    }
+    footer {
+        padding: 20px 0;
+    }
+    footer .footTit {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    footer ul li a {
+        padding: 5px 0;
+    }
+    footer .footSeach button {
+        width: 70px;
+        font-size: 14px;
+    }
+    footer .footSeach input {
+        width: calc(100% - 70px);
+        padding: 0 8px;
+    }
+    /* footer .conterBox .footRi .footThree {width: 40%;}
+    footer .conterBox .footRi .footFour {width: 60%;} */
+    footer .footTit1 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .backTop {
+        width: 40px;
+        height: 40px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li a {
+        font-size: 14px;
+    }
+}
+
+@media(min-width:200px) and (max-width:767px) {
+    .bigTitle img {
+        width: 25px;
+        margin: 0 5px;
+    }
+    .footRi {
+        position: relative;
+    }
+    .footFour_div1 {
+        position: absolute;
+        width: 93%;
+        height: 125px;
+        left: 0;
+        bottom: -125px;
+        right: 0;
+        margin: auto;
+    }
+    footer .footTit1 {
+        margin: 10px 0;
+    }
+    footer .last {
+        margin-top: 120px;
+    }
+    .footFour_div1 ol {
+        justify-content: flex-start;
+    }
+    footer .last .text a{display:block;}
+}
+
+@media (min-width: 768px) {
+    header .logoLine .topSeach {
+        width: 80%;
+        height: 40px;
+    }
+    header .logoLineMoble {
+        display: flex;
+    }
+    header .logoLine .logo {
+        width: 240px;
+    }
+    header .logoLine .logo img {
+        width: 240px;
+    }
+    footer .conterBox .footLe {
+        width: 100%;
+        padding: 0 30px;
+    }
+    footer .conterBox .footRi {
+        width: 100%;
+        padding: 0 30px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits {
+        width: 170px;
+    }
+    .topMenu {
+        margin-left: 50px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits ul {
+        padding: 0 20px;
+    }
+    header .logoLine .riIcon .choseText {
+        font-size: 18px;
+        width: 90px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li {
+        padding: 18px 0;
+    }
+    header .logoLine .topSeach button {
+        width: 90px;
+        height: 40px;
+        font-size: 16px;
+    }
+    header .logoLine .riIcon .collectionWarp {
+        margin-right: 50px;
+    }
+    header .logoLine .topSeach input {
+        width: calc(100% - 110px);
+        height: 40px;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .bigTitle {
+        font-size: 20px;
+    }
+    footer ol li {
+        margin-right: 35px;
+    }
+    footer {
+        padding: 50px 0;
+    }
+    footer .footTit {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    footer .footSeach button {
+        width: 90px;
+        font-size: 16px;
+    }
+    footer .footSeach input {
+        width: calc(100% - 90px);
+        padding: 0 12px;
+    }
+    footer .footTit1 {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .backTop {
+        width: 50px;
+        height: 50px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li a {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(1):hover i {
+        background: url(../images/topListIcon1h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(2):hover i {
+        background: url(../images/topListIcon2h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(3):hover i {
+        background: url(../images/topListIcon3h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(4):hover i {
+        background: url(../images/topListIcon4h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(5):hover i {
+        background: url(../images/topListIcon5h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(6):hover i {
+        background: url(../images/topListIcon6h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(7):hover i {
+        background: url(../images/topListIcon7h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li:nth-child(8):hover i {
+        background: url(../images/topListIcon8h.png) no-repeat center;
+        background-size: auto 90%;
+    }
+    .backTop:hover .back_top1 {
+        display: none;
+    }
+    .backTop:hover .back_top2 {
+        display: inline-block;
+    }
+    header .logoLine .topSeach {
+        width: 400px;
+        height: 50px;
+    }
+    header .logoLine .riIcon {
+        justify-content: space-between;
+        width: 286px;
+    }
+    header .logoLineMoble {
+        display: none;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits {
+        width: 220px;
+    }
+    header .logoLine .riIcon .choseText {
+        font-size: 20px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li {
+        padding: 23px 0;
+    }
+    header .logoLine .topSeach button {
+        width: 110px;
+        height: 50px;
+        font-size: 18px;
+    }
+    header .logoLine .topSeach input {
+        width: calc(100% - 110px);
+        height: 50px;
+        padding: 0 20px;
+        font-size: 16px;
+    }
+    header nav {
+        padding: 0px 0 15px;
+        display: block;
+    }
+    header nav ul li {
+        width: 12.5%;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    header nav ul li:hover,
+    header nav ul li.on {
+        border: 1px solid #0099ff;
+    }
+    header nav ul li:hover a,
+    header nav ul li.on a {
+        color: #0099ff;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .bigTitle img {
+        margin: 0 15px;
+    }
+    .bigTitle {
+        font-size: 25px;
+    }
+    footer .conterBox .footLe {
+        width: 50%;
+        padding: 0;
+    }
+    footer .conterBox .footRi {
+        width: 50%;
+        padding: 0;
+    }
+    footer ol li {
+        margin-right: 45px;
+    }
+    footer ol {
+        width: auto;
+        justify-content: flex-start;
+    }
+    footer .last .text {
+        margin-left: 54px;
+        text-align: left;
+        margin-top: 0;
+        width: auto;
+    }
+    footer {
+        padding: 60px 0;
+    }
+    footer .footTit {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    footer ul li a {
+        padding: 10px 0;
+        font-size:18px;
+    }
+    footer .footSeach button {
+        width: 100px;
+        font-size: 16px;
+    }
+    footer .footSeach input {
+        width: calc(100% - 100px);
+        padding: 0 15px;
+    }
+    footer .conterBox .footRi .footThree {
+        width: 50%;
+    }
+    footer .conterBox .footRi .footFour {
+        width: 50%;
+    }
+    footer .footTit1 {
+        margin-bottom: 22px;
+        margin-top: 40px;
+    }
+    .backTop {
+        width: 70px;
+        height: 70px;
+    }
+    header .logoLine .riIcon .listWarp .Iconlsits li a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .centerBox,
+    footer .conterBox {
+        width: 90%;
+    }
+    header .logoLine .topSeach {
+        width: 506px;
+        height: 64px;
+    }
+    header .logoLine {
+        padding: 30px 0;
+    }
+    header .logoLineMoble {
+        display: none;
+    }
+    header .logoLine .topSeach button {
+        width: 130px;
+        height: 56px;
+        font-size: 20px;
+    }
+    header .logoLine .topSeach input {
+        width: calc(100% - 135px);
+        height: 64px;
+        padding: 0 30px;
+        font-size: 18px;
+    }
+    .bigTitle img {
+        margin: 0 20px;
+    }
+    .bigTitle {
+        font-size: 32px;
+        font-weight:bold;
+    }
+    footer {
+        padding: 70px 0;
+    }
+    footer .footTit {
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+    .backTop {
+        width: 90px;
+        height: 90px;
+    }
+    .pages_div a {
+        display: inline-block;
+        vertical-align: middle;
+        width: 38px;
+        height: 38px;
+        text-align: center;
+        line-height: 38px;
+        position: relative;
+    }
+    header nav ul li{
+        font-size:17px;
+    }
+}
+
+
+@media(min-width:200px) and (max-width:767px) {
+    header nav ul {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    header nav ul li {
+        font-size: 14px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    header nav ul li:last-child {
+        border-bottom: 0;
+    }
+}
+@media(min-width:992px) and (max-width:1199px){
+    header nav ul li a{font-size:12px;}
+}
+@media(min-width:1200px) and (max-width:1399px){
+    header nav ul li a{font-size:14px;}
+}
+@media(min-width:1400px) and (max-width:1600px){
+    header nav ul li a{font-size:16px;}
+}
+@media(min-width:1800px) {
+    header nav ul li {
+        font-size: 20px;
+    }
+}

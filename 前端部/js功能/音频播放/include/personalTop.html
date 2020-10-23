@@ -1,0 +1,41 @@
+<!--
+ * @Description: 
+ * @fileName: 
+ * @Author: longhaiyan
+ * @Date: 2020-06-02 14:28:53
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-06-04 14:10:31
+-->
+
+<header>
+    <div class="personal_header">
+        <div class="personal_header_menu">
+            <img src="../images/personal_header_last.png" alt="<" class="other_last">
+            <div class="header_title">Personal Center</div>
+            <img src="../images/personal_header_more.png" alt=">" class="other_more">
+        </div>
+        <div class="personal_header_list_out">
+            <ul class="personal_header_list">
+                <li><a href="#">All Products</a></li>
+                <li><a href="#">Most Popular</a></li>
+                <li><a href="#">Newest Releases</a></li>
+                <li><a href="#">Healing</a></li>
+                <li><a href="#">Chakra</a></li>
+                <li><a href="#"> Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Forum</a></li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+
+<script>
+    $('body').on('click', '.other_more', function() {
+        if ($('.personal_header_list_out').css('display') == 'none') {
+            $('.personal_header_list_out').slideDown()
+        } else {
+            $('.personal_header_list_out').slideUp()
+        }
+    })
+</script>

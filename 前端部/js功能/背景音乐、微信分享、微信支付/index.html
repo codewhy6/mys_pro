@@ -1,0 +1,293 @@
+﻿<!--
+ * @Description: 背景音乐、微信分享、微信支付
+ * @fileName: index.html
+ * @Author: LiSuwan
+ * @Date: 2020-01-15 21:50:04
+ * @LastEditors: Li Suwan
+ * @LastEditTime: 2020-03-02 19:10:56
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="Author" content="">
+    <meta content="cn" name="design">
+    <title>解决页面背景音乐自动播放兼容性问题以及获取微信openId</title>
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link type="text/css" rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/imgsize.js"></script>
+    <!--公共js可以放在这里面，因为每个页面都会调用-->
+
+    <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+</head>
+
+<body>
+    <audio src="images/audio.mp3" loop autoplay="false" id="music" hidden></audio>
+    <div class="fixedWarp">
+        <div class="index_btn">
+            <span class="open_music animated"><img src="images/open_music.png"></span>
+            <span class="close_music animated"><img src="images/close_music.png"></span>
+        </div>
+
+        
+        <a  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=760243985&site=qq&menu=yes">
+            <img src="/images/qq_icon.png"/>
+        </a>
+
+
+
+        <div class="index_title"><img src="images/big_title.png"></div>
+        <div class="index_gif"> <img src="images/mouse_gif2.gif"></div>
+        <div class="index_bottom">
+            <!-- 如果关注公众号跳转 -->
+            <a href="javascript:void(0)" class="index_action animated startFlag"><img src="images/action_btn.png"></a>
+            <p class="index_p1">立下新年Flag，撸起袖子加油干</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        /**
+         * @Description: 音乐开关(开始音乐暂停音乐)
+         * @Author: CaoChen
+         * @Date: 2020-01-11 16:38:04
+         */
+        $('.index_btn span').on('click', function () {
+            $(this).css("display", "none")
+            $(this).siblings().css("display", "inline-block")
+            if (checkPlatform() == "Android") {
+                if (music.paused) {
+                    music.play();
+                } else {
+                    music.pause();
+                }
+            } else {
+                audioAutoPlay("music")
+            }
+        })
+
+        if (!sessionStorage.getItem("wxUserInfo")) {
+            getWxCode();//默认执行获取微信code
+        } else {
+            //业务逻辑
+        }
+
+
+        /**
+         * @Description: 获取微信code 弹窗授权
+         * @Author: LiSuwan
+         * @Date: 2020-01-14 13:27:52
+         */
+        function getWxCode() {
+
+            // 从url上取参数，这个方法已经封装过了，可以之间调用，引用的时候在这里就不要写了，直接调用方法就可以 start
+            var url = location.search;
+            //获取url中"?"符后的字串 ('?modFlag=business&role=1')
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1); //substr()方法返回从参数值开始到结束的字符串；
+                var strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                }
+            }
+            // 从url上取参数，这个方法已经封装过了，可以之间调用，引用的时候在这里就不要写了，直接调用方法就可以 start
+
+
+            if (theRequest.code) {
+                getUserInfo(theRequest.code)
+                getWxconfig()
+            } else {
+
+                // 需要获取用户头像信息用：scope=snsapi_userinfo
+                // 只获取用户openId用：scope=snsapi_base
+                //redirect_uri:授权后重定向的回调链接地址,引用时需要修改下这个地方
+                location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1f1b63388f365f4&redirect_uri=http://flag2020.uxbrand.cn/index.html&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+
+            }
+        }
+
+        /**
+         * @Description: 是否关注
+         * @Author: LiSuwan
+         * @Date: 2020-01-14 19:04:15
+         */
+        function getIsFollow(openId) {
+            let url = "user/info/isFollow";
+            http(url, isFollow, "get", { openId: openId })
+            function isFollow(res) {
+                if (res.data == 0) {
+                    $('.window_code').fadeIn()
+                }
+            }
+        }
+
+        /**
+         * @Description: 获取用户信息
+         * @Author: LiSuwan
+         * @Date: 2020-01-14 19:04:15
+         */
+        function getUserInfo(code) {
+            let url = "user/info/mobile/getUser";
+            http(url, userInfo, "get", { code: code })
+            function userInfo(res) {
+                console.log(res, "用户信息")
+                sessionStorage.setItem("userInfo", JSON.stringify(res.data.lastUser))
+            }
+        }
+
+
+
+
+        /**
+         * @Description: 解决苹果手机不能自动播放背景音乐
+         * @Author: LiSuwan
+         * @Date: 2020-01-15 10:29:42
+         */
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id);
+
+            if (checkPlatform() == "iOS") {
+                if (music.paused) {
+                    music.play();
+                } else {
+                    music.pause();
+                }
+            }
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                if (checkPlatform() == "iOS") {
+                    if (music.paused) {
+                        music.play();
+                    } else {
+                        music.pause();
+                    }
+                }
+            }, false);
+        }
+
+        audioAutoPlay("music");//自动播放背景音乐
+
+        //手机端判断各个平台浏览器及操作系统平台 这个方法易交封装过了，引用的时候在这里就不要写了，直接调用方法就可以 start 
+        function checkPlatform() {
+            if (/android/i.test(navigator.userAgent)) {
+                // document.write("This is Android'browser.");//这是Android平台下浏览器
+                return "Android"
+            }
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                // document.write("This is iOS'browser.");//这是iOS平台下浏览器
+                return "iOS";
+            }
+            if (/Linux/i.test(navigator.userAgent)) {
+                document.write("This is Linux'browser.");//这是Linux平台下浏览器
+            }
+            if (/Linux/i.test(navigator.platform)) {
+                document.write("This is Linux operating system.");//这是Linux操作系统平台
+            }
+            if (/MicroMessenger/i.test(navigator.userAgent)) {
+                document.write("This is MicroMessenger'browser.");//这是微信平台下浏览器
+            }
+        }
+        //手机端判断各个平台浏览器及操作系统平台 这个方法易交封装过了，引用的时候在这里就不要写了，直接调用方法就可以 end
+
+
+        /**
+         * @Description: 获取微信的配置
+         * @Author: LiSuwan
+         * @Date: 2020-01-15 21:51:39
+         */
+        function getWxconfig() {
+            let getWxconfigUrl = "user/info/share"; //接口路径
+            let locationUrl = location.href;
+
+            http(getWxconfigUrl, wxconfigCallback, "get", { urlParam: locationUrl });
+
+            function wxconfigCallback(res) {
+                console.log(res, "配置")
+                let data = res.data;
+
+                wx.config({
+                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId: data.appid, // 必填，公众号的唯一标识
+                    timestamp: data.timestamp, // 必填，生成签名的时间戳
+                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                    signature: data.signature,// 必填，签名
+                    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData'] // 必填，需要使用的JS接口列表
+                });
+
+                wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+                    wx.updateAppMessageShareData({
+                        title: '江小北喊你来立新年flag啦！', // 分享标题
+                        desc: '2020我的专鼠Flag，做更好的自己', // 分享描述
+                        link: 'http://flag2020.uxbrand.cn/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                        imgUrl: 'http://flag2020.uxbrand.cn/images/share.jpg', // 分享图标
+                        success: function () {
+                        }
+                    })
+
+                    wx.updateTimelineShareData({
+                        title: '江小北喊你来立新年flag啦！', // 分享标题
+                        link: 'http://flag2020.uxbrand.cn/index.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                        imgUrl: 'http://flag2020.uxbrand.cn/images/share.jpg', // 分享图标
+                        success: function () {
+                            // 设置成功
+                        }
+                    })
+                });
+            }
+        }
+
+        /**
+          * @Description: 微信支付
+          * @Author: LiSuwan
+          * @Date: 2020-01-21 10:27:21
+          * @param {type} 
+          * @return: 
+          */
+        function weixinPay() {
+            let url = "接口路径";//接口路径
+
+            let params = {//参数
+                openId: "用户openId"
+            };
+
+            http(url, weixinPayCallBack, "get", params)
+            function weixinPayCallBack(res) {
+                if (res.code == 200) {
+                    let data = res.data.body
+                    WeixinJSBridge.invoke(
+                        'getBrandWCPayRequest', {
+                        "appId": data.appid,     //公众号名称，由商户传入
+                        "timeStamp": data.timeStamp, //时间戳，自1970年以来的秒数
+                        "nonceStr": data.nonceStr, //随机串
+                        "package": data.packages,
+                        "signType": "MD5", //微信签名方式：
+                        "paySign": data.finalsign //微信签名
+                    },
+                        function (res1) {
+                            if (res1.err_msg == "get_brand_wcpay_request:ok") {
+                                //支付成功之后业务逻辑
+
+                            }
+                        });
+                } else {
+                    alert(res.message)
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

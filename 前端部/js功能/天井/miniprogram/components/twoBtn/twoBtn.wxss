@@ -1,0 +1,6 @@
+/* components/twoBtn/twoBtn.wxss */
+.twoBtn_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

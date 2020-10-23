@@ -1,0 +1,333 @@
+.personal_right_tit.order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order_class_txt {
+    font-size: 18px;
+    color: #333;
+}
+
+.order_class_more {
+    background: url(../images/order_class.png) no-repeat;
+    background-size: 100% 100%;
+    width: 16px;
+    height: 8px;
+    display: block;
+    margin-left: 5px;
+}
+
+.order_class {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.order_class:hover .order_class_txt {
+    color: #028eec;
+}
+
+.order_class_list {
+    /* width: ; */
+    width: 192px;
+    /* height: 103px; */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 27px 2px rgba(68, 68, 68, 0.1);
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    background: #fff;
+    padding: 20px;
+    line-height: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 30px;
+    display: none;
+}
+
+.order_class_list li:hover {
+    color: #028eec;
+}
+
+.li_saojiao {
+    width: 18px;
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    border-bottom: 9px solid #fff;
+    position: absolute;
+    top: -8px;
+    left: 164px;
+}
+
+
+/* 订单列表 */
+
+.order_list_item {
+    border-right: 1px solid #e5e5e5;
+}
+
+.order_list_head {
+    background-color: #fbfbfb;
+    height: 70px;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.order_list_head td {
+    padding-left: 20px;
+}
+
+.order_state_circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 9px;
+    border-radius: 50%;
+    background-color: #0099ff;
+}
+
+.order_state_circle.pending {
+    background-color: #ec962e;
+}
+
+.order_list {
+    border: solid 1px #e5e5e5;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.order_info {
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.order_list_item td {
+    padding: 30px 20px 20px;
+    border-right: solid 1px #e5e5e5;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.normal_txt {
+    font-size: 14px;
+    color: #797979;
+}
+
+.black_txt {
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.order_list_item .normal_txt {
+    margin-bottom: 13px;
+}
+
+.order_info_detal {
+    display: flex;
+    align-items: center;
+    margin-top: 17px;
+}
+
+.order_info_detal img {
+    width: 140px;
+    height: 78px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.order_info_detal_right .black_txt:first-child {
+    margin-bottom: 20px;
+}
+
+.order_total_money {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.operation_link {
+    display: block;
+    font-size: 14px;
+    line-height: 44px;
+    letter-spacing: 0px;
+    color: #028eec;
+    opacity: 1;
+    margin-right: 20px;
+}
+
+.operation_link:hover {
+    color: #028eec;
+    opacity: 0.7;
+}
+
+.load_more {
+    width: auto;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #797979;
+    cursor: pointer;
+    padding-bottom: 25px;
+}
+
+.load_more:hover {
+    color: #028eec;
+}
+
+.personal_right.other {
+    background: #fff;
+    padding-bottom: 30px;
+}
+
+.order_list_head .normal_txt {
+    margin-right: 5px;
+}
+
+.order_list_head .black_txt {
+    margin-right: 30px;
+}
+
+.order_total {
+    text-align: center;
+}
+
+
+/* 适配移动端 */
+
+@media screen and (min-width: 200px) {
+    /* .order_list tr {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    } */
+    .order_list_item td {
+        border-right: none;
+        padding: 30px 6px 20px;
+    }
+    .bottom_operation {
+        border-top: 1px solid #e5e5e5;
+    }
+    .order_total {
+        width: 20%;
+    }
+    .order_info_detal img {
+        width: 83px;
+        height: 49px;
+    }
+    .order_info {
+        width: 80%;
+        box-sizing: border-box;
+    }
+    .black_txt {
+        font-size: 14px;
+    }
+    .order_info_detal_right .black_txt:first-child {
+        margin-bottom: 0px;
+    }
+    .order_info_detal img {
+        margin-right: 10px;
+    }
+    .order_info_detal_right {
+        width: 60%;
+    }
+    .link_box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        /* width: 100%; */
+    }
+    .order_state {
+        width: 100%;
+    }
+    .order_base_detail {
+        width: 80%;
+        float: left;
+    }
+    .state_mobile {
+        width: 20%;
+        float: right;
+    }
+    .order_state_circle {
+        margin-right: 2px;
+    }
+    .order_list_head .black_txt {
+        margin-right: 0px;
+    }
+    .order_list_head td {
+        padding-left: 5px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* .order_list tr {
+        display: block;
+    } */
+    .order_list_item td {
+        padding: 30px 20px 20px;
+        border-right: solid 1px #e5e5e5;
+        vertical-align: top;
+    }
+    .order_total {
+        width: auto;
+    }
+    .order_info_detal img {
+        width: 140px;
+        height: 78px;
+    }
+    .order_info {
+        width: 60%;
+        box-sizing: border-box;
+    }
+    .order_total {
+        width: 10%;
+    }
+    .order_state {
+        width: 30%;
+    }
+    /* .black_txt {
+        font-size: 18px;
+    } */
+    .order_info_detal_right .black_txt:first-child {
+        margin-bottom: 20px;
+    }
+    .order_info_detal img {
+        margin-right: 20px;
+    }
+    .order_info_detal_right {
+        width: 60%;
+    }
+    .link_box {
+        display: block;
+    }
+    .order_state_circle {
+        margin-right: 9px;
+    }
+    .order_list_head .black_txt {
+        margin-right: 30px;
+    }
+    .order_list_head td {
+        padding-left: 20px;
+    }
+    /* .order_list_head td {
+        width: 50%;
+    }
+    .order_list_head td.state {
+        width: 20%;
+    } */
+    .li_saojiao {
+        top: -8px;
+        left: 50%;
+    }
+    .order_class_list {
+        right: -51.5px;
+    }
+}

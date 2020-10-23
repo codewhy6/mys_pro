@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>网页粒子特效背景</title>
+	<link href="" rel=" rel="external nofollow" stylesheet">
+	<style type="text/css">
+		ul,
+		li {
+			list-style: none;
+		}
+		ul>li {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+		
+		/*数字快速滚动开始*/
+		.percent_num {
+		    color: #2ea7e0;
+		}
+		.font100 {
+		    font-size: 100px;
+		}
+		 .percent_num {
+		    color: #2ea7e0;
+		}
+		.bold{
+			font-weight: 600;
+		}
+		/*数字快速滚动结束*/
+	</style>
+
+</head>
+<body>
+<!-- 数字快速滚动开始 -->
+<p class="percent_num"><span class="font100 bold percent_val1">0</span><em class="font48 bold">%</em></p>
+<!-- 数字快速滚动结束 -->
+
+<ul>
+	<li>使用说明</li>
+	<li>1、需要引入jquery</li>
+	<li>2、根据需要复制CSS样式</li>
+	<li>3、复制JS</li>
+</ul>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var hect = $(window).height();
+	    function growNum(selector,max,timer) {
+	        var stp = $(window).scrollTop();
+	        var top =  $(selector).offset().top;
+	        if($(selector).text() <= 0){
+	            if( top < stp + hect){
+	                var e = parseInt(max);
+	                var x =0;
+	                var num = setInterval(function(){
+	                    x++;
+	                    if(x<=e){
+	                        $(selector).text(x);
+	                    }else{
+	                        clearInterval(num);
+	                    }
+	                },timer)
+	            }
+	        }
+	    }
+	   growNum(".percent_val1",10,50);
+	})
+</script>
+</body>
+</html>

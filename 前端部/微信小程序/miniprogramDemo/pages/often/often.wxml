@@ -1,0 +1,49 @@
+<!-- index.wxml -->
+<view class="container">
+  <text class="title">常用基础功能</text>
+  <view class="index_list">
+    <text bindtap="skippingComponent">1、父子组件传参数</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">2、地图功能</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingSendSms">3、发送短信功能</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">4、图片轮播</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">5、picker选择器（从底部弹起的滚动选择器。）</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">6、日期选择功能</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingCallPhone">7、拨打电话功能</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">9、获取用户头像和昵称</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="">10、获取用户手机号码</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingMoreLoadingData">11、加载获取更多数据</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingUpdateBackground">12、后台实时定位</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingUploadImg">13、上传图片</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="anchorPoint">14、锚点链接</text>
+  </view>
+   <view class="index_list">
+    <text bindtap="nullData">15、暂无记录</text>
+  </view>
+   <view class="index_list">
+    <text bindtap="openCamera">16、打开摄像头</text>
+  </view>
+</view>

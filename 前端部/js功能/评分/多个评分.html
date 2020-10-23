@@ -1,0 +1,335 @@
+<!--
+ * @Description: 多个评分
+ * @fileName: 
+ * @Author: longhaiyan
+ * @Date: 2020-06-16 08:57:12
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-06-16 09:52:47
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        list-style: none;
+    }
+
+    /* 星星的大小 */
+    .my_shop_gray_star {
+        background: #fff url(./images/my_shop_star.png) no-repeat;
+        background-size: 100% 100%;
+        width:25px;
+        height:25px;
+        overflow: hidden;
+    }
+
+    .my_shop_red_star {
+        width: 0;
+        height: 100%;
+        background:transparent  url(./images/star_red.png) no-repeat;
+        background-size: 25px  25px; /* 此背景大小固定和星星大小一样 */
+    }
+
+    .my_shop_point_amount_num {
+        font-size: 18px;
+        color: #eb3629;
+        font-weight: bold;
+    }
+
+    .my_shop_point_amount_unit {
+        font-size: 18px;
+        color: #eb3629;
+    }
+
+    .my_shop_point_amount {
+        display: flex;
+        /* justify-conte; */
+    }
+
+    .my_shop_point_stars {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .my_shop_point_left {
+        display: flex;
+        align-items: center;
+    }
+
+    .my_shop_star_item {
+        margin-right: 12px;
+    }
+
+    .my_shop_point_right {
+        font-size: 18px;
+        color: #666666;
+        margin-left: 44px;
+    }
+
+    .my_shop_point {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+</style>
+<body>
+     <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">2.5</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">2.5</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">5</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">2.5</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">4.5</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">3.4</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+    <div class="my_shop_point_left">
+        <ul class="my_shop_point_stars">
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+            <li class="my_shop_star_item">
+                <div class="my_shop_gray_star">
+                    <div class="my_shop_red_star"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="my_shop_point_amount">
+            <span class="my_shop_point_amount_num">2.1</span>
+            <span class="my_shop_point_amount_unit">分</span>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+
+<script>
+    /**
+    * @Description: 通过评分计算星星数量 并 显示
+    * @Author: longhaiyan
+    * @Date: 2020-05-11 20:55:17
+    */
+   for(let i=0;i< $('.my_shop_point_amount_num').length;i++) {
+    computedStart($('.my_shop_point_amount_num').eq(i))
+   }
+    function  computedStart(element){
+       let redAll = parseInt(element.text())
+       let redPart = parseFloat(element.text()) - redAll 
+       for(let i=0;i<redAll;i++) {
+           element.parent().prev().find('.my_shop_red_star').eq(i).css('width', '100%')
+       }
+       element.parent().prev().find('.my_shop_red_star').eq(redAll).css('width', redPart*100+'%')
+   }
+</script>
+
+</html>

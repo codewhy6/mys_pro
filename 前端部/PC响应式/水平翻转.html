@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    *{
+        padding: 0;
+        margin: 0;
+    }
+     ul,
+	li {
+		list-style: none;
+	}
+	ul>li {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+    a{
+        text-decoration: none;
+    }
+    /* 水平翻转开始 */
+    .test_wrap ul{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        padding: 10px;
+        background: #ffffff;
+    }
+    .test_wrap li{
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        padding-right: 0.1rem;
+        list-style-type: none;
+        padding: 0 5px;
+    }
+    .test_wrap a{
+        display: block;
+        color: #ffffff;
+        text-align: center;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 30px 0;
+        background-color: #9a6ad8;
+    }
+    .test_wrap a:hover{
+	     -webkit-animation: proRotate 1s ease-in-out 500ms alternate none 1;
+	     animation: proRotate 1s ease-in-out 500ms alternate none 1;
+	    }
+	
+	 @-webkit-keyframes proRotate { 
+	    0%{transform:perspective(400px) rotateY(0deg);} 
+	    50%{transform:perspective(400px) rotateY(-90deg);} 
+	    100%{transform:perspective(400px) rotateY(-180deg);} 
+	}
+	@keyframes proRotate { 
+	    0%{transform:perspective(400px) rotateY(0deg);} 
+	    50%{transform:perspective(400px) rotateY(-90deg);} 
+	    100%{transform:perspective(400px) rotateY(-180deg);} 
+	}
+	/* 水平翻转结束 */
+</style>
+</head>
+<body>
+    <div class="test_wrap">
+        <ul>
+            <li>
+                <a href="#">测试一号</a>
+            </li>
+            <li>
+                <a href="#">测试二号</a>
+            </li>
+            <li>
+                <a href="#">测试三号</a>
+            </li>
+        </ul>
+    </div>
+    
+    <ul>
+		<li>使用说明</li>
+		<li>1、根据需要复制CSS样式</li>
+	</ul>
+<body>
+</html>

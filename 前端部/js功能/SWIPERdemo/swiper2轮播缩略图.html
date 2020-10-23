@@ -1,0 +1,128 @@
+<!--
+ * @Description: 
+ * @fileName: 
+ * @Author: Hu Sini
+ * @Date: 2020-09-27 14:29:44
+ * @LastEditors: Hu Sini
+ * @LastEditTime: 2020-09-28 15:42:57
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 纯使用swiper2  注意css 和js的文件 都是swiper2 -->
+    <link rel="stylesheet" href="css/carouselThumbnail.css">
+    <link rel="stylesheet" href="css/swiper2.min.css">
+    <script src="lib/swiper2.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="swiper_box">
+        <div class="view">
+            <div class="swiper-container">
+                <button class="btn_prev_s" href="#"></button>
+                <button class="btn_next_s" href="#"></button>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/b1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/b2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/b3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/b4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/b5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/b6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preview">
+            <button class="btn_prev_s" href="#"></button>
+            <button class="btn_next_s" href="#"></button>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active-nav">
+                        <img src="images/s1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/s2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/s3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/s4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/s5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide slide6">
+                        <img src="images/s6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var viewSwiper = new Swiper('.view .swiper-container', {
+            onSlideChangeStart: function () {
+                updateNavPosition();
+            }
+        })
+
+        $('.view .btn_prev_s,.preview .btn_prev_s').on('click', function (e) {
+            e.preventDefault();
+            if (viewSwiper.activeIndex == 0) {
+                viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
+                return;
+            }
+            viewSwiper.swipePrev();
+        })
+        $('.view .btn_next_s,.preview .btn_next_s').on('click', function (e) {
+            e.preventDefault();
+            if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+                viewSwiper.swipeTo(0, 1000);
+                return
+            }
+            viewSwiper.swipeNext();
+        })
+
+        var previewSwiper = new Swiper('.preview .swiper-container', {
+            visibilityFullFit: true,
+            slidesPerView: 'auto',
+            onlyExternal: true,
+            onSlideClick: function () {
+                viewSwiper.swipeTo(previewSwiper.clickedSlideIndex);
+            }
+        })
+
+        function updateNavPosition() {
+            $('.preview .active-nav').removeClass('active-nav');
+            var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav');
+            if (!activeNav.hasClass('swiper-slide-visible')) {
+                if (activeNav.index() > previewSwiper.activeIndex) {
+                    var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1;
+                    previewSwiper.swipeTo(activeNav.index() - thumbsPerNav);
+                } else {
+                    previewSwiper.swipeTo(activeNav.index());
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

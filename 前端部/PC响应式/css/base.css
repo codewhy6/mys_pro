@@ -1,0 +1,200 @@
+﻿@charset "utf-8";
+html {
+    font: normal 14px "微软雅黑", Arial;
+}
+body {
+    padding: 0px;
+    margin: 0px auto;
+    color: #666;
+    width: 100%;
+    /*min-width: 1200px;*/
+    /*width: expression((documentElement.clientWidth < 1200) ? "1200px" : "100%" );*/
+    zoom: 1;
+    background-color: #ffffff;
+    /*background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");*/
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;
+}
+li{
+	list-style:none;
+}
+ul, li, form, dl, dt, dd, div {
+    padding: 0px;
+    margin: 0px;
+}
+select, input, textarea {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    color: #666;
+	background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+input:focus {
+    outline: none;
+}
+input, button, select, textarea {
+    outline: none; /*-webkit-appearance:none;*//*强制去除表单自带的样式*/
+	font: normal 14px "微软雅黑", Arial;
+}
+
+textarea {
+    resize: none; /*-webkit-appearance:none;*//*强制去除textarea自带的样式*/
+}
+
+article, aside, footer, header, nav, section, figure, figcaption {
+    display: block;
+}
+/*html5设置*/
+figure, figcaption {
+    margin: 0px;
+    padding: 0px;
+}
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+img {
+    border: none;
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+    -moz-outline: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.clear {
+	display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+.SinglePage{  text-align:justify; word-wrap:break-word; clear:both; overflow:hidden; font-size:13px; line-height:24px;}
+/*.container{
+	width:1200px;
+	margin:auto;
+}*/
+
+
+
+
+
+
+/*****************************返回顶部******************************/
+.toTop{
+    position: fixed;
+    width: 88px;
+    height: 88px;
+    right: 3%;
+    bottom: 5%;
+    z-index: 99;
+}
+.toTop>a{
+    display: block;
+    text-indent: -9999px;
+    width: 88px;
+    height: 88px;
+    /*background: url(../images/back_top.png) no-repeat;*/
+}
+/****************************返回顶部****************************/
+/*****************************面包屑导航*****************************/
+.bread{
+	background-color: #F4F4F4;
+}
+.breadcrumbs{
+    font-size: 14px;
+    width:100%;
+    margin: 0 auto;
+}
+.wraps {
+	padding: 16px 0;
+}
+.breadcrumbs a {
+    color: #666666;
+}
+.breadcrumbs span{
+    color: #666666;
+}
+.breadcrumbs .wraps a + *:before {
+    content: '>';
+    margin: 0 8px;
+}
+.wraps a:first-child:before{
+	content: '';
+	display: inline-block;
+	width: 17px;
+	height: 15px;
+	background: url(../images/home.png);
+	margin: -4px 4px 0 0;
+	vertical-align: middle;
+}
+/******************************面包屑导航*********************************/
+/*******************************分页*****************************************/
+.pages{ height: 32px; text-align: right; margin-bottom: 90px;overflow: hidden;margin-top: 40px;}
+.pages a{ display: inline-block;margin: 0 3px;}
+.pages .fir,.pages .end{
+width: 60px;
+height: 32px;
+background: #f4f4f4;
+color: #626262;	
+font-size: 14px;
+line-height: 32px;
+text-align: center;
+margin-right: 10px;
+}
+.pages .end{
+	margin-right: 0;
+}
+.pages a.fff{
+	background: #fff;
+}
+.pages .prevs,.pages .nexts{width: 80px; height: 32px;border: 1px solid #e1e1e1;  color: #333; text-align: center; line-height: 32px;  font-size: 14px;}
+.pages .on{ color: #fff;background: #ee741c;}
+.pages .number a{ width: 36px; height: 32px; text-align: center; line-height: 32px;color: #626262; font-size: 14px;border: 1px solid #e1e1e1;}
+.pages .number a.on{ color: #fff;background: #ee741c;border: none;}
+.pages .text{ display: inline-block; width: 32px; height: 32px; text-align: center; line-height: 32px;  background: #FFFFFF; color: #08c357; font-size: 14px;}
+.pages .Btn_go{ display: inline-block; width: 57px; height: 36px; border: 1px solid #dfdfdf; color: #666666; font-size: 14px; text-align: center; background: #f3f3f3;  border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px;}
+/*******************************分页*****************************************/
+/*加载更多*/
+.dropload-down{
+    background-color:#F2F2F2;
+}
+.dropload-down .dropload-load{
+    padding: 3% 0 3% 47%;
+    background: url(../images/loading.gif) no-repeat 40% center /5.2%;
+    color: #999999;
+    font-size: 1rem;
+    display: block;
+}
+.dropload-refresh
+{
+     color: #999999;
+    
+    display: block;
+    text-align: center;
+    padding:3% 0  ;
+}
+.dropload-down .dropload-noData{
+    color: #999999;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    padding:3% 0  ;
+}
+/*加载更多*/
+

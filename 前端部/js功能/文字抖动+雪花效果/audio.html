@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="Tencent-CP" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<title>噪音干扰</title>
+<style type="text/css">
+body{margin:0rem;padding:0rem;}
+.wrap{width:100%;height:100%;position: absolute;top:0;bottom:0;left:0;right:0;background:#fff;}
+.wrap p{width:90%;height:100%;margin:0rem auto;position:relative;padding:0rem;display: flex;justify-content: center;align-items: center;font-size:0.6rem;color:#000;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<p>稍等一会，声音就会出来</p>
+		<audio src="image/song.mp3" id="audio"></audio>  
+	</div>
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script>
+function voice(){
+	var audio = document.getElementById("audio"); 
+    audio.play(); 
+    //解决微信中自动播放问题
+	if(window.WeixinJSBridge)
+	{
+        WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+            audio.play(); 
+        }, false);
+
+    }
+	else{
+        document.addEventListener("WeixinJSBridgeReady", function() {
+	        WeixinJSBridge.invoke('getNetworkType', {}, function(e){
+	            audio.play(); 
+	        });
+	    }, false);
+    }
+};
+setTimeout(voice,5000);
+</script>
+<script>
+//REM自适应
+function AutoPage(){ 
+	document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 750 + 'px';
+ } ;
+AutoPage();
+$(window).on('resize',function(){
+	AutoPage();
+});
+</script>
+</html>

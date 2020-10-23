@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上传图片</title>
+</head>
+<style>
+	ul,
+	li {
+		list-style: none;
+	}
+	
+	ul>li {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	
+	/************************上传图片start********************************/
+	.filter-sc{display:inline-block;}
+	.file3{
+	    width:130px;
+	    height:130px;
+		cursor: pointer;
+		display:inline-block;
+		position: relative;
+		background:url(../images/bd-sctp.png) center no-repeat;
+		background-size:100%;
+	}
+	.file3 input{opacity: 0;position: absolute;top: 0;left: 0;height:130px}
+	.bd-sc span{vertical-align:top;}
+	.mzsm{margin-left:160px;}
+	.mzsm .filter-duox b{font-weight: normal;color:#0081e0;}
+	.bd-tj a{
+		width:300px;
+		height:50px;
+		display:inline-block;
+		line-height:50px;
+		text-align:center;
+		color:#fff;
+		font-size:18px;
+		background-color:#0081e0;
+		border-radius:5px;
+		margin-top:10px;
+	}
+	.fbwd_imgs .z_file {
+	    float: left;
+	    width:130px;
+	    height:130px;
+	    background:url(images/bd-sctp.png) center no-repeat;
+	    background-size: 100% 100%;
+	    position: relative;
+	    cursor: pointer;
+	}
+	.fbwd_imgs .z_file input {
+	    width:130px;
+	    height:130px;
+	    opacity: 0;
+	    cursor: pointer;
+	}
+	.z_photo1 div {
+	    margin-right:20px;
+	    margin-bottom:10px;
+	    cursor: pointer;
+	    float:left;
+	}
+	.z_addImg {
+	    float:right;
+	    position: relative;
+	    width:160px;
+		height:130px;
+	    box-sizing: border-box;
+	}
+	.z_addImg img {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: auto;
+	    max-width: 100%;
+	    max-height: 100%;
+	}
+	.file-pic p{
+		position:relative;
+	    margin-top:-45px;
+	    width:160px;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+	    box-sizing: border-box;
+	    background-color:rgba(0,0,0,0.5);
+	}
+	.file-pic p a{color:#fff;}
+	.file-pic:hover p{display:block;}
+	.shopinform_nr2,.file-pic,.fbwd_imgs,.z_photo,.z_file{display:inline-block;}
+	.z_photo{width:925px;}
+	.filter-text:focus{
+		border:1px solid #000000;
+	}
+	.bdsc_span1{
+		width:161px;
+		height:128px;
+		display: inline-block;
+		position:relative;
+	}
+	.bdsc_span1 img{
+		position: absolute;
+	 	top: 0;
+	 	left: 0;
+	 	right: 0;
+	 	bottom: 0;
+	 	margin: auto;
+	 	max-width: 100%;
+	 	max-height: 100%
+	}
+	.bdsc_span2{margin-right:10px;}
+	.file-pic p{display:none;}
+	.file-pic:hover p{display:block;}
+	/************************上传图片end********************************/
+</style>
+<body>
+	<div class="fbwd_imgs fbwd_imgs1">
+		<div class="z_photo z_photo1">
+			<div class="z_file z_file1">
+				<input type="file" name="file" id="file1_0" value="" accept="image/jpg,image/jpeg,image/png,image/gif,image/bmp"  onchange="imgChange('z_photo1','z_file1','file1_0');" />
+			</div>
+			<div class="file-pic">
+    			<span class="bdsc-span1"><img src="images/bd-pic_03.jpg"></span>
+    			<p>
+    				<span class="bdsc_span2"><a href="javascript:;">设为首图</a></span>
+    				<span class="bdsc_span3"><a href="javascript:;">删除图片</a></span>
+    			</p>
+    		</div>
+			<i class="clear"></i>
+		</div>
+	</div>
+	
+	<ul>
+		<li>使用说明</li>
+		<li>1、需要引入jquery</li>
+		<li>2、复制图片上传CSS样式</li>
+		<li>3、复制以下JS</li>
+	</ul>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+// 添加图片
+var ids=1;
+var addimgid;
+var inputindex;
+function inputclick(){
+	$('.fbwd_imgs1 .z_photo1 .z_file1 input').unbind("click");
+	$('.fbwd_imgs1 .z_photo1 .z_file1 input').click(function(){
+		inputindex=$(this).index();				
+	})
+}
+inputclick()
+//上传照片,最多五张功能已经写好
+function imgChange(obj1, obj2, obj3) {
+	//创建input
+	$('.fbwd_imgs1 .z_photo1 .z_file1 input').eq(inputindex).css({"display":"none"});
+	var inputids="file1_"+ids;
+	console.log(inputids)
+	var scinput=$("<input/>");
+	scinput.attr('type','file');
+	scinput.attr('name','file');
+	scinput.attr('id',inputids);
+	scinput.attr('value','');
+	scinput.attr('accept','image/jpg,image/jpeg,image/png,image/gif,image/bmp');
+	scinput.bind("change",function(){
+		imgChange('z_photo1','z_file1',inputids);
+	});
+	scinput.appendTo('.z_file1');
+	ids++;
+	addimgid=$('.fbwd_imgs1 .z_photo1 .z_file1 input').eq(inputindex).attr('id');
+	inputclick()
+	//获取点击的文本框
+	var file = document.getElementById(obj3);
+	//存放图片的父级元素
+	var imgContainer = document.getElementsByClassName(obj1)[0];
+	//获取的图片文件
+	var fileList = file.files;
+	var FileExt = fileList[0].name.split('.').splice(-1);  // 后缀名字
+	console.log(FileExt[0])
+	if(FileExt!='jpg'&&FileExt!='jpeg'&&FileExt!='png'&&FileExt!='gif'&&FileExt!='bmp'){
+		alert('上传文件格式错误，请重新上传')
+	}else{
+	//文本框的父级元素
+	var input = document.getElementsByClassName(obj2)[0];
+	var imgArr = [];
+	//遍历获取到得图片文件
+	for (var i = 0; i < fileList.length; i++) {
+		var imgUrl = window.URL.createObjectURL(file.files[i]);
+		imgArr.push(imgUrl);
+		var img = document.createElement("img");
+		img.setAttribute("src", imgArr[i]);
+		var imgAdd = document.createElement("div");
+		var imgAdd1 = document.createElement("div");
+		var pp = document.createElement("p");
+		var a1=document.createElement("a");
+		var a2=document.createElement("a");
+		var span1 = document.createElement("span");
+		span1.setAttribute("class","bdsc_span2");
+		var span3 =document.createTextNode("设为首图")
+		var span5 = document.createElement("span");
+		var span2 = document.createElement("span");
+		span2.setAttribute("class","bdsc_span3");
+		var span4 =document.createTextNode("删除图片")
+		imgAdd.setAttribute("class", "file-pic");
+		imgAdd1.setAttribute("class", "z_addImg");
+		span5.setAttribute("class", "bdsc_span1");
+		imgAdd1.appendChild(imgAdd);
+		imgAdd.appendChild(span5);
+		imgAdd.setAttribute("name", addimgid);
+		a1.appendChild(span3);
+		a2.appendChild(span4);
+		span1.appendChild(a1);
+		span2.appendChild(a2);
+		span5.appendChild(img)
+		pp.appendChild(span1);
+		pp.appendChild(span2)
+		imgAdd.appendChild(pp);
+		$('.z_file1').after(imgAdd);
+	};			
+}
+//点击图片删除函数
+function clicks(){
+	//		先解绑事件,再添加事件
+	$('.bdsc_span3').unbind("click");
+	$('.bdsc_span3').click(function(){
+		var addimgname=$(this).attr('name');
+		$(this).parent().parent().remove();
+		$('#'+addimgname).val("").remove();
+		clicks()
+		var imggs2=$('.z_photo1 .z_addImg').length;
+		if(imggs2<4){
+			$('.z_file1').css({
+				"display":"block"
+			})
+		}
+	})
+}
+clicks()		
+}
+</script>
+</body>
+</html>
+

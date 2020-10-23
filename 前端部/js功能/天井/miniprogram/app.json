@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/index/index",
+    "pages/demo/demo",
+    "pages/home/home",
+    "components/oneBtn/oneBtn"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

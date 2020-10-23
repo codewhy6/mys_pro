@@ -1,0 +1,8 @@
+<!--pages/oftenComponent/button/button.wxml-->
+
+<view class="container">
+ <text class="title">暂无数据组件</text>
+ <view>
+  <component-noData></component-noData>
+ </view>
+</view>

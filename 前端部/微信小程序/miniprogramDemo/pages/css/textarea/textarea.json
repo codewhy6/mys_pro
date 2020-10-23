@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-showModal":"../../components/showModal/showModal"
+  },
+  "navigationBarTitleText":"textarea层级穿透"
+
+}

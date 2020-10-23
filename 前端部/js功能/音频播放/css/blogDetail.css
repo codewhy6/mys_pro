@@ -1,0 +1,421 @@
+.rich h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.rich h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rich h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rich h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rich h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rich h6 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rich {
+    font-size: 16px;
+    color: #666666;
+    line-height: 150%;
+    padding: 50px 0 30px;
+}
+
+.rich img {
+    margin: 15px 0;
+    max-width: 100%;
+}
+
+.richWarp {
+    padding: 60px 0 70px;
+}
+
+.richWarp .title {
+    font-size: 26px;
+    color: #333333;
+    text-align: center;
+}
+
+.richWarp .container1 {
+    background-color: #ffffff;
+    box-shadow: 0px 5px 27px 2px rgba(68, 68, 68, 0.1);
+    border-radius: 10px;
+    padding: 50px 50px 0;
+}
+
+.richWarp .container2 {
+    background-color: #ffffff;
+    box-shadow: 0px 5px 27px 2px rgba(68, 68, 68, 0.1);
+    border-radius: 10px;
+    padding: 0 40px 40px;
+}
+
+.IconTitle {
+    padding: 50px 0 30px;
+    font-size: 26px;
+    color: #333333;
+}
+
+.IconTitle img {
+    margin-right: 20px;
+}
+
+.noComment {
+    text-align: center;
+    padding: 90px 0;
+}
+
+.noComment p {
+    font-size: 18px;
+    color: #797979;
+    margin-top: 24px;
+}
+
+.verticalLine {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.verticalLine i {
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background-color: #0099ff;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 14px;
+}
+
+.nameFrom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.nameFrom li {
+    width: 48%;
+    height: 56px;
+}
+
+.nameFrom li input {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f8fa;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #797979;
+    border:1px solid #f5f8fa;
+}
+.nameFrom li input.error,.content textarea.error{
+    border:1px solid #ef3345;
+}
+
+.content {
+    margin-top: 30px;
+}
+
+.content textarea {
+    width: 100%;
+    height: 179px;
+    background-color: #f5f8fa;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    color: #797979;
+    border:1px solid #f5f8fa;
+}
+
+.submit {
+    width: 220px;
+    height: 50px;
+    background: linear-gradient(-62deg, #12c5ec 0%, rgba(18, 197, 236, 0.89) 100%), linear-gradient( #0099ff, #0099ff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 2px 9px 1px rgba(0, 153, 255, 0.25);
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    margin-top: 40px;
+}
+
+.submit:hover {
+    border: 1px solid #0099ff;
+    color: #0099ff;
+    background: #FFF;
+}
+
+.blogList {
+    margin-top: 0px;
+}
+
+.commentList {
+    padding-bottom: 60px;
+}
+
+.commentList li {
+    margin-bottom: 52px;
+}
+
+.commentList li .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commentList li .tit .img {
+    width: 48px;
+    height: 48px;
+}
+
+.commentList li .tit .img img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.commentList li .tit .nameInfor {
+    width: calc(100% - 48px);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    flex-wrap: wrap;
+}
+
+.commentList li .tit .nameInfor .le {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.commentList li .tit .nameInfor .ri {
+    font-size: 16px;
+    color: #797979;
+}
+
+.commentList li .text {
+    padding-left: 0px;
+    font-size: 16px;
+    color: #666666;
+    margin-top: 10px;
+}
+
+.moreWarp {
+    text-align: center;
+}
+
+.moreWarp button {
+    width: 160px;
+    height: 46px;
+    border-radius: 23px;
+    border: solid 1px #cccccc;
+    font-size: 16px;
+    color: #b3b3b3;
+    background: #FFF;
+}
+
+.moreWarp button:hover {
+    box-shadow: 0 0 10px #EEE;
+}
+
+.IconTitle img {
+    width: 24px;
+    height: 24px;
+}
+
+.noComment img {
+    width: 50%;
+}
+
+@media (min-width: 200px) {
+    .IconTitle {
+        padding: 15px;
+        font-size: 16px;
+    }
+    .commentList li .tit .nameInfor .le {
+        width: 100%;
+    }
+    .commentList li .tit .nameInfor .ri {
+        width: 100%;
+    }
+    .commentList li {
+        margin-bottom: 20px;
+    }
+    .verticalLine {
+        font-size: 18px;
+    }
+    .submit {
+        width: 180px;
+        height: 35px;
+        font-size: 14px;
+        margin-top: 25px;
+    }
+    .richWarp .container1 {
+        padding: 15px 15px 0;
+    }
+    .richWarp .container2 {
+        padding: 0 15px 15px;
+    }
+    .richWarp .title {
+        font-size: 16px;
+    }
+    .rich {
+        padding: 15px 0;
+    }
+    .commentList li .text {
+        font-size: 14px;
+    }
+    .richWarp {
+        padding: 25px 0;
+    }
+    .nameFrom li {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .nameFrom li:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .noComment img {
+        width: 15%;
+    }
+    .IconTitle {
+        padding: 25px 0;
+        font-size: 18px;
+    }
+    .commentList li .tit .nameInfor .le {
+        width: auto;
+    }
+    .commentList li .tit .nameInfor .ri {
+        width: auto;
+    }
+    .commentList li {
+        margin-bottom: 35px;
+    }
+    .verticalLine {
+        font-size: 20px;
+    }
+    .submit {
+        width: 220px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .richWarp .container1 {
+        padding: 25px 25px 0;
+    }
+    .richWarp .container2 {
+        padding: 0 25px 25px;
+    }
+    .richWarp .title {
+        font-size: 18px;
+    }
+    .rich {
+        padding: 25px 0;
+    }
+    .commentList li .text {
+        font-size: 16px;
+    }
+    .richWarp {
+        padding: 35px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .commentList li .text {
+        padding-left: 63px;
+        margin-top: 0px;
+    }
+    .IconTitle {
+        padding: 30px 0;
+        font-size: 22px;
+    }
+    .commentList li {
+        margin-bottom: 40px;
+    }
+    .verticalLine {
+        font-size: 22px;
+    }
+    .submit {
+        width: 220px;
+        height: 40px;
+        font-size: 18px;
+        margin-top: 30px;
+    }
+    .richWarp .container1 {
+        padding: 35px 35px 0;
+    }
+    .richWarp .container2 {
+        padding: 0 35px 35px;
+    }
+    .richWarp .title {
+        font-size: 22px;
+    }
+    .rich {
+        padding: 30px 0;
+    }
+    .richWarp {
+        padding: 50px 0;
+    }
+    .nameFrom li {
+        width: 48%;
+    }
+    .IconTitle img {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .IconTitle {
+        padding: 50px 0 30px;
+        font-size: 26px;
+    }
+    .commentList li {
+        margin-bottom: 52px;
+    }
+    .verticalLine {
+        font-size: 24px;
+    }
+    .submit {
+        width: 220px;
+        height: 50px;
+        font-size: 18px;
+        margin-top: 40px;
+    }
+    .richWarp .container1 {
+        padding: 50px 50px 0;
+    }
+    .richWarp .container2 {
+        padding: 0 40px 40px;
+    }
+    .richWarp .title {
+        font-size: 26px;
+        font-weight:bold;
+    }
+    .rich {
+        padding: 50px 0 30px;
+    }
+    .richWarp {
+        padding: 60px 0 70px;
+    }
+}

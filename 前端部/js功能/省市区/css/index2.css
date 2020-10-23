@@ -1,0 +1,93 @@
+body {
+    margin: 100px 200px !important;
+}
+h4{
+    color: red;
+    padding-bottom: 20px!important;
+}
+
+
+
+/* 复制以下css */
+
+/* 省市区  start */
+.addres_box {
+    position: relative;
+    height: auto;
+}
+
+#innerAdress {
+    height: 30px;
+    width: 300px;
+    border: 1px solid #ededed;
+    box-sizing: border-box;
+}
+/* 省市区下拉 */
+.addres_list {
+    position: absolute;
+    top: 30px;
+    width: 300px;
+    height: 300px;
+    /* overflow: auto; */
+    background: #fff;
+    z-index: 1;
+    display: none;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
+
+
+.addres_list ul {
+    width: 33.3%;
+    float: left;
+    height: 100%;
+    overflow: auto;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.addres_list ul+ul {
+    border-left: 1px solid #e5e5e5;
+}
+
+.addres_list ul li {
+    width: 100% !important;
+    float: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 0px 5px;
+}
+/* 选中样式 */
+.addres_list ul li.on {
+    color: #dfb972;
+    background: #f8f2e9;
+}
+.addres_list ul li:hover {
+    color: #dfb972;
+    background: #f8f2e9;
+}
+
+/* 滚动条 */
+.addres_list ul::-webkit-scrollbar {
+    /* 滚动条整体样式 */
+    width: 4px;
+    height:1px ;
+}
+
+.addres_list ul::-webkit-scrollbar-track {
+    /* 滚动条里面的轨道 */
+    background: #f6f6f6;
+    border-radius: 4px;
+}
+
+.addres_list ul::-webkit-scrollbar-thumb {
+    /* 滚动条里面的小方块 */
+    background: #d7d7d7;
+    border-radius: 4px;
+}
+
+/* 省市区  end */

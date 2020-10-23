@@ -1,0 +1,187 @@
+<!--
+ * @Description: 轮播缩略图
+ * @fileName: swiperClumbs.html
+ * @Author: ZhangChen
+ * @Date: 2020-01-09 11:27:04
+ * @LastEditors: ZhangChen
+ * @LastEditTime: 2020-09-28 13:46:58
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司,http://www.chemguan.com/">
+    <meta name="copyright" content="九州奇士">
+    <title>轮播缩略图</title>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 写响应式网站引入bootstrap.min.js,非响应式不需要引入 -->
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <!-- <script type="text/javascript" src="js/utils/regExp.js"></script> -->
+    <!-- <script type="text/javascript" src="js/utils/util.js"></script> -->
+    <!-- <script type="text/javascript" src="js/utils/http.js"></script> -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+
+
+    <!-- swiper  -->
+    <link rel="stylesheet" href="./css/swiper.min.css" id="swiper5css">
+    <!--[if lt IE 10]>
+        <link rel="stylesheet" href="./css/swiper2.min.css">
+        <![endif]-->
+    <script src="./lib/swiper.min.js" id="swiper5js"></script>
+    <!--[if lt IE 10]>
+        <script type="text/javascript" src="./lib/swiper2.min.js"></script>
+    <![endif]-->
+    <!-- swiper  -->
+
+
+    <link rel="stylesheet" href="css/pulicStyle.css">
+
+    <link rel="stylesheet" href="./css/swiperClumbs.css">
+</head>
+
+<body>
+    <!--头部 开始-->
+    <div id="header"></div>
+    <!--头部 结束-->
+
+    <!-- 轮播 -->
+
+    <div class="container">
+        <div class="swiperClumbs">
+            <div id="gallery" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                    <div class="swiper-slide my_swiper_slide"><img src="images/pd_img.png" /></div>
+                </div>
+            </div>
+
+            <div class="thumbs_box">
+                <div id="thumbs" class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" />
+                        </div>
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" /></div>
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" /></div>
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" /></div>
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" /></div>
+                        <div class="swiper-slide my_swiper_slide img-responsive"><img src="images/pd_img_s.png" /></div>
+                    </div>
+                    <!-- <div class="swiper-button-prev swiper-button-white color_main_bg"></div> -->
+                    <!-- <div class="swiper-button-next swiper-button-white color_main_bg"></div> -->
+                </div>
+
+                <!-- 自定义轮播的按钮 -->
+                <div class=" thumbs_swiper_btns my_thumbsSwiper_btn_next">
+                    <img src="./images/swiper_btn_right.png" alt="swiper_jt">
+                </div>
+                <div class=" thumbs_swiper_btns my_thumbsSwiper_btn_prev">
+                    <img src="./images/swiper_btn_right.png" alt="swiper_jt">
+                </div>
+            </div>
+
+        </div>
+        <!--底部 开始-->
+        <div id="footer"></div>
+        <!--底部 结束-->
+        <script type="text/javascript">
+            $(function () {
+                var galleryThumbs = ''
+                var galleryTop = ''
+                if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[
+                    1].replace(/[ ]/g, "").replace("MSIE", "")) < 10) {
+                    $('.my_swiper_slide').addClass('ie')
+                    //--  IE8 如果需要前进后退按钮 --
+                    $('.my_thumbsSwiper_btn_prev').click(function (e) {
+                        e.preventDefault();
+                        galleryThumbs.swipePrev();
+                        galleryTop.swipePrev();
+                    });
+                    $('.my_thumbsSwiper_btn_next').click(function (e) {
+                        e.preventDefault();
+                        galleryThumbs.swipeNext();
+                        galleryTop.swipeNext();
+                    });
+                    galleryThumbs = new Swiper(' #thumbs', {
+                        // autoplay: 2000,//可选选项，自动滑动
+                        // loop: true,//可选选项，开启循环
+                        slidesPerView: 4,
+                        centeredSlides: true,
+                        // offsetPxBefore: 100,
+                        // offsetPxafter: 10,
+                        // onSlideChangeStart: function (swiper) {
+                        //     var activeIndex = (swiper.activeIndex);
+                        //     // if (activeIndex == -3) {
+                        //     //     activeIndex = 3
+                        //     // } else if (activeIndex == -1) {
+                        //     //     activeIndex = 5
+                        //     // };
+                        //     console.log(activeIndex);
+                        // },
+                        onSlideClick: function (swiper) { // 点击缩略图 滑动到指定图
+                            // console.log(galleryThumbs.clickedSlideIndex);
+                            galleryTop.swipeTo(galleryThumbs.clickedSlideIndex);
+                            galleryThumbs.swipeTo(galleryThumbs.clickedSlideIndex);
+                            // $('#thumbs .ie.my_swiper_slide.swiper-slide-visible').eq(galleryThumbs.clickedSlideIndex).addClass('swiper-slide-active').siblings().removeClass('swiper-slide-active')
+                        }
+                    });
+                    galleryTop = new Swiper(' #gallery', {
+                        // autoplay: 2000,//可选选项，自动滑动
+                        // loop: true,//可选选项，开启循环
+                    });
+                    if (galleryThumbs.browser.ie8) {
+                        $('#swiper5js').remove()
+                        $('#swiper5css').remove()
+                    }
+                } else {
+                    galleryThumbs = new Swiper('#thumbs', {
+                        spaceBetween: 10,
+                        slidesPerView: 4,
+                        // loop: true,
+                        freeMode: true,
+                        loopedSlides: 5, //looped slides should be the same
+                        watchSlidesVisibility: true,
+                        watchSlidesProgress: true,
+                    });
+                    galleryTop = new Swiper('#gallery', {
+                        spaceBetween: 10,
+                        // loop: true,
+                        loopedSlides: 4, //looped slides should be the same
+                        thumbs: {
+                            swiper: galleryThumbs,
+                        },
+                    });
+
+                    /**
+                     * @Description: 轮播缩略图的点击事件
+                     * @Author: ZhangChen
+                     * @Date: 2020-09-08 15:32:42
+                     */
+                    $("body").on("click", ".my_thumbsSwiper_btn_next", function () {
+                        galleryThumbs.slideNext()
+                        galleryTop.slideNext()
+                    })
+                    $("body").on("click", ".my_thumbsSwiper_btn_prev", function () {
+                        galleryThumbs.slidePrev()
+                        galleryTop.slidePrev()
+                    })
+
+                }
+
+
+
+            })
+        </script>
+</body>
+
+</html>

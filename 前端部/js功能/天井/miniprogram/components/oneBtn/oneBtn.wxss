@@ -1,0 +1,8 @@
+/* components/oneBtn/oneBtn.wxss */
+.oneBtn_box{
+  padding: 0 4%;
+}
+.van-button {
+  width: 100% !important;
+  height: 50px;
+}

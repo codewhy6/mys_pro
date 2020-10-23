@@ -1,0 +1,9 @@
+<view class="container">
+ <text class="title">后台实时定位功能</text>
+ <view>
+  <text>经度：{{longitude}}</text>
+ </view>
+ <view>
+  <text>纬度：{{latitude}}</text>
+ </view>
+</view>

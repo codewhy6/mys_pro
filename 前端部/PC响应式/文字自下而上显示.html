@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+		ul,
+		li {
+			list-style: none;
+		}
+		ul>li {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+		
+		/* 文字自上而下显示开始 */
+		@-webkit-keyframes bounceInUp {
+		    from {
+		        opacity: 0;
+		        -webkit-transform: translate3d(0, 150px, 0);
+		        transform: translate3d(0, 150px, 0);
+		    }
+		    to {
+		        opacity: 1;
+		        -webkit-transform: translate3d(0, 0, 0);
+		        transform: translate3d(0, 0, 0);
+		    }
+		}
+		@keyframes bounceInUp {
+		    from {
+		        opacity: 0;
+		        -webkit-transform: translate3d(0, 150px, 0);
+		        transform: translate3d(0, 150px, 0);
+		    }
+		    to {
+		        opacity: 1;
+		        -webkit-transform: translate3d(0, 0, 0);
+		        transform: translate3d(0, 0, 0);
+		    }
+		}
+		.bounceInUp {
+		    animation:bounceInUp linear 1s;
+		    -webkit-animation:bounceInUp linear 1s; /*Safari and Chrome*/
+		}
+		.con{
+			height: 500px;
+		}
+		.section{
+			display: none;
+		}
+		/* 文字自上而下显示结束 */
+	</style>
+</head>
+<body>
+	<!-- 文字自上而下显示开始 -->
+	<div class="con" id="title1">
+		 <h3 class="question_answer_title bounceInUp section">供应商面临的困境</h3>
+	</div>
+	<div class="con" id="title2">
+		<h3 class="question_answer_title bounceInUp special section">我们的解决方案</h3>
+	</div>
+	<div class="con" id="title3">
+		<h3 class="question_answer_title bounceInUp section">如何成为金牌供应商</h3>
+	</div>
+	<div class="con" id="title4">
+		<h3 class="question_answer_title bounceInUp section">可与采购名企直接对接，可成为名企的长期合作商</h3>
+	</div>
+	<!-- 文字自上而下显示结束 -->
+	
+	<ul>
+		<li>使用说明</li>
+		<li>1、需要引入jquery</li>
+		<li>2、根据需要复制CSS样式</li>
+		<li>3、复制JS</li>
+	</ul>	
+
+<script type="text/javascript">
+	$(function () {
+		 var hect = $(window).height();//当前可见区域的高度
+		goUp("#title1");
+	    goUp("#title2");
+	    //  滚动事件监听
+	    $(window).scroll(function(){
+	        goUp("#title3");
+	        goUp("#title4");
+	    })
+	    function goUp(selector) {
+	       var stp = $(window).scrollTop(); //获取滚动条与文档的垂直距离
+	       var top =  $(selector).offset().top;//获取元素在页面中的坐标中的纵坐标, 如果页面结构没有发生变化, 这个值是不会变化的
+	        if( top < stp + hect){
+	            $(selector).find('.section').css("display","block");
+	        }
+	    }
+	})
+</script>
+</body>

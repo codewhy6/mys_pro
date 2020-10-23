@@ -1,0 +1,5 @@
+<!--components/twoBtn/twoBtn.wxml-->
+<view class="twoBtn_box">
+	<van-button color="#e5e5e5" plain bindtap="leftBtnEvent">{{leftBtnTxt}}</van-button>
+	<van-button color="#0c7fea" bindtap="rightBtnEvent">{{rightBtnTxt}}</van-button>
+</view>

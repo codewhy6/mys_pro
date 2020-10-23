@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/responsive/responsive",
+    "pages/index/index",
+    "pages/useInComponent/useInComponent"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap23.json"
+}

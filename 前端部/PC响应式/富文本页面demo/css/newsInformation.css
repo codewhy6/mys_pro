@@ -1,0 +1,106 @@
+.tab ul{
+   overflow: hidden;
+   border-bottom: 1px solid #dcdcdc;
+}
+.tab ul li{
+    float: left;
+    width: 160px;
+    padding: 16px 0;
+	font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    text-align: center;
+}
+.tab ul li.on{
+    background: #ed9431;
+	color: #FFF;
+}
+.newDetail{
+    margin-top: 25px;
+}
+.detail{
+    margin-top: 40px;
+}
+.detail .title{
+    text-align:center;
+}
+.detail .title .big{
+	font-size: 24px;
+	font-weight: bold;
+	color: #333333;
+}
+.detail .title .small{
+	font-size: 16px;
+    color: #999999;
+    margin-top: 30px;
+}
+.detail .title .small span{
+    margin-right: 33px;
+}
+.detail .title .small span:last-child{
+    margin: 0;
+}
+
+.pageList{
+    font-size: 16px;
+    color: #666666;
+    padding: 20px 0;
+}
+
+.pageList p{
+    padding: 10px 0;
+    white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden; 
+}
+.pageList a{
+    font-size: 16px;
+	color: #666666;
+}
+.pageList a:hover{
+    font-size: 16px;
+    color: #ed9028;
+}
+.pageList .ri{
+	font-size: 16px;
+    color: #666666;
+    border-left: 1px solid #eee;
+    text-align: right;
+    padding:21px 0;
+    
+}
+.pageList .ri img{
+    margin-right: 10px;
+}
+.pageList .ri:hover{
+    color: #ed9028;
+}
+
+
+@media (min-width: 200px) {
+.pageList .ri{font-size: 14px;border-left: none;padding:15px 0;}
+.tab ul li {width: 33.3%;padding: 10px 0;font-size: 18px;}
+.detail .title .big {font-size: 18px;}
+.detail .title .small {font-size: 14px;margin-top: 25px;} 
+
+}
+
+@media (min-width: 768px) {
+.pageList .ri{font-size: 16px;border-left: 1px solid #eee;padding:18px 0;}
+.tab ul li {width: 140px;padding: 14px 0;font-size: 20px;}
+.detail .title .big {font-size: 20px;}
+.detail .title .small {font-size: 16px;margin-top: 30px;}
+
+}
+
+@media (min-width: 992px) {
+.pageList .ri{font-size: 16px;border-left: 1px solid #eee;padding:21px 0;}
+.tab ul li {width: 160px;padding: 16px 0;font-size: 24px;}
+.detail .title .big {font-size: 24px;}
+
+}
+
+@media (min-width: 1200px) {
+    
+}

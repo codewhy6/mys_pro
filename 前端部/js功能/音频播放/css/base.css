@@ -1,0 +1,604 @@
+/*
+ * @Description: 样式基础配置文件 不在这个页面写样式，只写基础配置
+ * @fileName: base.css
+ * @Author: caochen
+ * @Date: 2020-01-09 11:54:14
+ */
+
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font: normal 14px "微软雅黑", Arial;
+}
+
+body {
+    padding: 0px;
+    margin: 0px auto;
+    color: #666;
+    width: 100%;
+    /*min-width: 1200px;*/
+    /*width: expression((documentElement.clientWidth < 1200) ? "1200px" : "100%" );*/
+    zoom: 1;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+select,
+input,
+textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    /*清除复选框默认样式*/
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    color: #666;
+    background: none;
+    border: none;
+    resize: none
+}
+
+input:focus {
+    outline: none;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+    /* -webkit-appearance:none; */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*强制去除表单自带的样式*/
+    font: normal 14px "微软雅黑", Arial;
+}
+
+textarea {
+    resize: none;
+    /*-webkit-appearance:none;*/
+    /*强制去除textarea自带的样式*/
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figure,
+figcaption {
+    display: block;
+}
+
+
+/*html5设置*/
+
+figure,
+figcaption {
+    margin: 0px;
+    padding: 0px;
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+img {
+    border: none;
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+a,
+a:hover,
+a:focus {
+    outline: none;
+    -moz-outline: none;
+    text-decoration: none;
+    /* border: 0; */
+}
+
+.clear {
+    display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+
+
+/* 设置placeholder默认文字颜色样式 start*/
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #b8b8b8;
+}
+
+input::-moz-input-placeholder,
+textarea::-moz-input-placeholder {
+    color: #b8b8b8;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: #b8b8b8;
+}
+
+
+/* 设置placeholder默认文字颜色样式 end*/
+
+.cursor {
+    cursor: pointer;
+}
+
+
+/* 解决手机微信公众号中的网页文字无法复制到剪切板问题 */
+
+* {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+
+/**
+ * @Description: 轮播动画
+ * @Author: longhaiyan
+ * @Date: 2020-04-15 15:40:47
+ margin-top 值向上滑动 改为 margin-left/right/bottom 即为左/右/下轮播
+ 值为滑动距离
+ */
+
+.marquee_top {
+    transition: all 0.5s linear;
+    margin-top: -60px;
+}
+
+
+/**
+ * @Description: 鼠标经过手型
+ * @Author: longhaiyan
+ * @Date: 2020-04-15 15:39:54
+ */
+
+.cursor {
+    cursor: pointer
+}
+
+
+/* 缺少
+checkbox radio的样式
+
+buton、select、单选、复选、a标签手型
+
+button有2种
+
+input type="button" */
+
+
+/* 单选框样式
+    <input type="radio" name="paixu" id="paixu1" checked>
+    <label for="paixu1" style="cursor:pointer">按热门排序</label>
+*/
+
+
+/* input[type=radio]{
+    display: none;
+} */
+
+input[type="radio"]:focus {
+    outline: none;
+    border: 0;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    /*清除复选框默认样式*/
+    background-size: 100% 100%;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: -3px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #e5e5e5;
+}
+
+input[type="radio"]:checked {
+    background: #fff url(../images/gou2.png) no-repeat center;
+    /*复选框的背景图，就是上图*/
+    background-size: 100% 100%;
+    cursor: pointer;
+    border-radius: 50%;
+    /*background-position: -48px 0;*/
+}
+
+
+/* 修改复选框样式 start */
+
+input[type="checkbox"]:focus {
+    outline: none;
+    border: 0;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    /*清除复选框默认样式*/
+    background: #fff url(../images/gou.png) no-repeat center;
+    /*复选框的背景图，就是上图*/
+    background-size: 100% 100%;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: -3px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: #fff url(../images/gou2.png) no-repeat center;
+    /*复选框的背景图，就是上图*/
+    background-size: 100% 100%;
+    cursor: pointer;
+    /*background-position: -48px 0;*/
+}
+
+
+/* 修改复选框样式 end */
+
+
+/*  */
+
+.pages {
+    text-align: center;
+}
+
+.pages_div {
+    display: inline-block;
+    /* border-bottom: 2px solid #b8b8b8; */
+}
+
+.pages_div .number {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pages_div a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 38px;
+    position: relative;
+}
+
+.pages_div a:hover:after,
+.pages_div a.on:after {
+    content: '';
+    color: #028eec;
+    position: absolute;
+    width: 95%;
+    bottom: -2px;
+    left: 0;
+    display: inline-block;
+    height: 2px;
+    background-color: #028eec;
+}
+
+.pages_div a.on {
+    color: #028eec;
+}
+
+
+/* 面包屑导航 start  */
+
+.bd_whole_top {
+    width: 100%;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.bd_whole_top_white {
+    background-color: #fff;
+}
+
+.breadcrumb_navigation {
+    /* width: 1200px; */
+    padding: 20px 0px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #999999;
+}
+
+.breadcrumb_navigation a,
+.breadcrumb_navigation span {
+    font-size: 16px;
+    color: #999999;
+}
+
+.firsta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next_ico {
+    margin: 0px 5px;
+}
+
+.breadcrumb_navigation a:hover {
+    color: #028eec;
+}
+
+.home_icon {
+    /* width: 20px; */
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+/* 面包屑导航 end */
+
+.product_content_lists {
+    margin-top: 40px;
+}
+
+.pro_content_links {
+    display: block;
+    width: 70%;
+    margin: 40px auto 0;
+    border: 1px solid #0099ff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0099ff;
+}
+
+.pro_content_links:hover {
+    background-image: linear-gradient(-62deg, #0099ff 0%, #10c0ee 100%), linear-gradient( #0099ff, #0099ff);
+    box-shadow: 0px 2px 9px 1px rgba(0, 153, 255, 0.25);
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.product_content_lists>li {
+    margin-right: 40px;
+    float: left;
+    width: 31%;
+    box-shadow: 0px 12px 28px 2px rgba(202, 211, 216, 0.3);
+    padding: 30px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.product_content_lists>li:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.product_content_lists>li>a {
+    display: block;
+}
+
+.product_content_lists>li:hover,
+.product_content_lists>li.on {
+    box-shadow: 0px 12px 38px 2px rgba(195, 203, 209, 0.65);
+}
+
+.product_content_lists>li.download .home_lis_i {
+    background: url(../images/product_purse_down.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.product_content_lists>li.download .home_lis_i.on {
+    background: url(../images/product_play_down.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.product_content_lists>li.download .pro_content_links {
+    color: #b817a4;
+    border: 1px solid #c51c9d;
+}
+
+.product_content_lists>li.download .pro_content_links:hover {
+    background-image: linear-gradient(-62deg, #b817a4 0%, #d42094 100%), linear-gradient( #b817a4, #b817a4);
+    box-shadow: 0px 2px 9px 1px rgba(184, 23, 164, 0.25);
+    color: #fff;
+}
+
+.pro_pic {
+    width: 100%;
+    height: 171.16px;
+    border-radius: 8px;
+}
+
+.pro_pic img {
+    width: 100%;
+    height: 171.16px;
+    border-radius: 8px;
+}
+
+.pro_content_tit {
+    font-size: 20px;
+    color: #333;
+    margin: 24px 0;
+    height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.pro_content_p1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.pro_content_p1 i {
+    font-style: normal;
+    font-size: 18px;
+    color: #acacac;
+    margin-left: 10px;
+    text-decoration: line-through;
+}
+
+.pro_content_p1.underline {
+    text-decoration: line-through;
+    color: #acacac;
+}
+
+.pro_content_div1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pro_content_div2 {
+    padding: 7px;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    width: 80%;
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slideTest_div {
+    width: 41%;
+    height: 4px;
+    border-radius: 4px;
+    position: relative;
+    background-color: #e5e5e5;
+}
+
+.slideTest {
+    width: 100%;
+}
+
+.slideTest .layui-slider-bar {
+    background: #0099ff !important;
+}
+
+.slideTest .layui-slider-wrap-btn {
+    background: transparent;
+    border: 0 !important;
+    width: 3px;
+}
+
+.pro_progress {
+    background-color: #9e9e9e;
+    width: 3px;
+    height: 10px;
+    position: absolute;
+    left: 20%;
+    top: -3.5px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.home_lis_i {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/product_purse.png) center center no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.home_lis_i.on {
+    background: url(../images/product_play.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.pro_collect {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-block;
+    background: url(../images/product_collect01.png) center center no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.pro_collect.on {
+    background: url(../images/product_collect02.png) center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.pro_play_start {
+    display: inline-block;
+}
+
+.pro_pic {
+    position: relative;
+}
+
+.pro_pic .album {
+    width: 260px;
+    height: 147px;
+    background-color: #e0e0e0;
+    box-shadow: 0px 0px 6px 0px rgba(44, 47, 55, 0.67);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.pro_pic .album1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pro_pic .album2 {
+    position: absolute;
+    top: 13px;
+    left: 24px;
+}
+
+.pro_pic .album3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.pro_album_p1 {
+    font-size: 18px;
+    color: #666;
+}
+
+.pro_album_span1 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.pro_album_span2 {
+    display: inline-block;
+    color: #0099ff;
+    margin-right: 5px;
+}

@@ -1,0 +1,6 @@
+<view class="container">
+ <text class="title">拨打电话</text>
+ <view>
+  <button bindtap="callPhone">拨打电话</button>
+ </view>
+</view>

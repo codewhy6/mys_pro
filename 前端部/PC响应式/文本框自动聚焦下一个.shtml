@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link  rel="stylesheet" type="text/css" href="js/layui/css/layui.css"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .exchange_form_div1{
+        width:500px;
+        display:flex;
+        justify-content:flex-start;
+        align-items: center;
+        margin:30px 0 50px;
+      }
+      .coupon_input{
+        width:30%;
+        height:40px;
+        border-radius:3px;
+        background-color:#f9f1f0;
+        text-align:center;
+        color:#f73e38;
+        font-weight:bold;
+      }
+      .coupon_i{
+          width:20px;
+          height:1px;
+          background-color:#f84c32;
+          display:inline-block;
+          margin:0 10px;
+      }
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+		<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<!--面包屑导航-->
+<div class="bread hidden-xs">
+	<div class="container">
+		<div class="breadcrumbs after">
+			<div class="wraps">
+				<a href="index.shtml">首页</a>
+				<a href="日期.shtml">日期插件</a>
+				<a href="文字滚动.shtml">文字滚动</a>
+				<a href="轮播.shtml">轮播</a>
+				<a href="倒计时验证手机号.shtml">倒计时验证手机号</a>
+				<a href="百度地图.shtml">百度地图</a>
+				<a href="分页.shtml">分页</a>
+				<!--<span> 公司介绍</span>-->
+			</div>
+		</div>
+	</div>
+</div>
+<!--面包屑导航-->  
+
+
+
+<!--用法说明-->
+<div class="container">
+  <!-- 内容 -->
+  <div class="exchange_form_div1">
+    <input type="text" name="coupon1" class="coupon_input" id="couponOne" maxlength=4> <i class="coupon_i"></i> 
+    <input type="text" name="coupon2" class="coupon_input" id="couponTwo" maxlength=4> <i class="coupon_i"></i> 
+    <input type="text" name="coupon3" class="coupon_input" id="couponThree" maxlength=4> <i class="coupon_i"></i> 
+    <input type="text" name="coupon4" class="coupon_input" id="couponFour" maxlength=4>
+  </div>
+
+
+
+
+<h3 style="margin-bottom: 30px;">这是一个常用的小小例子</h3>
+<dl>
+	<dt>用法：</dt>
+	<dd>1、复制js</dd>
+	<dd>2、根据需要改变样式</dd>
+</dl>
+	
+</div>
+
+<!--头部 开始-->
+		<!--#include file="include/bottom.html" -->
+<!--头部 结束-->	
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  /**
+ * @Description: 文本框自动聚焦下一个
+ * @Author: caochen
+ * @Date: 2020-06-03 16:17:15
+ */
+  goNextInput('.coupon_input');
+  function goNextInput(el){
+      var txts = document.querySelectorAll(el);
+      for(var i = 0; i<txts.length;i++){
+      var t = txts[i];
+      t.index = i;
+      t.setAttribute("readonly", true);
+      t.onkeyup=function(){
+          if(this.value.length == 4){
+              var next = this.index + 1;
+              if(next > txts.length - 1) return;
+              txts[next].removeAttribute("readonly");
+              if (this.value) {
+                  txts[next].focus();
+              }
+          }
+      }
+  }
+      txts[0].removeAttribute("readonly");
+  }
+})
+</script>
+</body>
+</html>
+

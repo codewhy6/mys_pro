@@ -1,0 +1,60 @@
+.swiper-slide,
+.swiper-wrapper {
+  height: auto !important;
+}
+
+.swiperNums_box {
+  position: relative;
+  margin-top: 100px;
+}
+.swiper_num_box {
+  width: 120px;
+  max-width: 120px;
+  padding: 15px 0px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 26px;
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  z-index: 999;
+  font-size: 20px;
+  color: #ffffff;
+  user-select: none;
+}
+
+.swiperNums_btn_box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  user-select: none;
+}
+.swiperNums_swiper_btns {
+  cursor: pointer;
+  user-select: none;
+}
+.my_swiperNums_btn_prev {
+  transform: rotate(-180deg);
+}
+
+.swiperNums_box .swiper-wrapper .swiper-slide-active {
+  border: 3px solid #f3aa22;
+  box-sizing: border-box;
+}
+.my_swiperNums_slide img {
+  width: 100%;
+}
+
+/* IE8下的缩略图的选中样式 */
+.swiperNums_box .ie.my_swiperNums_slide.swiper-slide-active {
+  border: 0px;
+}
+.swiperNums_box .ie.my_swiperNums_slide.swiper-slide-active img {
+  border: 3px solid #f3aa22;
+  box-sizing: border-box;
+}
+/* IE8下的缩略图的间隙 */
+.ie.my_swiperNums_slide {
+  padding: 0 5px;
+  box-sizing: border-box;
+}

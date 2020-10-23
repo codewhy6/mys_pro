@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-oneBtn":"../../components/oneBtn/oneBtn"
+  },
+  "navigationBarTitleText": "天井合伙人"
+}

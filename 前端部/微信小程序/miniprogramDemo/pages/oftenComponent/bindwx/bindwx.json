@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-bindwx": "../../components/bindwx/bindwx"
+  },
+  "navigationBarTitleText": "绑定微信"
+}

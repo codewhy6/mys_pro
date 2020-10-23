@@ -1,0 +1,8 @@
+<!--pages/oftenComponent/button/button.wxml-->
+
+<view class="container">
+ <text class="title">button按钮组件</text>
+ <view>
+  <component-button btn-name="button按钮"></component-button>
+ </view>
+</view>

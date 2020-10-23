@@ -1,0 +1,46 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: url(../images/03.png);
+	background-size: 100% 100%
+}
+
+img {
+	vertical-align: top;
+	width: 100%;
+	border: 0
+}
+
+#content {
+	width: 100%;
+	border: 0
+}
+
+/*.main {
+	background: url(../images/1.jpg) 100%
+}*/
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: microsoft yahei
+}
+
+ul.play {
+	width: 314px;
+	margin: 0 auto
+}
+
+ul.play li {
+	width: 100px;
+	height: 100px;
+	float: left;
+	border: 1px solid #ccc;
+	margin: 1px;
+	cursor: pointer;
+	-moz-background-size: 300px 300px;
+	background-size: 300px 300px;
+	background-repeat: no-repeat
+}

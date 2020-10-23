@@ -1,0 +1,10 @@
+<!--components/IknowDia/Iknow.wxml-->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+	<view class="wrapper">
+		<view class="block" catch:tap="noop">
+			<view class="wrapper_tit">{{title}}</view>
+			<view class="wrapper_sub">{{value}}</view>
+			<view class="wrapper_btn" bindtap="onClickHide">{{btnText}}</view>
+		</view>
+	</view>
+</van-overlay>

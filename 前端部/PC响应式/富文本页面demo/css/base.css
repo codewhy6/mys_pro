@@ -1,0 +1,246 @@
+/*
+ * @Description: 样式基础配置文件 不在这个页面写样式，只写基础配置
+ * @fileName: base.css
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 11:54:14
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-04-15 17:45:40
+ */
+
+ @charset "utf-8";
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ html {
+     font: normal 14px "微软雅黑", Arial;
+ }
+ 
+ body {
+     padding: 0px;
+     margin: 0px auto;
+     color: #666;
+     width: 100%;
+     /*min-width: 1200px;*/
+     /*width: expression((documentElement.clientWidth < 1200) ? "1200px" : "100%" );*/
+     zoom: 1;
+ }
+ 
+ ul,
+ li,
+ ol {
+     list-style: none;
+ }
+ 
+ select,
+ input,
+ textarea {
+     border-radius: 0;
+     -webkit-border-radius: 0;
+     color: #666;
+     background: none;
+     border: none;
+     resize:none
+ }
+ 
+ input:focus {
+     outline: none;
+ }
+ 
+ input,
+ button,
+ select,
+ textarea {
+     outline: none;
+     /* -webkit-appearance:none; */
+     appearance: none;
+     -moz-appearance: none;
+     -webkit-appearance: none;
+     /*强制去除表单自带的样式*/
+     font: normal 14px "微软雅黑", Arial;
+ }
+ 
+ textarea {
+     resize: none;
+     /*-webkit-appearance:none;*/
+     /*强制去除textarea自带的样式*/
+ }
+ 
+ article,
+ aside,
+ footer,
+ header,
+ nav,
+ section,
+ figure,
+ figcaption {
+     display: block;
+ }
+ 
+ /*html5设置*/
+ 
+ figure,
+ figcaption {
+     margin: 0px;
+     padding: 0px;
+ }
+ 
+ audio,
+ canvas,
+ progress,
+ video {
+     display: inline-block;
+     vertical-align: baseline;
+ }
+ 
+ img {
+     border: none;
+     border: 0;
+     max-width: 100%;
+     vertical-align: middle;
+ }
+ 
+ a,
+ a:hover,
+ a:focus {
+     outline: none;
+     -moz-outline: none;
+     text-decoration: none;
+ }
+ 
+ .clear {
+     display: block;
+     clear: both;
+     height: 0px;
+     overflow: hidden;
+ }
+ 
+ /* 设置placeholder默认文字颜色样式 start*/
+ input::-webkit-input-placeholder,
+ textarea::-webkit-input-placeholder {
+     color: #b8b8b8;
+ }
+ 
+ input::-moz-input-placeholder,
+ textarea::-moz-input-placeholder {
+     color: #b8b8b8;
+ }
+ 
+ input::-ms-input-placeholder,
+ textarea::-ms-input-placeholder {
+     color: #b8b8b8;
+ }
+ /* 设置placeholder默认文字颜色样式 end*/
+ 
+ .cursor {
+     cursor: pointer;
+ }
+ 
+ 
+ /* 解决手机微信公众号中的网页文字无法复制到剪切板问题 */
+ *{
+     -webkit-user-select:text;
+     -moz-user-select:text;
+     -ms-user-select:text;
+     user-select:text;
+ 
+  }
+
+
+/**
+ * @Description: 轮播动画
+ * @Author: longhaiyan
+ * @Date: 2020-04-15 15:40:47
+ margin-top 值向上滑动 改为 margin-left/right/bottom 即为左/右/下轮播
+ 值为滑动距离
+ */
+.marquee_top {
+    transition: all 0.5s linear;
+    margin-top: -60px;
+}
+
+/**
+ * @Description: 鼠标经过手型
+ * @Author: longhaiyan
+ * @Date: 2020-04-15 15:39:54
+ */
+.cursor{
+    cursor: pointer
+}
+
+/* 缺少
+checkbox radio的样式
+
+buton、select、单选、复选、a标签手型
+
+button有2种
+
+input type="button" */
+/* 单选框样式
+    <input type="radio" name="paixu" id="paixu1" checked>
+    <label for="paixu1" style="cursor:pointer">按热门排序</label>
+*/
+input[type=radio]{
+    display: none;
+}
+/* 选中前的样式 */
+label::before{
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid rgb(219, 219, 219);
+    margin-right: 6px;
+    vertical-align: bottom;
+}
+
+/* 选中后的背景色 */
+input[type=radio]:checked+label::before{
+    background-color: rgb(239, 66, 56);
+}
+
+/* 选中后的样式(中心圆点) */
+input[type=radio]:checked+label::after{
+    display: inline-block;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    background-color: white;
+}
+
+/* 复选框 */
+
+/* 选前的样式 */
+label::before{
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    border: 1px solid rgb(219, 219, 219);
+    margin-right: 6px;
+    vertical-align: bottom;
+}
+
+input[type=checkbox]{
+    visibility: hidden;
+}
+
+/* 选中之后的样式 */
+input[type=checkbox]:checked +label:before{
+    content: "\2714";       /*这里设置选中之后的显示内容*/
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 18px;
+    background-color: #c07721;
+}

@@ -1,0 +1,81 @@
+/* 轮播 */
+#gallery .swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-wrapper {
+  height: auto;
+}
+
+#thumbs {
+  margin: 2% auto;
+  position: relative;
+}
+.thumbs_box {
+  position: relative;
+}
+
+/* 轮播缩略图选中的样式 */
+#thumbs .swiper-slide-thumb-active {
+  border: 3px solid #f3aa22;
+}
+
+/* #thumbs .swiper-slide-active {
+  border: 3px solid #f3aa22;
+} */
+
+.ie.my_swiper_slide.active {
+  border: 3px solid #f3aa22;
+  box-sizing: border-box;
+}
+/* IE8下的缩略图的选中样式 */
+#thumbs .ie.my_swiper_slide.swiper-slide-active img {
+  border: 3px solid #f3aa22;
+  box-sizing: border-box;
+}
+/* IE8下的缩略图的间隙 */
+.ie.my_swiper_slide {
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+/* 缩略图的按钮--start */
+.thumbs_swiper_btns {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  user-select: none;
+}
+.thumbs_swiper_btns img {
+  /* width: 10px; */
+  /* height: 10px; */
+  margin-top: -3px;
+}
+
+.my_thumbsSwiper_btn_next {
+  right: 10px;
+}
+.my_thumbsSwiper_btn_prev {
+  left: 10px;
+}
+.my_thumbsSwiper_btn_prev img {
+  transform: rotate(-180deg);
+}
+.thumbs_swiper_btns:hover {
+  background: #dfb972;
+}
+
+.swiper-slide,
+.swiper-wrapper {
+  height: auto !important;
+}
+
+/* 缩略图的按钮--end */

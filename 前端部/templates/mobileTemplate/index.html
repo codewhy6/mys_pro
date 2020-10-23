@@ -1,0 +1,77 @@
+<!--
+ * @Description: 模板页面
+ * @fileName: index.html
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 11:27:04
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-07-23 14:44:53
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司，http://www.chemguan.com/">
+    <meta name="copyright" content="">
+    <title>模板页面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pulicStyle.css">
+    <!-- layer移动端css -->
+    <link rel="stylesheet" href="lib/layer_mobile/need/layer.css">
+    <!-- jquery -->
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 日期插件  -->
+    <script type="text/javascript" src="lib/jdate.min.js"></script>
+    <!-- 配置rem -->
+    <script type="text/javascript" src="js/utils/resize.js"></script>
+    <!-- layer移动端JS -->
+    <!-- <script type="text/javascript" src="lib/layui/layui.all.js"></script> -->
+    <script type="text/javascript" src="lib/layer_mobile/layer.js"></script>
+    <!-- 正则表达式 -->
+    <script type="text/javascript" src="js/utils/regExp.js"></script>
+    <!-- 工具类 -->
+    <script type="text/javascript" src="js/utils/util.js"></script>
+    <!-- ajax请求方法 -->
+    <script type="text/javascript" src="js/utils/http.js"></script>
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="lib/html5shiv.v3.72.min.js"></script>
+        <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 日期插件  -->
+    <input type="text" id="birth" placeholder="请选择日期">
+    <input type="text" id="picker" placeholder="请选择省市区">
+    <script src="js/city.js"></script>
+    <script src="js/picker.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        /**
+         * @Description: layui 弹窗
+         * @Author: Liangxinyang
+         * @Date: 2020-04-27 10:10:06
+         */
+        //信息框 参考：https://layer.layui.com/mobile/
+        // layer.open({
+        //     content: '移动版和PC版不能同时存在同一页面'
+        //     ,btn: '我知道了',
+        // });
+        /**
+         * @Description: 日期插件
+         * @Author: Liangxinyang
+         * @Date: 2020-04-27 10:11:35
+         */
+        new Jdate({
+            el: '#birth',//元素绑定
+            format: 'YYYY-MM-DD hh:mm',//日期格式  YYYY 年- MM 月- DD 日  hh 时:mm 分
+            beginYear: 1949,//日期范围 最初
+            endYear: new Date().getFullYear(),//日期范围 最=后
+        })
+    </script>
+</body>
+
+</html>

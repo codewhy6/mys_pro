@@ -1,0 +1,117 @@
+body {
+    margin: 100px !important;
+}
+
+
+/* 复制一下css */
+
+/*=========== 省市区选择 start ==================== */
+.address_box div {
+    float: left;
+    margin-right: 20px;
+}
+
+.area_box input {
+    border: 1px solid #ededed;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    background: url(../images/select_down.png) no-repeat right center;
+    background-size: 12px 8px;
+}
+
+.area_box ul {
+    display: none;
+    width: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.address_box .select-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3%;
+    cursor: pointer;
+    width: 30%;
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    background: #fff;
+    border-radius: 4px;
+    border: solid 1px #ffd3b8;
+    box-sizing: border-box;
+    padding: 0px 8px;
+}
+
+.select-val {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.address_box .select-wrap:first-child {
+    margin-left: 0;
+}
+
+.address_box .select-list {
+    display: none;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    border: solid 1px #ffd3b8;
+    max-height: 180px;
+    overflow-y: auto;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.address_box .select-list-item {
+    background-color: #fff;
+    margin: 0;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    float: none;
+    cursor: pointer;
+    padding: 4px 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.address_box .select-list-item:hover,
+.address_box .select-list-item.active {
+    background-color: #ff6d15;
+    color: #fff;
+}
+
+.intr_sed_txt::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 6px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.intr_sed_txt::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    background: #d7d7d7;
+}
+
+.intr_sed_txt::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    border-radius: 10px;
+    background: #f6f6f6;
+}
+
+/*================ 省市区选择 end  =====================*/
+
+
+

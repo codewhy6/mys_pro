@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>导航功能页面</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	.btn{
+    		height: 50px;width: 80%;
+    		color: #000000;
+    		font-size:35px;
+    		border: 2px solid #000;
+    		margin:0 auto;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body>
+
+	<div onclick="MtiaozhuanDT()" class="btn">
+		戳这里导航
+	</div>
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=jGvrKuhKqMe1ZAKmb2cLtgGbOzwxiKDd&s=1"></script>
+<script type="text/javascript">
+function MtiaozhuanDT() {
+			//118.828518,32.044825
+			var longitude;
+			var latitude;
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function (r) {
+				if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+					var mk = new BMap.Marker(r.point);
+					longitude = r.point.lng;
+					latitude = r.point.lat;
+					window.location.href = "http://api.map.baidu.com/direction?origin=latlng:" + latitude + "," + longitude + "|name:我&destination=32.044825,118.828518&mode=driving&region=江苏学森律师事务所&output=html&src=yourCompanyName|yourAppName";
+				}
+			});
+		}
+</script>
+</body>
+</html>
+
+

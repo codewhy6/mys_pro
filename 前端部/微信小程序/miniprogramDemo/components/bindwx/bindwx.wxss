@@ -1,0 +1,39 @@
+.bindWx{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  z-index: 20;
+}
+.cont{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  margin:auto;
+  text-align: center;
+}
+.cont image{
+  width: 390rpx;
+  height: 390rpx;
+}
+.cont .text{
+  font-size: 30rpx;
+  color: #333333;
+  margin:60rpx 0 160rpx;
+}
+.cont button{
+  width: 460rpx;
+  height: 88rpx;
+	background-color: #0b7ee9;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

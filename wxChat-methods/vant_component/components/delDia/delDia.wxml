@@ -1,0 +1,13 @@
+<!--components/delDia/delDia.wxml-->
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+	<view class="wrapper">
+		<view class="block" catch:tap="noop">
+			<view class="del_tit">{{title}}</view>
+			<view class="del_sub">{{subTitle}}</view>
+			<view class="del_btns">
+				<view class="user_confirm" bindtap="onTapChild">{{leftBtnTxt}}</view>
+				<view class="user_cancel" bindtap="onClickHide">{{rightBtnTxt}}</view>
+			</view>
+		</view>
+	</view>
+</van-overlay>

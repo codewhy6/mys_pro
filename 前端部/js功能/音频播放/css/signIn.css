@@ -1,0 +1,122 @@
+.signWarp{
+    background: url(../images/signBg.png) no-repeat top center;
+    background-size: 100% auto;
+    padding: 70px 0;
+}
+.signWarp .container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background: url(../images/musicBg.png) no-repeat left bottom;
+    height: 671px;
+	background-color: #ffffff;
+	box-shadow: 0px 12px 28px 2px 
+		rgba(183, 205, 219, 0.3);
+    border-radius: 10px;
+    padding: 60px 35px;
+}
+.signWarp .container .le{
+    border-right: 1px solid #eee;
+}
+.signWarp .container .le,
+.signWarp .container .ri{
+    width: 50%;
+    padding:0 10%;
+}
+
+.reset_con_div1{
+    width: 100%;
+}
+.reset_tips1{
+    text-align: center;
+}
+.checkboxWarp label{
+    display: flex;
+    justify-content: space-between;
+}
+.checkboxWarp label input{
+    width: 18px;
+    height: 18px;
+    outline: none;
+}
+.checkboxWarp label .text{
+    width: calc(100% - 18px);
+    padding-left: 13px;
+    font-size: 16px;
+	color: #333333;
+}
+.checkboxWarp label .text .tip{
+	font-size: 14px;
+    color: #999999;
+    margin-top: 10px;
+    font-weight: normal;
+}
+.reset_submit{
+    margin-top: 40px;
+}
+.reset_list li {
+    margin-bottom: 25px;
+
+}
+.tabs ul{
+    display: flex;
+    justify-content: flex-start;
+}
+.tabs ul li{
+    font-size: 24px;
+    color: #666;
+    margin-right: 30px;
+}
+.tabs ul li i{
+    display: block;
+	width: 32px;
+	height: 4px;
+	background-color: #028eec;
+    border-radius: 2px;
+    margin-top: 12px;
+    display: none;
+}
+.tabs ul li.on{
+    color: #333;
+}
+.tabs ul li.on i{
+    display: block;
+}
+.backTop {
+    display: none;
+}
+@media (min-width: 200px) {
+.signWarp .container .le, .signWarp .container .ri {width: 100%;padding: 0 3%;display: none; }
+.signWarp { padding: 25px 0;}
+.signWarp .container {height: auto;padding: 30px 15px;box-sizing:border-box;}
+.reset_tit{display: none;}
+.signWarp .container .on{ display: block;}
+.tabs ul li{font-size:20px;}
+.tabs ul{padding-left:15px;}
+}
+@media (min-width: 200px) and (max-width:991px){
+    .signWarp .container{width:100%;}
+}
+@media (min-width: 768px) {
+.signWarp .container .le, .signWarp .container .ri { padding: 0 3%; box-sizing: border-box;}
+.signWarp { padding: 35px 0;}
+.signWarp .container {height: auto;padding: 30px 20px;}
+.signWarp .container .on{ display: block;}
+.tabs ul li{font-size:24px;}
+.tabs ul{padding-left:0px;}
+}
+
+@media (min-width: 992px) {
+.signWarp .container .le, .signWarp .container .ri {width: 50%; padding: 0 10%; display: block;}
+.signWarp { padding: 50px 0;}
+.signWarp .container {padding: 40px 25px;}
+.reset_tit{display: block;}
+}
+
+@media (min-width: 1200px) {
+.signWarp .container .le, .signWarp .container .ri {padding: 0 10%; }
+.signWarp { padding: 70px 0;}
+.signWarp .container {padding: 60px 35px;}
+
+}
+

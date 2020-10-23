@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <title>关于钦城</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/c-style.css"/>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="about-jtcy c-center">
+	<ul class="jtcy-list"> 
+		<li class="jtcyon" id="conn1">
+			<a href="javascript:;">
+				<span class="jtcy-pic"></span>
+				<p class="jtcy-p1">能源</p>
+				<p class="jtcy-p2">Energy</p>
+			</a>
+		</li>
+		<li id="conn2">
+			<a href="javascript:;">
+				<span class="jtcy-pic"></span>
+				<p class="jtcy-p1">餐饮</p>
+				<p class="jtcy-p2">Restaurant</p>
+			</a>
+		</li>
+		<li id="conn3">
+			<a href="javascript:;">
+				<span class="jtcy-pic"></span>
+				<p class="jtcy-p1">汽车</p>
+				<p class="jtcy-p2">Car</p>
+			</a>
+		</li>
+		<li id="conn4">
+			<a href="javascript:;">
+				<span class="jtcy-pic"></span>
+				<p class="jtcy-p1">商业</p>
+				<p class="jtcy-p2">Business</p>
+			</a>
+		</li>
+		<i class="clear"></i>
+	</ul>
+	<div class="jtcy-gs jtcy-gs1 jtcycur">
+		<p><a href="关于钦城-公司详情.shtml">南京钦城能源有限公司<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">江苏钦洋石油化工有限公司<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">美国休斯顿中油华通有限公司<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">廊坊中油华通油品销售有限公司<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">山东庆河利石油化工有限公司<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">广西新太汇石油化工有限公司<span></span></a></p>
+		<i class="clear"></i>
+	</div>
+	<div class="jtcy-gs jtcy-gs2">
+		<p><a href="关于钦城-公司详情.shtml">烟波渔港梦都店<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">玉见楼<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">南京盈丰收农副产品有限公司<span></span></a></p>
+		<i class="clear"></i>
+	</div>
+	<div class="jtcy-gs jtcy-gs3">
+		<p><a href="关于钦城-公司详情.shtml">北京现代南京布洛博店<span></span></a></p>
+		<p><a href="关于钦城-公司详情.shtml">一汽马自达镇江维力达店<span></span></a></p>
+		<i class="clear"></i>
+	</div>
+	<div class="jtcy-gs jtcy-gs4">
+		<p><a href="关于钦城-公司详情.shtml">常州道生中心<span></span></a></p>
+		<i class="clear"></i>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+//hover效果	
+$('.jtcy-list li').click(function(){
+	$('.jtcy-list li').removeClass('jtcyon');
+	$(this).addClass('jtcyon');
+	$('.jtcy-gs').removeClass('jtcycur');
+	$('.jtcy-gs').eq($(this).index()).addClass('jtcycur');
+})
+
+</script>
+<script>
+		(function($){
+			$.getUrlParam = function(name)
+			{
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r!=null) return unescape(r[2]); return null;
+			}
+		})(jQuery);
+		urlnum(1);urlnum(2);urlnum(3);urlnum(4);
+		function urlnum(num){
+			if($.getUrlParam('page')==num){
+				$('.jtcy-list li').removeClass('jtcyon')
+				$('#conn'+num).addClass('jtcyon')
+				$('.jtcy-gs').removeClass('jtcycur')
+				$('.jtcy-gs'+num).addClass('jtcycur')
+			}
+		}
+		
+</script>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+<view class="container">
+ <text class="title">加载更多</text>
+ <view>
+  <text class="moreLoading" bindtap="moreLoadContents" wx:if="{{moreLoadingParams.hasNextPage}}">加载更多</text>
+ </view>
+</view>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="Author" content="">
+		<meta content="" name="design">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>侧边栏1</title>
+		<style type="text/css">
+			.center{width:1200px;margin:0 auto;}
+			
+			.side-sidebar {
+				position: fixed;
+				top: 30%;
+				right: 20px;
+				clear: both;
+				z-index: 999;
+			}
+			.side-sidebar li {
+				height: 80px;
+				width: 80px;
+				position: relative;
+				background: #105893;
+				position: relative;
+				list-style: none;
+			}
+			.side-sidebar li a {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+			.side-sidebar ul {
+				width: 80px;
+				float: right;
+			}
+			.side-sidebar li:hover {
+				background: #F59D27;
+			}
+			.side-sidebar li:hover .sidebar-code {
+				display: block;
+			}
+			.side-sidebar li a img {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+				max-width: 50%;
+				max-height: 50%;
+			}
+			.side-sidebar .sidebar-code {
+				width: 240px;
+				height: 240px;
+				position: absolute;
+				right:100px;
+				top: -85px;
+				display: block;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!--面包屑导航-->
+		<div class="bread center">
+			<div class="container">
+				<div class="breadcrumbs after">
+					<div class="wraps">
+						<a href="../index.shtml">首页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--面包屑导航-->
+		<!--侧栏-->
+		<div class="side-sidebar hidden-xs">
+			<ul>
+				<li>
+					<a href="javascript:;"><img src="images/qq_icon.png" /></a>
+					<span class="sidebar-code">
+				<img src="images/r_code.jpg"/>
+			</span>
+				</li>
+				<li>
+					<a href="javascript:;"><img src="images/ewm.png" /></a>
+					<span class="sidebar-code">
+				<img src="images/r_code.jpg"/>
+			</span>
+				</li>
+				<li class="backTop">
+					<a href="javascript:;"><img src="images/backTop.png" /></a>
+				</li>
+			</ul>
+		</div>
+
+		<!--用法说明-->
+		<div class="center" style="margin: 30px auto;">
+			<h2>用法</h2>
+			<ul>
+				<li>1、最外层div类名为：side-sidebar 隐藏二维码元素类名：sidebar-code</li>
+				<li>2、响应式在移动端隐藏</li>
+				<li>3、引入之后需根据需要修改二维码图片</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			// 定义点击返回顶部图标后向上滚动的动画
+			$(".backTop").click(function() {
+				$('html,body').animate({
+					scrollTop: '0px'
+				}, 'slow');
+			})
+		</script>
+	</body>
+
+</html>

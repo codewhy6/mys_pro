@@ -1,0 +1,365 @@
+.billing_tabs {
+    padding: 10px 0px 12px;
+    overflow: hidden;
+}
+
+.billing_tab {
+    float: left;
+    font-size: 16px;
+    color: #666;
+    margin-right: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.billing_tab_line {
+    width: 26px;
+    height: 4px;
+    background-color: #0099ff;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.billing_tab:hover .billing_tab_line,
+.billing_tab.on .billing_tab_line {
+    opacity: 1;
+}
+
+.billing_tab.on,
+.billing_tab:hover {
+    color: #333;
+}
+
+.billing_item_tip img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.billing_item_tip {
+    font-size: 16px;
+    color: #797979;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.billing_address {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.address_half {
+    width: 100%;
+}
+
+.address_total {
+    width: 100%;
+}
+
+.address_half,
+.address_total {
+    height: 54px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #dedede;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.address_half.error, .address_total.error{
+    border: solid 1px #ef3345;
+}
+
+.billing_address input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+.billing_address_down {
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 4px);
+}
+
+.billing_save {
+    width: 100%;
+    height: 56px;
+    border-radius: 28px;
+    background: url(../images/person_btn_bg.png) no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #0099ff;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.billing_save:hover {
+    background: transparent;
+    color: #0099ff;
+}
+
+.address_select input {
+    cursor: pointer;
+}
+
+.select_list {
+    position: absolute;
+    top: 57px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    background: #fff;
+    z-index: 1;
+    line-height: 30px;
+    box-shadow: 0px 5px 27px 2px rgba(68, 68, 68, 0.1);
+    cursor: pointer;
+    border-radius: 10px;
+    display: none;
+}
+
+.select_list li {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.select_list li:last-child {
+    border-bottom: none;
+}
+
+.billing_item {
+    margin-bottom: 30px;
+    display: none;
+}
+
+.billing_item.on {
+    display: block;
+}
+
+
+/* 账单 */
+
+.no_billings {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.no_billings img {
+    width: 158px;
+    height: 155px;
+    margin-bottom: 28px;
+}
+
+.no_billings_txt {
+    font-size: 18px;
+    color: #666;
+}
+
+.my_bil_item_top {
+    width: 100%;
+    background: #fbfbfb;
+    display: flex;
+    box-sizing: border-box;
+    padding: 7px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    flex-wrap: wrap;
+}
+
+.my_bil_item_top_item {
+    margin-right: 30px;
+}
+
+.my_bil_item_top_item .normal_txt {
+    margin-right: 5px;
+}
+
+.my_bil_item_info {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    /* padding-top: 20px; */
+    height: auto;
+    /* flex-flow: row wrap; */
+    /*  */
+}
+
+.my_bil_item {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    /* padding-bottom: 22px; */
+    margin-bottom: 30px;
+}
+
+.bill_list_title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #797979;
+    width: 50%;
+    text-align: left;
+}
+
+.bil_item_info_one {
+    width: 60%;
+    border-right: 1px solid #e5e5e5;
+}
+
+.bil_item_info_two {
+    width: 15%;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+}
+
+.bil_item_info_three {
+    width: 25%;
+    text-align: center;
+}
+
+.bil_item_info_one,
+.bil_item_info_two,
+.bil_item_info_three {
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
+.bil_item_info_three a {
+    display: block;
+    overflow: hidden;
+    width: 21px;
+    height: 21px;
+    margin: 0px;
+}
+
+.bil_item_info_three a img {
+    width: 100%;
+    height: 100%;
+}
+
+.bil_item_info_one_box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bil_item_info_one .bil_item_info_one_box:last-child {
+    margin-bottom: 0px;
+}
+
+.bil_item_info_one_box img {
+    width: 140px;
+    height: 78px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.bil_item_info_one_right {
+    width: 70%;
+}
+
+.select_list li:hover {
+    color: #0099ff;
+}
+
+
+/* 适配 */
+
+@media screen and (min-width: 200px) {
+    .my_bil_item_top_item {
+        width: 100%;
+    }
+    .bil_item_info_one,
+    .bil_item_info_two,
+    .bil_item_info_three {
+        padding: 10px 10px;
+        box-sizing: border-box;
+        width: 100%;
+        border-right: none;
+    }
+    .bil_item_info_two,
+    .bil_item_info_three {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .my_bil_item_top_item {
+        width: auto;
+    }
+    .address_half {
+        width: 48%;
+    }
+    .billing_tabs {
+        padding: 30px 0px 40px;
+        overflow: hidden;
+    }
+    .billing_tab {
+        float: left;
+        font-size: 26px;
+        color: #666;
+        margin-right: 50px;
+        font-weight: bold;
+    }
+    .billing_item_tip {
+        font-size: 16px;
+        color: #797979;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: flex-start;
+    }
+    .address_half,
+    .address_total {
+        margin-bottom: 30px;
+    }
+    .billing_save {
+        width: 258px;
+    }
+    .my_bil_item_top {
+        padding: 25px 20px;
+    }
+    .bil_item_info_one {
+        width: 60%;
+        border-right: 1px solid #e5e5e5;
+    }
+    .bil_item_info_two {
+        width: 15%;
+        text-align: center;
+        border-right: 1px solid #e5e5e5;
+    }
+    .bil_item_info_three {
+        width: 25%;
+        text-align: center;
+    }
+    .bil_item_info_one,
+    .bil_item_info_two,
+    .bil_item_info_three {
+        padding: 20px 20px;
+        box-sizing: border-box;
+    }
+    .bil_item_info_two,
+    .bil_item_info_three {
+        display: block;
+    }
+    .bil_item_info_three a {
+        margin: 0px auto;
+    }
+    .bill_list_title {
+        width: 100%;
+        text-align: center;
+    }
+    .bill_list_title {
+        margin-bottom: 30px;
+    }
+    .bil_item_info_one .bill_list_title {
+        text-align: left;
+    }
+}

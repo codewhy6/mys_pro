@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>雅思比轮播-bootstart</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .newAL {
+	    text-align: center;
+	}
+	.newAL #carousel-example-generic1 {
+	    width: 80%;
+	    margin: 90px auto 0;
+	}
+	.newAL #carousel-example-generic1 .left {
+	    left: -10%;
+	}
+	.newAL #carousel-example-generic1 .right {
+	    right: -10%;
+	}
+	.newAL #carousel-example-generic1 .carousel-control {
+	    width: 8%;
+	    height: 80%;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    margin: auto;
+	    background: #DBBD7D;
+	    opacity: 1;
+	}
+	.newAL #carousel-example-generic1 .carousel-control .sr-only {
+	    display: block;
+	    width: 100%;
+	    height: 50px;
+	    position: relative;
+	    top: 50%;
+	    margin-top: -25px;
+	    font-size: 16px;
+	    color: #FFF;
+	    z-index: 66;
+	}
+	.newAL #carousel-example-generic1 .carousel-caption {
+	    padding: 27px;
+	}
+	.newAL #carousel-example-generic1 .carousel-caption {
+	    font-size: 30px;
+	}
+	.newAL #carousel-example-generic1 .carousel-caption a {
+	    font-size: 20px;
+	    top: 9px;
+	    color:#FFF ;
+	    float: right;
+	    margin-top: 10px;
+	}
+	.newAL #carousel-example-generic1 .carousel-caption {
+	    position: absolute;
+	    width: 100%;
+	    bottom: 0;
+	    left: 0;
+	    padding: 27px;
+	    background: rgba(0,0,0,0.5);
+	    font-size: 30px;
+	    text-align: left;
+	}
+	.newAL #carousel-example-generic1 .carousel-control .sr-only img {
+	    display: block;
+	    margin: 0 auto;
+	    width: 50%;
+	    height: 28px;
+	}
+	.glyphicon-chevron-right:before {
+	   content: "";
+	}
+	.glyphicon-chevron-left:before {
+		content: "";
+	}
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+		<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<!-- 雅思比轮播实例 -->
+<div class="newAL container">
+<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/new_AL.jpg" class="center-block">
+      <div class="carousel-caption">
+        <span>灵山水泥</span><span>一码通管理系统</span>
+        <a href="bootstarp轮播.shtml">VIEW MORE ></a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/new_AL.jpg" class="center-block">
+      <div class="carousel-caption">
+     <span>灵山水泥</span><span>一码通管理系统</span>
+        <a href="bootstarp轮播.shtml">VIEW MORE ></a>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control hidden-sm hidden-xs" href="#carousel-example-generic1" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">
+    	Prev<img src="images/long_jian.png" />
+    </span>
+  </a>
+  <a class="right carousel-control hidden-sm hidden-xs" href="#carousel-example-generic1" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">
+    	Next<img src="images/long_jian.png" />
+    </span>
+  </a>
+</div>
+</div>
+
+<!--说明-->
+<div class="container">
+	<h3 style="margin-bottom: 30px;">这是雅思比轮播的轮播实例</h3>
+</div>
+<!--头部 开始-->
+		<!--#include file="include/bottom.html" -->
+<!--头部 结束-->	
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+

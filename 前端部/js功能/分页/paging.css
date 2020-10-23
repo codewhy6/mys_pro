@@ -1,0 +1,85 @@
+/*
+ * @Description: 分页样式
+ * @fileName: paging
+ * @Author: longhaiyan
+ * @Date: 2020-04-17 17:28:59
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-04-17 18:02:30
+ */
+/* 分页 */
+body {
+    background: #f0f0f0;
+}
+.pages {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* 清除默认效果 */
+.pages a {
+    text-decoration: none;
+}
+
+
+.pages a .change_page {
+    width: 12px;
+	height: 12px;
+}
+
+.pre_red, .next_red {
+    display: none;
+}
+
+/* 静态样式 */
+.staticEffect a{
+    color: #999999;
+    border: 1px solid transparent;
+    background: #fff;
+}
+
+/* 鼠标经过 */
+.hoverEffect a:hover{
+    color: #f80035;
+    border: 1px solid transparent;
+    background-color: #f1dde1;
+}
+
+/* 基础样式 */
+.pages a {
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 10px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 34px;
+}
+
+.pages a.prev, .pages a.next {
+    font-size: 18px;
+}
+
+/* 选中样式 */
+.pages a.on  {
+    color: #fff;
+    background: #f80035;
+}
+
+
+/* 跳转到第一页 / 最后一页的 图片切换显示 */
+.prev_pre:hover .pre_gray {
+    display: none;
+}
+
+.prev_pre:hover .pre_red {
+    display: inline;
+}
+
+.next_nex:hover .next_gray {
+    display: none;
+}
+
+.next_nex:hover .next_red {
+    display: inline;
+}

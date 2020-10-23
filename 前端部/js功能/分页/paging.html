@@ -1,0 +1,52 @@
+<!--
+ * @Description: 分页
+ * @fileName: paging
+ * @Author: longhaiyan
+ * @Date: 2020-04-17 17:27:06
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-04-17 18:03:59
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="paging.css">
+</head>
+<body>
+    <!-- 分页 start -->
+    <div class="my_container">
+        <!-- staticEffect是静态时的样式  hoverEffect是鼠标经过时的样式 -->
+        <div class="pages staticEffect  hoverEffect ">
+            <!-- 跳到第一页和最后一页是图片 change_page 是基础的设置-->
+            <a href="#" class="prev_pre">
+                <!-- 静态 pre_gray -->
+                <img src="images/pre_gray.png" alt="第一页" class="pre_gray change_page">
+                <!-- 鼠标经过 pre_red -->
+                <img src="images/pre_red.png" alt="第一页" class="pre_red change_page">
+            </a>
+            <a href="#" class="prev "><</a>
+                    <span class="number">
+                        <!-- a标签添加 on 类名就是选中的状态 -->
+                        <a href="#" class="on">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">...</a>
+                        <a href="#">34</a>
+                        <a href="#">35</a>
+                        <a href="#">36</a>
+                    </span>
+                    <a href="#" class="next">></a>
+            <a href="#" class="next_nex">
+                <!-- 静态 next_gray -->
+                <img src="images/next_gray.png" alt="最后页" class="next_gray change_page">
+                <!-- 鼠标经过 next_red -->
+                <img src="images/next_red.png" alt="最后页" class="next_red change_page">
+            </a>
+        </div>
+    </div>
+    <!-- 分页 end -->
+    
+</body>
+</html>

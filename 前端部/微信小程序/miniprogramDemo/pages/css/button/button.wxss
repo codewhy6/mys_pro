@@ -1,0 +1,10 @@
+
+
+.borderRadius::after {
+    border:none; /* 去除边框 */
+    border-radius: none;/* 去除圆角 */
+}
+.borderRadius{
+  background: #F00;
+  color: #fff;
+}

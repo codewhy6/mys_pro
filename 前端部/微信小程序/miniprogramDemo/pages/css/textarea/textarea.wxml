@@ -1,0 +1,10 @@
+<!--pages/css/textarea/textarea.wxml-->
+<view class="container">
+ <text class="title">IOS系统textarea层级穿透</text>
+ <view>
+  <button bindtap="showPopup">点击显示弹窗</button>
+    <textarea value="textarea层级穿透" style="color:{{visibility}}"></textarea>
+ </view>
+<component-showModal show="{{TCshow}}" message = "{{message}}" bind:myevent="onMyEvent"></component-showModal>
+</view>
+

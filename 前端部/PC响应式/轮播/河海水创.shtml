@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <title>水利科技成果交易综合服务平台</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	/*banner*/
+.s1-banner {
+	/*max-width: 1200px;*/
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+.slideBox {
+	width: 100%;
+	/*max-width: 1200px;*/
+	/*height: 460px;*/
+	overflow: hidden;
+	position: relative;
+}
+.slideBox .hd {
+	width: 126px;
+	height: 8px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	margin: auto;
+	z-index: 1;
+}
+.slideBox .hd ul {
+	width: 100%;
+	overflow: hidden;
+	clear: both;
+}
+.slideBox .hd ul li {
+	width: 26px;
+	height: 8px;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 0;
+	margin: 0px 8px;
+	border: none;
+	float: left;
+}
+.slideBox .hd ul li.on {
+	width: 26px;
+	height: 8px;
+	background: #fff;
+}
+.slideBox .bd {
+	height: 460px;
+	/*width: 1920px;*/
+	position: relative;
+	z-index: 0;
+}
+.slideBox .bd li {
+	zoom: 1;
+	vertical-align: middle;
+	height: 460px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.slideBox .bd img {
+	text-align: center;
+	width: 1920px;
+	height: 460px;
+	/*display: block;*/
+	/*position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     top: 0;
+     margin: auto;
+     max-width: 100%;
+     max-height: 100%;*/
+     
+}
+.s1-list1 {
+	width: 1200px;
+	height: 365px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+.s1-list1-off {
+	width: 285px;
+	height: 365px;
+	display: block;
+	background: #0088e2;
+	position: relative;
+}
+.s1-list1-top {
+	width: 256px;
+	height: 60px;
+	position: absolute;
+	top: -10px;
+	left: 15px;
+	display: block;
+	background: url(images/s-titBg.png) no-repeat;
+}
+.s1-list1-top a{
+	width:100%;
+	height:100%;
+	display:block;
+}
+.s1-list1-ul {
+	width: 100%;
+	position: absolute;
+	top: 64px;
+	left: 0px;
+}
+.s1-list1-ul li {
+	height: 100px;
+	line-height: 100px;
+	border-bottom: 1px solid #339fe8;
+}
+.s1-list1-ul li a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.s1-list1-ul li a:hover {
+	background: #fff;
+}
+.s1-list1-ul li:last-child {
+	border: none;
+	height: 98px;
+}
+.s1-list1-img {
+	display: block;
+	float: left;
+	margin: 38px 20px;
+}
+.s1-list1-img1 {
+	width: 20px;
+	height: 20px;
+	background: url(images/s1-listImg1.png) no-repeat;
+}
+.s1-list1-img2 {
+	width: 22px;
+	height: 22px;
+	background: url(images/s1-listImg2.png) no-repeat;
+}
+.s1-list1-img3 {
+	width: 22px;
+	height: 20px;
+	background: url(images/s1-listImg3.png) no-repeat;
+}
+.s1-list1-ul li a:hover .s1-list1-img1 {
+	background: url(images/s1-listImg1-on.png) no-repeat;
+}
+.s1-list1-ul li a:hover .s1-list1-img2 {
+	background: url(images/s1-listImg2-on.png) no-repeat;
+}
+.s1-list1-ul li a:hover .s1-list1-img3 {
+	background: url(images/s1-listImg3-on.png) no-repeat;
+}
+.s1-list1-ul li span {
+	display: block;
+	font-size: 16px;
+	color: #ffffff;
+	float: left;
+}
+.s1-list1-ul li a:hover span {
+	color: #0087e2;
+}
+.s1-list1-jt {
+	width: 8px;
+	height: 16px;
+	float: right;
+	display: block;
+	margin-right: 20px;
+	margin-top: 42px;
+	background: url(images/s1-listImg4.png) no-repeat;
+}
+.s1-list1-ul li a:hover .s1-list1-jt {
+	background: url(images/s1-listImg4-on.png) no-repeat;
+}
+.s1-list1-on {
+	width: 680px;
+	height: 365px;
+	background: #fff;
+	position: absolute;
+	top: -65px;
+	left: 285px;
+	padding: 0px 60px;
+	display: none;
+}
+.s1-list1-ul2 {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.s1-list1-ul2 li {
+	font-size: 16px;
+	color: #666666;
+	height: 75px;
+	border: none;
+}
+.s1-list1-ul2 li a:hover {
+	color: #0081e0;
+}
+.s1-list1-ul li:hover .s1-list1-on {
+	display: block;
+}
+/*s1-container*/
+.s1-container {
+	width: 100%;
+	height: 140px;
+	background: #fff;
+}
+.s1-conn{
+	width: 1200px;
+	margin: auto;
+}
+.s1-nr1 {
+	width: 335px;
+	float: left;
+	border-right: 1px solid #e5e5e5;
+	margin: 39px 0px;
+}
+.s1-nr1:nth-child(2) {
+	margin: 39px 55px;
+}
+.s1-nr1 span {
+	width: 50px;
+	height: 50px;
+	display: block;
+	float: left;
+	margin-right: 25px;
+}
+.s1-nr1 p {
+	font-size: 14px;
+	color: #999999;
+	font-style: normal;
+}
+.s1-nr1 em {
+	font-size: 30px;
+	font-style: normal;
+}
+.s1-nr1:nth-child(1) {
+	color: #0070c3;
+}
+.s1-nr1:nth-child(2) {
+	color: #f6a11a;
+}
+.s1-nr2 {
+	width: 418px;
+	float: left;
+	margin: 39px 0px;
+}
+.s1-nr2 span {
+	width: 50px;
+	height: 50px;
+	display: block;
+	float: left;
+	margin-right: 25px;
+}
+	
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<div class="s1-banner">
+	<div id="slideBox" class="slideBox">
+		<div class="hd">
+			<ul><li></li><li></li><li></li></ul>
+		</div>
+		<div class="bd">
+			<ul>
+				<li style="background: url(images/s-banner1.jpg) no-repeat center;"></li>
+				<li style="background: url(images/s-banner1.jpg) no-repeat center;"></li>
+				<li style="background: url(images/s-banner1.jpg) no-repeat center;"></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="s1-list1">
+		<div class="s1-list1-off">
+			<span class="s1-list1-top"><a href="发明专利列表.shtml"></a></span>
+			<ul class="s1-list1-ul">
+				<li>
+					<a href="发明专利列表.shtml">
+						<i class="s1-list1-img s1-list1-img1"></i>
+						<span>水资源高效利用</span>
+						<em class="s1-list1-jt"></em>
+					</a>
+					<div class="s1-list1-on">
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">水文预报鱼库群调度技术</a></li>
+							<li><a href="发明专利列表.shtml">水资源综合利用技术</a></li>
+							<li><a href="发明专利列表.shtml">洪旱灾害防治技术</a></li>
+							<li><a href="发明专利列表.shtml">长距离调水调度与控制技术</a></li>
+						</ul>
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">数字流域与只能管理技术</a></li>
+							<li><a href="发明专利列表.shtml">海水淡化与非常规水资源开发利用技术</a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="发明专利列表.shtml">
+						<i class="s1-list1-img s1-list1-img2"></i>
+						<span>水工程建设与运行安全</span>
+						<em class="s1-list1-jt"></em>
+					</a>
+					<div class="s1-list1-on">
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+						</ul>
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+							<li><a href="发明专利列表.shtml">水工程建设与运行安全</a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="发明专利列表.shtml">
+						<i class="s1-list1-img s1-list1-img3"></i>
+						<span>水环境与生态保护</span>
+						<em class="s1-list1-jt"></em>
+					</a>
+					<div class="s1-list1-on">
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+						</ul>
+						<ul class="s1-list1-ul2">
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+							<li><a href="发明专利列表.shtml">水环境与生态保护</a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+							<li><a href="发明专利列表.shtml"></a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+
+
+
+<!--底部 开始-->
+<!--#include file="include/bottom.html" -->
+<!--底部 结束-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(window).resize(function(){
+//  alert("窗体大小改变了！");
+      location.reload()
+    //这里你可以尽情的写你的刷新代码！
+});
+//选中
+$('.s-top-inlist li').eq(0).addClass('on');
+//返回顶部
+$(".float-top").click(function(){
+    $("html,body").animate({"scrollTop":0},500);
+});
+
+//banner
+jQuery(".slideBox").slide({mainCell:".bd ul",effect:"left",autoPlay:true});
+//文字轮播
+jQuery(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:2,interTime:80,trigger:"click"});
+//友情链接轮播
+jQuery(".txtMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:4,interTime:50,trigger:"click"});
+
+//筛选1
+$(".s1-c2Ul1 li a").click(function(){
+  $(this).siblings().toggle();
+  if($(this).siblings().css("display")=="block"){
+  	 $(".s1-c2Ul1 li em").removeClass("s1-jiantou2");
+  	 $(this).find("em").addClass("s1-jiantou2");
+  }else{
+  	$(this).find("em").removeClass("s1-jiantou2");
+  }
+  $(this).parents("li").siblings().find(".s1-select").hide();
+});
+$(".s1-select p").click(function(){
+	$(this).parents(".s1-select").siblings("a").find("span").text($(this).text());
+	$(".s1-select").css("display","none");
+	if($(this).siblings().css("display")=="block"){
+	  	$(".s1-c2Ul1 li em").removeClass("s1-jiantou2");
+	  	$(this).find("em").addClass("s1-jiantou2");
+	}else{
+		$(this).find("em").removeClass("s1-jiantou2");
+	}
+})
+
+//筛选2
+$(".s1-c3Ul1 li a").click(function(){
+  $(this).siblings().toggle();
+  if($(this).siblings().css("display")=="block"){
+  	 $(".s1-c3Ul1 li em").removeClass("s1-jiantou2");
+  	 $(this).find("em").addClass("s1-jiantou2");
+  }else{
+  	$(this).find("em").removeClass("s1-jiantou2");
+  }
+  $(this).parents("li").siblings().find(".s1-select1").hide();
+});
+$(".s1-select1 p").click(function(){
+	$(this).parents(".s1-select1").siblings("a").find("span").text($(this).text());
+	$(".s1-select1").css("display","none");
+	if($(this).siblings().css("display")=="block"){
+	  	 $(".s1-c3Ul1 li em").removeClass("s1-jiantou2");
+	  	 $(this).find("em").addClass("s1-jiantou2");
+	  }else{
+	  	$(this).find("em").removeClass("s1-jiantou2");
+	  }
+})
+</script>
+</body>
+</html>
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style type="text/css">
+	html {
+		font-family: sans-serif;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+	body {
+		margin: 0 auto;
+		text-align: center;
+		background-color: #FFFFCC;
+	}
+	ul {
+		list-style: none;
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+	ul.jieshao li{
+		background-color:initial;
+		color:#333;
+	}
+	a {
+		cursor: pointer;
+	}
+	div {
+		display: inline-block;
+		margin: 40px;
+	}
+	ul li {
+		width: 200px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		margin: 10px;
+		background-color: #747474;
+		border-radius: 4px;
+		color: white;
+	}
+	.dis-block {
+		display: block;
+	}
+	
+	/*#nav1鼠标hover效果  前后翻转 start*/
+	#nav1 ul li {
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		-ms-transition: 0.5s;
+		-moz-transition: 0.5s;
+	}
+	#nav1 ul li:hover {
+		transform: translateZ(30px) rotateX(180deg) scale(1.1);
+		-webkit-transform: translateZ(30px) rotateX(180deg) scale(1.1);
+		-ms-transform: translateZ(30px) rotateX(180deg) scale(1.1);
+		-moz-transform: translateZ(30px) rotateX(180deg) scale(1.1);
+	}
+	/*#nav1鼠标hover效果  前后翻转 end*/
+	
+	/*#nav2鼠标hover效果 上浮 start*/
+	#nav2 ul li {
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		-ms-transition: 0.5s;
+		-moz-transition: 0.5s;
+	}
+	#nav2 ul li:hover {
+		transform: translateZ(30px) scale(1.1);
+		-webkit-transform: translateZ(30px) scale(1.1);
+		-ms-transform: translateZ(30px) scale(1.1);
+		-moz-transform: translateZ(30px) scale(1.1);
+	}
+	/*#nav2鼠标hover效果 上浮 end*/
+	
+	/*#nav4鼠标hover效果 下浮 start*/
+	#nav4 ul li {
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		-ms-transition: 0.5s;
+		-moz-transition: 0.5s;
+	}
+	#nav4 ul li:hover {
+		transform: translateZ(30px) scale(0.9);
+		-webkit-transform: translateZ(30px) scale(0.9);
+		-ms-transform: translateZ(30px) scale(0.9);
+		-moz-transform: translateZ(30px) scale(0.9);
+	}
+	/*#nav4鼠标hover效果 下浮 end*/
+	
+	/*#nav3鼠标hover效果 左右翻转 start*/
+	#nav3 ul li {
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transition: 0.5s;
+		-webkit-transition: 0.5s;
+		-ms-transition: 0.5s;
+		-moz-transition: 0.5s;
+	}
+	#nav3 ul li:hover {
+		transform: translateZ(30px) rotateY(360deg) scale(1.1);
+		-webkit-transform: translateZ(30px) rotateY(360deg) scale(1.1);
+		-ms-transform: translateZ(30px) rotateY(360deg) scale(1.1);
+		-moz-transform: translateZ(30px) rotateY(360deg) scale(1.1);
+	}
+	/*#nav3鼠标hover效果 左右翻转 end*/
+	
+	/*button1 hover效果 start*/
+	.btn1 {
+		background-color: #1AAB8A;
+		color: white;
+		font-size: 18px;
+		height: 60px;
+		width: 150px;
+		border: 0;
+		transition: 800ms ease all;
+		outline: none;
+		position: relative;
+	}
+	.btn1:hover {
+		background: #fff;
+		color: #1AAB8A;
+	}
+	.btn1:before,
+	.btn1:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 0;
+		background: #1AAB8A;
+		transition: 400ms ease all;
+	}
+	.btn1:before {
+		right: 0;
+		top: 0;
+	}
+	.btn1:after {
+		left: 0;
+		bottom: 0;
+	}
+	.btn1:hover:before,
+	.btn1:hover:after {
+		width: 100%;
+		transition: 800ms ease all;
+	}
+	/*button1 hover效果 end*/
+</style>
+</head>
+
+<body>
+	<div id="nav1">
+		<p>前后翻转</p>
+		<ul>
+			<li>
+				<a>home</a>
+			</li>
+			<li>
+				<a>js</a>
+			</li>
+			<li>
+				<a>jquery</a>
+			</li>
+			<li>
+				<a>div+css</a>
+			</li>
+			<li>
+				<a>css3</a>
+			</li>
+		</ul>
+	</div>
+	<div id="nav2">
+		<p>上浮</p>
+		<ul>
+			<li>
+				<a>home</a>
+			</li>
+			<li>
+				<a>js</a>
+			</li>
+			<li>
+				<a>jquery</a>
+			</li>
+			<li>
+				<a>div+css</a>
+			</li>
+			<li>
+				<a>css3</a>
+			</li>
+		</ul>
+	</div>
+	<div id="nav4">
+		<p>下浮</p>
+		<ul>
+			<li>
+				<a>home</a>
+			</li>
+			<li>
+				<a>js</a>
+			</li>
+			<li>
+				<a>jquery</a>
+			</li>
+			<li>
+				<a>div+css</a>
+			</li>
+			<li>
+				<a>css3</a>
+			</li>
+		</ul>
+	</div>
+	<div id="nav3">
+		<p>左右翻转</p>
+		<ul>
+			<li>
+				<a>home</a>
+			</li>
+			<li>
+				<a>js</a>
+			</li>
+			<li>
+				<a>jquery</a>
+			</li>
+			<li>
+				<a>div+css</a>
+			</li>
+			<li>
+				<a>css3</a>
+			</li>
+		</ul>
+	</div>
+	<div class="dis-block">
+		<p>按钮hover效果</p>
+		<button class="btn1" type="button">hover!</button>
+	</div>
+	
+	<ul class="jieshao">
+		<li>使用说明</li>
+		<li>1、按需选择效果</li>
+		<li>2、复制CSS样式</li>
+	</ul>
+</body>
+
+</html>

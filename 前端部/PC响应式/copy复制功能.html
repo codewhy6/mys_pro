@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS复制功能</title>
+<style>
+	 *{
+	 margin:0;
+	 padding:0;
+	 }
+	 
+	 /* 复制功能开始 */
+	 input{
+	 border:1px solid #ccc;
+	 padding: 5px;
+	 width: 200px;
+	 }
+	 button{
+	 height:32px;
+	 }
+	 /*复制功能结束*/
+</style>
+</head>
+<body>
+<!-- 复制功能开始 -->
+ <input type="text" value="1234" />
+ <button type="button">点击复制</button>
+<!--复制功能结束-->
+ 
+ <ul>
+	<li>使用说明</li>
+	<li>1、需要引入jquery</li>
+	<li>2、根据需要复制CSS样式</li>
+	<li>3、复制JS</li>
+</ul>	
+ <script type="text/javascript" src='js/jquery-1.9.1.min.js'></script>
+ <script>
+  $(document).ready(function(){
+	  $('button').click(function(){
+	  	$('input').trigger('select');//点击选中文本框的文字
+	  	document.execCommand('copy');//复制选中的文字
+	  })
+  })
+ </script>
+</body>
+</html>

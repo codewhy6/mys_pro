@@ -1,0 +1,305 @@
+.nodata {
+    padding: 153px 0 0;
+    text-align: center;
+}
+
+.nodata p {
+    font-size: 18px;
+    color: #666666;
+    margin-top: 42px;
+}
+
+.product_content_lists>li {
+    margin-right: 25px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: solid 1px #e5e5e5;
+    padding: 10px;
+}
+
+.pro_content_tit {
+    font-size: 20px;
+    color: #333;
+    margin: 19px 0 7px;
+    height: 56px;
+}
+
+.pro_content_p1 {
+    font-size: 24px;
+    margin-bottom: 13px;
+}
+
+.pro_content_links {
+    margin: 15px auto 0;
+}
+
+.downLoadList li {
+    margin-bottom: 30px;
+}
+
+.downLoadList li a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: solid 1px #eeeeee;
+}
+
+.downLoadList li .le {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.downLoadList li .ri {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.downLoadList li .ri .time {
+    width: 100%;
+}
+
+.downLoadList li .ri .operation {
+    width: 100%;
+}
+
+.downLoadList li .img {
+    width: 130px;
+    height: 73px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+.downLoadList li .img img{
+    width: 130px;
+    height: 73px;
+    border-radius: 5px;
+}
+
+.downLoadList li .img {
+    width: 130px;
+    height: 73px;
+}
+
+.downLoadList li .name {
+    width: 100%;
+    padding: 0px;
+}
+
+.downLoadList li .tit {
+    font-size: 16px;
+    color: #797979;
+}
+
+.downLoadList li .txt {
+    font-size: 18px;
+    color: #333333;
+    margin-top: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.downLoadList li .txt.blue {
+    color: #028eec;
+}
+
+@media (max-width: 768px) and (min-width: 200px) {
+    .personal_body {
+        margin-bottom: 30px;
+    }
+    .downLoadList li .ri .operation {
+        margin-top: 10px;
+    }
+    .downLoadList li .img{
+        width:100%;
+        height:153.7px;
+    }
+    .downLoadList li .img img{
+        width:100%;
+        height:153.7px;
+    }
+}
+
+@media (min-width: 200px) {
+    .nodata {
+        padding: 50px 0 0;
+    }
+    .downLoadList li .le {
+        width: 100%;
+    }
+    .downLoadList li .ri {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .downLoadList li .name {
+        padding: 0px;
+        margin-top: 10px;
+    }
+    .downLoadList li .txt {
+        font-size: 18px;
+        color: #333333;
+        margin-top: 0px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .product_content_lists {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .product_content_lists>li {
+        padding: 15px;
+        margin-right: 0;
+        width: 48%;
+    }
+    .downLoadList li .ri .time {
+        width: 60%;
+    }
+    .downLoadList li .ri .operation {
+        width: 40%;
+    }
+    .downLoadList li a {
+        padding: 20px;
+    }
+    .downLoadList li .name {
+        width: calc(100% - 130px);
+        padding: 0 50px 0 20px;
+    }
+    .downLoadList li .ri .operation {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .nodata {
+        padding: 120px 0 0;
+    }
+    .downLoadList li .le {
+        width: 50%;
+    }
+    .downLoadList li .ri {
+        width: 50%;
+        margin-top: 0;
+    }
+    .downLoadList li .name {
+        padding: 0 20px
+    }
+    .downLoadList li .name {
+        width: calc(100% - 130px);
+        padding: 0 50px 0 20px;
+    }
+    .downLoadList li .ri .time {
+        width: 62%;
+    }
+    .downLoadList li .ri .operation {
+        width: 38%;
+    }
+    .downLoadList li .ri .operation {
+        /* width: 100%; */
+        margin-top: 0px;
+    }
+    .downLoadList li .txt {
+        font-size: 18px;
+        color: #333333;
+        margin-top: 25px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 992px) {
+    .nodata {
+        padding: 140px 0 0;
+    }
+    .downLoadList li .le {
+        width: 100%;
+    }
+    .downLoadList li .ri {
+        width: 100%;
+    }
+    .downLoadList li .name {
+        padding: 0 20px
+    }
+    .downLoadList li .name {
+        width: calc(100% - 130px);
+        padding: 0 50px 0 20px;
+    }
+    .downLoadList li .ri .operation {
+        width:38%;
+        margin-top: 0px;
+    }
+    .downLoadList li .txt {
+        font-size: 18px;
+        color: #333333;
+        margin-top: 25px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .downLoadList li .name {
+        padding: 0px;
+        margin-top: 0px;
+    }
+    .downLoadList li .ri .operation {
+        margin-top: 0px;
+    }
+}
+@media (min-width: 992px) and (max-width:1199px){
+    .downLoadList li .ri{margin-top:15px;}
+    .downLoadList li .name{padding-left:15px;}
+}
+@media (min-width: 1200px) {
+    .nodata {
+        padding: 153px 0 0;
+    }
+    .downLoadList li .le {
+        width: 50%;
+    }
+    .downLoadList li .ri {
+        width: 50%;
+        margin-top: 0;
+    }
+    .downLoadList li .name {
+        padding: 0 50px 0 20px;
+    }
+    .downLoadList li .name {
+        width: calc(100% - 130px);
+        padding: 0 50px 0 20px;
+    }
+    .downLoadList li .ri .time {
+        width: 62%;
+    }
+    .downLoadList li .ri .operation {
+        width: 38%;
+    }
+    .downLoadList li .ri .operation {
+        /* width: 100%; */
+        margin-top: 0px;
+    }
+    .downLoadList li .txt {
+        font-size: 18px;
+        color: #333333;
+        margin-top: 25px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

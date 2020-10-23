@@ -1,0 +1,63 @@
+<!--
+ * @Description: 模板页面
+ * @fileName: index.html
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 11:27:04
+ * @LastEditors: CaoChen
+ * @LastEditTime: 2020-04-13 20:40:57
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司,http://www.chemguan.com/">
+    <meta name="copyright" content="九州奇士">
+    <title>模板页面</title>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 写响应式网站引入bootstrap.min.js,非响应式不需要引入 -->
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="js/utils/regExp.js"></script>
+    <script type="text/javascript" src="js/utils/util.js"></script>
+    <script type="text/javascript" src="js/utils/http.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pulicStyle.css">
+    <script type="text/javascript">
+        $(function () {
+            $("#header").load("./include/top.html");
+            $("#footer").load("./include/bottom.html");
+        })
+    </script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="lib/html5shiv.v3.72.min.js"></script>
+        <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--头部 开始-->
+    <div id="header"></div>
+    <!--头部 结束-->
+
+
+    <!--底部 开始-->
+    <div id="footer"></div>
+    <!--底部 结束-->
+    <script type="text/javascript">
+    /**
+         * @Description: 
+         * @Author: LiSuwan
+         * @Date: 2020-01-10 11:46:11
+         * @param {type} 
+         * @return: 
+         */
+        checkEmail(1234) //调用util.js的方法示例 使用的时候需要删除
+    </script>
+</body>
+
+</html>

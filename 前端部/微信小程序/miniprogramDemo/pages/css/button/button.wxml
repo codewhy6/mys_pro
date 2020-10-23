@@ -1,0 +1,10 @@
+<!--pages/css/textarea/textarea.wxml-->
+<view class="container">
+  <text class="title">button按钮去除边框</text>
+  <view>
+    <button class="borderRadius" hover-class="btn-hover">
+      去除边框 
+    </button>
+  </view>
+
+</view>

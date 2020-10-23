@@ -1,0 +1,3 @@
+
+<button bindtap="showModal2">弹窗提示2个按钮</button>
+<button bindtap="showModal1">弹窗提示1个按钮</button>

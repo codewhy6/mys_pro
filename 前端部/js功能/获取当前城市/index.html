@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>获取当前城市</title>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=3aP8bIzc4QK35ALv44TM9h5We3NcsRU3"></script>
+</head>
+<body>
+    <div id="container"></div>
+<script type="text/javascript">
+ var map = new BMap.Map("container");
+            var nowCity = new BMap.LocalCity();//LocalCity这个类是利用用户IP地址去百度数据库里查询得到IP所在的城市
+            nowCity.get(bdGetPosition);
+            function bdGetPosition(result){
+            var cityName = result.name; //当前的城市名
+            console.log("cityName",cityName)
+            document.getElementById("container").innerHTML=cityName
+         }
+</script>
+</body>
+</html>

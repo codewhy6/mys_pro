@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>宁博瑞首页轮播</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	h3{
+    		margin: 30px 0;
+    	}
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+		<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<!--面包屑导航-->
+<div class="bread hidden-xs">
+	<div class="container">
+		<div class="breadcrumbs after">
+			<div class="wraps">
+				<a href="index.shtml">首页</a>
+				<a href="日期.shtml">日期插件</a>
+				<a href="文字滚动.shtml">文字滚动</a>
+				<a href="轮播.shtml">轮播</a>
+				<a href="倒计时验证手机号.shtml">倒计时验证手机号</a>
+				<a href="百度地图.shtml">百度地图</a>
+				<a href="分页.shtml">分页</a>
+				<!--<span> 公司介绍</span>-->
+			</div>
+		</div>
+	</div>
+</div>
+<!--面包屑导航-->   
+
+<!-- 宁博瑞轮播实例 -->
+<div class="lunbo-carousel2">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	        	<img src="images/banner1.jpg">
+	        	<div class="black">
+			      	关于宁博瑞<span class="hidden-xs">read more +</span>
+			    </div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<img src="images/banner2.jpg">
+	        	<div class="black">
+	      			服务项目<span class="hidden-xs">read more +</span>
+	      		</div>
+	        </div>
+	        <div class="swiper-slide">
+	        	<img src="images/banner3.jpg">
+	        	<div class="black">
+	      			客户服务<span class="hidden-xs">read more +</span>
+	      		</div>
+	        </div>
+	    </div>
+	    <!-- Add Pagination -->
+	    <!--<div class="swiper-pagination"></div>-->
+	    <!-- Add Arrows -->
+	    <p class="swiper-button-prev swiper_btn"> &lt; </p>
+	    <p class="swiper-button-next swiper_btn"> > </p>
+	</div>
+</div>
+
+<!--说明-->
+<div class="container">
+	<h3 style="margin-bottom: 30px;">这是宁博瑞的轮播实例</h3>
+</div>
+
+<!--头部 开始-->
+		<!--#include file="include/bottom.html" -->
+<!--头部 结束-->	
+
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+//宁博瑞轮播实例
+var swipers1 = new Swiper('.lunbo-carousel2 .swiper-container', {
+	//轮播点
+//	pagination: {
+//	    el: '.lunbo-carousel2 .swiper-pagination',
+//	    clickable: true,
+//	},
+	//箭头
+	navigation: {
+        nextEl: '.lunbo-carousel2 .swiper-button-next',
+        prevEl: '.lunbo-carousel2 .swiper-button-prev',
+    },
+	autoplay: {
+	    delay: 3000,
+	    stopOnLastSlide: false,
+	    disableOnInteraction: false,// 这样，即使我们滑动之后， 定时器也不会被清除
+    },
+	loop:true,//循环播放
+})
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,279 @@
+﻿/*
+ * @Description: 样式基础配置文件 不在这个页面写样式，只写基础配置
+ * @fileName: base.css
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 11:54:14
+ * @LastEditors: longhaiyan
+ * @LastEditTime: 2020-09-27 14:05:16
+ */
+
+ @charset "utf-8";
+ * {
+     margin: 0;
+     padding: 0;
+     /* 解决手机微信公众号中的网页文字无法复制到剪切板问题  start*/
+     -webkit-user-select: text;
+     -moz-user-select: text;
+     -ms-user-select: text;
+     user-select: text;
+     /* 解决手机微信公众号中的网页文字无法复制到剪切板问题  end*/
+ 
+     word-wrap:break-word;
+ }
+ 
+ 
+ /* 隐藏 input[type=number] 的上下箭头 */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+ }
+ input[type="number"]{
+   -moz-appearance: textfield;
+ }
+ 
+ html {
+     font: normal 14px "微软雅黑", Arial;
+     width: 100%;
+ }
+ 
+ body {
+     padding: 0px;
+     margin: 0px auto;
+     color: #666;
+     width: 100%;
+     /*min-width: 1200px;*/
+     /*width: expression((documentElement.clientWidth < 1200) ? "1200px" : "100%" );*/
+     zoom: 1;
+ }
+ 
+ ul, li, ol {
+     list-style: none;
+ }
+ 
+ select, input, textarea {
+     border-radius: 0;
+     -webkit-border-radius: 0;
+     color: #666;
+     background: none;
+     border: none;
+     resize: none
+ }
+ 
+ input:focus {
+     outline: none;
+ }
+ 
+ input, button, select, textarea {
+     outline: none;
+     /* -webkit-appearance:none; */
+     appearance: none;
+     -moz-appearance: none;
+     -webkit-appearance: none;
+     /*强制去除表单自带的样式*/
+     font: normal 14px "微软雅黑", Arial;
+ }
+ 
+ textarea {
+     resize: none;
+     /*-webkit-appearance:none;*/
+     /*强制去除textarea自带的样式*/
+ }
+ 
+ article, aside, footer, header, nav, section, figure, figcaption {
+     display: block;
+ }
+ 
+ /*html5设置*/
+ 
+ figure, figcaption {
+     margin: 0px;
+     padding: 0px;
+ }
+ 
+ audio, canvas, progress, video {
+     display: inline-block;
+     vertical-align: baseline;
+ }
+ 
+ img {
+     border: none;
+     border: 0;
+     max-width: 100%;
+     vertical-align: middle;
+ }
+ 
+ a, a:hover, a:focus {
+     outline: none;
+     -moz-outline: none;
+     text-decoration: none;
+ }
+ 
+ .clear {
+     display: block;
+     clear: both;
+     height: 0px;
+     overflow: hidden;
+ }
+ 
+ /* 设置placeholder默认文字颜色样式 start*/
+ 
+ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+     color: #b8b8b8;
+ }
+ 
+ input::-moz-input-placeholder, textarea::-moz-input-placeholder {
+     color: #b8b8b8;
+ }
+ 
+ input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+     color: #b8b8b8;
+ }
+ 
+ /* 设置placeholder默认文字颜色样式 end*/
+ 
+ 
+ 
+ /**
+  * @Description: 轮播动画
+  * @Author: longhaiyan
+  * @Date: 2020-04-15 15:40:47
+  margin-top 值向上滑动 改为 margin-left/right/bottom 即为左/右/下轮播
+  值为滑动距离
+  */
+ 
+ .marquee_top {
+     transition: all 0.5s linear;
+     margin-top: -60px;
+ }
+ 
+ /**
+  * @Description: 鼠标经过手型
+  * @Author: longhaiyan
+  * @Date: 2020-04-15 15:39:54
+  */
+ 
+ .cursor {
+     cursor: pointer
+ }
+ 
+ 
+ /* 单选框样式
+      <label >
+      <input type="radio" name="paixu" >
+         按热门排序
+     </label>
+     start
+ */
+ 
+ /* 选中前的样式 */
+ 
+ input[type=radio] {
+     width: 16px;
+     height: 16px;
+     border: 1px solid #e5e5e5;
+ }
+ 
+ /* 选中后的样式(使用背景图写的，使用时换背景图即可) */
+ input[type=radio]:checked{
+     background: url(../images/radoi_checkedhiolk.png) left top no-repeat;
+     background-size: 100% 100%;
+     border: 1px solid transparent;
+ }
+ /* 单选框样式
+      <label >
+      <input type="radio" name="paixu" >
+         按热门排序
+     </label>
+     end
+ */
+ 
+ 
+ 
+ /* 复选框
+     <label >
+     <input type="checkbox" name="" >
+         按热门排序
+     </label>
+     start
+  */
+ 
+ /* 选前的样式 */
+ 
+ input[type=checkbox] {
+     width: 16px;
+     height: 16px;
+     border: 1px solid #e5e5e5;
+ }
+ 
+ /* 选中之后的样式 */
+ input[type=checkbox]:checked{
+     background: url(../images/radoi_checkedhiolk.png) left top no-repeat;
+     background-size: 100% 100%;
+     border: 1px solid transparent;
+ }
+ /* 复选框
+     <label >
+     <input type="checkbox" name="" >
+         按热门排序
+     </label>
+     end
+  */
+ 
+ 
+ /* a,button 手型 */
+ 
+ a, button, select , option ,input[type=button] {
+     cursor: pointer;
+ }
+ 
+ /* 
+ ::-webkit-scrollbar 滚动条整体部分
+ ::-webkit-scrollbar-thumb  滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）
+ ::-webkit-scrollbar-track  滚动条的轨道（里面装有Thumb）
+ ::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。
+ ::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+ ::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处
+ ::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件 */
+ 
+ /*修改滚动条样式   start */
+ 
+ ::-webkit-scrollbar {
+     width: 8px;
+     height: 425px;
+     /**/
+ }
+ 
+ ::-webkit-scrollbar-track {
+     background: #21222f;
+     border-radius: 4px;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+     width: 8px;
+     height: 98px;
+     background-color: #4b4d5e;
+     border-radius: 4px;
+ }
+ /*修改滚动条样式   end */
+ 
+ 
+ /* 文字一行展示，超过长度用 ... 表示： start */
+ 
+ .one_line {
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     -o-text-overflow: ellipsis;
+     overflow: hidden;
+ }
+ /* 文字一行展示，超过长度用 ... 表示： end */
+ 
+ 
+ /* 多行展示，超过长度用 ... 表示： start */
+ .much_line {
+     overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+ }
+ /* 多行展示，超过长度用 ... 表示： end */

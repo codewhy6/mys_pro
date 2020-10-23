@@ -1,0 +1,49 @@
+.notFind{
+    position: relative;
+}
+.notFind button{
+	width: 220px;
+	height: 60px;
+	background: linear-gradient(-62deg, 
+		#12c5ec 0%, 
+		rgba(18, 197, 236, 0.89) 100%), 
+	linear-gradient(
+		#0099ff, 
+		#0099ff);
+	background-blend-mode: normal, 
+		normal;
+	box-shadow: 0px 2px 9px 1px 
+		rgba(0, 153, 255, 0.25);
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+	font-size: 22px;
+    color: #ffffff;
+    border: none;
+}
+.notFind button:hover{
+    border: 1px solid #0099ff;
+    color: #0099ff;
+    background: #FFF;
+}
+
+@media (min-width: 200px) {
+.notFind button {width: 80px;height: 20px;font-size: 14px;}
+}
+
+@media (min-width: 768px) {
+.notFind button {width: 120px;height: 35px;font-size: 16px;}
+}
+
+@media (min-width: 992px) {
+.notFind button {width: 200px;height: 45px;font-size: 18px;}
+}
+
+@media (min-width: 1200px) {
+.notFind button {width: 220px; height: 60px;font-size: 22px;}
+}
+

@@ -1,0 +1,5 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<view class="twoBtn_box">
+	<component-twoBtn bind:rightBtnEvent='rightBtnEvent' bind:leftBtnEvent='leftBtnEvent' rightBtnTxt='确定2'></component-twoBtn>
+</view>

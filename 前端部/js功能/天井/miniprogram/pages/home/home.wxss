@@ -1,0 +1,42 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #fff;
+}
+.home_wrap{
+  height: 642rpx;
+  background-color: aquamarine;
+}
+.home_inner{
+  width: 100%;
+  position: relative;
+}
+.home_bg{
+  width: 100%;
+  position: relative;
+
+}
+.home_search{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 4%;
+  position:absolute;
+  top: 0;
+}
+.home_search_left{
+  width: 169rpx;
+  height: 56rpx;
+}
+.home_logo{
+  width: 169rpx;
+  height: 56rpx;
+}
+.home_input{
+  width: 460rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 32px;
+  padding-left: 30rpx;
+  background-color: pink;
+}

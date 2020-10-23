@@ -1,0 +1,75 @@
+<!--
+ * @Description: 普通轮播
+ * @fileName: 
+ * @Author: Hu Sini
+ * @Date: 2020-09-27 09:56:32
+ * @LastEditors: Hu Sini
+ * @LastEditTime: 2020-09-27 15:59:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 纯使用swiper2  注意css 和js的文件 都是swiper2 -->
+    <link rel="stylesheet" href="css/swiper2.min.css">
+    <script src="lib/swiper2.min.js"></script>
+    <link rel="stylesheet" href="css/ordinarySwiper.css">
+</head>
+
+<body>
+    <div class="swiper-container myswiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/index_banner.jpg" alt="轮播图片"></div>
+            <div class="swiper-slide"><img src="./images/index_banner.jpg" alt="轮播图片"></div>
+            <div class="swiper-slide"><img src="./images/index_banner.jpg" alt="轮播图片"></div>
+        </div> <!-- 分页器 -->
+        <div class="pagination"></div>
+        <!-- 按钮 -->
+        <button class="btn_prev"></button>
+        <button class="btn_next"></button>
+
+    </div>
+
+
+    <script>
+        var autoplay = autoplay;
+        var loop = loop
+        if ($(".myswiper .swiper-slide").length > 1) { // 多张开始自动轮播
+            autoplay = 2000 // 自动轮播的时间
+            loop = true
+        } else {
+            $('.pagination').css('display', 'none') // 单张时分页器隐藏
+            loop = false
+        }
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: autoplay, //可选选项，自动滑动
+            loop: loop, //可选选项，开启循环
+            pagination: '.pagination', // 分页器
+            paginationClickable: true, // 分页器 可点击切换
+            initialSlide: 0,
+            autoplayDisableOnInteraction: false, // 手动后 自动 不停止 ie8无效
+            onInit: function (swiper) { // 按钮功能
+                swiper.swipeNext()
+                swiper.swipePrev();
+            },
+            onAutoplayStop: function (swiper) { // 重新启动自动轮播
+                if (!swiper.support.transitions) { //IE7、IE8
+                    swiper.startAutoplay()
+                }
+            }
+        })
+        // 按钮点击方法
+        $('.btn_prev').click(function () {
+            mySwiper.swipePrev();
+        })
+        $('.btn_next').click(function () {
+            mySwiper.swipeNext();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	
+<style type="text/css">
+ul.ul_list li{
+	width:100%;
+}
+
+/* 开始 */
+ul,li{
+	list-style: none;
+
+}
+ul {
+	width: 100%;
+	height: 100%;
+}
+ul li {
+	width: 22%;
+	margin: 0 1.5%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+ul li img{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	max-width:100%;
+	max-height:100%;
+	width:100%;
+	height:100%;
+}
+.bt_tu {
+	width: 100%;
+	height: 314px;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 5% 5%;
+	position: absolute;
+	top: -100%;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+}
+.bt_tu .bt_tus {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 32%;
+}
+.bt_tus p {
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+	color: #d1b883;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
+}
+.bt_tu a.btn {
+	display: block;
+	width: 116px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 20%;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	background: #deae49;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-o-border-radius: 40px;
+	border-radius: 40px;
+}
+</style>
+</head>
+<div class="con">
+
+<ul>
+	<li style="margin-top: 28.5px; margin-bottom: 28.5px; height: 315px;">
+		<img src="images/banner-01.jpg">
+		<div class="bt_tu" style="top:-100%">
+			<div class="bt_tus">
+				<p>英文网站</p>
+				<a class="btn" id="22" style="height: 40px; line-height: 40px;">快速预览</a>
+			</div>
+		</div>
+	</li>
+	<li style="margin-top: 28.5px; margin-bottom: 28.5px; height: 315px;">
+		<img src="images/banner-02.jpg">
+		<div class="bt_tu" style="top:-100%">
+			<div class="bt_tus">
+				<p>英文网站</p>
+				<a class="btn" id="22" style="height: 40px; line-height: 40px;">快速预览</a>
+			</div>
+		</div>
+	</li>
+</ul>
+
+<ul class="ul_list" style="clear: both;">
+	<li>1.引入jquery</li>
+	<li>2.复制css样式</li>
+	<li>3.复制js</li>
+</ul>
+
+<script type="text/javascript">
+	$(function () {
+		function hpvers(){
+			$("ul li").hover(function(){
+				$(".bt_tu",this).stop().animate({
+					top:'0'
+					},500);
+					},function(){
+						$(".bt_tu",this).stop().animate({
+						top:'-100%'
+					},500);
+				});
+		}
+		hpvers()
+	})
+</script>
+</body>

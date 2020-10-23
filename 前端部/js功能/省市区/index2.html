@@ -1,0 +1,155 @@
+<!--
+ * @Description: 省市区联动 一个下拉框
+ * @fileName: 
+ * @Author: Hu Sini
+ * @Date: 2020-09-28 08:36:30
+ * @LastEditors: Hu Sini
+ * @LastEditTime: 2020-09-28 13:40:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>省市区联动2</title>
+    <link rel="stylesheet" href="./css/index2.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./js/utils/http.js"></script>
+    <!-- 需要引入layui 和city-->
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/utils/city.js"></script>
+</head>
+
+<body>
+    <h4>省市区只有一个下拉框</h4>
+    <!-- 复制以下代码和js -->
+    <div class="addres_box">
+        <input type="text" id="innerAdress" readonly placeholder="请选择所在地区" class="  city_choose_input">
+        <!-- 省市区下拉 start -->
+        <div class="addres_list">
+            <ul class="province">
+            </ul>
+            <ul class="city">
+            </ul>
+            <ul class="area">
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <!-- 省市区下拉 end -->
+    </div>
+</body>
+<script>
+    $(function () {
+        // 初始化省市区数据
+        // 省份
+        var province = ChineseDistricts["86"]
+        var prostr = ""
+        for (prokey in province) {
+            prostr += '<li data-id="' + prokey + '">' + province[prokey] + '</li>'
+        }
+        $(".province").html(prostr)
+        // 默认城市显示
+        var defaltCity = '<li data-id="110100">' + ChineseDistricts['110000']["110100"] + '</li>'
+        $(".city").html(defaltCity)
+        // 默认区显示
+        var area = ChineseDistricts["110100"]
+        var areastr = ""
+        for (areakey in area) {
+            areastr += '<li data-id="' + areakey + '">' + area[areakey] + '</li>'
+        }
+        $(".area").html(areastr)
+
+
+        /**
+         * @Description: 点击选择省市区的输入框  展开省市区下拉
+         * @Author: longhaiyan
+         * @Date: 2020-09-12 09:27:52
+         */
+        $("body").on("click", ".city_choose_input", function () {
+            if ($(this).siblings('.addres_list').css("display") == "none") {
+                $(this).siblings('.addres_list').slideDown()
+            } else {
+                $(this).siblings('.addres_list').slideUp()
+            }
+        })
+
+        /**
+         * @Description: 选择省份
+         * @Author: longhaiyan
+         * @Date: 2020-09-12 09:08:17
+         */
+        $("body").on("click", ".province li", function () {
+            console.log($(this).data("id"), $(this).text())
+            $(this).addClass("on").siblings().removeClass("on")
+            var currentCities = ChineseDistricts[$(this).data("id")]
+            console.log(currentCities)
+            var citystr = ""
+            var cityCont = []
+            for (citykey in currentCities) {
+                citystr += '<li data-id="' + citykey + '">' + currentCities[citykey] + '</li>'
+                cityCont.push(citykey)
+            }
+            console.log(cityCont[0], ChineseDistricts[cityCont[0]])
+            var currentAreaDefault = ""
+            for (cadkey in ChineseDistricts[cityCont[0]]) {
+                currentAreaDefault += '<li data-id="' + cadkey + '">' + ChineseDistricts[cityCont[0]][
+                    cadkey
+                ] + '</li>'
+            }
+            $(this).parent().siblings(".area").html(currentAreaDefault)
+            $(this).parent().siblings(".city").html(citystr)
+        })
+
+        /**
+         * @Description: 选择城市
+         * @Author: longhaiyan
+         * @Date: 2020-09-12 09:08:17
+         */
+        $("body").on("click", ".city li", function () {
+            console.log($(this).data("id"), $(this).text())
+            $(this).addClass("on").siblings().removeClass("on")
+            var currentArea = ChineseDistricts[$(this).data("id")]
+            console.log(currentArea)
+            var areastr = ""
+            for (areakey in currentArea) {
+                areastr += '<li data-id="' + areakey + '">' + currentArea[areakey] + '</li>'
+            }
+            $(this).parent().siblings(".area").html(areastr)
+        })
+
+        /**
+         * @Description: 选择区
+         * @Author: longhaiyan
+         * @Date: 2020-09-12 09:08:17
+         */
+        $("body").on("click", ".area li", function () {
+            // console.log($(this).data("id"),$(this).text())
+            var proRes = ""
+            var cityRes = ""
+            var areaRes = ""
+            $(this).addClass("on").siblings().removeClass("on")
+            if ($(this).parents('.addres_list').find(".province li.on").length == 0) {
+                proRes = $(this).parents('.addres_list').find(".province li").eq(0).text()
+            } else {
+                proRes = $(this).parents('.addres_list').find(".province li.on").text()
+            }
+            if ($(this).parents('.addres_list').find(".city li.on").length == 0) {
+                cityRes = $(this).parents('.addres_list').find(".city li").eq(0).text()
+            } else {
+                cityRes = $(this).parents('.addres_list').find(".city li.on").text()
+            }
+            areaRes = $(this).text()
+            var ciryResult = proRes + '-' + cityRes + '-' + areaRes
+            $(this).parents(".addres_list").siblings("input").val(ciryResult)
+            $(this).parents(".addres_list").slideUp()
+        })
+
+
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-showModal": "../../components/showModal/showModal"
+  },
+  "navigationBarTitleText": "父子组件传参数"
+}

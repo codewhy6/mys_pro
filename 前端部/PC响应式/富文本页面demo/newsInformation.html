@@ -1,0 +1,288 @@
+<!--
+ * @Description:  3-1新闻动态-详情   
+ * @fileName: newsInformation
+ * @Author: Liangxinyang
+ * @Date: 2020-04-27 11:04:51
+ * @LastEditors: Liangxinyang
+ * @LastEditTime: 2020-04-27 15:21:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司,http://www.chemguan.com/">
+    <meta name="copyright" content="九州奇士">
+    <title>新闻动态-详情-南京旭州电子科技有限公司</title>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 写响应式网站引入bootstrap.min.js,非响应式不需要引入 -->
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="js/utils/regExp.js"></script>
+    <script type="text/javascript" src="js/utils/util.js"></script>
+    <script type="text/javascript" src="js/utils/http.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pulicStyle.css">
+    <link rel="stylesheet" href="css/newsInformation.css">
+
+    <!--[if lt IE 9]>
+         <script type="text/javascript" src="lib/html5shiv.v3.72.min.js"></script>
+         <script type="text/javascript" src="lib/respond.min.js"></script>
+     <![endif]-->
+     <style>
+        .rich h1{
+             font-size: 22px;
+             font-weight: bold;
+         }
+         .rich h2{
+             font-size: 20px;
+             font-weight: bold;
+         }
+         .rich h3{
+             font-size: 18px;
+             font-weight: bold;
+         }
+         .rich h4{
+             font-size: 16px;
+             font-weight: bold;
+         }
+         .rich h5{
+             font-size: 14px;
+             font-weight: bold;
+         }
+         .rich h6{
+             font-size: 12px;
+             font-weight: bold;
+         }
+        .rich {
+            font-size: 12px;
+            color: #666666;
+            line-height: 150%;
+            padding: 50px 0 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .rich img{
+            margin: 15px 0;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--头部 开始-->
+    <div id="header"></div>
+    <!--头部 结束-->
+    <!-- banner start -->
+    <div class="banner" style="background: url(images/newsBanner.jpg) no-repeat 40% 50%;background-size: auto 100%;">
+        <img src="images/newsBanner.jpg" alt="海报" class="hidden-xs">
+    </div>
+    <!-- banner END -->
+    <!--面包屑导航 start-->
+    <div class="bd_whole_top hidden-xs">
+        <p class="breadcrumb_navigation container">
+            <a class="firsta" href="index.html">
+                <img src="images/home_icon.png" class="home_icon" />
+                首页
+            </a>
+            <span class="next_ico">
+                >
+            </span>
+            <a class="firsta" href="news.html">
+                新闻动态
+            </a>
+            <span class="next_ico">
+                >
+            </span>
+            <a class="firsta" href="news.html">
+                行业动态
+            </a>
+            <span class="next_ico">
+                >
+            </span>
+            <span>详情 </span>
+        </p>
+    </div>
+    <!--面包屑导航 END-->
+    <!-- tab 栏 start -->
+    <div class="newDetail container">
+        <section class="tab">
+            <ul>
+                <li class="on">行业动态</li>
+                <li>公司新闻</li>
+                <li>政策法规</li>
+            </ul>
+        </section>
+        <!-- tab 栏 end -->
+        <!-- detail start -->
+        <section class="detail">
+            <div class="title">
+                <p class="big">“最美青春梦”江苏青少年才走进旭洲电子参观学习</p>
+                <p class="small">
+                    <span>类型：行业动态</span>
+                    <span>发布时间：2020年2月13日 </span>
+                    <span>浏览量：235</span>
+                </p>
+            </div>
+            <div class="rich">
+                <p>
+                    2015年8月10日下午，“飞扬中国梦”余姚青少英才们又来到了申江万国数据信息股份有限公司，体验档案数据管理方面的知识。来到档案信息库，工作人员十分认真谨慎，向同学们介绍参观参观信息库的注意事项。由于信息数据库里面的资料都是机密。所以同学们进去之前不能带手机、包，还要有专人跟随开门，开锁。
+                </p>
+                <p>
+                    随后在工作人员的带领下，青少英才们参观了公司的档案信息库，介绍了全产业的各项服务，档案管理软件系统，电子数据备份，软件定制开发等。通过对数据信息库的探索，颠覆了同学们对管理传统理解，感叹第一次见到这么多档案和这么多专业的管理。
+                </p>
+                <p>
+                    <img src="images/rich.png" alt="图片" class="center-block">
+                </p>
+                <p>
+                    参观完档案信息库后申江万国公司特意为同学们举办档案数据知识交流会，公司朱董、谭总为同学们上了一节别开生面的档案数据管理专业知识会，并讲到欧美等发达国家是如何处理和储存档案的，让同学们了解到，相比国外的档案管理，我国档案管理是一流的，要比欧美等发达国家的档案管理先进很多，通过分享交流会同学们收获颇丰。
+                </p>
+                <p>
+                    通过一天下来的学习体验，余姚青少英才感慨万千，学到了只有社会拓展体验才能学到的东西，并表示，通过自己的观察学习，一定把在京的所见所学带回家乡，讲给身边的小伙伴们听，也让家乡的小伙伴分享自己的收获。
+                </p>
+
+
+
+            </div>
+
+        </section>
+        <!-- detail start -->
+        <section class="pageList">
+            <div class="le col-md-10 col-sm-9 col-xs-12">
+                <p><span>上一篇：</span><a href="newsInformation.html">没有了~</a></p>
+                <p><span>下一篇：</span><a href="newsInformation.html"> 智能科技自动驾驶汽车驶入浙江交博会，展示未来智慧出行体验</a></p>
+            </div>
+            <div class="ri col-md-2 col-sm-3 col-xs-12">
+                <a href="#">
+                    <img src="images/backList.png" alt="返回">
+                    <span>返回列表</span>
+                </a>
+
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+
+
+    <!--底部 开始-->
+    <div id="footer"></div>
+    <!--底部 结束-->
+    <script type="text/javascript">
+        $(function () {
+            /**
+             * @Description: 头尾引入
+             * @Author: Liangxinyang
+             * @Date: 2020-04-27 11:00:48
+             */
+            $("#header").load("./include/top.html");
+            $("#footer").load("./include/bottom.html");
+
+            /**
+             * @Description: 
+             * @Author: Liangxinyang
+             * @Date: 2020-04-27 13:15:30
+             */
+            $("body").on("click", ".tab ul li", function () {
+                $(this).addClass("on").siblings().removeClass("on");
+            })
+
+            let str = `<p style="font-size:14px;">
+        <br />
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        建筑装修装饰工程专业承包资质分为一级、二级。
+</p>
+<h2 style="color:#444444;font-family:&quot;">
+        一级资质标准
+</h2>
+<h3 style="color:#444444;font-family:&quot;">
+        1.1 企业资产
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        净资产1500万元以上。
+</p>
+<h3 style="color:#444444;font-family:&quot;">
+        1.2 企业主要人员
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （1）建筑工程专业一级注册建造师不少于 5人。&nbsp; &nbsp;（2）技术负责人具有10年以上从事工程施工技术管理工作经历，且具有工程序列高级职称或建筑工程专业一级注册建造师（或一级注册建筑师或一级注册结构工程师）执业资格；建筑美术设计、结构、暖通、给排水、电气等专业中级以上职称人员不少于 10人。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （3）持有岗位证书的施工现场管理人员不少于 30人，且施工员、质量员、安全员、材料员、造价员、劳务员、资料员等人员齐全。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （4）经考核或培训合格的木工、砌筑工、镶贴工、油漆工、石作业工、水电工等中级工以上技术工人不少于 30人。
+</p>
+<h3 style="color:#444444;font-family:&quot;">
+        1.3 企业工程业绩
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        近5年承担过单项合同额 1500万元以上的装修装饰工程 2项，工程质量合格。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        <img src="http://www.suguan100.com/upfile/201811/2018112852819693.jpg" title="1.jpg" alt="1.jpg" style="width:auto;" /> 
+</p>
+<h2 style="color:#444444;font-family:&quot;">
+        二级资质标准
+</h2>
+<h3 style="color:#444444;font-family:&quot;">
+        2.1 企业资产
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        净资产200万元以上。
+</p>
+<h3 style="color:#444444;font-family:&quot;">
+        2.2 企业主要人员
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （1）建筑工程专业注册建造师不少于3人。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （2）技术负责人具有 8年以上从事工程施工技术管理工作经历，且具有工程序列中级以上职称或建筑工程专业注册建造师（或注册建筑师或注册结构工程师）执业资格；建筑美术设计、结构、暖通、给排水、电气等专业中级以上职称人员不少于5人。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （3）持有岗位证书的施工现场管理人员不少于 10人，且施工员、质量员、安全员、材料员、造价员、劳务员、资料员等人员齐全。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （4）经考核或培训合格的木工、砌筑工、镶贴工、油漆工、石作业工、水电工等专业技术工人不少于 15人。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        （5）技术负责人（或注册建造师)主持完成过本类别工程业绩不少于2项
+</p>
+<h2 style="color:#444444;font-family:&quot;">
+        承包工程范围
+</h2>
+<h3 style="color:#444444;font-family:&quot;">
+        3.1 一级资质
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        可承担各类建筑装修装饰工程，以及与装修工程直接配套的其他工程的施工。
+</p>
+<h3 style="color:#444444;font-family:&quot;">
+        3.2 二级资质
+</h3>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        可承担单项合同额 2000万元以下的建筑装修装饰工程，以及与装修工程直接配套的其他工程的施工。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        注：
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        1.与装修工程直接配套的其他工程是指在不改变主体结构的前提下的水、暖、电及非承重墙的改造。
+</p>
+<p style="font-size:14px;color:#444444;font-family:&quot;">
+        2.建筑美术设计职称包括建筑学、环境艺术、室内设计、装璜设计、舞美设计、工业设计、雕塑等专业职称。
+</p>
+<p>
+        <br />
+</p>`
+            $(".rich").html(str);
+        })
+    </script>
+</body>
+
+</html>

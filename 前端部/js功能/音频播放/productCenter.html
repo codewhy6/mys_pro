@@ -1,0 +1,433 @@
+<!--
+ * @Description: 1-0-0产品
+ * @fileName: productCenter.html
+ * @Author: CaoChen
+ * @Date: 2020-01-09 11:27:04
+ * @LastEditors: Li Suwan
+ * @LastEditTime: 2020-07-21 18:41:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="南京贞观互联网科技有限公司,http://www.chemguan.com/">
+    <meta name="copyright" content="Frequency Heals">
+    <title>All Products</title>
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!-- 写响应式网站引入bootstrap.min.js,非响应式不需要引入 -->
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="js/utils/regExp.js"></script>
+    <script type="text/javascript" src="js/utils/util.js"></script>
+    <script type="text/javascript" src="js/utils/http.js"></script>
+    <script type="text/javascript" src="js/top1.js"></script>
+
+    <script src="//api.html5media.info/1.2.2/html5media.min.js"></script> <!-- 音频视频兼容模式 -->
+    <script type="text/javascript" src="js/audioUtil.js"></script> <!-- 音频处理JS文件 -->
+    
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pulicStyle.css">
+    <link rel="stylesheet" href="css/productCenter.css">
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="lib/html5shiv.v3.72.min.js"></script>
+        <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!--头部 开始-->
+    <div id="header"></div>
+    <!--头部 结束-->
+    <!-- 背景条 -->
+    <div class="product_bg">
+        <div class="product_tit">
+            <p class="product_tit_p1">Download your favorite sound.</p>
+            <p class="product_tit_p2">Raise Your Vibration ~ Made in Frequency Heals.</p>
+        </div>
+    </div>
+    <div class="product_con">
+        <div class="product_con_left">
+            <p class="product_con_tit"><span>Search By Category</span><img src="images/product_jt01.png"
+                    class="product_jt"></p>
+            <ul class="product_con_list">
+                <li><a href="javascript:void(0);"><i></i><span>Allergy</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Blood</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Cancer</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Cold</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Dental</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Digestive System</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Ear Eyes Nose and Throat</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>General Healing</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Immune System</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Inflammation-Infection</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Mental</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Parasites and Bacteria</span></a></li>
+                <li><a href="javascript:void(0);"><i></i><span>Virus</span></a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="product_content_title">
+                <div class="product_content_left">
+                    Showing 1-24 of 90 results
+                </div>
+                <div class="product_content_right">
+                    <div class="product_content_select">
+                        <span>Sort By</span>
+                        <input type="text" placeholder="" value="Recommend" readonly unselectable="on"
+                            onfocus="this.blur()">
+                        <img src="images/product_jt01.png" class="product_jt">
+                    </div>
+                    <ul class="product_content_list">
+                        <li>Recommend</li>
+                        <li>Hot</li>
+                        <li>New</li>
+                        <li>Price Low to High</li>
+                        <li>Price High To Low</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- download 下载颜色样式 添加download 类名 -->
+            <!-- 如果已经加入购物车 则 按钮显示的文字是 already in cart -->
+            <!-- 单首歌曲 跳转详情页面productDetail；专辑 跳转详情页面 productDetailAlbum -->
+            <ul class="product_content_lists">
+                <li class="product_audio">
+                    <!--音频播放链接 start-->
+                    <!--音频播放链接 end-->
+                    <a href="productDetail.html">
+                        <div class="pro_pic">
+                            <img src="images/product_img01.jpg">
+                        </div>
+                        <p class="pro_content_tit">Activate 100% Brain Potential - Genius Brain</p>
+                    </a>
+                    <p class="pro_content_p1">$1.99</p>
+                    <div class="pro_content_div1">
+                        <div class="pro_content_div2">
+                            <i class="home_lis_i" newsId="slideTest12" musicsrc="http://www.tyssgzs.com/projectimg/200401LH0OHIIV.mp3"></i>
+                            <span class="pro_play_start">00:00</span>
+                            <div class="slideTest_div">
+                                <div class="slideTest" id="slideTest12"></div>
+                                <i class="pro_progress" style="left:10%" ></i>
+                            </div>
+                            <span class="pro_play_end">10:30</span>
+                        </div>
+                        <span class="pro_collect"></span>
+                    </div>
+                    <a href="javascript:void(0);" class="pro_content_links">
+                        <!-- 如果已经加入购物车 则 按钮显示的文字是 already in cart -->
+                        Add to Cart
+                    </a>
+                </li>
+                <li class="product_audio">
+                     <!--音频播放链接 start-->
+                     <!--音频播放链接 end-->
+                    <a href="productDetail.html">
+                        <div class="pro_pic">
+                            <img src="images/product_img02.jpg">
+                        </div>
+                        <p class="pro_content_tit">Activate 100% Brain Potential - Genius Brain</p>
+                    </a>
+                    <p class="pro_content_p1">$1.99</p>
+                    <div class="pro_content_div1">
+                        <div class="pro_content_div2">
+                            <i class="home_lis_i" newsId="slideTest1" musicsrc="http://www.tyssgzs.com/projectimg/200401LH0OHIIV.mp3"></i>
+                            <span class="pro_play_start">00:10</span>
+                            <div class="slideTest_div">
+                                <div class="slideTest" id="slideTest1"></div>
+                                
+                                <i class="pro_progress" style="left:10%" ></i>
+                            </div>
+                            <span class="pro_play_end" >10:30</span>
+                        </div>
+                        <span class="pro_collect"></span>
+                    </div>
+                    <a href="javascript:void(0);" class="pro_content_links">
+                        <!-- 如果已经加入购物车 则 按钮显示的文字是 already in cart -->
+                        Add to Cart
+                    </a>
+                </li>
+                <li class="download product_audio">
+                    <a href="productDetailAlbum.html">
+                        <div class="pro_pic">
+                            <img src="images/product_img03.jpg">
+                        </div>
+                        <p class="pro_content_tit">Activate 100% Brain Potential - Genius Brain</p>
+                    </a>
+                    <p class="pro_content_p1 underline">$1.99</p>
+                    <div class="pro_content_div1">
+                        <div class="pro_content_div2">
+                            <i class="home_lis_i" newsId="slideTest2" musicsrc="images/200328HYFBSWAA.mp3"></i>
+                            <span class="pro_play_start">00:10</span>
+                            <div class="slideTest_div">
+                                <div class="slideTest" id="slideTest2"></div>
+                                <i class="pro_progress" ></i>
+                            </div>
+                            <span class="pro_play_end">10:30</span>
+                        </div>
+                        <span class="pro_collect"></span>
+                    </div>
+                    <a href="javascript:void(0);" class="pro_content_links">
+                        Download
+                    </a>
+                </li>
+                <li class="product_audio">
+                    <a href="productDetail.html">
+                        <div class="pro_pic">
+                            <img src="images/product_img01.jpg">
+                        </div>
+                        <p class="pro_content_tit">Activate 100% Brain Potential - Genius Brain</p>
+                    </a>
+                    <p class="pro_content_p1">$1.99</p>
+                    <div class="pro_content_div1">
+                        <div class="pro_content_div2">
+                            <i class="home_lis_i" newsId="slideTest3" musicsrc="images/200316RPX3OE3K.mp3"></i>
+                            <span class="pro_play_start">00:10</span>
+                            <div class="slideTest_div">
+                                <div class="slideTest" id="slideTest3"></div>
+                                <i class="pro_progress" ></i>
+                            </div>
+                            <span class="pro_play_end">10:30</span>
+                        </div>
+                        <span class="pro_collect"></span>
+                    </div>
+                    <a href="javascript:void(0);" class="pro_content_links">
+                        <!-- 如果已经加入购物车 则 按钮显示的文字是 already in cart -->
+                        Add to Cart
+                    </a>
+                </li>
+                <li>
+                    <a href="productDetailAlbum.html">
+                        <div class="pro_pic">
+                            <div class="album album1"><img src="images/product_img05.jpg" alt="img"></div>
+                            <div class="album album2"><img src="images/product_img05.jpg" alt="img"></div>
+                            <div class="album album3"><img src="images/product_img05.jpg" alt="img"></div>
+                        </div>
+                        <p class="pro_content_tit">Activate 100% Brain Potential - Genius Brain</p>
+                    </a>
+                    <p class="pro_content_p1">$1.99</p>
+                    <div class="pro_content_div1">
+                        <div class="pro_content_div2">
+                            <p class="pro_album_p1">
+                                <img src="images/product_zj.png">
+                                <span class="pro_album_span1">Album</span>
+                            </p>
+                            <p class="pro_album_p1">
+                                <span class="pro_album_span2">4 </span><span>Audios</span>
+                            </p>
+                        </div>
+                        <span class="pro_collect"></span>
+                    </div>
+                    <a href="javascript:void(0);" class="pro_content_links">
+                        Add to Cart
+                    </a>
+                </li>
+                <i class="clear"></i>
+            </ul>
+            <div class="clear"></div>
+            <!--分页-->
+            <div class="pages hidden-xs">
+                <div class="pages_div">
+                    <a href="#" class="prevs">
+                        < </a>
+                            <span class="number">
+                                <a href="#" class="on">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">...</a>
+                                <a href="#">12</a>
+                            </span>
+                            <a href="#" class="nexts">></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--底部 开始-->
+    <div id="footer"></div>
+    <!--底部 结束-->
+    <audio src="" id="musicaudio"></audio>
+    
+
+
+    <script type="text/javascript">
+        $(function () {
+            /**
+             * @Description: 点击下拉框
+             * @Author: caochen
+             * @Date: 2020-06-01 13:37:28
+             */
+            if ($(window).width() < 768) {
+                $('body').on('click', '.product_content_select', function () {
+                    if ($(this).next('.product_content_list').css('display') == "none") {
+                        $(this).next('.product_content_list').slideDown()
+                        $(this).children('.product_jt').css({
+                            "transform": "rotate(-180deg)"
+                        })
+                    } else {
+                        $(this).next('.product_content_list').slideUp()
+                    }
+                })
+                /**
+                * @Description: 点击下拉框内容 选择
+                * @Author: caochen
+                * @Date: 2020-06-01 15:54:58
+                */
+                $('body').on('click', '.product_content_list li', function () {
+                    $(this).parent('.product_content_list').prev('.product_content_select').children('input').val($(this).text())
+                    $(this).parent('.product_content_list').slideUp()
+                    $(this).addClass('on').siblings().removeClass('on')
+                })
+            } else {
+                $('body').on('click', '.product_content_list li', function () {
+                    $(this).parent('.product_content_list').prev('.product_content_select').children('input').val($(this).text())
+                    $(this).addClass('on').siblings().removeClass('on')
+                })
+            }
+
+
+
+            
+            /**
+             * @Description: 点击收藏
+             * @Author: caochen
+             * @Date: 2020-06-01 16:21:49
+             */
+            $('body').on('click', '.pro_collect', function () {
+                if ($(this).hasClass('on')) {
+                    $(this).removeClass('on')
+                } else {
+                    $(this).addClass('on')
+                }
+            })
+
+           
+            /**
+             * @Description: 已购买歌曲点击播放按钮
+             * @Author: caochen
+             * @Date: 2020-06-01 16:30:35
+             */
+            $('body').on('click', '.product_content_list li.download .home_lis_i', function () {
+                if ($(this).hasClass('on')) {
+                    $(this).removeClass('on')
+                } else {
+                    $('.home_lis_i').removeClass('on')
+                    $(this).addClass('on')
+                }
+
+            })
+            /**
+             * @Description: 移动端左侧导航栏收缩
+             * @Author: caochen
+             * @Date: 2020-06-01 18:26:36
+             */
+            if ($(window).width() < 768) {
+                $('body').on('click', '.product_con_tit', function () {
+                    if ($(this).next('.product_con_list').css('display') == "none") {
+                        $(this).next('.product_con_list').slideDown()
+                    } else {
+                        $(this).next('.product_con_list').slideUp()
+                    }
+                })
+                $('body').on('click', '.product_con_list li', function () {
+                    $(this).parent().slideUp()
+                })
+            }
+            /**
+             * @Description: 左侧导航栏滑动
+             * @Author: caochen
+             * @Date: 2020-06-01 18:31:24
+             */
+            if ($(window).width() > 767) {
+                document.addEventListener('scroll', function (event) {
+                    var scrollDistance = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                    if (scrollDistance >= 230) { // 触发的位置
+                        $('.product_con_left').addClass('scorll')
+                    } else {
+                        $('.product_con_left').removeClass('scorll')
+                    }
+                });
+            }
+            /**
+             * @Description: 左侧导航栏点击选中
+             * @Author: caochen
+             * @Date: 2020-06-01 18:31:24
+             */
+            $('body').on('click', '.product_con_list li', function () {
+                $(this).addClass('on').siblings().removeClass('on')
+            })
+
+
+
+            $("#header").load("./include/top.html");
+            $("#footer").load("./include/bottom.html");
+            /**
+             * @Description: 头部选中
+             * @Author: longhaiyan
+             * @Date: 2020-06-08 13:16:38
+             * 产品页是根据筛选条件选中头部的    All Products->0   Most Popular->1  Newest Releases->2  Healing->3
+             */
+            setTimeout(function () {
+                $('header nav ul li').eq(0).addClass('on')
+            }, 200)
+
+
+            
+
+            
+
+
+
+
+
+
+            // 音乐播放start
+            
+             /**
+             * @Description: 点击播放按钮
+             * @Author: LiSuwan
+             * @Date: 2020-07-20 16:23:51
+             * @LastEditors: Li Suwan
+             * @LastEditTime: Do not edit
+             */
+             $('body').on('click', '.home_lis_i', function () {
+                var musicsrc=$(this).attr("musicsrc");
+                    var audio = document.getElementById("musicaudio");
+                    var newsId=$(this).attr("newsId");
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        audioStop(audio);
+                        currentId="";
+                    }else{
+                        currentId=newsId;
+                        debugger
+                        console.log("currentId:"+currentId);
+                        $('.home_lis_i').removeClass('on');
+                        $(this).addClass('on');
+                        debugger
+                        audioStart(audio,musicsrc);
+                        audioState(audio);
+                        initSlient(audio);
+                    }
+
+            })
+
+
+
+
+
+            // 音乐播放end
+
+
+
+            
+        })
+    </script>
+</body>
+
+</html>

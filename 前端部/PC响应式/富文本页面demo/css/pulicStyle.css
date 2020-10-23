@@ -1,0 +1,70 @@
+/*
+ * @Description: 公共的样式写在这个文件中
+ * @fileName: pulicStyle.css
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 13:31:02
+ * @LastEditors: Liangxinyang
+ * @LastEditTime: 2020-04-27 14:01:16
+ */
+/* 面包屑导航 start  longhaiyan */
+.bd_whole_top {
+    width: 100%;
+    background: #f8f8f8;
+    border-top:1px solid #e5e5e5;
+    border-bottom:1px solid #e5e5e5;
+}
+.bd_whole_top_white{background-color:#fff;}
+.breadcrumb_navigation {
+   /* width: 1200px; */
+   padding:20px 0px;
+   margin:0px auto;
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   color: #999999;
+}
+
+.breadcrumb_navigation a ,.breadcrumb_navigation span{
+   font-size: 16px;
+   color: #999999;
+}
+
+.firsta {
+   display: flex;
+   /* justify-content: ; */
+   align-items: center;
+}
+
+.next_ico {
+   margin: 0px 5px;
+}
+
+.breadcrumb_navigation a:hover {
+   color: #f56d2f;
+}
+
+.home_icon {
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+}
+
+/* 面包屑导航 end */
+
+@media (min-width: 200px) {
+.banner{ height: 135px;}   
+
+}
+
+@media (min-width: 768px) {
+ .banner{ height: auto;}
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    
+}

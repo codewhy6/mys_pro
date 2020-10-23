@@ -1,0 +1,72 @@
+/********************************轮播(优创实例)start*******************************************/
+.lunbo-carousel1 .swiper-pagination-bullet{
+	width: 6%;
+    height: 6px;
+    background: rgba(255,255,255,0.7);
+    margin: 0 10px;
+    border: none;
+    border-radius: 0;
+    opacity:.4;
+}
+.lunbo-carousel1 .swiper-pagination-bullet-active{opacity:1;}
+/********************************轮播(优创实例)end*******************************************/
+
+/********************************轮播(宁博瑞)start*******************************************/
+.lunbo-carousel2 .swiper-button-next,
+.lunbo-carousel2 .swiper-button-prev{
+	width:60px;
+	height:60px;
+	border:1px solid #fff;
+	color:#fff;
+	text-align:center;
+	font-size:24px;
+}
+.lunbo-carousel2 .swiper-button-next:hover,
+.lunbo-carousel2 .swiper-button-prev:hover{background-color:#e70001;border:0;}
+.lunbo-carousel2 .swiper-button-next:after,
+.lunbo-carousel2 .swiper-button-prev:after{
+	display:none;
+}
+.lunbo-carousel2 .swiper-slide .black span{color:#fff;text-transform:uppercase;font-size:18px;display:inline-block;float:right;margin-right:26%;margin-top:10px;}
+.lunbo-carousel2 .swiper-slide .black{
+	padding:35px ;
+	width: 50%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	font-size: 34px;
+	color: #FFF;
+}
+@media (min-width: 200px) and (max-width:767px) {
+	.lunbo-carousel2 .swiper-slide .black{padding:7px;font-size:20px;}
+	.lunbo-carousel2 .swiper-button-next, .lunbo-carousel2 .swiper-button-prev{width:30px;height:30px;}
+	.lunbo-carousel2 .swiper-button-next{right:9px;bottom:5px;top:auto;}
+	.lunbo-carousel2 .swiper-button-prev{right:38px;bottom:5px;top:auto;left:auto;}
+}
+@media(min-width:768px) {
+	.lunbo-carousel2 .swiper-slide .black{padding:7px;font-size:24px;}
+	.lunbo-carousel2 .swiper-slide .black span{margin-top:5px;}
+	.lunbo-carousel2 .swiper-button-next, .lunbo-carousel2 .swiper-button-prev{width:40px;height:40px;}
+	.lunbo-carousel2 .swiper-button-next{right:15px;bottom:5px;top:auto;}
+	.lunbo-carousel2 .swiper-button-prev{right:54px;bottom:5px;top:auto;left:auto;}
+}
+@media(min-width:992px) {
+	.lunbo-carousel2 .swiper-slide .black{padding:20px;font-size:32px;}
+	.lunbo-carousel2 .swiper-slide .black span{margin-top:10px;}
+	.lunbo-carousel2 .swiper-button-next, .lunbo-carousel2 .swiper-button-prev{width:50px;height:50px;}
+	.lunbo-carousel2 .swiper-button-next{right:25px;bottom:16px;top:auto;}
+	.lunbo-carousel2 .swiper-button-prev{right:74px;bottom:16px;top:auto;left:auto;}
+}
+@media(min-width:1200px) {
+	.lunbo-carousel2 .swiper-slide .black{padding:35px;font-size:34px;}
+	.lunbo-carousel2 .swiper-slide .black span{margin-top:15px;}
+	.lunbo-carousel2 .swiper-button-next, .lunbo-carousel2 .swiper-button-prev{width:60px;height:60px;}
+	.lunbo-carousel2 .swiper-button-next{right:35px;bottom:30px;}
+	.lunbo-carousel2 .swiper-button-prev{right:94px;bottom:30px;}
+}
+/********************************轮播(宁博瑞)end*******************************************/
+
+
+
+

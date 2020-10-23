@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="author" content="Tencent-CP" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="Description" content=""/>
+<meta name="Keywords" content=""/>
+<title>无信号雪花效果</title>
+<style type="text/css">
+* {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;   
+    margin:0;
+    padding:0;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 7.5rem;
+    max-height: 100vh;
+}
+.media-bg {
+    position: relative;
+    max-width: 280px;
+    max-height: 460px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    background: linear-gradient(-33deg, #000, #000 50%, #333 50%, #333);
+    border-radius: 30px;
+}
+
+
+.media-button:active {
+    background: linear-gradient(-33deg, #666, #666 40%, #000 40%, #000);
+}
+</style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <a href="#" id="static-toggle" class="media-button"></a>
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script>
+window.onload = function() {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    //canvas dimensions
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+
+    var colorArray = [
+        [255, 255, 255],
+        [255, 0, 0],
+        [0, 255, 0],
+        [0, 0, 255],
+        [145, 145, 145]
+    ];
+
+    function color() {
+        return {
+            r: Math.floor(Math.random() * colorArray[0][0]),
+            g: Math.floor(Math.random() * colorArray[0][1]),
+            b: Math.floor(Math.random() * colorArray[0][2]),
+        }
+    }
+
+    function static() {
+        // create new canvas image data based on same width/height
+        var imageData = ctx.createImageData(W, H),
+            //get how many values we should need for a canvas of W width and H height
+            n = imageData.data.length,
+            //will hold all pixel data of our canvas [r,g,b,a,r,g,b,a,...] wow
+            components = [],
+            tmpComponent;
+
+        for (var i = 0; i < n; i += 4) {
+            tmpComponent = color();
+            //
+            components.push(tmpComponent.r, tmpComponent.g, tmpComponent.b, 255);
+        }
+
+        components = Uint8ClampedArray.from(components);
+        imageData.data.set(components);
+        ctx.putImageData(imageData, 0, 0);
+
+        requestAnimationFrame(static);
+    }
+
+    //change order of colorArray
+    function colorSwap(e) {
+        e.preventDefault();
+        tmp = colorArray.pop();
+        colorArray.unshift(tmp);
+    }
+
+    function init() {
+        //add event listeners
+        var staticToggle = document.getElementById('static-toggle');
+        staticToggle.addEventListener('click', colorSwap, false);
+        //start animation
+        requestAnimationFrame(static);
+    }
+    init();
+}
+</script>
+<script>
+//REM自适应
+function AutoPage(){ 
+	document.documentElement.style.fontSize = document.documentElement.clientWidth * 100 / 750 + 'px';
+ } ;
+AutoPage();
+$(window).on('resize',function(){
+	AutoPage();
+});
+</script>
+</html>

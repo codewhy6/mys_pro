@@ -1,0 +1,41 @@
+/* components/IknowDia/Iknow.wxss */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 550rpx;
+  min-height: 327rpx;
+  background-color: #fff;
+  border-radius: 23rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 34rpx 0rpx;
+  box-sizing: border-box;
+}
+.wrapper .wrapper_tit{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 33rpx;
+}
+.wrapper .wrapper_sub{
+  width: 83%;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+.wrapper_btn{
+  width: 83%;
+  height: 82rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 82rpx;
+  margin-top: 61rpx;
+  background-color: #c11c24;
+  border-radius: 55rpx;
+}

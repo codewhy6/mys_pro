@@ -1,0 +1,68 @@
+<!--
+ * @Description: ios键盘事件
+ * @fileName: 
+ * @Author: caochen
+ * @Date: 2020-06-03 17:31:27
+ * @LastEditors: caochen
+ * @LastEditTime: 2020-06-03 17:42:56
+--> 
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!-- 配置rem -->
+    <script type="text/javascript" src="../js功能/utils/resize.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .inputDiv{
+        width:100%;
+        padding:0.3rem;
+        box-sizing: border-box;
+    }
+    .input_text{
+        border:1px solid #e5e5e5;
+        padding:0.1rem;
+    }
+</style>
+<body>
+    <div class="inputDiv">
+        <input type="text" class="input_text"> 
+    </div>
+    <ul>
+        <li>使用说明</li>
+        <li>1、适用于移动端ios键盘事件的js</li>
+        <li>2、样式无需复制</li>
+        <li>3、复制JS</li>
+    </ul>	
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function(){
+     /**
+     * @Description: ios键盘事件
+     * @Author: caochen
+     * @Date: 2020-06-03 17:04:02
+     */
+    $("input,select,textarea").blur(function(){
+    setTimeout(function() {
+            var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
+            window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+        }, 100);
+    })
+})
+</script>
+</body>
+</html>
+

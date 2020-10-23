@@ -1,0 +1,129 @@
+.privacyPolicy {
+    background: url(../images/signBg.png) no-repeat top center;
+    background-size: 100% auto;
+}
+
+.privacyPolicy .toptit {
+    text-align: center;
+    padding: 44px 0 46px;
+    font-size: 32px;
+    color: #333333;
+}
+
+.privacyPolicy .container {
+    background-color: #ffffff;
+    box-shadow: 0px 12px 28px 2px rgba(179, 182, 194, 0.16);
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 70px;
+}
+
+.rich h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.rich h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rich h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rich h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rich h5 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rich h6 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rich {
+    font-size: 16px;
+    color: #666666;
+    line-height: 28px;
+    /* padding: 50px 0 30px; */
+    /* border-bottom: 1px solid #eee; */
+}
+
+.rich img {
+    margin: 15px 0;
+    max-width: 100%;
+}
+
+.rich p {
+    margin-bottom: 10px;
+}
+
+.rich .rich_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+@media (min-width: 200px) {
+    .privacyPolicy {
+        background-size: 100% 90px;
+    }
+    .privacyPolicy .toptit {
+        padding: 20px 0;
+        font-size: 18px;
+    }
+    .privacyPolicy .container {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .privacyPolicy {
+        background-size: 100% 130px;
+    }
+    .privacyPolicy .toptit {
+        padding: 25px 0;
+        font-size: 24px;
+    }
+    .privacyPolicy .container {
+        padding: 25px;
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 992px) {
+    .privacyPolicy {
+        background-size: 100% 150px;
+    }
+    .privacyPolicy .toptit {
+        padding: 35px 0;
+        font-size: 28px;
+    }
+    .privacyPolicy .container {
+        padding: 35px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .privacyPolicy {
+        background-size: 100% auto;
+    }
+    .privacyPolicy .toptit {
+        padding: 44px 0 46px;
+        font-size: 32px;
+    }
+    .privacyPolicy .container {
+        padding: 50px;
+        margin-bottom: 70px;
+    }
+}

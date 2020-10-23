@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <text class="title">微信小程序DEMO</text>
+  <view class="index_list">
+    <text bindtap="skippingTextarea">一、CSS样式</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingOften">二、常用功能</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="skippingOftenComponent">三、常用组件</text>
+  </view>
+  <view class="index_list">
+    <text bindtap="specialFunction">四、营销活动</text>
+  </view>
+  
+</view>

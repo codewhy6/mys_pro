@@ -1,0 +1,7 @@
+<!--components/noData/noData.wxml-->
+<view class="no-data">
+  <view class="zwdata">
+    <image src="./personal-bg.png"></image>
+  </view>
+  <text>暂无内容</text>
+</view>

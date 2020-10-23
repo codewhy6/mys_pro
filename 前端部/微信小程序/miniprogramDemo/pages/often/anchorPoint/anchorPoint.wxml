@@ -1,0 +1,13 @@
+<!--pages/anchorPoint/anchorPoint.wxml-->
+<view class="wrap">
+  <!-- 左侧导航 -->
+  <view class="left">
+    <view wx:for="{{leftArray}}" wx:key="index" class="left-item {{index==leftIndex?'activeLeft':''}}" bindtap="clickLeft" data-index="{{index}}" >{{item}}</view>
+  </view>
+  <!-- 右侧商品 -->
+  <view class="right"> 
+    <scroll-view scroll-y style="height:100vh;" bindscroll="getScroll" scroll-into-view="{{toView}}" scroll-with-animation="true">
+      <view class="right-item" wx:for="{{rightArray}}" wx:key="index" id="{{'a'+index}}">{{item}}</view>
+    </scroll-view>
+  </view>
+</view>

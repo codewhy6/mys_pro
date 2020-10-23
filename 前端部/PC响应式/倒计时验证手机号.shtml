@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>倒计时验证手机号</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	.Reciprocal{
+    		text-align: center;
+    		/*background:#f3f3f3;*/
+    		padding-top: 30px;
+    	}
+    	.Reciprocal input{
+    		border: 1px solid #f3f3f3;
+    		padding: 10px;
+    	}
+    	.ReciprocalNum{
+    		background: #093759;
+    		color: #ffbd43;
+    		text-align: center;
+    		padding: 10px;
+    		border-radius: 4px;
+    	}
+    	
+    </style>
+</head>
+<body>
+<!--头部 开始-->
+		<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<!--面包屑导航-->
+<div class="bread hidden-xs">
+	<div class="container">
+		<div class="breadcrumbs after">
+			<div class="wraps">
+				<a href="index.shtml">首页</a>
+				<a href="日期.shtml">日期插件</a>
+				<a href="文字滚动.shtml">文字滚动</a>
+				<a href="轮播.shtml">轮播</a>
+				<a href="倒计时验证手机号.shtml">倒计时验证手机号</a>
+				<a href="百度地图.shtml">百度地图</a>
+				<a href="分页.shtml">分页</a>
+				<!--<span> 公司介绍</span>-->
+			</div>
+		</div>
+	</div>
+</div>
+<!--面包屑导航-->  
+<!--点击获取验证码-->
+<div class="Reciprocal container">
+	<input type="text" name="" value="" placeholder="请输入手机号" id="PhoneNum"/>
+	<input type="text" name="" id="" value="" placeholder="验证码"/>
+	<input type="button" class="ReciprocalNum" value="获取验证码" id="YzmBtn" onclick="checkPhone()"/>
+</div>
+
+<!--说明-->
+<div class="container">
+	<h3 style="margin-bottom: 30px;">这是一个常用的小小例子</h3>
+	<dl>
+		<dt>用法：</dt>
+		<dd>1、样式根据设计图用css调整样式</dd>
+	    <dd>2、手机号码输入框 的id为"PhoneNum",按钮需是button或是input，id为"YzmBtn"</dd>
+	    <dd>3、js直接复制</dd>
+	</dl>	
+</div>	
+	
+<!--头部 开始-->
+		<!--#include file="include/bottom.html" -->
+<!--头部 结束-->	
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var btn = document.getElementById("YzmBtn");
+
+//验证手机号码
+function checkPhone(){ 
+    var phone = document.getElementById('PhoneNum').value;
+    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+        alert("手机号码有误，请重填");  
+        return false; 
+    }else{
+    	settime(btn)
+    }
+    console.log(phone)
+}
+//按钮倒计时
+var countdown = 60;
+function settime(obj){
+    if (countdown == 0) {
+        obj.removeAttribute("disabled");
+        obj.value="获取验证码";
+        countdown = 60;
+        return;
+    } else {
+        obj.setAttribute("disabled", true);
+        obj.value="重新发送(" + countdown + ")";
+        countdown--;
+    }
+    setTimeout(function() {
+    settime(obj) }
+    ,1000)
+}
+</script>
+</body>
+</html>
+

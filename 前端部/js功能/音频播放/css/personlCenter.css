@@ -1,0 +1,690 @@
+* {
+    padding: 0;
+}
+
+
+/* 头部 */
+
+.personal_header {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.personal_header_menu {
+    height: 40px;
+    border-bottom: 1px solid#e5e5e5;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.other_last {
+    width: 7px;
+    height: 12px;
+}
+
+.header_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.other_more {
+    width: 15px;
+    height: 11px;
+}
+
+.personal_header_list {
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    /* display: none; */
+    background: #fff;
+}
+
+
+/* 头部 */
+
+.personal_menu_list_ul li:nth-child(1) i {
+    background: url(../images/topListIcon1.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(1):hover i,
+.personal_menu_list_ul li:nth-child(1).on i {
+    background: url(../images/topListIcon1h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(2) i {
+    background: url(../images/topListIcon2.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(2):hover i,
+.personal_menu_list_ul li:nth-child(2).on i {
+    background: url(../images/topListIcon2h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(3) i {
+    background: url(../images/topListIcon3.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(3):hover i,
+.personal_menu_list_ul li:nth-child(3).on i {
+    background: url(../images/topListIcon3h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(4) i {
+    background: url(../images/topListIcon4.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(4):hover i,
+.personal_menu_list_ul li:nth-child(4).on i {
+    background: url(../images/topListIcon4h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(5) i {
+    background: url(../images/topListIcon5.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(5):hover i,
+.personal_menu_list_ul li:nth-child(5).on i {
+    background: url(../images/topListIcon5h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(6) i {
+    background: url(../images/topListIcon6.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(6):hover i,
+.personal_menu_list_ul li:nth-child(6).on i {
+    background: url(../images/topListIcon6h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(7) i {
+    background: url(../images/topListIcon7.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(7):hover i,
+.personal_menu_list_ul li:nth-child(7).on i {
+    background: url(../images/topListIcon7h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(8) i {
+    background: url(../images/topListIcon8.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li:nth-child(8):hover i,
+.personal_menu_list_ul li:nth-child(8).on i {
+    background: url(../images/topListIcon8h.png) no-repeat center;
+    background-size: auto 90%;
+}
+
+.personal_menu_list_ul li i {
+    width: 16px;
+    display: block;
+    height: 18px;
+    margin-right: 14px;
+}
+
+.personal_menu_list_ul li a {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 0px 30px;
+    font-size: 18px;
+    color: #333333;
+    border-bottom: 1px solid #eee;
+}
+
+.personal_menu_list_ul li:hover a,
+.personal_menu_list_ul li.on a {
+    color: #028eec;
+}
+
+.personal_menu_list_ul li {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0px 15px;
+}
+
+.personal_menu_list_ul li:last-child a {
+    border-bottom: none;
+}
+
+.personal_menu_list_ul {
+    width: 100%;
+}
+
+.personal_menu_list {
+    /* width: 100%; */
+    position: relative;
+}
+
+.personal_body {
+    /* overflow: hidden; */
+    margin: 0px auto;
+    /* width: 90%; */
+}
+
+.person_page {
+    width: 100%;
+    background: url(../images/personal_bg.png) no-repeat;
+    background-size: 100% auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 60px 0px 70px;
+}
+
+.person_img {
+    width: 40px;
+    height: 41px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.person_name {
+    font-size: 22px;
+    color: #fff;
+}
+
+.personal_menu_top {
+    /* width: 100%; */
+    height: 110px;
+    display: flex;
+    align-items: center;
+    background: url(../images/normal_person_bg.png) no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 0px 15px;
+}
+
+.personal_menu_top.vip .vip_symbol {
+    display: inline-block;
+}
+
+.vip_symbol {
+    width: 50px;
+    height: 22px;
+    border-radius: 11px;
+    margin-left: 10px;
+    display: none;
+}
+
+.vertical_line {
+    width: 3px;
+    height: 15%;
+    background-color: #0099ff;
+    position: absolute;
+    right: 0px;
+    top: 35%;
+    display: none;
+}
+
+.personal_menu_list_ul li a:hover .vertical_line,
+.personal_menu_list_ul li.on a .vertical_line {
+    display: block;
+}
+
+.personal_menu_list {
+    padding: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* 右侧 */
+
+.personal_menu,
+.personal_right {
+    box-shadow: 0px 5px 27px 2px rgba(68, 68, 68, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 70%;
+}
+
+.personal_right {
+    background: #fff url(../images/person_right_bg.png) no-repeat;
+    background-size: 100% 100%;
+    min-height: 680px;
+    padding: 0px 20px;
+    float: right;
+}
+
+.personal_right_tit {
+    /* height: 34px; */
+    box-sizing: border-box;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.personal_right_tit_txt {
+    font-size: 26px;
+    color: #333;
+}
+
+.personal_right_tit_line {
+    width: 26px;
+    height: 4px;
+    background-color: #0099ff;
+    border-radius: 2px;
+}
+
+
+/* 订阅 */
+
+.Discover_btn {
+    width: 20%;
+    height: 44px;
+    border-radius: 22px;
+    background: url(../images/person_btn_bg.png) no-repeat;
+    background-size: 100% 100%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #028eec;
+}
+
+.Discover_btn:hover {
+    background: transparent;
+    color: #028eec;
+}
+
+.subscription_info {
+    background: #f1fbfe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px 0px;
+    margin-bottom: 38px;
+    flex-wrap: wrap;
+}
+
+.subscription_none_txt {
+    font-size: 20px;
+    color: #333;
+}
+
+.subscription_none_tit {
+    font-size: 16px;
+    color: #787878;
+}
+
+
+/* 个人信息 start */
+
+.personal_info {
+    overflow: hidden;
+}
+
+.personal_info_item {
+    width: 50%;
+    text-align: left;
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.personal_info_item_le {
+    width: 35%;
+    color: #666;
+}
+
+.personal_info_item_ri {
+    width: 65%;
+    overflow: hidden;
+}
+
+.head_upload {
+    width: 60px;
+    height: 60px;
+    background-color: #e5f5ff;
+    position: relative;
+    border-radius: 50%;
+}
+
+.person_head_uped {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+}
+
+.head_upload_input {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+}
+
+.personal_info_item_ri,
+.personal_info_item_ri input {
+    font-size: 18px;
+    color: #333;
+    padding-left: 20px;
+}
+
+.personal_info_item_ri.name {
+    padding-left: 0px;
+}
+
+.user_name_edit {
+    width: 16px;
+    height: 16px;
+    background: url(../images/name_edit.png) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.user_name_edit:hover {
+    background: url(../images/name_edit_1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.user_name_input {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+}
+
+.user_name_input.on {
+    border: solid 1px #0099ff;
+    border-radius: 4px;
+}
+
+.password_btn {
+    font-size: 18px;
+    color: #333;
+    text-decoration: underline;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.password_btn:hover {
+    color: #028eec;
+}
+
+.menu_logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+
+.menu_name {
+    font-size: 32px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.personal_header_list_out {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    display: none;
+}
+
+
+/* 个人信息 end*/
+
+
+/* 适配移动端 */
+
+@media screen and (min-width: 200px) {
+    .personal_menu {
+        /* height: 53px; */
+    }
+    .personal_menu_list {
+        float: right;
+        height: 100%;
+    }
+    .personal_menu_list_ul {
+        /* position: absolute; */
+        width: 100%;
+        top: 67px;
+        left: 0px;
+        z-index: 1;
+        background: #fff;
+        display: none;
+    }
+    .personal_menu_list_top {
+        height: 100%;
+        /* width: 100%; */
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        padding-right: 15px;
+        margin-top: 8px;
+    }
+    .personal_menu {
+        background: url(../images/mobile_person_bg.png) no-repeat;
+        background-size: 100% 53px;
+        padding-top: 7px;
+    }
+    .personal_menu_top {
+        background: transparent;
+    }
+    .Discover_btn {
+        width: 50%;
+    }
+    .subscription_none {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .personal_info_item {
+        width: 100%;
+    }
+    .person_page {
+        padding: 0px 0 20px;
+        background: #fff;
+    }
+    .menu_logo {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+    }
+    .menu_name {
+        font-size: 16px;
+        color: #fff;
+        margin-right: 8px;
+    }
+    .menu_more {
+        width: 12px;
+        height: 7px;
+    }
+    .personal_menu_top {
+        /* width: 100%; */
+        height: 100%;
+    }
+    .personal_menu_list_ul li a {
+        padding: 10px 0px 10px;
+    }
+    .vip_symbol {
+        width: 44px;
+        height: 16px;
+    }
+    .person_name {
+        font-size: 16px;
+        color: #fff;
+        max-width: 50%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .head_upload {
+        width: 47px;
+        height: 47px;
+    }
+    .personal_info_item_ri,
+    .personal_info_item_ri input {
+        font-size: 13px;
+    }
+    .personal_right {
+        padding: 0px 10px;
+    }
+    .personal_menu {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    .personal_right {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .person_page {
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .personal_menu_top.vip {
+        background: url(../images/normal_person_bg1.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    .personal_menu_list_ul {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        display: block;
+    }
+    .personal_menu_top {
+        background: url(../images/normal_person_bg.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    .personal_menu {
+        background: #fff;
+        margin-bottom: 0px;
+    }
+    .personal_menu_list_top {
+        display: none !important;
+    }
+    .Discover_btn {
+        width: 20%;
+    }
+    .subscription_none {
+        width: auto;
+        margin-bottom: 0px;
+    }
+    .personal_info_item {
+        width: 50%;
+    }
+    .person_page {
+        background: url(../images/personal_bg.png) no-repeat;
+        background-size: 100% auto;
+    }
+    .personal_info_item_le {
+        text-align: left;
+        padding: 0px;
+    }
+    .menu_logo {
+        width: 32px;
+        height: 32px;
+        margin-right: 16px;
+    }
+    .menu_name {
+        font-size: 32px;
+        color: #fff;
+        margin-right: 20px;
+    }
+    .menu_more {
+        width: 22px;
+        height: 12px;
+    }
+    .personal_menu_top {
+        /* width: 100%; */
+        height: 110px;
+    }
+    .personal_menu_list_ul li a {
+        padding: 25px 0px 30px;
+    }
+    .vip_symbol {
+        width: 50px;
+        height: 22px;
+    }
+    .person_name {
+        font-size: 22px;
+        color: #fff;
+        max-width: 54%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .head_upload {
+        width: 60px;
+        height: 60px;
+    }
+    .personal_info_item_ri,
+    .personal_info_item_ri input {
+        font-size: 18px;
+    }
+    .user_name_edit {
+        width: 16px;
+        height: 16px;
+    }
+    .person_page {
+        padding: 60px 0px 70px;
+    }
+    .personal_right {
+        padding: 0px 20px;
+    }
+    .personal_menu_list {
+        margin-top: 0px;
+    }
+    .personal_menu {
+        padding-top: 0px;
+    }
+    .other_page {
+        margin-top: 0px;
+    }
+    .personal_menu {
+        width: 23%;
+        float: left;
+    }
+    .personal_right {
+        width: 75%;
+    }
+}

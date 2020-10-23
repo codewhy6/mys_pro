@@ -1,0 +1,406 @@
+﻿<!--
+ * @Description: 海报生成页面
+ * @fileName: 
+ * @Author: Cheng Linmao
+ * @Date: 2020-01-20 10:41:57
+ * @LastEditors  : Cheng Linmao
+ * @LastEditTime : 2020-01-21 10:50:50
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="Author" content="">
+    <meta content="cn" name="design">
+    <title>我的专鼠Flag</title>
+
+    <link rel="stylesheet" href="css/poster.css" />
+    <style>
+        .canvas {
+            background-color: #f7fcf8;
+            position: absolute;
+            top: -1000000px;
+            left: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body class="poster_body">
+    <div class="poster_con" style="display:block;">
+        <div class="poster_content">
+            <div class="poster_icon">
+                <a href="javascript:;"><img src="images/poster1.jpg" /></a>
+            </div>
+            <div class="poster_middle">
+                <div class="poster_left">
+                    <img src="images/my_flag.jpg">
+                </div>
+                <ul class="poster_list">
+                    <li>绝不熬夜绝不熬</li>
+                    <li>戒烟酒</li>
+                    <li>绝不熬夜绝不熬</li>
+                    <li>戒烟酒</li>
+                    <li>绝不熬夜</li>
+                    <li>绝不熬夜</li>
+                    <li>戒烟酒</li>
+                </ul>
+                <div class="poster_logo">
+                    <img src="images/logo.jpg">
+                </div>
+            </div>
+            <div class="poster_bottom">
+                <div class="poster_intro">
+                    <span class="poster_use">Kevin小明</span>
+                    <div class="poster_div">
+                        <p>梦想是一个矫情的东西，它在暗地里滋长</p>
+                        <p>在实现之前</p>
+                        <p>除了坚持与拼搏别无选择</p>
+                    </div>
+                </div>
+                <div class="poster_code">
+                    <span><img src="images/poster_code.jpg" alt=""/></span>
+                    <span>选择我的flag</span>
+                </div>
+            </div>
+        </div>
+        <div class="poster_btn">
+            <button class="poster_press">
+                <span style="color:#fff;font-size:16px;"> 生成Flag海报</span>
+            </button>
+        </div>
+    </div>
+    <div class="createPoster">
+        <img src="" id="download" alt="" style="display: none;" />
+        <img src="images/changanbaochun.png" class="longPressSaveImg">
+        <div class="createPoster_btns">
+            <button class="poster_playAgain">
+                <img class="press_icon3" src="images/zaiwan.png" />
+            </button>
+            <button class="poster_share poster_playAgain">
+                <img src="images/poster_share.png">
+            </button>
+        </div>
+    </div>
+
+    <!-- canvas 设置画板宽高 开始-->
+    <canvas id="canvas" width="350" height="678" class="canvas"></canvas>
+    <!-- canvas 设置画板宽高 结束-->
+
+    <script type="text/javascript" src="js/hidpi-canvas.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/imgsize.js"></script>
+    <!--公共js可以放在这里面，因为每个页面都会调用-->
+    <script type="text/javascript">
+        $(function () {
+
+      
+            /**
+             * @Description: 点击生成海报图，隐藏html页面
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-20 11:30:35
+             * @param {type} 
+             * @return: 
+             */
+            $(".poster_press").on("click", function () {
+                canvasApp() //执行canvas画板
+                $(".poster_con").css("display", "none")
+            })
+
+
+
+            /**
+             * @Description: 点击保存
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-14 11:16:19
+             */
+            $(".poster_share").on("click", function () {
+                // canvasApp()
+            })
+
+
+
+            /**
+             * @Description: 自定义canvas文本竖直排列
+             * 在canvas可直接调用ctx.fillTextVertical(text, x, y)
+             * 其中text为文本内容;
+             * x:距离画布左间距;
+             * y:距离画布上间距;
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-20 11:31:24
+             */
+            CanvasRenderingContext2D.prototype.fillTextVertical = function (text, x, y) {
+                var context = this;
+                var canvas = context.canvas;
+                var arrText = text.split('');
+                var arrWidth = arrText.map(function (letter) {
+                    return context.measureText(letter).width;
+                });
+                var align = context.textAlign;
+                var baseline = context.textBaseline;
+                if (align == 'left') {
+                    x = x + Math.max.apply(null, arrWidth) / 2;
+                } else if (align == 'right') {
+                    x = x - Math.max.apply(null, arrWidth) / 2;
+                }
+                if (baseline == 'bottom' || baseline == 'alphabetic' || baseline == 'ideographic') {
+                    y = y - arrWidth[0] / 2;
+                } else if (baseline == 'top' || baseline == 'hanging') {
+                    y = y + arrWidth[0] / 2;
+                }
+                context.textAlign = 'center';
+                context.textBaseline = 'middle';
+
+                // 开始逐字绘制
+                arrText.forEach(function (letter, index) {
+
+                    // 确定下一个字符的纵坐标位置
+                    var letterWidth = arrWidth[index];
+
+                    // 是否需要旋转判断
+                    var code = letter.charCodeAt(0);
+                    if (code <= 256) {
+                        context.translate(x, y);
+
+                        // 英文字符，旋转90°
+                        context.rotate(90 * Math.PI / 180);
+                        context.translate(-x, -y);
+                    } else if (index > 0 && text.charCodeAt(index - 1) < 256) {
+
+                        // offset fix
+                        y = y + arrWidth[index - 1] / 2;
+                    }
+                    context.fillText(letter, x, y);
+
+                    // 旋转坐标系还原成初始态
+                    context.setTransform(1, 0, 0, 1, 0, 0);
+
+                    // 确定下一个字符的纵坐标位置
+                    var letterWidth = arrWidth[index];
+                    y = y + letterWidth;
+                });
+
+                // 水平垂直对齐方式还原
+                context.textAlign = align;
+                context.textBaseline = baseline;
+            };
+
+
+
+
+
+            /**@Description:自定义canvas字符串间距。
+             * 在canvas可直接调用ctx.letterSpacingText(text, x, y, letterSpacing)
+             * 其中text为文本内容;
+             * x:距离画布左间距;
+             * y:距离画布上间距;
+             * letterSpacing:文字之间的间距直接给数值不需要加单位
+             * @Description: 
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-20 11:31:42
+             */
+            CanvasRenderingContext2D.prototype.letterSpacingText = function (text, x, y, letterSpacing) {
+                var context = this;
+                var canvas = context.canvas;
+                if (!letterSpacing && canvas) {
+                    letterSpacing = parseFloat(window.getComputedStyle(canvas).letterSpacing);
+                }
+                if (!letterSpacing) {
+                    return this.fillText(text, x, y);
+                }
+                var arrText = text.split('');
+                var align = context.textAlign || 'left';
+
+                // 这里仅考虑水平排列
+                var originWidth = context.measureText(text).width;
+
+                // 应用letterSpacing占据宽度
+                var actualWidth = originWidth + letterSpacing * (arrText.length - 1);
+
+                // 根据水平对齐方式确定第一个字符的坐标
+                if (align == 'center') {
+                    x = x - actualWidth / 2;
+                } else if (align == 'right') {
+                    x = x - actualWidth;
+                }
+
+                // 临时修改为文本左对齐
+                context.textAlign = 'left';
+
+                // 开始逐字绘制
+                arrText.forEach(function (letter) {
+                    var letterWidth = context.measureText(letter).width;
+                    context.fillText(letter, x, y);
+
+                    // 确定下一个字符的横坐标
+                    x = x + letterWidth + letterSpacing;
+                });
+
+                // 对齐方式还原
+                context.textAlign = align;
+            };
+
+
+
+
+            /**
+             * @Description: 改变canvas清晰
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-20 11:31:59
+             * @param {type} 
+             * @return: 
+             */
+            function getPixelRatio(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }
+
+
+
+
+            /**
+             * @Description: canvans画图
+             * @Author: Cheng Linmao
+             * @Date: 2020-01-20 11:32:35
+             * @param {type} 
+             * @return: 
+             */
+            function canvasApp() {
+                let theCanvas = document.getElementById("canvas"); //创建画布实例
+                let ctx = theCanvas.getContext("2d"); //获得2D上下文
+                let ratio = getPixelRatio(ctx); //****解决生成图片清晰度问题，此处很重要，文字不需要
+                let banner_img = new Image
+                let company_logo = new Image
+                let flag_img = new Image
+                let show_code = new Image
+
+
+
+                /**
+                 * @Description: 解决图片跨域问题，本地图片不需要。
+                 * @Author: Cheng Linmao
+                 * @Date: 2020-01-20 11:33:13
+                 */
+                // banner_img.crossOrigin="anonymous";
+                // company_logo.crossOrigin="anonymous";
+                // flag_img.crossOrigin="anonymous";
+                // code.crossOrigin="anonymous";
+                
+                banner_img.src = 'images/poster1.jpg'; //主图
+                flag_img.src = 'images/my_flag.jpg'; //我的flag图
+                let flag_text = '抽烟喝酒不烫头'; //立下的flag文字
+                company_logo.src = 'images/logo.jpg'; //公司logo
+                let user_name = 'Kevin小明'; //用户名
+                let text_one = '梦想是一个矫情的东西，它在暗地里滋长'; //小诗第一行
+                let text_two = '在实现之前'; //小诗第二行                
+                let text_three = '除了坚持与拼搏别无选择'; //小诗第三行
+                let textArr = ['绝不熬夜绝不熬', '戒烟酒', '绝不熬夜绝不熬', '戒烟酒', '绝不熬夜', '绝不熬夜', '戒烟酒'];
+                show_code.src = 'images/poster_code.jpg'; //二维码
+                let code_text = '选择我的flag'; //二维码下方文字
+
+
+                // 绘制背景
+                ctx.fillStyle = '#f7fcf8';
+                ctx.fillRect(0, 0, 350 * ratio, 638 * ratio);
+
+
+                //绘制轮播图片
+                banner_img.onload = function () {
+                    ctx.drawImage(banner_img, 11 * ratio, 12 * ratio, 328 * ratio, 416 * ratio)
+                    //绘制我的flag的logo
+                    flag_img.onload = function () {
+                        ctx.drawImage(flag_img, 11 * ratio, 450 * ratio, 90 * ratio, 90 * ratio)
+                        // 绘制公司logo
+                        company_logo.onload = function () {
+                            ctx.drawImage(company_logo,275 * ratio, 450 * ratio, 60 * ratio, 58 *ratio);
+                            // 绘制二维码
+                            show_code.onload = function () {
+                                ctx.drawImage(show_code, 270 * ratio, 530 * ratio, 67 * ratio, 67 * ratio);
+
+
+                                //绘制用户名
+                                ctx.fillStyle = '#000';
+                                ctx.font = "bold 16px normal normal";
+                                ctx.letterSpacingText(user_name, 13, 590); //调用文字间距方法，控制单一文本文字间距
+                                //ctx.fillText(user_name, 13, 590);
+
+
+                                // 绘制竖线
+                                ctx.fillStyle = "#000"
+                                ctx.fillRect(104, 450, 1, 90);
+
+
+                                // 绘制名字上方红色的矩形
+                                ctx.fillStyle = '#be1927';
+                                ctx.fillRect(13, 562, 20, 2);
+
+
+                                //绘制文本左对齐
+                                ctx.fillStyle = '#848484';
+                                ctx.font = " 12px normal normal ";
+                                ctx.letterSpacingText(text_one, 13, 618);
+                                // ctx.fillText(text_one, 13, 618);
+
+
+                                //绘制文本左对齐
+                                ctx.fillStyle = '#848484';
+                                ctx.font = "12px normal normal";
+                                ctx.letterSpacingText(text_two, 13, 637);
+                                // ctx.fillText(text_two, 13, 637);
+
+
+                                //绘制文本左对齐
+                                ctx.fillStyle = '#848484';
+                                ctx.font = "12px normal normal  ";
+                                ctx.letterSpacingText(text_three, 13, 657);
+                                // ctx.fillText(text_three, 13, 657);
+
+
+                                // 绘制文本
+                                ctx.fillStyle = '#848484';
+                                ctx.font = "12px normal normal ";
+                                ctx.letterSpacingText(code_text, 270, 617);
+                                // ctx.fillText(code_text, 260, 657);
+                                // canvas.style.letterSpacing = '1px';
+
+
+                                // 循环获取文本排版
+                                for (let i = 0; i < textArr.length; i++) {
+                                    console.log(textArr[i])
+
+                                    // 绘制文本
+                                    ctx.fillStyle = '#848484';
+                                    ctx.font = "12px normal normal ";
+                                    ctx.fillTextVertical(textArr[i], 126 + i * 20,464);
+                                }
+
+
+                                // 生成图片
+                                var dataURL = document.getElementById("download"); //获取img标签
+                                dataURL.src = canvas.toDataURL("image/png"); //将生成的base63位图片塞入获取的img标签src中
+                                console.log(dataURL)
+                                $("#download").show() //显示img图片
+                                $(".createPoster").show();
+                                // $(".poster_body").hide();
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

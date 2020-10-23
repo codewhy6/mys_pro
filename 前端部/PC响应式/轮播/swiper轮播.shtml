@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>swiper轮播  用于honor</title>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部 开始-->
+		<!--#include file="include/top.html" -->
+<!--头部 结束-->
+<!--swiper的轮播  经常用来放荣誉-->
+<div class="container">
+<!--<select id="progressEffect">
+  <option value="0">无效果</option>
+  <option value="1">缩放scale</option>
+  <option value="2">Y轴位移+透明度</option>
+  <option value="3">旋转rotate</option>
+  <option value="4">背景色</option>
+</select>-->
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/honor.png"/></div>
+      <div class="swiper-slide"><img src="images/honor1.png"/></div>
+      <div class="swiper-slide"><img src="images/honor3.png"/></div>
+      <div class="swiper-slide"><img src="images/honor4.png"/></div>
+      <div class="swiper-slide"><img src="images/honor5.png"/></div>
+    </div>
+    
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+<!--说明-->
+<div class="container">
+	<h3 style="margin-bottom: 30px;">这是一个常用的小小例子</h3>
+	<dl>
+		<dt>用法：</dt>
+		<dd>1、引入 "swiper.min.js"  和 "swiper.min.css"</dd>
+		<dd>2、轮播的内容放在.swiper-slide中  </dd>
+		<dd>3、设置样式时一般采用覆盖swiper.min.css的样式   可采用内联样式  或者将带有轮播样式的css放在swiper.min.css下引入 </dd>
+		<dd>4、更多用法参数设置<a href="https://www.swiper.com.cn/api/index.html" style="color: #F00;">点击跳转</a></dd>
+		<dd>4、更多实例<a href="https://www.swiper.com.cn/demo/index.html" style="color: #F00;">点击跳转</a></dd>
+	</dl>	
+</div>	
+<!--头部 开始-->
+		<!--#include file="include/bottom.html" -->
+<!--头部 结束-->	
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	//0、 无效果   1、缩放seale 2、Y轴位移+透明度  3、旋转rotate 5、背景色
+	effect = 1 
+    var swiper = new Swiper('.container .swiper-container', {
+	  loop: true,
+	  speed: 2500,
+      slidesPerView:5,
+      spaceBetween:0,
+	  centeredSlides : true,
+	  watchSlidesProgress : true,
+	  on: {
+	    setTranslate: function(){
+			slides = this.slides
+			for(i=0; i< slides.length; i++){
+				slide = slides.eq(i)
+				progress = slides[i].progress
+				//slide.html(progress.toFixed(2)); 看清楚progress是怎么变化的
+				    slide.css({'opacity': '','background': ''});slide.transform('');//清除样式
+					
+					if(effect == 1){
+					    slide.transform('scale('+(1 - Math.abs(progress)/8)+')');  
+					}else if(effect == 2){
+						slide.css('opacity',(1-Math.abs(progress)/6));
+					    slide.transform('translate3d(0,'+ Math.abs(progress)*20+'px, 0)');  
+					}
+					else if(effect == 3){
+					    slide.transform('rotate('+ progress*30+'deg)');  
+					}else if(effect == 4){
+						slide.css('background','rgba('+ (255 - Math.abs(progress)*20) +','+ (127 + progress*32) +',' + Math.abs(progress)*64 + ')');
+					}
+					
+				}	
+		},
+		setTransition: function(transition) {
+			for (var i = 0; i < this.slides.length; i++) {
+				var slide = this.slides.eq(i)
+				slide.transition(transition);
+			}
+		},
+	  },
+	  navigation: {
+		nextEl: '.container .swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	  },
+      pagination: {
+        el: '.container .swiper-pagination',
+        clickable: true,
+      },
+    });
+	//select 的点击选择效果
+//	pe = document.getElementById('progressEffect');
+//	pe.onchange = function(){ 
+//	    effect = this.value
+//		swiper.update();	
+//	}
+	
+</script>
+</body>
+</html>
+

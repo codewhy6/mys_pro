@@ -1,0 +1,5 @@
+<!--mine/components/nullData/nullData.wxml-->
+<view class="imgWarp">
+    <image src="{{imgurl}}nullData.png" mode="widthFix"></image>
+    <view class="msg">{{text}}</view>
+</view>

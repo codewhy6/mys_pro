@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+ <text class="title">常用组件</text>
+ <view class="index_list">
+  <text bindtap="skippingButton">1、button组件</text>
+ </view>
+ <view class="index_list">
+  <text bindtap="skippingNoData">2、暂无数据组件</text>
+ </view>
+ <view class="index_list">
+  <text bindtap="skippingbindwx">3、绑定微信</text>
+ </view>
+</view>
+

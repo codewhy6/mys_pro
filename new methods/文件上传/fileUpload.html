@@ -1,0 +1,190 @@
+<!--
+ * @Description: 
+ * @fileName: 
+ * @Author: ZhangChen
+ * @Date: 2020-09-27 09:38:16
+ * @LastEditors: ZhangChen
+ * @LastEditTime: 2020-09-28 10:24:23
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+  <style>
+    @charset "UTF-8";
+
+    /* 清除浮动 */
+    .clearfix:after {
+      content: "";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      height: 0;
+    }
+
+    /* 左浮动 */
+    .fl {
+      float: left;
+    }
+
+    /* 右浮动 */
+    .fr {
+      float: right;
+    }
+
+    .upload_btn {
+      /* width: 10%; */
+      max-width: 20%;
+      height: 100%;
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #dddddd;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+
+
+    .file {
+      width: 2%;
+      border-radius: 4px;
+      padding: 4px 12px;
+      overflow: hidden;
+      color: #666;
+      text-decoration: none;
+      text-indent: 0;
+      line-height: 20px;
+    }
+
+    .file input {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      font-size: 100px;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    input[type="file"] {
+      display: block;
+    }
+
+
+    .upload_result {
+      width: 100%;
+      /* float: right; */
+      /* padding-left: 40%; */
+      box-sizing: border-box;
+      overflow: hidden;
+      /* padding: 13px 0px; */
+      display: none;
+    }
+
+    .upload_result span {
+      width: 80%;
+      float: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .upload_result img {
+      vertical-align: middle;
+      float: left;
+      margin-right: 5px;
+    }
+
+    .del_box {
+      width: 15px;
+      height: 15px;
+      background: #ccc;
+      border-radius: 50%;
+      float: right;
+      /* line-height: 15px; */
+      vertical-align: middle;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+      user-select: none;
+    }
+
+    .upload_result .del_box img {
+      width: 10px;
+      height: 10px;
+      margin-right: 0px;
+      float: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="upload_btn ">
+    <img src="./images/add_icon.png" alt="">
+    <a href="javascript:;" class="file">
+      <span>点击上传</span>
+      <input type="file" name="" id="">
+    </a>
+    <div class="upload_result">
+      <img src="./images/excle_icon.png" class="result_img">
+      <!-- 上传文件的文件名 -->
+      <span></span>
+      <div class="del_box">
+        <img src="./images/closepopo.png">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    /**
+    * @Description: 文件上传
+    * @Author: ZhangChen
+    * @Date: 2020-09-03 19:27:23
+    */
+    $('body').on('click', ' .upload_btn', function () {
+      $(".file").on("change", "input[type='file']", function () {
+        var filePath = $(this).val();
+        // console.log(filePath);
+        if (filePath.indexOf("jpg") != -1 || filePath.indexOf("png") != -1) {
+          $(".fileerrorTip").html("").hide();
+          var arr = filePath.split('\\');
+          var fileName = arr[arr.length - 1];
+          $(".showFileName").html(fileName);
+          // console.log(fileName)
+          $('.upload_btn>img').hide()
+          $('.file').hide().siblings('.upload_result').show().find("span").text(fileName)
+        } else {
+          $(".showFileName").html("");
+          $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+          return false
+        }
+      })
+    })
+    /**
+     * @Description: 文件上传成功之后点击删除
+     * @Author: ZhangChen
+     * @Date: 2020-09-11 13:55:55
+     */
+    $("body").on("click", ".del_box", function () {
+      $(this).parent().hide().prev().show()
+      $('.upload_btn>img').show()
+
+    })
+
+  </script>
+</body>
+
+</html>

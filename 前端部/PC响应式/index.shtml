@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <style type="text/css">
+    	h1.container{
+    		color:#333;
+    		margin:20px auto;
+    	}
+    	
+    	.demoList{
+    		padding:5px 0;
+    	}
+    	.demoList a{
+    		color: #333;
+    		text-align: left;
+    		font-size:16px;
+    		display:block;
+    		background-color:#f7f7f7;
+    		padding:5px;
+    		margin-bottom:15px;
+    	}
+    	.demoList a:hover{color:#007AFF;}
+    </style>
+</head>
+<body>
+<h1 class="container">引导页</h1>
+<div class="demoList">
+	<div class="container">
+		<a href="index.shtml" target="_blank">1.首页</a>
+		<a href="日期.shtml" target="_blank">2.日期插件</a>
+		<a href="文字滚动.shtml" target="_blank">3.文字滚动</a>
+		<a href="轮播.shtml" target="_blank">4.轮播</a>
+		<a href="倒计时验证手机号.shtml" target="_blank">5.倒计时验证手机号</a>
+		<a href="百度地图.shtml" target="_blank">6.百度地图</a>
+		<a href="分页.shtml" target="_blank">7.分页</a>
+		<a href="列表分栏/列表分栏list.shtml" target="_blank">8.列表</a>
+		<a href="侧边栏1/侧边栏.shtml" target="_blank">9.侧边栏1</a>
+		<a href="侧边栏2/侧边栏.shtml" target="_blank">10.侧边栏2</a>
+		<a href="上传图片.shtml" target="_blank">11.上传图片</a>
+		<a href="跨页面跳转到指定元素模块/index.shtml" target="_blank">12.跨页面跳转</a>
+		<a href="整屏滚动.shtml" target="_blank">13.整屏滚动</a>
+		<a href="瀑布流.shtml" target="_blank">14.瀑布流</a>
+		<a href="inputFile样式美化.html" target="_blank">15.inputFile样式美化</a>
+		<a href="单选框复选框的美化.html" target="_blank">16.单选框复选框样式美化</a>
+		<a href="控制只显示2行.html" target="_blank">17.控制文本只显示两行</a>
+		<a href="前后翻转、上浮、下浮、左右翻转.html" target="_blank">18.前后翻转、上浮、下浮、左右翻转效果</a>
+		<a href="设置选中的背景颜色.html" target="_blank">19.设置选中的背景颜色</a>
+		<a href="实现两端对齐文本效果.html" target="_blank">20.实现两端对齐文本效果</a>
+		<a href="水平翻转.html" target="_blank">21.水平翻转效果</a>
+		<a href="旋转放大缩小移动.html" target="_blank">22.旋转放大缩小移动效果</a>
+		<a href="水平翻转.html" target="_blank">23.水平翻转</a>
+		<a href="圆放大效果.html" target="_blank">24.圆放大效果</a>
+		<a href="网页粒子特效背景.html" target="_blank">25.网页粒子特效背景</a>
+		<a href="数字快速滚动.html" target="_blank">26.数字快速滚动</a>
+		<a href="鼠标放上去自上而下显示效果.html" target="_blank">27.鼠标放上去自上而下显示效果</a>
+		<a href="文字自下而上显示.html" target="_blank">28.文字自下而上显示效果</a>
+		<a href="copy复制功能.html" target="_blank">29.复制文本框内容功能</a>
+	</div>
+</div>  
+
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
+

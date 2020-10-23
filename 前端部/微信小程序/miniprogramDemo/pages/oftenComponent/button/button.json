@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-button": "../../components/button/button"
+  },
+  "navigationBarTitleText": "button组件"
+}

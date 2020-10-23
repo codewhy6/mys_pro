@@ -1,0 +1,105 @@
+//--登录
+    userLogin(name,pass){
+      let self = this;
+      var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(16[0-9]{1})|(15[0-3]{1})|(15[4-9]{1})|(18[0-9]{1})|(19[0-9]{1}))+\d{8})$/;
+      if(!myreg.test(this.name)){
+        this.$message.error('手机号错误，请重新输入');
+        this.name = ''
+      }else{
+      let data = {
+        user_login: name?name:self.name,
+        user_pass: pass?pass:self.pass
+      }
+      self.$http.userLogin(data).then(req => {
+        if (req.code == 200) {
+          self.$message({
+            message: '登录成功！',
+            type: 'success'
+          });
+          //存储登录信息
+          localStorage.setItem('token',req.data.token)
+          localStorage.setItem('sig', req.data.sig);
+//          localStorage.setItem('name',self.name)
+//          localStorage.setItem('pass', self.pass);
+          localStorage.setItem('status', true);
+          localStorage.setItem('timekey', sessionStorage.getItem('timekey'));
+          sessionStorage.setItem('token', req.data.token);
+          sessionStorage.setItem('sig', req.data.sig);
+          sessionStorage.setItem('loginStatus', true)
+          // this.$store.state.loginStatus = true;
+         self.$store.state.loginStatus = true;
+          self.$store.commit('loginStatus',true)
+          self.setChangeStatus(true);
+
+        //获取用户信息并且登录 即时通讯IM
+          let token = req.data.token;
+          let sig = req.data.sig;
+          self.$http.getBaseInfo({ token: token }).then(res => {
+            if (res.code == 200) {
+              let path =self.$route.path
+              if(path.indexOf('live_room')>=0){
+                  let roomAg = JSON.parse(sessionStorage.getItem('roomInfo'))
+                timJs.quitGroup(roomAg.livegroupid);
+              }
+              timJs.login(res.data.id.toString(),sig)
+              tim.on(TIM.EVENT.SDK_READY, function(event) { timJs.updateMyProfile()});
+            sessionStorage.setItem('userInfo',JSON.stringify(res.data))
+            sessionStorage.removeItem('IMStatus');
+            if(path.indexOf('live_room')>=0){
+                  self.inRoomLogin();
+                  sessionStorage.setItem('inRoomLogin',true)
+              window.location.reload()
+              }
+            }
+          })
+          self.close();
+        self.setLoginStatus(true);
+          sessionStorage.setItem('loginStatus',true)
+          if(sessionStorage.getItem('change')=='true'){
+            self.getBaseInfo();
+            sessionStorage.setItem('change','false')
+          }
+
+        } else {
+         self.$message.error(req.msg);
+        }
+      }).catch(rep => {
+         self.$message.error(rep.msg);
+      })}
+    },
+
+//--=================================================================
+//--退出登录
+  logout() {
+      let self = this;
+
+      self.$http.logout().then(req => {
+        if (req.code == 200) {
+          self.$message({
+            message: "已退出登录！",
+            type: "success"
+          });
+          this.$router.push({ path: "/" });
+          self.setLoginStatus(false);
+          sessionStorage.setItem("loginStatus", false);
+          sessionStorage.setItem("token", "");
+          sessionStorage.setItem("sig", "");
+          sessionStorage.setItem("pull", "");
+
+          localStorage.setItem("token", "");
+          localStorage.setItem("sig", "");
+          localStorage.setItem("name", "");
+          localStorage.setItem("pass", "");
+
+
+        self.getBaseInfo();
+          self.ownCenter = false;
+          self.loginStatus = false;
+        self.status = false;
+          //              tim.on(TIM.EVENT.SDK_READY, function(event) {
+
+          timJs.loginOut();
+          //              })
+        }
+      });
+    },

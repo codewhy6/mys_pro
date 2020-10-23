@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="Author" content="">
+		<meta content="" name="design">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>文字滚动</title>
+
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.content {
+				width: 1200px;
+				margin: 0 auto;
+				overflow: hidden;
+				padding: 0 20px;
+				box-sizing:border-box;
+			}
+			
+			h1 {
+				width: 100%;
+				font-weight: 500;
+				text-align: center;
+				margin: 20px 0;
+			}
+			
+			h2 {
+				width: 100%;
+				font-weight: 500;
+				text-align: left;
+				margin: 50px 0 30px;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			ul>li {
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			/*案例一：文字横向滚动 start*/
+			
+			.gunText-warp {
+				overflow: hidden;
+				position: relative;
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.gunText-warp span {
+				position: absolute;
+				left: 0;
+				color: #000;
+			}
+			/*案例一：文字横向滚动 end*/
+			
+			
+			/*案例二：文字垂直滚动 start*/
+			.gunShu-warp {
+				height: 100px;
+				overflow: hidden;
+				position: relative;
+				padding: 0;
+			}
+			
+			.gunShu-warp ul {
+				position: absolute;
+				width: 100%;
+				top: 0;
+			}
+			
+			.gunShu-warp ul li {
+				height: 20px;
+				line-height: 20px;
+				text-align: left;
+				color: #000;
+			}
+			/*案例二：文字垂直滚动 end*/
+			
+			
+			/*************案例三：列表文字橫屏滚动 start*****************/
+	    	.s1-conn8{
+				width: 100%;
+				height:120px;
+				margin:auto;
+				position:relative;
+				padding-top: 20px;
+			}
+			.txtMarquee-left{ 
+				height:30px;
+				position:relative;
+				margin-top: 30px;
+			}
+			.txtMarquee-left .hd .prev{
+				position:absolute;
+				top:0px;left:0px;
+				z-index:4;
+				display:block;
+				width:50px;
+				height:30px;
+				overflow:hidden;
+				cursor:pointer; 
+				background:url(images/s1-c8left.jpg) no-repeat;
+			}
+			.txtMarquee-left .hd .next{
+				position:absolute;
+				top:0px;right:0px;
+				z-index:4;
+				display:block;
+				width:50px;
+				height:30px;
+				overflow:hidden; 
+				cursor:pointer; 
+				background:url(images/s1-c8right.jpg) no-repeat;
+			}
+			.txtMarquee-left .bd{
+				position:absolute;
+				top:0px;left:0;right:0;
+				margin:auto;
+				z-index:0;
+			}
+			.txtMarquee-left .bd .tempWrap{ 
+				width:1000px !important; 
+				margin:auto;
+			}
+			.txtMarquee-left .bd ul{ 
+				overflow:hidden; 
+				zoom:1; 
+			}
+			.txtMarquee-left .bd ul li{
+				margin-right: 45px; 
+				float:left; 
+				height:30px; 
+				line-height:30px;  
+				text-align:left; 
+				_display:inline; 
+				width:auto !important;  
+			}
+			.txtMarquee-left .bd ul li a{ 
+				color:#666666;
+				font-size:18px;
+			}
+			.txtMarquee-left .bd ul li a:hover{ color:#0081e0;}
+			/*************案例三：列表文字橫屏滚动 end*****************/
+			
+			/*************案例四：文字垂直滚动start******************/
+			.txtMarquee-top {
+				overflow: hidden;
+				position: relative;
+			}
+			.txtMarquee-top .infoList li {
+				width: 100%;
+				height: 26px;
+				line-height: 26px;
+				float: left;
+			}
+			.txtMarquee-top .infoList li em {
+				margin: 0px 5px;
+			}
+			/*************案例四：文字垂直滚动end******************/
+			
+			/*************案例五：文字逐条滚动start******************/
+			.notice {
+				width: 300px;/*单行显示，超出隐藏*/
+				height: 35px;/*固定公告栏显示区域的高度*/
+				padding: 0 30px;
+				background-color: #b3effe;
+				overflow: hidden;
+			}
+			.notice ul li {
+				list-style: none;
+				line-height: 35px;
+				/*以下为了单行显示，超出隐藏*/
+				display: block;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			/*************案例五：文字逐条滚动start******************/
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<h1>文字滚动</h1>
+			<!--页面内容 start-->
+			<article>
+				<h2>案例一：文字横向滚动</h2>
+				<div class="demo1">
+					<!--文字横向滚动 start-->
+					<div class="gunText-warp container">
+						<span class="guntext">文字横向滚动</span>
+					</div>
+					<!--文字横向滚动 end-->
+					<ul>
+						<li>使用说明</li>
+						<li>1、需要引入jquery</li>
+						<li>2、复制CSS样式</li>
+						<li>3、复制JS</li>
+					</ul>
+				</div>
+
+				<h2>案例二：文字垂直滚动</h2>
+				<div class="demo2">
+					<!--文字垂直滚动 start-->
+					<div class="gunShu-warp container">
+						<ul>
+							<li>文字垂直滚动111</li>
+							<li>文字垂直滚动222</li>
+							<li>文字垂直滚动333</li>
+							<li>文字垂直滚动333</li>
+						</ul>
+					</div>
+					<!--文字垂直滚动 end-->
+					<ul>
+						<li>使用说明</li>
+						<li>1、需要引入jquery</li>
+						<li>2、复制CSS样式</li>
+						<li>3、复制JS</li>
+					</ul>
+				</div>
+
+				<h2>案例三：列表文字橫屏滚动</h2>
+				<div class="demo3">
+					<!--列表文字橫屏滚动 start-->
+					<div class="s1-conn8 after">
+						<div class="txtMarquee-left">
+							<div class="hd">
+								<a class="next"></a>
+								<a class="prev"></a>
+							</div>
+							<div class="bd">
+								<ul class="infoList">
+									<li>河海大学官网</li>
+									<li>水资源高效利用与工程安全国家工程研究中心</li>
+									<li>水利经济研究所</li>
+									<li>水利政策法制研究与培训中心
+									</li>
+									<li>
+										河海大学官网
+									</li>
+									<li>
+										水资源高效利用与工程安全国家工程研究中心
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--列表文字橫屏滚动 end-->
+					<ul>
+						<li>使用说明</li>
+						<li>1、需要引入jquery</li>
+						<li>2、需要引入jquery.SuperSlide.2.1.1.js</li>
+						<li>3、复制CSS样式</li>
+						<li>4、复制JS</li>
+					</ul>
+				</div>
+				
+				<h2>案例四：列表文字垂直滚动</h2>
+				<div class="demo4">
+					<!--列表文字垂直滚动 start-->
+					<div class="txtMarquee-top">
+						<div class="container">
+							<div class="bd">
+								<ul class="infoList">
+									<li>185****2685</li>
+									<li>185****2685</li>
+									<li>185****2685</li>
+									<li>185****2685</li>
+									<li>185****2685</li>
+									<li>185****2685</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--列表文字垂直滚动 end-->
+					<ul>
+						<li>使用说明</li>
+						<li>1、需要引入jquery</li>
+						<li>2、需要引入jquery.SuperSlide.2.1.1.js</li>
+						<li>3、复制CSS样式</li>
+						<li>4、复制JS</li>
+					</ul>
+				</div>
+				
+				<h2>案例五：文字逐条滚动</h2>
+				<div class="demo5">
+					<!--列表文字逐条滚动 start-->
+					<div class="notice">
+						<ul>
+							<li>第1条公告第1条公告第1条公告第1条公告第1条公告第1条公告</li>
+							<li>第2条公告第2条公告第2条公告第2条公告第2条公告第2条公告</li>
+							<li>第3条公告第3条公告第3条公告第3条公告第3条公告第3条公告</li>
+							<li>第4条公告第4条公告第4条公告第4条公告第4条公告第4条公告</li>
+						</ul>
+					</div>
+					<!--列表文字逐条滚动 start-->
+					<ul>
+						<li>使用说明</li>
+						<li>1、需要引入jquery</li>
+						<li>2、需要引入jquery.SuperSlide.2.1.1.js</li>
+						<li>3、复制CSS样式</li>
+						<li>4、复制JS</li>
+					</ul>
+				</div>
+			</article>
+			<!--页面内容 start-->
+		</div>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+		<script type="text/javascript">
+			//案例一 文字横向滚动 start 
+			var left = 0;
+			var timer1 = null;
+			timer1 = setInterval(function() { //循环定时器
+				left--; //一个变量  控制span离div 的距离
+				//当文字滚动完后   文字从div的后面出现
+				if(left == -$(".guntext").width() + 30) {
+					left = $(".gunText-warp").width()
+				}
+				$(".gunText-warp span").css("left", left)
+			}, 50) //这里的数字可以调节滚动的速度
+			//案例一 文字横向滚动 end
+
+			//案例二 文字垂直滚动 start 
+			var top1 = 0
+			var timer2 = null;
+			timer2 = setInterval(function() { //循环定时器
+				top1--; //top 控制ul在div中的定位
+				//	console.log(top1)
+				//当文字滚动完后   文字从div的下面出现
+				if(top1 == -$(".gunShu-warp ul").height()) {
+					top1 = $(".gunShu-warp").height()
+				}
+				$(".gunShu-warp ul").css("top", top1)
+			}, 50) //这里的数字可以调节滚动的速度
+			//案例二 文字垂直滚动
+			
+			//案例三 列表文字橫屏滚动
+			jQuery(".txtMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:4,interTime:50,trigger:"click"});
+			//案例三 列表文字橫屏滚动
+			
+			//案例四 列表文字垂直滚动
+			jQuery(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:2,interTime:80,trigger:"click"});
+			//案例四 列表文字垂直滚动
+			
+			//案例五 列表文字逐条滚动
+			$(function(){
+				setInterval("noticeUp('.notice ul','-35px',500)",2000);
+			})
+			/*
+			* 参数说明
+			* obj : 动画的节点，本例中是ul
+			* top : 动画的高度，本例中是-35px;注意向上滚动是负数
+			* time : 动画的速度，即完成动画所用时间，本例中是500毫秒，即marginTop从0到-35px耗时500毫秒
+			* function : 回调函数，每次动画完成，marginTop归零，并把此时第一条信息添加到列表最后;
+			* 
+			*/
+			function noticeUp(obj,top,time) {
+				$(obj).animate({
+					marginTop: top
+				}, time, function () {
+					$(this).css({marginTop:"0"}).find(":first").appendTo(this);
+				})
+			}
+			//案例五 列表文字逐条滚动
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,154 @@
+﻿/*
+ * @Description: 样式基础配置文件 不在这个页面写样式，只写基础配置
+ * @fileName: base.css
+ * @Author: LiSuwan
+ * @Date: 2020-01-09 11:54:14
+ * @LastEditors: Li Suwan
+ * @LastEditTime: 2020-07-29 15:02:47
+ */
+
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer; /* 手机端所有标签鼠标都是手型 */
+    /* 解决手机微信公众号中的网页文字无法复制到剪切板问题 start */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    /* 解决手机微信公众号中的网页文字无法复制到剪切板问题 end */
+    -webkit-tap-highlight-color: transparent; /*用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，设置为半透明的灰色背景*/
+    
+}
+
+
+
+html {
+    font: normal 14px "微软雅黑", Arial;
+}
+
+
+body {
+    padding: 0px;
+    margin: 0px auto;
+    color: #666;
+    width: 100%;
+    /*min-width: 1200px;*/
+    /*width: expression((documentElement.clientWidth < 1200) ? "1200px" : "100%" );*/
+    zoom: 1;
+}
+
+
+
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+select,
+input,
+textarea {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    color: #666;
+    background: none;
+    border: none;
+    resize:none
+}
+
+input:focus {
+    outline: none;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+    /* -webkit-appearance:none; */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*强制去除表单自带的样式*/
+    font: normal 14px "微软雅黑", Arial;
+}
+
+textarea {
+    resize: none;
+    /*-webkit-appearance:none;*/
+    /*强制去除textarea自带的样式*/
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figure,
+figcaption {
+    display: block;
+}
+
+/*html5设置*/
+
+figure,
+figcaption {
+    margin: 0px;
+    padding: 0px;
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+img {
+    border: none;
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+a,
+a:hover,
+a:focus {
+    outline: none;
+    -moz-outline: none;
+    text-decoration: none;
+}
+
+.clear {
+    display: block;
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+
+/* 设置placeholder默认文字颜色样式 start*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #b8b8b8;
+}
+
+input::-moz-input-placeholder,
+textarea::-moz-input-placeholder {
+    color: #b8b8b8;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: #b8b8b8;
+}
+/* 设置placeholder默认文字颜色样式 end*/
+
+.cursor {
+    cursor: pointer;
+}
+

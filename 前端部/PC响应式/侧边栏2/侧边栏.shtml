@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="Author" content="">
+		<meta content="" name="design">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>侧边栏2</title>
+		<style type="text/css">
+			.center{width:1200px;margin:0 auto;box-sizing:border-box;}
+			
+			*{margin:0;}
+			.suspension{
+				position: fixed;
+				top: 50%;
+				margin-top: -120px;
+				right:20px;
+				z-index: 2;
+			}
+			.suspension ul{
+				width: 70px;
+			}
+			.suspension ul li{
+				position: relative;
+				text-align: center;
+				margin-bottom: 10px;
+				box-sizing: border-box;
+				border: 1px solid #552277;
+				width: 100%;
+				height: 70px;
+				border-radius: 5px;
+				color: #552277;
+				background: #fff;
+				list-style:none;
+			}
+			.suspension ul li img{
+				margin-top: 7px;
+				margin-bottom: 5px;
+			}
+			.suspension ul li:hover{
+				background: #552277;
+				color: #fff;
+			}
+			.suspension ul li .tel{
+				opacity: 0;
+				box-sizing: border-box;
+				padding:10px;
+				text-align: left;
+				position: absolute;
+				z-index: -1;
+				top:7px;
+				left: 0;
+				width: 138px;
+				height: 54px;
+				background: #552277;
+				color: #FFF;
+				border-radius: 5px;
+			}
+			.suspension ul li .tel:after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				margin-top: -6px;
+				right: -10px;
+				display: block;
+				width: 10px;
+				height: 13px;
+				background: url(images/xf_sj.png) center no-repeat;
+			}
+		    .suspension ul li:nth-of-type(2)
+		    {
+		        background:url(images/Upjqqd.png) center no-repeat;
+		    }
+		    .suspension ul li:nth-of-type(2):hover
+		    {
+		        background:url(images/Upjqqd_1.png) center no-repeat;
+		    }
+
+		</style>
+	</head>
+	<body>
+		<!--面包屑导航-->
+		<div class="bread center">
+			<div class="container">
+				<div class="breadcrumbs after">
+					<div class="wraps">
+						<a href="../index.shtml">首页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--面包屑导航-->
+		<!--侧栏-->
+		<div class="suspension hidden-xs">
+			<ul>
+				<li>
+					<img src="images/xf_icon1.png" name="images/xf_icon11.png"/>
+					<p>预约</p>
+				</li>
+				<li>
+					
+				</li>
+				<li>
+					<img src="images/xf_icon3.png" name="images/xf_icon33.png"/>
+					<p>电话</p>
+					<div class="tel">
+						<p>TEL:</p>
+						<p>025-85469999</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!--用法说明-->
+		<div class="center" style="margin: 30px auto;">
+			<h2>用法</h2>
+			<ul>
+				<li>1、先引入jquery</li>
+				<li>2、在复制css样式 和 js</li>
+				<li>2、响应式在移动端隐藏</li>
+				<li>3、引入之后需根据需要修改样式和图片</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			var nameU, imgU;
+		    $('.suspension ul li').hover(function () {
+		        nameU = $(this).find('img').attr('name');
+		        $(this).find('.tel').stop().animate({ 'left': '-158px', 'opacity': '1' }, 500)
+		        imgU = $(this).find('img').attr('src');
+		        $(this).find('img').attr('src', nameU)
+		    }, function () {
+		        $(this).find('img').attr('src', imgU);
+		        $(this).find('.tel').stop().animate({ 'left': '0', 'opacity': '0' }, 500)
+		    })
+
+		</script>
+	</body>
+
+</html>

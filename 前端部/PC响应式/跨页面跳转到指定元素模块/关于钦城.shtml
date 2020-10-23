@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="Author" content="">
+    <meta content="" name="design">
+    <title>关于钦城</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+	.about-jtcy{
+		width:1200px;
+		margin:0 auto;
+	}
+	.jtcy-list li:hover .jtcy-p1,.jtcy-list .jtcyon{color:#1463bf;}
+</style>
+<body>
+
+<div class="about-jtcy c-center">
+	<ul class="jtcy-list"> 
+		<li class="jtcyon" id="conn1">
+			能源
+		</li>
+		<li id="conn2">
+			餐饮
+		</li>
+		<li id="conn3">
+			汽车
+		</li>
+		<li id="conn4">
+			商业
+		</li>
+	</ul>
+</div>
+
+
+
+<script type="text/javascript">
+
+//hover效果	
+$('.jtcy-list li').click(function(){
+	$('.jtcy-list li').removeClass('jtcyon');
+	$(this).addClass('jtcyon');
+})
+
+</script>
+<script>
+		//跳转js代码
+		(function($){
+			$.getUrlParam = function(name)
+			{
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r!=null) return unescape(r[2]); return null;
+			}
+		})(jQuery);
+		urlnum(1);urlnum(2);urlnum(3);urlnum(4);
+		function urlnum(num){
+			if($.getUrlParam('page')==num){
+				$('.jtcy-list li').removeClass('jtcyon')
+				$('#conn'+num).addClass('jtcyon')
+				$('.jtcy-gs').removeClass('jtcycur')
+				$('.jtcy-gs'+num).addClass('jtcycur')
+			}
+		}
+		
+</script>
+</body>
+</html>
+

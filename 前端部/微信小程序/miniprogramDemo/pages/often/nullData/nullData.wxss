@@ -1,0 +1,10 @@
+/* mine/components/nullData/nullData.wxss */
+.imgWarp{
+  text-align: center;
+  padding-top: 30%;
+	font-size: 28rpx;
+	color: #666666;
+}
+.imgWarp image{
+  width: 400rpx;
+}

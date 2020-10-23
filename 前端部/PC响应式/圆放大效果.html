@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type='text/css'>
+ul,
+li {
+	list-style: none;
+}
+
+ul>li {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+	
+.circle {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -100px;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -30px 0 0 -30px;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	background-color: #666666;
+}
+
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -35px 0 0 -35px;
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background: #111111;
+	text-align: center;
+	line-height: 70px;
+	color: #EAEAEA;
+	font-size: 16px;
+	font-family: '';
+}
+
+.circle1 {
+	-webkit-animation: circle 3s linear infinite;
+	animation: circle 3s linear infinite;
+}
+
+.circle2 {
+	-webkit-animation: circle 3s linear 0.8s infinite;
+	animation: circle 3s linear 0.8s infinite;
+}
+
+.circle3 {
+	-webkit-animation: circle 3s linear 1.6s infinite;
+	/* Safari and Chrome */
+	animation: circle 3s linear 1.6s infinite;
+}
+
+@-webkit-keyframes circle {
+	/* Safari and Chrome */
+	from {
+		opacity: 1;
+		-webkit-transform: scale(0);
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(3);
+	}
+}
+</style>
+<body>
+	<div class='circle'>
+		<div class='circle1'>&nbsp;</div>
+		<div class='circle2'>&nbsp;</div>
+		<div class='circle3'>&nbsp;</div>
+		<div class='center'></div>
+	</div>
+	
+	<ul>
+		<li>使用说明</li>
+		<li>1、按需复制CSS样式</li>
+		<li>2、是圆向外发散的效果，越放大颜色越淡</li>
+	</ul>
+</body>

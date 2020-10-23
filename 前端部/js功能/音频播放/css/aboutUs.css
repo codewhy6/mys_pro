@@ -1,0 +1,77 @@
+.aboutUs{
+    background: url(../images/aboutBg.png) no-repeat top center;
+    background-size:100% auto;
+}
+.aboutUs .toptitle{
+    text-align: center;
+	font-size: 32px;
+    color: #ffffff;
+    padding: 48px 0 55px;
+}
+.aboutUs .container{
+	background-color: #ffffff;
+	box-shadow: 0px 12px 28px 2px 
+		rgba(179, 182, 194, 0.16);
+    border-radius: 10px;
+    padding: 48px 50px 40px;
+    margin-bottom: 70px;
+}
+.rich h1{
+    font-size: 22px;
+    font-weight: bold;
+}
+.rich h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.rich h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+.rich h4{
+    font-size: 16px;
+    font-weight: bold;
+}
+.rich h5{
+    font-size: 14px;
+    font-weight: bold;
+}
+.rich h6{
+    font-size: 12px;
+    font-weight: bold;
+}
+.rich {
+   font-size: 16px;
+   color: #666666;
+   line-height: 150%;
+   /* padding: 50px 0 30px; */
+   /* border-bottom: 1px solid #eee; */
+}
+.rich img{
+   margin: 15px 0;
+   max-width: 100%;
+}
+
+@media (min-width: 200px) {
+.aboutUs {background-size: 100% 100px;}
+.aboutUs .toptitle {font-size: 20px;padding: 20px 0 ;}
+.aboutUs .container {padding: 15px;margin-bottom: 25px;}
+}
+
+@media (min-width: 768px) {
+.aboutUs {background-size: 100% 150px;}
+.aboutUs .toptitle {font-size: 24px;padding: 25px 0 ;}
+.aboutUs .container {padding: 25px;margin-bottom: 35px;}
+}
+
+@media (min-width: 992px) {
+.aboutUs {background-size: 100% 200px;}
+.aboutUs .toptitle {font-size: 28px;padding: 35px 0 ;}
+.aboutUs .container {padding: 35px;margin-bottom: 50px;}
+}
+
+@media (min-width: 1200px) {
+.aboutUs {background-size: 100% 200px;}
+.aboutUs .toptitle {font-size: 32px;padding: 48px 0 55px;}
+.aboutUs .container {padding: 48px 50px 40px;margin-bottom: 70px;}
+}

@@ -1,0 +1,16 @@
+
+<view class="weui-cells">
+            <view class="weui-cell weui-cell_input" wx:for-items="{{optionList}}" wx:key="{{index}}">
+                <view class="weui-cell__hd">
+                    <image bindtap="delOption" src="{{item.icon}}" class="option-icon" data-index="{{index}}"></image>
+                </view>
+                <view class="weui-cell__bd"><input bindinput="recordValue" class="weui-input"  data-index="{{index}}" value="{{item.value}}" placeholder="选项{{index + 1}}" /></view>
+            </view>
+            <view class="weui-cell" bindtap="addOption" wx:if="{{showAddBtn}}" >
+                <view class="weui-cell__hd">
+                    <image src="/images/common/4.png" class="option-icon"></image>
+                </view>
+                <view class="weui-cell__bd">添加选项</view>
+            </view>
+        </view>
+

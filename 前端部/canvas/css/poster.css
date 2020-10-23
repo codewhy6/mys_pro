@@ -1,0 +1,259 @@
+/* 海报生成页面 */
+.poster_body{
+    background:#f43813 url(../images/poster_bg.jpg) left top no-repeat;
+    background-size:cover;
+    /* height:100%; */
+    background-attachment: fixed;
+}
+.poster_con{
+    background:#f43813 url(../images/poster_bg.jpg) left bottom no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    padding:0.25rem;
+    box-sizing:border-box;
+}
+.poster_content{
+    padding:0.2rem;
+    background:#f7fcf8;
+    border:1px solid #dc4527;
+}
+.poster_content .poster_icon{
+    position: relative;
+}
+.poster_icon img{
+    width:6.3rem;
+}
+.poster_middle{
+    padding-top:0.1rem;
+}
+.poster_left{
+    padding-right:0.1rem;
+    display:inline-block;
+    vertical-align:top;
+    border-right:1px solid #7e7f7e;
+}
+.poster_left img{
+    width:1.4rem;
+}
+.poster_list{
+    display:inline-block;
+    width: 3rem;
+    vertical-align:top;
+    font-size:0.16rem;
+    padding-left:0.1rem;
+}
+.poster_list li{
+    width:0.27rem;
+    font-size:0.16rem;
+    color:#6d6d6d;
+    display:inline-block;
+    vertical-align:top;
+    margin-left:0.05rem;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+letter-spacing: 0.05rem;
+}
+.poster_logo{
+    display:inline-block;
+    float:right;
+}
+.poster_logo img{
+    width:1.2rem;
+}
+.poster_intro{
+    display:inline-block;
+    vertical-align:top;
+}
+.poster_use{
+    font-size:0.3rem;
+    color:#000;
+    font-weight:bold;
+    display:inline-block;
+}
+.poster_use::before{
+    content:'';
+    width:30%;
+    display: block;
+    height:2px;
+    background:#be1927;
+    margin-bottom:0.15rem;
+}
+.poster_div{
+    font-size:0.24rem;
+    color:#848484;
+    margin-top:0.2rem;
+}
+.poster_div p{
+    margin-bottom:0.1rem;
+}
+.poster_bottom{
+    margin-top:0.3rem;
+    position:relative;
+}
+.poster_code{
+    display:inline-block;
+    vertical-align:top;
+    text-align:center;
+    position: absolute;
+    right:0;
+    padding-top:0.1rem;
+}
+.poster_code span{
+    display:block;
+    vertical-align:top;
+    font-size:0.24rem;
+    color:#898989;
+    margin-bottom:0.1rem;
+}
+.poster_code span img{
+    width:1.4rem;
+}
+.poster_btn button{
+    border:0;
+    background:none;
+}
+.poster_share img{
+    width:2rem;
+    height: 0.9rem;
+}
+.press_icon1{
+    width:0.7rem;
+    display:inline-block;
+    vertical-align:middle;
+    margin-bottom:0.05rem;
+}
+.press_icon2{
+    width: 2.25rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.05rem;
+    height: 1.08rem;
+}
+.press_icon3{
+    width: 2.25rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.05rem;
+    height: 1.08rem;
+}
+.poster_btn{
+    width:86%;
+    margin:0.1rem auto 0;
+}
+.poster_btn button{
+    cursor: pointer;
+}
+.press_wz{
+    width:1.8rem;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:0.15rem;
+}
+.poster_press a span{
+color:#fff;
+font-size: 0.2rem;
+}
+/* 海报生成页面 */
+.poster_gen,.poster_cons{
+    background:#f7fcf8;
+}
+.poster_cons{
+    padding:0.3rem;
+}
+/* canvas位置 */
+.canvas {
+    background-color: #f7fcf8;
+    position: absolute;
+    top: -1000000px;
+    left: 0;
+    z-index: 999;
+}
+#point_share_img{
+    width:100% ;
+    height:100% ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba(0,0,0,.7);
+    z-index: 100009;
+}
+#point_share_img img{
+    width: 3rem;
+    position: absolute;
+    top:0.3rem;
+    right: 0.6rem;
+    z-index: 10001;
+}
+.hint_flag_text{
+    width: 100%;
+    height: 0.6rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(212, 212, 212, 0.92);
+    text-align: center;
+    color: rgb(153, 153, 153);
+    font-size:0.24rem;
+    line-height: 0.6rem;
+    letter-spacing: 0.03rem;
+    display: none;
+    z-index: 10002;
+}
+.createPoster{
+    width: 100%;
+    height: 100%;
+    background: url(../images/beijing.png);
+    background-size: cover;
+    display: none;
+    text-align: center;
+    position: relative;;
+}
+.createPoster #download{
+    width: 60%;
+    margin: 0 20%;
+    margin-top: 0.5rem;
+}
+.longPressSaveImg{
+    width: 2rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+}
+.poster_playAgain{
+    background: transparent;
+    border: none;
+    margin-top: 0.3rem;
+}
+.poster_share{
+    background: transparent;
+    border: none;
+    display: inline-block;
+}
+.createPoster_btns{
+    display: flex;
+    justify-content: space-around;
+}
+@media screen and (max-width: 320px) {
+}
+@media screen and (max-width: 375px){
+    .poster_btn {
+        width: 86%;
+        margin: 0rem auto 0;
+    }
+    .poster_con{
+        position: relative;
+        top:-0.15rem
+    }
+    .longPressSaveImg{
+        margin-top: 0.15rem;
+    }
+    .poster_playAgain{
+        margin-top: 0.1rem;
+    }
+    .createPoster #download{
+        margin-top: 0.2rem;
+    }
+}

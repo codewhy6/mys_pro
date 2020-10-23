@@ -1,0 +1,8 @@
+/* pages/often/openCamera/openCamera.wxss */
+
+.camera {
+  position: absolute;
+  z-index: 99;
+  margin: 0 auto;
+  width: 80%;
+}

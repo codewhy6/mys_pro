@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-noData": "../../components/noData/noData"
+  },
+  "navigationBarTitleText": "暂无数据"
+}

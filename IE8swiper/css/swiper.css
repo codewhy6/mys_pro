@@ -1,0 +1,136 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide,
+.swiper-wrapper {
+  height: auto !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #9d9189;
+  text-align: center;
+  transform: translateY(5px);
+  border: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev:focus {
+  outline: none;
+}
+
+.swiper-button-prev {
+  left: 33px;
+  background: #9d9189 url(../images/arrow_left.png) no-repeat center center;
+}
+.swiper-button-next.swiper-button-white {
+  background-size: 29%;
+  background-position: 55% center;
+}
+.swiper-button-prev.swiper-button-white {
+  background-size: 29%;
+  background-position: 55% center;
+}
+.swiper-button-next {
+  right: 33px;
+  background: #9d9189 url(../images/arrow_right.png) no-repeat center center;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #07ab58 !important;
+  border: 0;
+}
+
+.ie.swiper-button-next:after {
+  content: "" !important;
+}
+
+.ie.swiper-button-prev:after {
+  content: "" !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.swiper-button-prev:after {
+  margin-left: 0px;
+}
+
+/* ie9 以下的轮播点样式  */
+.ie.swiper-pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.ie .swiper-pagination-switch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #555;
+  margin: 0 5px;
+  opacity: 0.8;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.ie .swiper-active-switch {
+  background: #fff;
+}
+
+/* ie9 以下的轮播点样式  */
+.swiper2 {
+  width: 768px;
+  margin: 0px auto;
+}
+.swiper2 .swiper-slide-active {
+  transform: scale(1);
+}
+.swiper2 .swiper-slide-next {
+  width: 300px !important;
+}
+.swiper2 .swiper-slide-prev {
+  width: 300px !important;
+}
+.swiper2 .swiper-slide-next img {
+  width: 100% !important;
+}
+.swiper2 .swiper-slide-prev img {
+  width: 100% !important;
+}

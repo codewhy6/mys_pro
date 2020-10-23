@@ -1,0 +1,5 @@
+<!--pages/often/openCamera/openCamera.wxml-->
+<view>
+  <camera class="camera" device-position="back" flash="off" binderror="error" style="height:{{height}}px;width:{{width}}px" wx:if="{{showCamera}}">
+  </camera>
+</view>

@@ -1,0 +1,13 @@
+/* components/noData/noData.wxss */
+.no-data{
+  color:#666;
+  text-align:center;
+  font-size:32rpx;
+}
+.zwdata{
+  margin-top:13%;
+}
+.zwdata image{
+  width:520rpx;
+  height:350rpx;
+}

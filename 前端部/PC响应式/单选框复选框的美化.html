@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{ 
+		font:menu; 
+		font-size:16px;
+	} 
+	.con{ 
+		width:1000px; 
+		margin:0 auto;
+	} 
+	.con h1{ 
+		text-align:center;
+	} 
+	h1,h2{ 
+		font-weight:normal; 
+		color:#0CC;
+	} 
+	ul{ 
+		margin:0;
+		padding:0; 
+		list-style:none;
+		margin-top:30px;
+	} 
+	 ul,
+	li {
+		list-style: none;
+	}
+	ul>li {
+		font-size: 14px;
+		margin-bottom: 10px;
+	}
+	em{ 
+		font-style:normal;
+	} 
+	/*单选框复选框开始*/ 
+	.check_box{ 
+		display:inline-block; 
+		position:relative;
+	} 
+	.check_box label{ 
+		width:16px; 
+		height:16px; 
+		position:absolute;
+		top:0; 
+		left:0; 
+		border:2px solid #cacaca; 
+		border-radius:50%; 
+		background:#fff; 
+		cursor:pointer;
+	} 
+	.check_box label:hover{ 
+		border:2px solid #f78642;
+	} 
+	.check_box label:after{ 
+		content:'';
+		width:8px; 
+		height:4px; 
+		position:absolute; 
+		top:4px; 
+		left:3px; 
+		border:2px solid #cacaca; 
+		border-top:none; 
+		border-right:none; 
+		opacity:0.4; 
+		transform:rotate(-45deg); 
+		/*-webkit-transform:rotate(-45deg);*/
+	} 
+	.check_box label:hover:after{ 
+		border:2px solid #f78642;
+		border-top:none; 
+		border-right:none;
+	} 
+	.check_box input:checked + label{ 
+		border:2px solid #f78642;
+	} 
+	.check_box input:checked + label:after{ 
+		opacity:1; 
+		border:2px solid #f78642;
+		border-top:none;
+		border-right:none;
+	} 
+	.check_box em{ 
+		margin:0 0 0 5px;
+	} 
+	/*单选框复选框结束*/ 
+	
+	/*复选框开始 */
+	.loginChcekbox{
+		display: none;
+		cursor: pointer;
+	}  
+	.loginCheckboxInput {
+		background-color: #fff;
+		border: 1px solid #666;
+		border-radius: 100%;
+		display: inline-block;
+		height: 16px;
+		margin-right: 10px;
+		margin-top: -1px;
+		vertical-align: middle;
+		width: 16px;
+		line-height: 1;
+		cursor: pointer;
+	}
+	.loginChcekbox:checked+.loginCheckboxInput:after {
+		border-radius: 100%;
+		content: "\2713";
+		display: inline-block;
+		height: 12px;
+		line-height: 10px;
+		margin: 2px;
+		width: 12px;
+		font-size:10px;
+		color: #46bf10;
+	}
+	.loginSpan.loginCheckboxInput,
+	.loginChcekbox:checked+.loginSpan.loginCheckboxInput:after {
+		border-radius: 0;
+	}
+	/*复选框结束 */
+	
+	/*单选框开始*/ 
+	.radio_box{ 
+		display:inline-block; 
+		position:relative;
+	} 
+	.radio_box label{ 
+		width:15px; 
+		height:15px; 
+		position:absolute; 
+		top:0; 
+		left:0; 
+		border:2px solid #ef4949; 
+		border-radius:50%; 
+		background:#fff; 
+		cursor:pointer;
+	} 
+	.radio_box input:checked + label:after{ 
+		content:''; 
+		width:9px; 
+		height:9px; 
+		position:absolute; 
+		top:3px; 
+		left:3px; 
+		background:#ef4949; 
+		border-radius:50%;
+	} 
+	.check_box em{ 
+		margin:0 0 0 5px;
+	}
+	/*单选框结束*/ 
+</style>
+</head>
+<body>
+	<div class="con">
+		<!-- 单选框复选框开始 -->
+		<h1>单选框复选框的美化</h1>
+		<h2>复选框效果1:</h2>
+		<span class="check_box">
+			<input type="checkbox" id="check_1">
+			<label for="check_1"></label>
+			<em>选项1</em>
+		</span>
+		<br><br>
+		<span class="check_box">
+			<input type="checkbox" id="check_2">
+			<label for="check_2"></label>
+			<em>选项2</em>
+		</span>
+		<br><br>
+		<!-- 单选框复选框结束 -->
+		
+		<!-- 复选框开始 -->
+		<h2>复选框效果2</h2>
+		<label>
+			<input class="loginChcekbox" type="checkbox" checked="true">
+			<span class="loginSpan loginCheckboxInput"></span>
+		</label>
+		<em>选项2</em>
+		<br><br>
+		<!-- 复选框结束 -->
+		
+		<!-- 单选框开始 -->
+		<h2>单选框:</h2>
+		<span class="radio_box">
+			<input type="radio" id="radio_1" name="radio" checked>
+			<label for="radio_1"></label>
+			<em>选项1</em>
+		</span>
+	
+		<br><br>
+		<span class="radio_box">
+			<input type="radio" id="radio_2" name="radio">
+			<label for="radio_2"></label>
+			<em>选项2</em>
+		</span>
+		<!-- 单选框结束 -->
+		
+		<ul>
+			<li>使用说明</li>
+			<li>1、复制CSS样式</li>
+		</ul>
+	</div>
+</body>

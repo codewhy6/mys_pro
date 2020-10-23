@@ -1,0 +1,7 @@
+<view class="bindWx">
+  <view class="cont">
+    <image src="../../images/bindImg.png"></image>
+    <view class="text">绑定微信，尊享更多服务</view>
+    <button open-type="getUserInfo" bindgetuserinfo="getBindnameimage">立即绑定</button>
+  </view>
+</view>

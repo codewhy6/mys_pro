@@ -1,0 +1,252 @@
+<!--
+ * @Description: 省市区联动 分开
+ * @fileName: 
+ * @Author: Hu Sini
+ * @Date: 2020-09-27 15:53:07
+ * @LastEditors: Hu Sini
+ * @LastEditTime: 2020-09-28 10:20:42
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>省市区联动1</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./js/utils/http.js"></script>
+    <!-- 需要引入layui和city -->
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+    <script type="text/javascript" src="lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/utils/city.js"></script>
+</head>
+
+<body>
+
+    <!-- 复制以下代码和js -->
+    <div class=" address_box">
+        <div class="area_box">
+            <input type="text" class="province_input form_input select_input size_three" readonly id="provinceJoin1"
+                placeholder="省" />
+            <ul class="province intr_sed_txt"></ul>
+        </div>
+        <div class="area_box">
+            <input type="text" class="city_input form_input select_input size_three" readonly id="cityJoin1"
+                placeholder="市" />
+            <ul class="city intr_sed_txt"></ul>
+        </div>
+        <div class="area_box">
+            <input type="text" class="area_input form_input select_input size_three" readonly id="areaJoin1"
+                placeholder="区" />
+            <ul class="area intr_sed_txt"></ul>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            /**
+             * @Description: 初始化省市区数据
+             * @Author: xujun
+             * @Date: 2020-09-18 22:13:14
+             */
+            initAreaData()
+
+            function initAreaData() {
+                var province = ChineseDistricts["86"];
+                console.log(province);
+                var prostr = "";
+                for (prokey in province) {
+                    prostr +=
+                        '<li class="select-list-item province" data-id="' +
+                        prokey +
+                        '">' +
+                        province[prokey] +
+                        "</li>";
+                }
+                $(".province").html(prostr);
+                // 默认城市显示
+                var defaltCity =
+                    '<li class="select-list-item city" data-id="110100">' +
+                    ChineseDistricts["110000"]["110100"] +
+                    "</li>";
+                $(".city").html(defaltCity);
+                // 默认区显示
+                var area = ChineseDistricts["110100"];
+                var areastr = "";
+                for (areakey in area) {
+                    areastr +=
+                        '<li class="select-list-item area" data-id="' +
+                        areakey +
+                        '">' +
+                        area[areakey] +
+                        "</li>";
+                }
+                $(".area").html(areastr);
+            }
+
+
+            /**
+             * @Description: 点击省 / 市 / 区 展开下拉选择
+             * @Author: longhaiyan
+             * @Date: 2020-09-21 13:37:27
+             */
+            $("body").on("click", ".area_box", function () {
+                $(this).find("ul").slideToggle()
+            })
+
+            /**
+             * @Description: 点击选择项设置省
+             * @Author: xujun
+             * @Date: 2020-09-18 10:59:55
+             */
+            $("body").on("click", ".province li", function (e) {
+                e.preventDefault()
+                e.stopPropagation()
+                $(this).addClass("on").siblings().removeClass("on");
+                var currentCities = ChineseDistricts[$(this).data("id")];
+                console.log(currentCities);
+                var citystr = "";
+                var cityCont = [];
+                for (citykey in currentCities) {
+                    citystr +=
+                        '<li class="select-list-item city" data-id="' +
+                        citykey +
+                        '">' +
+                        currentCities[citykey] +
+                        "</li>";
+                    cityCont.push(citykey);
+                }
+                var currentAreaDefault = "";
+                for (cadkey in ChineseDistricts[cityCont[0]]) {
+                    currentAreaDefault +=
+                        '<li  class="select-list-item area" data-id="' +
+                        cadkey +
+                        '">' +
+                        ChineseDistricts[cityCont[0]][cadkey] +
+                        "</li>";
+                }
+                $(this).parents(".area_box").siblings().find(".area").html(currentAreaDefault);
+                $(this).parents(".area_box").siblings().find(".city").html(citystr);
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".province-val").eq(0).text();
+                if ($(this).parents(".area_box").find(".province li.active").length == 0) {
+                    $(this).parents(".area_box").find("input.province_input").val($(this).parents(
+                        ".area_box").find(".province li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").find("input.province_input").val($(this).html())
+                }
+                if ($(this).parents(".area_box").siblings().find(".city li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.city_input").val($(this)
+                        .parents(".area_box").siblings().find(".city li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.city_input").val($(this)
+                        .parents(".area_box").siblings().find(".city li.active").eq(0).html())
+                }
+                if ($(this).parents(".area_box").siblings().find(".area li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.area_input").val($(this)
+                        .parents(".area_box").siblings().find(".area li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.area_input").val($(this)
+                        .parents(".area_box").siblings().find(".area li.active").eq(0).html())
+                }
+                $(this).parent().slideUp()
+            });
+
+            /**
+             * @Description: 点击选择项设置市
+             * @Author: xujun
+             * @Date: 2020-09-18 10:59:55
+             */
+            $("body").on("click", ".city li", function (e) {
+                e.stopPropagation()
+                var currentArea = ChineseDistricts[$(this).data("id")]
+                console.log(currentArea)
+                var areastr = ""
+                for (areakey in currentArea) {
+                    areastr += '<li class="select-list-item " data-id="' + areakey + '">' + currentArea[
+                        areakey] + '</li>'
+                }
+                $(this).parents(".area_box").siblings().find(".area").html(areastr)
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".city-val").eq(0).text();
+                if ($(this).parents(".area_box").siblings().find(".province li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.province_input").val($(this)
+                        .parents(".area_box").siblings().find(".province li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.province_input").val($(this)
+                        .parents(".area_box").siblings().find(".province li.active").html())
+                }
+                if ($(this).parents(".area_box").find(".city li.active").length == 0) {
+                    $(this).parents(".area_box").find("input.city_input").val($(this).parents(
+                        ".area_box").find(".city li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").find("input.city_input").val($(this).html())
+                }
+                if ($(this).parents(".area_box").siblings().find(".area li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.area_input").val($(this)
+                        .parents(".area_box").siblings().find(".area li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.area_input").val($(this)
+                        .parents(".area_box").siblings().find(".area li.active").html())
+                }
+                $(this).parent().slideUp()
+            });
+
+            /**
+             * @Description: 点击选择项设置区
+             * @Author: xujun
+             * @Date: 2020-09-18 10:59:55
+             */
+            $("body").on("click", ".area li", function (e) {
+                $(this).addClass("active").siblings().removeClass("active");
+                e.stopPropagation()
+                var currentArea = ChineseDistricts[$(this).data("id")]
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".area-val").eq(0).text();
+                $(".area_box ul").slideUp()
+
+                if ($(this).parents(".area_box").siblings().find(".province li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.province_input").val($(this)
+                        .parents(".area_box").siblings().find(".province li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.province_input").val($(this)
+                        .parents(".area_box").siblings().find(".province li.active").html())
+                }
+                if ($(this).parents(".area_box").siblings().find(".city li.active").length == 0) {
+                    $(this).parents(".area_box").siblings().find("input.city_input").val($(this)
+                        .parents(".area_box").siblings().find(".city li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").siblings().find("input.city_input").val($(this)
+                        .parents(".area_box").siblings().find(".city li.active").html())
+                }
+                if ($(this).parents(".area_box").find(".area li.active").length == 0) {
+                    $(this).parents(".area_box").find("input.area_input").val($(this).parents(
+                        ".area_box").siblings().find(".area li").eq(0).html())
+                } else {
+                    $(this).parents(".area_box").find("input.area_input").val($(this).html())
+                }
+            });
+
+
+        });
+        /**
+         * @Description: 点击其他地方隐藏下拉框
+         * @Author: xujun
+         * @Date: 2020-09-18 10:54:34
+         */
+        $("body").bind("click", function (e) {
+            var target = $(e.target);
+            if (
+                target.closest(
+                    ".select-wrap.province, .select-wrap.city,  .select-wrap.area"
+                ).length == 0
+            ) {
+                $(".select-list").hide(0.3);
+            }
+        });
+    </script>
+</body>
+
+</html>

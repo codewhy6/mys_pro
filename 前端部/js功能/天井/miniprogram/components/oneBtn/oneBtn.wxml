@@ -1,0 +1,4 @@
+<!--components/oneBtn/oneBtn.wxml-->
+<view class="oneBtn_box">
+	<van-button  color="#0c7fea" bindtap="oneBtnEvent" size="large">{{oneBtnTxt}}</van-button>
+</view>

@@ -1,0 +1,7 @@
+css：样式文件
+fonts：字体文件
+images：图片
+include：一个组件是一个html文件，所有的组件全部放在这个文件夹中
+js：自定义JS文件
+lib：引入的第三方库
+

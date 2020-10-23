@@ -1,0 +1,56 @@
+/* components/delDia/delDia.wxss */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 550rpx;
+  min-height: 327rpx;
+  background-color: #fff;
+  border-radius: 23rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 34rpx 0rpx;
+  box-sizing: border-box;
+}
+.del_tit{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 37rpx;
+
+}
+.del_sub{
+  font-size: 28rpx;
+  color: #666;
+}
+.del_btns{
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.del_btns view{
+  width: 223rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  background-color: pink;
+  color: #fff;
+  border: 0;
+  border-radius: 43rpx;
+}
+.del_btns .user_confirm{
+  color: #666666;
+  background-color: #e7e7e7;
+}
+.del_btns .user_cancel{
+  background-color: #c11c24;
+}
+/* 删除按钮弹窗样式--end */
+

@@ -1,0 +1,311 @@
+/* css公共代码块样式 */
+/* 清除浮动 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+/* 左浮动 */
+.fl {
+  float: left;
+}
+
+/* 右浮动 */
+.fr {
+  float: right;
+}
+
+/* 文本溢出隐藏，一行 */
+.txt_of {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行文本溢出隐藏 */
+.txt_of2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.txt_of3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/* H5移动端，宽度的设置 */
+.h5_container {
+  min-width: 3.2rem;
+  width: 92%;
+  margin: 0 auto;
+}
+
+/* H5页面左右内边距 */
+.h5_padding {
+  padding: 0 4%;
+  margin-top: 0.2rem;
+}
+
+/* flex布局 */
+.flex_c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* flex布局 */
+.flex_sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex_sa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// 文本样式
+@mixin font($color: black, $fontSize: 16px) {
+  color: $color;
+  font-size: $fontSize;
+  text-align: center;
+}
+
+// 文本居中对齐
+@mixin textCenter($color: black, $fontSize: 16px, $lineHeight: 0px) {
+  color: $color;
+  font-size: $fontSize;
+  text-align: center;
+  line-height: $lineHeight;
+}
+
+// 子绝父相
+@mixin position($left: 0, $top: 0, $bottom: 0, $x: 0, $y: 0) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  bottom: $bottom;
+  transform: translate($x, $y);
+}
+
+// 图片变灰
+@mixin picGray {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+
+/* ======字体 start-========== */
+.font30 {
+  font-size: 30px;
+}
+
+.font24
+{
+  font-size: 24px;
+}
+.font_tit {
+  font-weight: bold;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.font22 {
+  font-size: 22px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font16 {
+  font-size: 16px;
+}
+
+// @font-face {
+//   font-family: "huxiaobo";
+//   src: url("../fonts/huxiaobo.OTF");
+// }
+/* 三角箭头 */
+.trangle_jt:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 10px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  position: absolute;
+  top: -20px;
+  left: 47%;
+}
+
+/* ======字体 end========== */
+/*========= 颜色  start=========== */
+.color_fff {
+  color: #fff;
+}
+
+.color_333 {
+  color: #333333;
+}
+
+.color_666 {
+  color: #666666;
+}
+
+.color_999 {
+  color: #999999;
+}
+
+.color_main {
+  color: #e01b25;
+}
+
+.color_main_bg {
+  background-color: #e01b25;
+}
+
+.color_c11c24 {
+  color: #c11c24;
+}
+/*========= 颜色  start=========== */
+/* ==========================bootstrap========================= */
+@media (min-width: 300px) and (max-width: 575.98px) {
+  /* ======字体 start-========== */
+  .font30 {
+    font-size: 16px;
+  }
+
+  .font24,
+  .font_tit {
+    font-size: 16px;
+  }
+
+  .font20 {
+    font-size: 14px;
+  }
+
+  .font22,
+  .font18,
+  .font16 {
+    font-size: 14px;
+  }
+  /* ======字体 end-========== */
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* ======字体 start-========== */
+  .font30 {
+    font-size: 16px;
+  }
+
+  .font24,
+  .font_tit {
+    font-size: 18px;
+  }
+
+  .font20 {
+    font-size: 16px;
+  }
+
+  .font22 {
+    font-size: 16px;
+  }
+
+  .font18,
+  .font16 {
+    font-size: 14px;
+  }
+  /* ======字体 end-========== */
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* ======字体 start-========== */
+  .font30 {
+    font-size: 16px;
+  }
+
+  .font24,
+  .font_tit {
+    font-size: 20px;
+  }
+
+  .font20 {
+    font-size: 16px;
+  }
+
+  .font22 {
+    font-size: 18px;
+  }
+
+  .font18 {
+    font-size: 16px;
+  }
+  /* ======字体 end-========== */
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* ======字体 start-========== */
+  .font30 {
+    font-size: 25px;
+  }
+
+  .font20 {
+    font-size: 18px;
+  }
+
+  .font22 {
+    font-size: 20px;
+  }
+  /* ======字体 end-========== */
+}
+
+@media (min-width: 1200px) and (max-width: 1299.98px) {
+  .container {
+    width: 1000px;
+  }
+  /* ======字体 start-========== */
+  .font30 {
+    font-size: 30px;
+  }
+
+  .font24,
+  .font_tit {
+    font-size: 20px;
+  }
+
+  .font20 {
+    font-size: 20px;
+  }
+
+  .font22 {
+    font-size: 20px;
+  }
+
+  .font18 {
+    font-size: 16px;
+  }
+
+  /* ======字体 end-========== */
+}
+
+@media (min-width: 1300px) {
+  .container {
+    width: 1200px;
+  }
+}
