@@ -130,3 +130,9 @@ import { mapActions, mapState, mapMutations } from "vuex";
 
 ```
 
+### 9、千分符
+
+```js
+
+```
+
