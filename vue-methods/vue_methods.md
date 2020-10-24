@@ -13,7 +13,7 @@ Vue.directive('focus', {
 });
 ```
 
-### 2、时间过滤器 
+### 2、时间-过滤器 
 
 ```js
 Vue.filter('dateFormat', function (originTime) {
@@ -130,9 +130,16 @@ import { mapActions, mapState, mapMutations } from "vuex";
 
 ```
 
-### 9、千分符
+### 9、千分符-过滤器
 
 ```js
-
+filters: {
+    thousandMark: function (value) {
+        if(typeof value != "string"){
+            value=value+''
+        }
+        return value=value.replace(/(\d)(?=(\d{3})+(\.|$))/g,'$1,');
+    },
+},
 ```
 

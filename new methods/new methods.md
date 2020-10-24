@@ -553,3 +553,107 @@ onDateConfirm(e) {
 add0(m){return m<10?'0'+m:m },
 ```
 
+### 十六、new js methods
+
+```js
+// 首字母大写
+function getUpperCase(str) {
+    // replace每找到一个敏感词，就会调用一次回调函数
+    // keyword：会自动保存本次找到的敏感词的内容
+    str = str.replace(/\b[a-z]/ig, function (keyword) {
+        // 返回一个新值
+        return keyword.toUpperCase();
+    });
+    return str;
+}
+
+// 将查询字符串变成一个对象的形式
+let str = '?uname=chen&email=1464481294@qq.com&favs=swimming&favs=running&favs=basketball';
+function getSearchObj(str) {
+    // 定义一个对象，保存
+    let obj = {};
+    // 1.截取？之后的所有字符串
+    str = str.substr(1);
+    // 2.以&进行截取，变成一个数组
+    let arr = str.split('&');
+    // 3.遍历数组，获取每一项的值
+    for (const item of arr) {
+        // 4.以=进行截取
+        arr = item.split('=');
+        // 数组解构，取出数组中的每一项的值
+        let [key, val] = arr;
+        // 5.对象中有重复的属性名，就要将属性值放在一个数组中
+        if (obj[key] === undefined) {
+            obj[key] = val;
+        } else {
+            obj[key] = [].concat(obj[key], val)
+        }
+    }
+
+    return obj;
+};
+
+// 方式二：零宽断言
+// 截取字符串
+let ret2 = str.match(/[a-z]+(?=:\/\/)|(?<=:\/\/)[a-z0-9.]+(?=:)|(?<=:)\d+(?=\/)|\/[a-z0-9./]+(?=\?)|(?<=\?)[a-z0-9=&]+(?=\#)|#[a-z0-9]+/ig);
+console.log(ret2);
+/*
+    [
+      0: "http"
+      1: "www.tmooc.cn"
+      2: "5050"
+      3: "/product/index.html"
+      4: "uname=chen&pwd=123"
+      5: "#flag"
+    ]
+    */
+
+
+// 封装获取元素样式的函数
+function getStyle(ele, calssName) {
+    if (window.getComputedStyle) {
+        //大部分浏览器具有getComputedStyle()方法
+        return window.getComputedStyle(ele, null).getPropertyValue(calssName);
+    } else {
+        //兼容IE8,7,6的方式,
+        return ele.currentStyle[calssName];
+    }
+}
+
+
+function addClass(obj, cn) {
+    // 没有该样式就要添加
+    if (!hasClass(obj, cn)) {
+        obj.className += " " + cn;
+    }
+}
+
+// 判断这个对象是不是有该样式
+function hasClass(obj, cn) {
+    let reg = new RegExp("\\b" + cn + "\\b");
+    return reg.test(obj.className);
+}
+
+// 有该样式就要删除
+function removeClass(obj, cn) {
+    let reg = new RegExp('\\b' + cn + '\\b');
+    obj.className = obj.className.replace(reg, '');
+}
+
+// 切换样式
+function toggleClass(obj, cn) {
+    if (hasClass(obj, cn)) {
+        removeClass(obj, cn)
+    } else {
+        addClass(obj, cn);
+    }
+}
+
+//--获取随机的整数
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+}
+```
+
