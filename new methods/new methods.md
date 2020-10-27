@@ -657,3 +657,29 @@ function getRandomInt(min, max) {
 }
 ```
 
+### 十七、动画animate函数
+
+```js
+function animate(obj, target, callback) {
+    // 清除多余定时器
+    clearInterval(obj.timer);
+    // 开启定时器--执行动画
+    obj.timer = setInterval(function () {
+        // 定义步长（缓动动画）
+        let step = (target - obj.offsetLeft) / 5;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        // 判断是否到达目标位置
+        if (obj.offsetLeft === target) {
+            // 清除定时器，停止动画
+            clearInterval(obj.timer);
+            // 判断是否有回调函数
+            if (callback) {
+                // 调用回调函数
+                callback();
+            }
+        }
+        obj.style.left = obj.offsetLeft + step + 'px';
+    }, 15)
+}
+```
+

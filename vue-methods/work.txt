@@ -103,3 +103,55 @@
         }
       });
     },
+
+//--vue-一直滚动
+<template>
+  <vue-seamless-scroll class="seamless-warp" :data="list" :class-option="options">
+    <ul class="item">
+      <li
+        v-for="(item,index) in list"
+        :key="index"
+      >用户 {{item.user_nicename}} 获得 {{item.type == 1 && "星钻" || item.type == 2 && "礼物" || item.type == 3 && "特殊礼物" || ''}} <img :src="item.thumb" alt /> {{item.prize}} x {{item.nums}}</li>
+    </ul>
+  </vue-seamless-scroll>
+</template>
+<script>
+export default {
+  props: {
+    list: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    options() {
+      return {
+        direction: 1,
+        limitMoveNum: this.list.length,
+        step: 0.8,
+        hoverStop:false,
+        openTouch:false
+      };
+    },
+  },
+};
+</script>
+<style lang="less" scoped>
+.seamless-warp {
+  height: 58px;
+  overflow: hidden;
+  li {
+    height: 58px;
+    line-height: 58px;
+    color: #ffffff;
+    img{
+      max-width: 44px;
+      max-height: 44px;
+      vertical-align: middle;
+    }
+  }
+}
+</style>
