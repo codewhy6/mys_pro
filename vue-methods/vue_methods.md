@@ -175,6 +175,9 @@ filters: {
                     newNum;
             }
             return newNum;
+            if (newNum=='一十') {
+              newNum='十'
+            }
         };
         let overWan = Math.floor(num / 10000);
         let noWan = num % 10000;
