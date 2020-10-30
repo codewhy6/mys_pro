@@ -104,7 +104,7 @@
       });
     },
 
-//--vue-一直滚动
+//===========================vue-一直滚动========================================
 <template>
   <vue-seamless-scroll class="seamless-warp" :data="list" :class-option="options">
     <ul class="item">
@@ -155,3 +155,71 @@ export default {
   }
 }
 </style>
+
+//===========================  SVGAPlay========================================
+<template>
+  <div>
+    <div class="mask" v-show="visible">
+      <div id="svgaPlayer" v-show="visible"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+import SVGA from "svgaplayerweb";
+export default {
+  props: {
+    url: String,
+  },
+  data() {
+    return {
+      player: null,
+      parser: null,
+      visible: false,
+    };
+  },
+  methods: {
+    start() {
+      let player = new SVGA.Player("#svgaPlayer");
+      let parser = new SVGA.Parser("#svgaPlayer"); // 如果你需要支持 IE6+，那么必须把同样的选择器传给 Parser。
+      parser.load(this.url, (videoItem) => {
+        // console.log(videoItem, "videoItem");
+        player.loops = 1;
+        player.setVideoItem(videoItem);
+        player.startAnimation();
+        player.onFinished(() => {
+          this.$emit("finish");
+          this.hide();
+        });
+      });
+    },
+    show() {
+      this.visible = true;
+      this.start();
+    },
+    hide() {
+      this.visible = false;
+    },
+  },
+};
+</script>
+<style lang="less" scoped>
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+}
+#svgaPlayer {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+</style>
+
