@@ -189,3 +189,17 @@ filters: {
 },
 ```
 
+### 11、点击滚动页面指定的位置scrollTo（）
+
+```js
+toScroll(id) {
+    let el = document.getElementById(id);
+    let baseH = document.getElementById("");
+    let page = document.getElementById("");
+    page.scrollTo({
+        top: baseH.offsetTop + el.offsetTop - 80,
+        behavior: "smooth",
+    });
+},
+```
+
