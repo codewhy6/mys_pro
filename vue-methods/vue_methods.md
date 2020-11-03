@@ -203,3 +203,84 @@ toScroll(id) {
 },
 ```
 
+### 12、点击全屏显示
+
+```js
+//获取浏览器型号和版本号
+export function bro() {
+    let broName = ''
+    let strStart = 0
+    let strStop = 0
+    let temp = ''
+    let userAgent = window.navigator.userAgent // 包含以下属性中所有或一部分的字符串：appCodeName,appName,appVersion,language,platform
+    // FireFox
+    if (userAgent.indexOf('Firefox') !== -1) {
+        strStart = userAgent.indexOf('Firefox')
+        temp = userAgent.substring(strStart)
+        broName = temp.split('/')
+    }
+    // Edge
+    if (userAgent.indexOf('Edge') !== -1) {
+        /* broName = 'Edge浏览器'; */
+        strStart = userAgent.indexOf('Edge')
+        temp = userAgent.substring(strStart)
+        broName = temp.split('/')
+    }
+    // IE浏览器
+    if (userAgent.match(/msie ([\d.]+)/)) {
+        /* broName = 'IE浏览器'; */
+        let s = userAgent.match(/msie ([\d.]+)/)
+        let res = 'IE ' + s[1]
+        broName = res + res.replace(/[^0-9.]/ig, '')
+    }
+    // 360极速模式可以区分360安全浏览器和360极速浏览器
+    if (userAgent.indexOf('WOW') !== -1 && userAgent.indexOf('NET') < 0 && userAgent.indexOf('Firefox') < 0) {
+        if (navigator.javaEnabled()) {
+            broName = '360安全浏览器-极速模式'
+        } else {
+            broName = '360极速浏览器-极速模式'
+        }
+    }
+    // 360兼容
+    if (userAgent.indexOf('WOW') !== -1 && userAgent.indexOf('NET') !== -1 && userAgent.indexOf('MSIE') !== -1 && userAgent.indexOf('rv') < 0) {
+        broName = '360兼容模式'
+    }
+    // Chrome浏览器
+    if (userAgent.match(/Chrome\/([\d.]+)/)) {
+        /* broName = 'Chrome浏览器'; */
+        strStart = userAgent.indexOf('Chrome')
+        strStop = userAgent.indexOf('Safari')
+        temp = userAgent.substring(strStart, strStop)
+        broName = temp.split('/')
+    }
+    // safari
+    if (userAgent.match(/Version\/([\d.]+).*Safari/)) {
+        strStop = userAgent.indexOf('Safari')
+        temp = userAgent.substring(strStop)
+        broName = temp.split('/')
+    }
+    // opera
+    if (userAgent.match(/Opera.([\d.]+)/)) {
+        strStop = userAgent.indexOf('Opera')
+        temp = userAgent.substring(strStop)
+        broName = temp.split('/')
+    }
+    return broName
+}
+fullScreen() {
+    var ele = document.getElementById("zb_video");
+    var type = util.bro();
+    if (type[0] == "Firefox") {
+        ele.mozRequestFullScreen();
+    } else {
+        if (ele.requestFullscreen) {
+            ele.requestFullscreen();
+        } else if (ele.mozRequestFullScreen) {
+            ele.mozRequestFullScreen();
+        } else if (ele.webkitRequestFullScreen) {
+            ele.webkitRequestFullScreen();
+        }
+    }
+},
+```
+

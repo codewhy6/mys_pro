@@ -1,0 +1,8 @@
+解决方案：
+
+以管理员身份（我没以管理员身份也解决了，都试下好）运行PowerShell
+执行：get-ExecutionPolicy，回复Restricted，表示状态是禁止的
+3.执行：set-ExecutionPolicy RemoteSigned
+4.选择Y
+5.在此执行
+continue
