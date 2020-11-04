@@ -508,7 +508,7 @@ $("body").on("click", ".scrollTop_box", function () {
 
 ```
 
-### 十四、三角箭头css样式
+### 十四、右箭头/叉号-css样式
 
 ```css
 /* 三角箭头的父元素 */
