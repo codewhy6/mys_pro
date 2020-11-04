@@ -683,3 +683,25 @@ function animate(obj, target, callback) {
 }
 ```
 
+### 十八、点击复制文本
+
+```html
+<span id="ptext1">NJ14206</span>
+<!-- 点击复制需要一个隐藏的textarea 才能复制到粘贴板-->
+<textarea id="input1" style="position: fixed; top: 100%"></textarea>
+```
+
+```js
+copyUrl() {
+    var text = document.getElementById("ptext1").innerText;
+    var input = document.getElementById("input1");
+    input.value = text; // 修改文本框的内容
+    input.select();
+    document.execCommand("Copy");
+    this.$message({
+        message: "复制成功！",
+        type: "success",
+    });
+},
+```
+
