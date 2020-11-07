@@ -267,6 +267,8 @@ export function bro() {
     }
     return broName
 }
+
+//--进入全屏
 fullScreen() {
     var ele = document.getElementById("zb_video");
     var type = util.bro();
@@ -282,5 +284,18 @@ fullScreen() {
         }
     }
 },
+
+    //--退出全屏
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen()
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen()
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen()
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen()
+        }
+    }
 ```
 
