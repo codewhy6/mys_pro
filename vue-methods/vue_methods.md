@@ -27,6 +27,26 @@ Vue.filter('dateFormat', function (originTime) {
     return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 })
 
+Vue.filter('dateFormat', function (dataString, pattern = '') {
+    // 根据给定的时间字符串，得到特定的时间
+    let dt = new Date(dataString);
+    let year = dt.getFullYear();
+    let month = dt.getMonth() + 1;
+    let data = dt.getDate();
+    //yyyy-mm-dd:返回这个日期格式
+    // return year + '-' + month + '-' + data;
+    // return `${year}-${month}-${data}`;
+
+    if (pattern.toLowerCase() === 'yyyy-mm-dd') {
+        return year + '-' + month + '-' + data;
+    } else {
+        let hour = dt.getHours();
+        let minute = dt.getMinutes();
+        let second = dt.getSeconds();
+        // return year + '-' + month + '-' + data + ' ' + hour + ':' + minute + ':' + second;
+        return `${year}-${month}-${data} ${hour}:${minute}:${second}`;
+    }
+});
 ```
 
 ### 3、asios网络请求
@@ -126,6 +146,7 @@ let userId = this.$route.params.userId
 
 ```js
 import { mapActions, mapState, mapMutations } from "vuex";
+//-computed中引入mapState
 ...mapState(["hotLive", "jackpotList", "jackpotTime", "jackpotAn"]),
 
 ```
@@ -297,5 +318,39 @@ fullScreen() {
             document.webkitExitFullscreen()
         }
     }
+```
+
+### 13、判断某一元素是否滚动到底部
+
+```js
+// 是否滚动到底部
+isScrollBottom() {
+    let ranking_list = document.getElementById("ranking_list");
+    // console.log(
+    //   ranking_list.scrollHeight +
+    //     "  " +
+    //     ranking_list.scrollTop +
+    //     " " +
+    //     ranking_list.clientHeight
+    // );
+    // 判断有没有滚动到底部
+    if (
+        ranking_list.scrollHeight - ranking_list.scrollTop ==
+        ranking_list.clientHeight
+    ) {
+        this.rankQueryParams.page = this.rankQueryParams.page + 1;
+        if (this.rankQueryParams.page > this.totalPage) {
+            this.$toast({
+                message: "没有更多数据了!!!",
+                position: "bottom",
+            });
+            this.rankQueryParams.page = this.totalPage;
+            return false;
+        }
+        //--滚动到底部再次请求数据（拼接数据）
+        this.agentRank(this.rankQueryParams, 2);
+        // console.log(this.rankQueryParams.page);
+    }
+},
 ```
 
