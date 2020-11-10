@@ -530,6 +530,28 @@ $("body").on("click", ".scrollTop_box", function () {
     border-color: #fff;
     border-style: solid;
 }
+/* ================================================================================ */
+/* 叉号的css样式,伪元素 */
+.close_icon {
+    position: relative;
+    /* width: 40px;
+    height: 40px; */
+}
+.close_icon::before,
+.close_icon::after {
+    position: absolute;
+    content: " ";
+    background-color: red;
+    left: 20px;
+    width: 1px;
+    height: 40px;
+}
+.close_icon::before {
+    transform: rotate(45deg);
+}
+.close_icon::after {
+    transform: rotate(-45deg);
+}
 ```
 
 ### 十五、格式化时间
