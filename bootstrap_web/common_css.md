@@ -64,5 +64,12 @@
     justify-content: space-around;
     align-items: center;
 }
+
+/* 插入换行 */
+.br::after {
+    content: "\A";
+    white-space: pre;
+}
+
 ```
 
