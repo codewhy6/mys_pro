@@ -705,3 +705,175 @@ copyUrl() {
 },
 ```
 
+### 十九、双飞翼布局
+
+```html
+<main class="main">
+    <section :style="width:100%">
+        <div class="center">
+            A paragraph of filler text. La la la de dah de dah de dah de la.
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </section>
+</main>
+```
+
+```css
+main {
+    width: 100%;
+    font-size: 12px;
+}
+section {
+    box-shadow: 0 0 0 1px #eee;
+}
+/* 清除浮动 */
+section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+section > div {
+    height: 229px;
+    line-height: 1.5em;
+    text-align: center;
+    /* 浮动 */
+    float: left;
+    color: white;
+}
+section .left,
+section .right {
+    /* 左右盒子固定的宽度 */
+    width: 119px;
+    background: #b4a078;
+}
+section .left {
+    margin-left: -100%;
+}
+section .center {
+    width: 100%;
+    text-align: justify;
+    hyphens: auto;
+    background: pink;
+    background-clip: content-box;
+    /* 中间的自适应盒子宽度是100%，padding就是左右盒子的宽度+间隙（10px） */
+    padding: 0px 129px;
+    box-sizing: border-box;
+}
+
+section .right {
+    margin-left: -119px;
+}
+```
+
+### 二十、绝对底部布局
+
+```html
+<main class="main">
+    <header>
+        <h1>Site Header</h1>
+    </header>
+    <section>
+        <input id="con-1" type="checkbox" checked />
+        <label for="con-1"><b>Toggle contents</b></label>
+        <p>
+            A paragraph of filler text. La la la de dah de dah de dah de la.A
+            paragraph of filler text. La la la de dah de dah de dah de la.A
+            paragraph of filler text. La la la de dah de dah de dah de la.A
+            paragraph of filler text. La la la de dah de dah de dah de la.A
+            paragraph of filler text. La la la de dah de dah de dah de la.A
+            paragraph of filler text. La la la de dah de dah de dah de la.
+        </p>
+    </section>
+    <footer>
+        <p>© 2018 LHammer</p>
+        <p>CSS Tricks need to know for web developer.</p>
+    </footer>
+</main>
+```
+
+```css
+main {
+    width: 100%;
+    height: 392px;
+}
+section input:checked ~ p {
+    display: none;
+}
+.main > header,
+.main > section,
+.main > footer {
+    padding: 0.1em calc(50% - 329px);
+    text-align: justify;
+    hyphens: auto;
+}
+header {
+    text-align: center;
+}
+section {
+    box-sizing: border-box;
+    /* 赋予内容区最小高度:calc() 计算（视窗高度 - 页头高度 - 页脚高度） */
+    min-height: calc(100vh - 88px - 93px);
+}
+footer {
+    color: white;
+    background: #747e7f;
+}
+```
+
+### 二十一、条纹背景进度条
+
+```html
+<main>
+    <div class="progress-outer">
+        <!--更好的扩展-->
+        <div class="progress-enter">
+            <div class="progress-bg"></div>
+        </div>
+        <!-- <span>60%</span> -->
+    </div>
+</main>
+```
+
+```css
+main {
+    width: 100%;
+    padding: 80px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.progress-outer {
+    width: 60%;
+    height: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+.progress-enter {
+    height: inherit;
+    background: rgba(180, 160, 120, 0.2);
+}
+.progress-bg {
+    width: 60%;
+    height: inherit;
+    border-radius: 6px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #d9cfbb 25%,
+        #c3b393 0,
+        #c3b393 50%,
+        #d9cfbb 0,
+        #d9cfbb 75%,
+        #c3b393 0
+    );
+    background-size: 16px 16px;
+    animation: panoramic 20s linear infinite;
+}
+@keyframes panoramic {
+    to {
+        background-position: 200% 0;
+    }
+}
+```
+
