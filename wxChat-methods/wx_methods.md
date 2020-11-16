@@ -17,7 +17,7 @@
 
 ```
 
-### 2、戴眼镜的的密码输入框
+### 2、戴眼睛的的密码输入框
 
 ```html
 <van-field value="{{ subAccountPwd }}" type="{{inputType?'password':''}}" placeholder="点击输入子账号密码" border="{{ false }}" bind:change="onChange" custom-style="box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);border-radius:8rpx"  use-button-slot>
@@ -53,7 +53,7 @@ showPwd(){
 }
 ```
 
-### 5、tabs新样式
+### 5、tabs新样式（卡片式）
 
 ```html
 <van-tabs active="{{ active }}"  bind:change="onChange" color="#1478FC" custom-class="tabs_box" tab-class="new_tab_cls" tab-active-class="new_tab_cls_active" line-width="0rpx">

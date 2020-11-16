@@ -677,6 +677,33 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
 }
+
+//--倒计时
+function countDown(params) {
+    let newDate = +new Date();
+    let targetDate = +new Date(params);
+    // 毫秒数变成秒数
+    let times = Math.floor((targetDate - newDate) / 1000);
+    // 剩余天数
+    let d = Math.floor(times / (60 * 60 * 24));
+    // 剩余小时数
+    let h = getTimeStyle(Math.floor((times % (60 * 60 * 24)) / (60 * 60)));
+    // 剩余分钟数
+    let m = getTimeStyle(Math.floor((times % (60 * 60)) / 60));
+    // 剩余秒数
+    let s = getTimeStyle(Math.floor(times % 60));
+    // console.log(d);
+    // console.log(h);
+    // console.log(m);
+    // console.log(s);
+    return `剩余${d}天${h}小时${m}分钟${s}秒`;
+}
+console.log(countDown("2020-11-13 00:00:00"));
+
+function getTimeStyle(a) {
+    return a < 10 ? "0" + a : a;
+}
+
 ```
 
 ### 十七、动画animate函数
@@ -897,5 +924,23 @@ main {
         background-position: 200% 0;
     }
 }
+```
+
+### 二十二、金额保留两位小数
+
+```js
+Money(value, num) {
+    num = num > 0 && num <= 20 ? num : 2;
+    value = parseFloat((value + "").replace(/[^\d\.-]/g, "")).toFixed(num) + ""; //将金额转成比如 123.45的字符串
+    var valueArr = value.split(".")[0].split("").reverse() //将字符串的数变成数组
+    const valueFloat = value.split(".")[1]; // 取到 小数点后的值
+    let valueString = "";
+    for (let i = 0; i < valueArr.length; i++) {
+        valueString += valueArr[i] + ((i + 1) % 3 == 0 && (i + 1) != valueArr.length ? "," : ""); //循环 取数值并在每三位加个','
+    }
+    const money = valueString.split("").reverse().join("") + "." + valueFloat; //拼接上小数位
+    return money
+},
+
 ```
 
