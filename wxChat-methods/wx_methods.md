@@ -91,3 +91,89 @@ showPwd(){
 }
 ```
 
+### 6、手机验证码表单（倒计时）
+
+```html
+<van-field model:value="{{ phone}}" type="number" maxlength="11" size="large" custom-style="font-size:34rpx" placeholder-style="font-size:34rpx" placeholder="请输⼊⼿机号" border="{{ false }}" input-class="input-class" use-button-slot>
+    <van-button slot="button" size="small" type="primary" color="{{time != 0 ? '#cccccc' : '#1478FC'}}" disabled="{{time != 0}}" bind:click="phoneSubmit">
+        <text wx:if="{{time==0}}">发送验证码</text>
+        <van-count-down wx:else time="{{ time }}" format="ss s" use-slot class="control-count-down" bind:finish="countDownFinished" bind:change="countDownOnChange">
+            <van-button size="small" color="#999">{{ timeData.seconds }} s</van-button>
+        </van-count-down>
+    </van-button>
+</van-field>
+<view class="line"></view>
+```
+
+```js
+data:{
+    phone: "", // 手机号
+    yzm: "", // 验证码
+    time: 0,//倒计时时间
+    timeData: {},//倒计时详细数据
+} 
+
+// 获取手机验证码
+phoneSubmit() {
+    const phone = this.data.phone
+    if (!phone) {
+        Toast("请输入手机号")
+    } else if (!isPhone(phone)) {
+        Toast("请输入正确的手机号")
+    } else {
+        phoneSubmit({
+            data: {
+                phone: this.data.phone,
+            },
+            success: (res) => {
+                if (res.respCode == "0000") {
+                    this.setData({
+                        time: 60 * 1000
+                    })
+                } else {
+                    Toast(res.respMsg);
+                }
+
+            },
+            fail: (err) => {
+                console.log(err)
+            }
+        })
+    }
+},
+    // 倒计时结束事件
+    countDownFinished() {
+        // Toast('倒计时结束！')
+        //  console.log(this.data.time);
+        // 倒计时结束，让时间重回0
+        if (this.data.time == 60000) {
+            this.setData({
+                time: 0
+            })
+        }
+    },
+        // 倒计时change事件，从而自定义样式(按需使用)
+        countDownOnChange(e) {
+            // console.log(e.detail);
+            e.detail.seconds = e.detail.seconds < 10 ? '0' + e.detail.seconds : e.detail.seconds
+            this.setData({
+                timeData: e.detail,
+            });
+        },
+```
+
+```css
+.line {
+    box-sizing: border-box;
+    padding: 0 30rpx;
+}
+
+.line::after {
+    display: block;
+    content: '';
+    height: 2rpx;
+    width: 100%;
+    background-color: #E4E4E4;
+}
+```
+

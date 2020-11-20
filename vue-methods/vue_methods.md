@@ -354,3 +354,81 @@ isScrollBottom() {
 },
 ```
 
+### 14、付款表单，金额输入问题
+
+```js
+watch:{
+    money(val, old) {
+        // console.log(typeof Number(val), "是数字");
+        if (isNaN(Number(val))) {
+            this.money = old;
+            return;
+        }
+        //修复第一个字符是小数点的情况.
+        if (val != "" && val.substr(0, 1) == ".") {
+            this.money = "";
+        }
+        //解决 粘贴不生效
+        this.money = val.replace(/^0*(0\.|[1-9])/, "$1"); 
+        //清除“数字”和“.”以外的字符
+        this.money = val.replace(/[^\d.]/g, "");
+        //只保留第一个. 清除多余的
+        this.money = val.replace(/\.{2,}/g, "."); 
+        this.money = val.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+        //只能输入两位小数
+        this.money = val.replace(/^(\-)*(\d+)\.(\d\d).*$/, "$1$2.$3"); 
+        if (val.indexOf(".") < 0 && val != "") {
+            //以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+            if (val.substr(0, 1) == "0" && val.length == 2) {
+                this.money = val.substr(1, val.length);
+            }
+        }
+    },
+}
+```
+
+### 15、判断是不是Android、iOS、WeChat、PC
+
+```js
+// 点击下载
+down() {
+    let u = navigator.userAgent;
+    // console.log(u);
+    //-Android终端
+    let isAndroid = u.indexOf("Android") > -1 || u.indexOf("Linux") > -1; //g
+    //ios终端
+    let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+    // 判断是否在微信中打开的链接
+    let ua = window.navigator.userAgent.toLowerCase();
+    let iswx = ua.match(/MicroMessenger/i);
+    if (isIOS) {
+        window.location.href = "https://apps.apple.com/cn/app/id1532241721";
+    } else if (isAndroid) {
+        if (iswx == "micromessenger") {
+            this.isWx = true;
+        } else {
+            window.location.href =
+                "http://task.liuyanzb.com/download/liuyan_360.apk";
+        }
+    } else {
+        window.location.href = "https://www.liuyanzb.com/";
+    }
+},
+//-判断是不是PC
+    IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (window.screen.width >= 768) {
+            flag = true;
+        }
+        return flag;
+    },
+```
+
