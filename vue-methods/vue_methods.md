@@ -195,10 +195,11 @@ filters: {
                      : changeNum[strArr[i]] + (strArr[i] == 0 ? unit[0] : unit[i])) +
                     newNum;
             }
-            return newNum;
+            
             if (newNum=='一十') {
               newNum='十'
             }
+            return newNum;
         };
         let overWan = Math.floor(num / 10000);
         let noWan = num % 10000;

@@ -944,3 +944,12 @@ Money(value, num) {
 
 ```
 
+### 二十三、获取用户当前所在的城市
+
+```js
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+console.log(returnCitySN)
+//--{cip: "221.231.169.178", cid: "320100", cname: "江苏省南京市"},'returnCitySN'
+```
+
