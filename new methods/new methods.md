@@ -508,7 +508,7 @@ $("body").on("click", ".scrollTop_box", function () {
 
 ```
 
-### 十四、右箭头/叉号/三角形-css样式
+### 十四、右箭头/叉号/三角形/加号-css样式
 
 ```css
 /* 三角箭头的父元素 */
@@ -557,7 +557,7 @@ $("body").on("click", ".scrollTop_box", function () {
 /* 三角形-css样式 */
 .triangle::after {
     content:''
-    position:absolute;
+        position:absolute;
     left:0px;
     top:0px;
     width: 0;
@@ -566,6 +566,38 @@ $("body").on("click", ".scrollTop_box", function () {
     border-width: 86.6px 50px 0 50px;
     border-color: #00adb5 transparent transparent transparent;
 }
+
+/* ================================================================================ */
+/* 加号-css样式 */
+.add_icon {
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    color: #ccc;
+    transition: color .25s;
+    position: relative;
+}
+.add_icon::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    margin-left: -40px;
+    margin-top: -5px;
+    border-top: 10px solid;
+}
+.add_icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 80px;
+    margin-left: -5px;
+    margin-top: -40px;
+    border-left: 10px solid;
+}
+
 ```
 
 ### 十五、格式化时间

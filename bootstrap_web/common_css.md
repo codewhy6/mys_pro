@@ -70,6 +70,10 @@
     content: "\A";
     white-space: pre;
 }
-
+/* 长文本折行 */
+.long-text{
+  white-space: pre-line;
+  word-wrap: break-word;
+}
 ```
 
