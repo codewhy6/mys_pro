@@ -508,7 +508,7 @@ $("body").on("click", ".scrollTop_box", function () {
 
 ```
 
-### 十四、右箭头/叉号-css样式
+### 十四、右箭头/叉号/三角形-css样式
 
 ```css
 /* 三角箭头的父元素 */
@@ -551,6 +551,20 @@ $("body").on("click", ".scrollTop_box", function () {
 }
 .close_icon::after {
     transform: rotate(-45deg);
+}
+
+/* ================================================================================ */
+/* 三角形-css样式 */
+.triangle::after {
+    content:''
+    position:absolute;
+    left:0px;
+    top:0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 86.6px 50px 0 50px;
+    border-color: #00adb5 transparent transparent transparent;
 }
 ```
 
@@ -942,6 +956,9 @@ Money(value, num) {
     return money
 },
 
+    
+//--正则表达式
+/^(([1-9]{1}\d*)|(0{1}))(\.\d{1,2})?$/
 ```
 
 ### 二十三、获取用户当前所在的城市
