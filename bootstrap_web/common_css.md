@@ -23,6 +23,11 @@
     float: right;
 }
 
+/* 清除外边距塌陷 */
+.clearMargin::before{
+    content:'';
+    display:table;
+}
 /* 文本溢出隐藏，一行 */
 .txt_of {
     overflow: hidden;
