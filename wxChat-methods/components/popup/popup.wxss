@@ -1,0 +1,10 @@
+/* components/popup/popup.wxss */
+.valCls {
+  text-align: left !important;
+  padding-left: 24rpx;
+}
+.valCls2 {
+  text-align: left !important;
+  padding-left: 24rpx;
+  color: #333 !important;
+}

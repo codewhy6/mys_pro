@@ -1,0 +1,3 @@
+<!--components/fieldInput/fieldInput.wxml-->
+<van-field label="{{title}}" title-width="200rpx" label-class="titleCls" placeholder-style="color:#969799;" value="{{ value }}" type="{{type}}" password="{{password}}" placeholder="{{placeholder}}" bind:input="modelInput"
+  data-currentkey="{{currentkey}}" />

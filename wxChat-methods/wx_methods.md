@@ -177,3 +177,30 @@ phoneSubmit() {
 }
 ```
 
+### 7、动态输入表单（field）
+
+```html
+<van-field label="微信" value="{{ company.wechat_rate }}" placeholder="请填写微信费率" bind:input="modelInput"
+           data-currentkey="wechat_rate" />
+```
+
+```js
+// 输入框中的双向绑定
+modelInput(e) {
+    let shop = this.data.shop
+    let {
+        currentkey,
+        currentconfig
+    } = e.currentTarget.dataset
+    if (currentconfig) {
+        shop[currentconfig][currentkey] = e.detail
+    } else {
+        shop[currentkey] = e.detail
+    }
+    this.setData({
+        shop: shop
+    })
+    console.log(this.data, "data")
+},
+```
+

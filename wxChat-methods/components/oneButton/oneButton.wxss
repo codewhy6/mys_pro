@@ -1,0 +1,5 @@
+/* component/oneButton/oneButton.wxss */
+.one_button {
+    margin-top: 60rpx;
+    padding: 0 4%;
+}

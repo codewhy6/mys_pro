@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.del_btns view{
+.del_btns .btn_item{
   width: 223rpx;
   height: 88rpx;
   line-height: 88rpx;

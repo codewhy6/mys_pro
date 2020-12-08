@@ -23,7 +23,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 删除图片
     deleteImg(e) {
+      let that = this //获取上下文
       let upload_picture_list = this.data.upload_picture_list;
       let index = e.currentTarget.dataset.index;
       upload_picture_list.splice(index, 1);
@@ -43,13 +45,12 @@ Component({
         sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
         success: function (res) { // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片 
           let tempFiles = res.tempFiles
-
           for (let i in tempFiles) {
             tempFiles[i]['upload_percent'] = 0
             tempFiles[i]['path_server'] = ''
             upload_picture_list.push(tempFiles[i])
           }
-          console.log(tempFiles)
+          // console.log(tempFiles)
           //显示
           that.setData({
             upload_picture_list: upload_picture_list,

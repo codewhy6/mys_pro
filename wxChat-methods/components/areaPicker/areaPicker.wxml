@@ -1,0 +1,8 @@
+<!--components/areaPicker/areaPicker.wxml-->
+<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}" value-class="{{value1==value2?'valCls':'valCls2'}}" 
+  bind:click="openAreaPicker" />
+<!-- 区域选择器 企业地区选择-->
+<van-popup show="{{ pickerAreaVisible }}" position="bottom" round>
+  <van-area area-list="{{ areaList }}" value="{{region}}" bind:change="onchange" bind:confirm="onSelectArea"
+    columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}" bind:cancel="closeAreaPicker" title="省/市/区" />
+</van-popup>

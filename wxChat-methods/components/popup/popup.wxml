@@ -1,0 +1,8 @@
+<!--components/popup/popup.wxml-->
+<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}" value-class="{{value1==value2?'valCls':'valCls2'}}" data-pickertype="{{pickertype}}"
+  data-currentkey="{{currentkey}}" bind:click="openPicker" />
+<!-- 选择器 -->
+<van-popup show="{{ pickerVisible }}" position="bottom" round>
+  <van-picker columns="{{ pickerList[pickertype].data }}" bind:confirm="onSelect" bind:cancel="closePicker" show-toolbar
+    title="{{pickerList[pickertype].title}}" value-key="text" default-value="" />
+</van-popup>

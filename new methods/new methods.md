@@ -750,6 +750,18 @@ function getTimeStyle(a) {
     return a < 10 ? "0" + a : a;
 }
 
+
+// 对象转数组
+export const objToArr = (obj) => {
+    let res = []
+    for (let key in obj) {
+        res.push({
+            value: key,
+            text: obj[key]
+        })
+    }
+    return res
+}
 ```
 
 ### 十七、动画animate函数
@@ -1000,5 +1012,17 @@ Money(value, num) {
 
 console.log(returnCitySN)
 //--{cip: "221.231.169.178", cid: "320100", cname: "江苏省南京市"},'returnCitySN'
+
+export const getIp = () => {
+    return new Promise((resolve, reject) => {
+        var script = document.createElement('script')
+        // script.src = 'https://jsonip.com/'
+        script.src = 'https://pv.sohu.com/cityjson?ie=utf-8'
+        script.onload = function () {
+            resolve(window.returnCitySN)
+        }
+        document.body.appendChild(script)
+    })
+}
 ```
 

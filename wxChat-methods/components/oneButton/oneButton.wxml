@@ -1,0 +1,4 @@
+<!--component/oneButton/oneButton.wxml-->
+<view class="one_button">
+    <van-button type="primary" bind:click="handleClick" color="{{btnColor}}" round custom-style="width:100%;height:80rpx">{{btnName}}</van-button>
+</view>

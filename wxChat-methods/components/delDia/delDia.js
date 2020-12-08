@@ -12,22 +12,22 @@ Component({
     // 标题
     title: {
       type: String,
-      value: ''
+      value: '删除'
     },
     // 副标题
     subTitle: {
       type: String,
-      value: ""
+      value: "是否要删除！"
     },
     // 左侧按钮文字
     leftBtnTxt: {
       type: String,
-      value: ''
+      value: '取消'
     },
     // 右侧按钮文字
     rightBtnTxt: {
       type: String,
-      value: ''
+      value: '确定'
     }
 
   },

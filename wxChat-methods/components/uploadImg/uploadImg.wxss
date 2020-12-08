@@ -1,7 +1,5 @@
 
 .add-image, .up-pic image {
-  margin-top: 2%;
-  margin-left: 2%;
   width:217rpx;
   height:217rpx;
   color: #ddd;
