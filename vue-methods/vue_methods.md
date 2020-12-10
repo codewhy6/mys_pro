@@ -16,35 +16,20 @@ Vue.directive('focus', {
 ### 2、时间-过滤器 
 
 ```js
-Vue.filter('dateFormat', function (originTime) {
-    let newTime = new Date(originTime);
-    let y = newTime.getFullYear()
-    let m = (newTime.getMonth() + 1 + '').padStart(2, '0')
-    let d = (newTime.getDate() + '').padStart(2, '0')
-    let hh = (newTime.getHours() + '').padStart(2, '0')
-    let mm = (newTime.getMinutes() + '').padStart(2, '0')
-    let ss = (newTime.getSeconds() + '').padStart(2, '0')
-    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
-})
-
 Vue.filter('dateFormat', function (dataString, pattern = '') {
     // 根据给定的时间字符串，得到特定的时间
     let dt = new Date(dataString);
     let year = dt.getFullYear();
-    let month = dt.getMonth() + 1;
-    let data = dt.getDate();
+    let month =(dt.getMonth() + 1+'').padStart(2,'0');
+    let day = (dt.getDate()+'').padStart(2,'0');
     //yyyy-mm-dd:返回这个日期格式
-    // return year + '-' + month + '-' + data;
-    // return `${year}-${month}-${data}`;
-
     if (pattern.toLowerCase() === 'yyyy-mm-dd') {
-        return year + '-' + month + '-' + data;
+        return year + '-' + month + '-' + day;
     } else {
-        let hour = dt.getHours();
-        let minute = dt.getMinutes();
-        let second = dt.getSeconds();
-        // return year + '-' + month + '-' + data + ' ' + hour + ':' + minute + ':' + second;
-        return `${year}-${month}-${data} ${hour}:${minute}:${second}`;
+        let hour = (dt.getHours()+'').padStart(2,'0');
+        let minute = (dt.getMinutes()+'').padStart(2,'0');
+        let second = (dt.getSeconds()+'').padStart(2,'0');
+        return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
     }
 });
 ```
@@ -431,5 +416,54 @@ down() {
         }
         return flag;
     },
+```
+
+### 16、路由元信息
+
+```js
+// 1.只能在需要用户登录才能访问的路由上添加meta元信息，这样就可以区分哪些路由需要用户登录了！代码如下：
+{
+    path:'/me',
+        component:Me,
+            //在路由的头部添加元信息
+            meta:{
+                //requiresAuth是自定义的头部参数名称,
+                //标识访问该路由时是否进行用户登录的检测
+                requiresAuth:true
+            }
+}
+// 2.接下来就可以通过全局前置守卫进行检测，代码如下：
+router.beforeEach((to,from,next)=>{
+    //console.log(to);
+    //console.log(to.meta.requiresAuth);
+    //检测目标路由信息是否包含requiresAuth的元信息
+    //如果包含则代表需要进行用户登录状态的检测
+    if(to.meta.requiresAuth){
+        //检测用户是否登录了?
+        if(store.state.author.isLogined == false || sessionStorage.getItem('isLogined') == false){
+            //强行跳转到登录路由(附加目标路由信息作为URL地址栏的参数)
+            if (confirm('未登录，是否要进行登陆！')) {
+                // 从哪个页面跳转到的登陆页面，在登陆成功后就需要到回到当前的页面
+                router.push('/login?redirect=' + to.fullPath)
+            }
+        } else {
+            //访问用户期望访问的信息(如我的,也就是说访问那些用户已登录后才能访问的路由)
+            next();
+        }
+    } else {
+        //不需要用户登录即可访问的路由
+        next();
+    } 
+});
+
+//--login.vue
+// 从哪个页面点击的登陆，或者跳转到登陆的页面
+// 在登陆成功后，就从跳转当前的页面
+if (this.$route.query.redirect) {
+    this.$router.push(this.$route.query.redirect);
+} else {
+    // 直接在登陆页面的登陆，就要跳转到首页
+    this.$router.push("/");
+}
 ```
 
