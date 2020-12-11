@@ -204,3 +204,64 @@ modelInput(e) {
 },
 ```
 
+### 8、根据地址获取经纬度
+
+```js
+if(!this.data.company.merLngLat){
+    wx.request({
+        url: 'https://restapi.amap.com/v3/geocode/geo?key=363f73cc6d1cd03f815332fc5ed430e9&s=rsv3&address='+this.data.company.adress,
+        method: 'GET',
+        data:'',    //参数为键值对字符串
+        header: {
+            //设置参数内容类型为x-www-form-urlencoded
+            'content-type':'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+        },
+        success: function (res) {
+            console.log(res.data)
+            let company = this.data.company
+            company.merLngLat = res.data.geocodes[0].location
+            this.setData({
+                comApany: company
+            })
+            // Toast(res.data.geocodes[0].location)
+        },
+        fail:function(err){
+            Toast('err'+JSON.stringify(err))
+        }
+
+    })
+}
+//------------------------------
+{
+    "status": "1",
+    "info": "OK",
+    "infocode": "10000",
+    "count": "1",
+    "geocodes": [
+        {
+            "formatted_address": "安徽省合肥市肥东县",
+            "country": "中国",
+            "province": "安徽省",
+            "citycode": "0551",
+            "city": "合肥市",
+            "district": "肥东县",
+            "township": [],
+            "neighborhood": {
+                "name": [],
+                "type": []
+            },
+            "building": {
+                "name": [],
+                "type": []
+            },
+            "adcode": "340122",
+            "street": [],
+            "number": [],
+            "location": "117.469383,31.887940",
+            "level": "区县"
+        }
+    ]
+}
+```
+
