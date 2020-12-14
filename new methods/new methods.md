@@ -556,8 +556,8 @@ $("body").on("click", ".scrollTop_box", function () {
 /* ================================================================================ */
 /* 三角形-css样式 */
 .triangle::after {
-    content:''
-        position:absolute;
+    content:'';
+    position:absolute;
     left:0px;
     top:0px;
     width: 0;
@@ -1024,5 +1024,10 @@ export const getIp = () => {
         document.body.appendChild(script)
     })
 }
+//--使用
+import {getIp} from '../../utils/util';
+getIp().then((res) => {
+    this.ip = res.cip;
+});
 ```
 

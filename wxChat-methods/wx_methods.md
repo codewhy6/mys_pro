@@ -108,9 +108,9 @@ showPwd(){
 ```js
 data:{
     phone: "", // 手机号
-    yzm: "", // 验证码
-    time: 0,//倒计时时间
-    timeData: {},//倒计时详细数据
+        yzm: "", // 验证码
+            time: 0,//倒计时时间
+                timeData: {},//倒计时详细数据
 } 
 
 // 获取手机验证码
@@ -140,26 +140,26 @@ phoneSubmit() {
             }
         })
     }
-},
-    // 倒计时结束事件
-    countDownFinished() {
-        // Toast('倒计时结束！')
-        //  console.log(this.data.time);
-        // 倒计时结束，让时间重回0
-        if (this.data.time == 60000) {
-            this.setData({
-                time: 0
-            })
-        }
-    },
-        // 倒计时change事件，从而自定义样式(按需使用)
-        countDownOnChange(e) {
-            // console.log(e.detail);
-            e.detail.seconds = e.detail.seconds < 10 ? '0' + e.detail.seconds : e.detail.seconds
-            this.setData({
-                timeData: e.detail,
-            });
-        },
+}
+// 倒计时结束事件
+countDownFinished() {
+    // Toast('倒计时结束！')
+    //  console.log(this.data.time);
+    // 倒计时结束，让时间重回0
+    if (this.data.time == 60000) {
+        this.setData({
+            time: 0
+        })
+    }
+}
+// 倒计时change事件，从而自定义样式(按需使用)
+countDownOnChange(e) {
+    // console.log(e.detail);
+    e.detail.seconds = e.detail.seconds < 10 ? '0' + e.detail.seconds : e.detail.seconds
+    this.setData({
+        timeData: e.detail,
+    });
+}
 ```
 
 ```css

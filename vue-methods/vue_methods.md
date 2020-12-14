@@ -290,20 +290,20 @@ fullScreen() {
             ele.webkitRequestFullScreen();
         }
     }
-},
+}
 
-    //--退出全屏
-    function exitFullscreen() {
-        if (document.exitFullscreen) {
-            document.exitFullscreen()
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen()
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen()
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen()
-        }
+//--退出全屏
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen()
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen()
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen()
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen()
     }
+}
 ```
 
 ### 13、判断某一元素是否滚动到底部
@@ -399,24 +399,73 @@ down() {
     } else {
         window.location.href = "https://www.liuyanzb.com/";
     }
-},
+}
 //-判断是不是PC
-    IsPC() {
-        var userAgentInfo = navigator.userAgent;
-        var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"];
-        var flag = true;
-        for (var v = 0; v < Agents.length; v++) {
-            if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                flag = false;
-                break;
-            }
+IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
         }
-        if (window.screen.width >= 768) {
-            flag = true;
-        }
-        return flag;
-    },
+    }
+    if (window.screen.width >= 768) {
+        flag = true;
+    }
+    return flag;
+},
 ```
+
+```html
+<div class="iswx" v-show="isWx" @click="isWx = false">
+    <img src="@/assets/guide-arrows.png" alt="" />
+    <div class="txt">
+        点击右上角<br />
+        选择在 <span class="b1">浏览器</span> 中打开
+    </div>
+</div>
+```
+
+```css
+.iswx {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    font-size: 24px;
+    color: #ffffff;
+    z-index: 999;
+    img {
+        width: 150px;
+        height: 180px;
+        position: absolute;
+        right: 40px;
+        top: 10px;
+        // transform: translateX(-50%);
+    }
+    .b1 {
+        font-weight: bold;
+    }
+    .txt {
+        position: absolute;
+        top: 180px;
+        left: 50%;
+        min-width: 250px;
+        transform: translateX(-50%);
+        margin-left: -30px;
+        line-height: 45px;
+        font-size: 40px;
+    }
+}
+```
+
+
 
 ### 16、路由元信息
 
@@ -464,6 +513,14 @@ if (this.$route.query.redirect) {
 } else {
     // 直接在登陆页面的登陆，就要跳转到首页
     this.$router.push("/");
+}
+```
+
+### 17、从url中获取参数信息
+
+```js
+export const getUrlKey = (name) => {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
 }
 ```
 
