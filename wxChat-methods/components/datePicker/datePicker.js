@@ -48,10 +48,14 @@ Component({
       const second = date.getSeconds()
       // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
       // return [year, month, day].map(this.data.formatNumber()).join(sym)
-      return `${year}-${month}-${day}`
+      if (sym.toLowerCase() == 'yyyy-mm-dd') {
+        return year + '-' + month + '-' + day;
+      } else {
+        return `${year}${month}${day}`
+      }
     },
-    value1:'1',
-    value2:'1',
+    value1: '1',
+    value2: '1',
   },
 
   /**
@@ -101,8 +105,8 @@ Component({
         targetData: targetData,
         pickerDateVisible: false,
         // 选中的值
-        value: this.data.formatTime(new Date(e.detail)),
-        value2:'0'
+        value: this.data.formatTime(new Date(e.detail),'yyyy-mm-dd'),
+        value2: '0'
 
       })
       // console.log(this.data, "onSelect")

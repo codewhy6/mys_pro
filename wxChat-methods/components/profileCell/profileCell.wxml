@@ -1,0 +1,5 @@
+<!--components/profileCell/profileCell.wxml-->
+<van-cell title="{{title}}" value="{{value}}" size="large" center="true" is-link link-type="{{linkType}}"
+  url="{{linkUrl}}">
+  <image wx:if="{{icon}}" slot="icon" class="custom-icon" src="{{icon}}"></image>
+</van-cell>

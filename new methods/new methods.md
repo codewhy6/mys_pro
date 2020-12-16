@@ -233,65 +233,69 @@ $("body").on("click", ".my_swiperNums_btn_prev", function () {
 
 ```css
 .customer_form input[type="radio"] {
-  width: 0.24rem;
-  height: 0.24rem;
-  background-color: #fff;
-  border: solid 1px #c9c9c9;
-  border-radius: 50%;
-  margin: 0px 0.14rem;
+    width: 0.24rem;
+    height: 0.24rem;
+    background-color: #fff;
+    border: solid 1px #c9c9c9;
+    border-radius: 50%;
+    margin: 0px 0.14rem;
 }
 
 .customer_form input[type="radio"]:checked {
-  position: relative;
-  border-color: #ff6d15;
+    position: relative;
+    border-color: #ff6d15;
 }
 
 .customer_form input[type="radio"]:checked::after {
-  position: absolute;
-  content: "";
-  width: 0.12rem;
-  height: 0.12rem;
-  background-color: #ff6d15;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  -moz-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -o-transform: translate3d(-50%, -50%, 0);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+    position: absolute;
+    content: "";
+    width: 0.12rem;
+    height: 0.12rem;
+    background-color: #ff6d15;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .customer_form input[type="checkbox"]:checked {
-  background: url(../images/radoi_checkedhiolk.png) 0px 0px no-repeat;
-  background-size: 100% 100%;
-  border: 1px solid #ff6d15;
+    background: url(../images/radoi_checkedhiolk.png) 0px 0px no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #ff6d15;
 }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: none;
-  border: 1px solid #ff6d15;
+    outline: none;
+    border: 1px solid #ff6d15;
 }
 
 .customer_form input[type="checkbox"] {
-  width: 0.24rem;
-  height: 0.24rem;
-  border-radius: 0.04rem;
-  border: solid 1px #c9c9c9;
-  background-color: #fff;
-  margin-right: 0.15rem;
-  -webkit-border-radius: 0.04rem;
-  -moz-border-radius: 0.04rem;
-  -ms-border-radius: 0.04rem;
-  -o-border-radius: 0.04rem;
+    width: 0.24rem;
+    height: 0.24rem;
+    border-radius: 0.04rem;
+    border: solid 1px #c9c9c9;
+    background-color: #fff;
+    margin-right: 0.15rem;
+    -webkit-border-radius: 0.04rem;
+    -moz-border-radius: 0.04rem;
+    -ms-border-radius: 0.04rem;
+    -o-border-radius: 0.04rem;
 }
 
+/* 表单输入框更改光标的颜色==================== */
+.input{
+    caret-color: #1478fc;
+}
 ```
 
 
@@ -1029,5 +1033,87 @@ import {getIp} from '../../utils/util';
 getIp().then((res) => {
     this.ip = res.cip;
 });
+```
+
+### 二十四、自定义键盘，不弹起手机自带的软键盘
+
+```html
+<div class="input-wrap">
+    <!--<input-->
+    <!--type="text"-->
+    <!--class="inp"-->
+    <!--placeholder="请输入金额"-->
+    <!--v-model="money"-->
+    <!--:readonly="true"-->
+    <!--/>-->
+    <!--<span class="flagSta"></span>-->
+    <div class="numb" @click="changeStatus" v-show="!money">请输入金额</div>
+    <div class="numb2" v-show="showNum || money">{{ money }}</div>
+    <span class="sym">￥</span>
+</div>
+```
+
+```less
+.input-wrap {
+    position: relative;
+    border-bottom: 1px solid #e4e4e4;
+    height: 60px;
+    .inp {
+        width: 100%;
+        height: 100px;
+        font-size: 54px;
+        line-height: 140px;
+        text-indent: 36px;
+        border: none;
+        // font-weight: bold;
+        caret-color: #1478fc;
+    }
+    .sym {
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        font-size: 36px;
+    }
+}
+.numb {
+    height: 60px;
+    /* position: absolute; */
+    padding-left: 40px;
+    padding-top: 5px;
+    font-size: 36px;
+    color:#ccc;
+}
+
+.numb2 {
+    width: 93.5%;
+    height: 60px;
+    margin-left: 40px;
+    box-sizing: border-box;
+    padding-top: 5px;
+    font-size: 36px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.numb2::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 30px;
+    animation: blink 1.2s infinite;
+    top: 9px;
+    margin-left: 1px;
+}
+@keyframes blink {
+    0%,
+    100% {
+        background-color: #1989fa;
+    }
+    50% {
+        background-color: transparent;
+    }
+}
 ```
 

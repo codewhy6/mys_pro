@@ -1,0 +1,51 @@
+/* components/scrollView/scrollView.wxss */
+.superScrollView{
+  height:100%;
+  background: pink;
+ }
+ .scrollView{
+  height:100%;
+ }
+ .scrollWrap{
+  min-height:100%;
+  position: relative;
+ }
+ .freshball{
+  background:white;
+  border-radius: 50%;
+  width:95rpx;
+  height:95rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+  left:50%;
+  margin-left:-40rpx;
+  margin-top:-80rpx;
+  box-sizing: border-box;
+  z-index:999;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  transition:all 0.3s;
+  overflow:hidden;
+ }
+ /* .freshball .freshImg{
+  width:67%;
+  height:67%;
+  display:block;
+  transform-origin: center center;
+  transition:all 0.1s;
+ }
+ .freshball .loading{
+  width:70%;
+  height:70%;
+  display:block;
+  transform-origin: center center;
+  animation:loading 1s infinite;
+ }
+ @keyframes loading
+ {
+  from {transform:rotate(0deg)}
+  to {transform: rotate(360deg)}
+ } */
+ 

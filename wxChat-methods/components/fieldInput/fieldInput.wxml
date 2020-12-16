@@ -1,3 +1,5 @@
 <!--components/fieldInput/fieldInput.wxml-->
-<van-field label="{{title}}" title-width="200rpx" label-class="titleCls" placeholder-style="color:#969799;" value="{{ value }}" type="{{type}}" password="{{password}}" placeholder="{{placeholder}}" bind:input="modelInput"
-  data-currentkey="{{currentkey}}" />
+<van-field label="{{title}}" title-width="200rpx" label-class="titleCls" placeholder-style="color:#969799;" value="{{ value }}" type="{{type}}" password="{{password}}" placeholder="{{placeholder}}" required="{{required}}" bind:input="modelInput" bind:blur="validateData"
+  data-currentkey="{{currentkey}}" data-validatetype="{{validatetype}}"/>
+
+<van-toast id="van-toast" />
