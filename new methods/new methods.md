@@ -1125,3 +1125,36 @@ getIp().then((res) => {
 
 ```
 
+### 二十六、参数列表自适应对其
+
+```html
+<div class="params-container">
+    <div class="param-item">
+        <div class="param-cell font-bold">key</div>
+        <div class="param-cell font-bold">value</div>
+    </div>
+    <div class="param-item">
+        <div class="param-cell">message</div>
+        <div class="param-cell">消息文字</div>
+    </div>
+    ...
+</div>
+```
+
+```less
+.params-container {
+    display: table;
+    border: 1px solid #ddd;
+    .param-item {
+        display: table-row;
+    }
+    .param-cell {
+        display: table-cell;
+        padding: 10px;
+    }
+    .font-bold {
+        font-weight: bold;
+    }
+}
+```
+
