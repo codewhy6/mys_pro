@@ -84,16 +84,6 @@ module.exports = {
                     "^/api": "/",
                 },
             },
-            "/api2": {
-                target: "http://172.12.12.12:2018",
-                //允许跨域
-                changeOrigin: true,
-                //ws: true,//websocket支持
-                secure: false,
-                pathRewrite: {
-                    "^/api2": "/",
-                },
-            },
         },
     },
     // 对内部的 webpack 配置（比如修改、增加Loader选项）(链式操作)

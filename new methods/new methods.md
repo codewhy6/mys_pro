@@ -1117,3 +1117,11 @@ getIp().then((res) => {
 }
 ```
 
+### 二十五、解决iPhone手机底部留白问题
+
+```html
+<!-- 在meta viewport标签里加属性：viewport-fit=cover；如下 -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, viewport-fit=cover" />
+
+```
+
