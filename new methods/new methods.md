@@ -1158,3 +1158,70 @@ getIp().then((res) => {
 }
 ```
 
+### 二十七、节流(throttle)和防抖(debounce)
+
+```js
+//--防抖：就是在规定的时间内只让你执行一次，如果在时间内又一次触发了此事件，则会重新计算时间，直到你不在触发此事件，并等待一定时间，才会执行事件中的函数。(只要不是最后一次触发，就不执行异步操作)
+// 延迟执行版防抖
+function count() {
+    console.log(1)
+}
+function debounce(fn, time) {
+    let timer;
+    return function () {
+        clearTimeout(timer); // 如果在1秒钟内重复点击，会清除上一个定时器，下面的定时器将重新计算时间
+        timer = setTimeout(() => {
+            fn()               // 将函数放在定时器中，1秒钟之后执行；
+        }, time);
+    }
+
+}
+box.onclick = debounce(count,1000) 
+//立即执行版防抖
+function debounce(fn,time){
+    let timer;// null
+    return function(){
+        clearTimeout(timer); // 1秒内连续点击，会清除上一次的定时器，timer为定时器的返回值是一个数字，转布尔取反为false，判断条件不成立，函数无法执行
+        let now = !timer; // 第一次点击now为true ，判断条件成立，所以进来立即执行一次函数。
+        timer=setTimeout(()=>{
+            timer=null;   // 在间隔1秒钟之后 重新给timer赋值为null，转布尔取反为true，下一次点击就会立即执行函数
+        },1000);
+
+        /// 第一次进来立即执行
+        if(now){
+            fn.call(this);
+        }
+    }
+}
+box.onclick = debounce(count,1000)
+
+//=======================================================================================
+//--节流:事件不断被触发，但是里面的函数还是每隔一定的时间间隔触发一次，稀释了函数执行的频率。（阻止一个函数在短时间内连续调用）
+// 立即执行版
+function throttle(fn, time) {
+    let previous = 0;
+    return function () {
+        let now = Date.now(); // 每次点击获取最新的时间戳
+        if (now - previous >= time) { // 第一次触发点击事件，时间戳一定比previous大很多，判断条件成立，函数执行
+            fn.call(this)
+            previous = now // 在这将刚刚获取到的时间戳赋值给previous 
+        }// 在之后的每次点击中都在不断的获取最新的时间戳；只有时间戳大于previous 1000ms时，判断条件才会成立，函数才会执行
+    }
+}
+box.onclick = debounce(count,1000)  
+// 定时器版
+function throttle(fn,time){
+    let timer // 第一次为null
+    return function(){
+        if(!timer){ // 判断条件成立 定时器开始计时
+            timer=setTimeout(()=>{  // 定时器的返回值 赋值给timer 为数字，如果在1秒内中再次点击 !timer为flase 条件不成立俩民的代码无法执行
+                timer=null;
+                fn.call(this)
+            },time) // 在1秒之后，timer重新被赋值为null，判断条件成立，里面的代码开始执行，
+        }
+    }// 这样每次函数执行的间隔为1秒，稀释了代码执行的频率
+}
+box.onclick = debounce(count,1000)  
+
+```
+
