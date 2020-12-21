@@ -1039,6 +1039,7 @@ getIp().then((res) => {
 
 ```html
 <div class="input-wrap">
+    <!-- 不带光标的input输入框 -->
     <!--<input-->
     <!--type="text"-->
     <!--class="inp"-->
@@ -1047,10 +1048,19 @@ getIp().then((res) => {
     <!--:readonly="true"-->
     <!--/>-->
     <!--<span class="flagSta"></span>-->
+    
+    <!-- 带光标的自定义输入框 -->
     <div class="numb" @click="changeStatus" v-show="!money">请输入金额</div>
     <div class="numb2" v-show="showNum || money">{{ money }}</div>
     <span class="sym">￥</span>
 </div>
+```
+
+```js
+//--点击提示文字，显示输入金额
+changeStatus() {
+    this.showNum = true;
+},
 ```
 
 ```less
@@ -1171,7 +1181,7 @@ function debounce(fn, time) {
     return function () {
         clearTimeout(timer); // 如果在1秒钟内重复点击，会清除上一个定时器，下面的定时器将重新计算时间
         timer = setTimeout(() => {
-            fn()               // 将函数放在定时器中，1秒钟之后执行；
+            fn()// 将函数放在定时器中，1秒钟之后执行；
         }, time);
     }
 
@@ -1199,7 +1209,7 @@ box.onclick = debounce(count,1000)
 //--节流:事件不断被触发，但是里面的函数还是每隔一定的时间间隔触发一次，稀释了函数执行的频率。（阻止一个函数在短时间内连续调用）
 // 立即执行版
 function throttle(fn, time) {
-    let previous = 0;
+    let previous = 0; 
     return function () {
         let now = Date.now(); // 每次点击获取最新的时间戳
         if (now - previous >= time) { // 第一次触发点击事件，时间戳一定比previous大很多，判断条件成立，函数执行
@@ -1208,7 +1218,7 @@ function throttle(fn, time) {
         }// 在之后的每次点击中都在不断的获取最新的时间戳；只有时间戳大于previous 1000ms时，判断条件才会成立，函数才会执行
     }
 }
-box.onclick = debounce(count,1000)  
+box.onclick = throttle(count,1000)  
 // 定时器版
 function throttle(fn,time){
     let timer // 第一次为null
@@ -1221,7 +1231,7 @@ function throttle(fn,time){
         }
     }// 这样每次函数执行的间隔为1秒，稀释了代码执行的频率
 }
-box.onclick = debounce(count,1000)  
+box.onclick = throttle(count,1000)  
 
 ```
 
