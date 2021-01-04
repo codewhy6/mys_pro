@@ -196,7 +196,22 @@ filters: {
 },
 ```
 
-### 11、点击滚动页面指定的位置scrollTo（）
+### 11、银行卡表单输入有空格--过滤器
+
+```js
+filters: {
+    cardNoFormat: function (value) {
+        if(typeof value != "string"){
+            value=value+''
+        }
+        return value=value.replace(/(\s)/g, '').replace(/(\d{4})/g, '$1 ').replace(/\s*$/, '');
+    },
+},
+```
+
+
+
+### 12、点击滚动页面指定的位置scrollTo（）
 
 ```js
 toScroll(id) {
@@ -210,7 +225,7 @@ toScroll(id) {
 },
 ```
 
-### 12、点击全屏显示
+### 13、点击全屏显示
 
 ```js
 //获取浏览器型号和版本号
@@ -306,7 +321,7 @@ function exitFullscreen() {
 }
 ```
 
-### 13、判断某一元素是否滚动到底部
+### 14、判断某一元素是否滚动到底部
 
 ```js
 // 是否滚动到底部
@@ -340,7 +355,7 @@ isScrollBottom() {
 },
 ```
 
-### 14、付款表单，金额输入问题
+### 15、付款表单，金额输入问题
 
 ```js
 watch:{
@@ -373,7 +388,7 @@ watch:{
 }
 ```
 
-### 15、判断是不是Android、iOS、WeChat、PC
+### 16、判断是不是Android、iOS、WeChat、PC
 
 ```js
 // 点击下载
@@ -467,7 +482,7 @@ IsPC() {
 
 
 
-### 16、路由元信息
+### 17、路由元信息
 
 ```js
 // 1.只能在需要用户登录才能访问的路由上添加meta元信息，这样就可以区分哪些路由需要用户登录了！代码如下：
@@ -516,7 +531,7 @@ if (this.$route.query.redirect) {
 }
 ```
 
-### 17、从url中获取参数信息
+### 18、从url中获取参数信息
 
 ```js
 export const getUrlKey = (name) => {

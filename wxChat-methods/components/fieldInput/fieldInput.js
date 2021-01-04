@@ -18,7 +18,7 @@ Component({
     },
     value: {
       type: String,
-      value: ''
+      value: '',
     },
     type: {
       type: String,
@@ -47,7 +47,11 @@ Component({
     errorMsg: {
       type: String,
       value: ''
-    }
+    },
+    maxlength:{
+      type:Number,
+      value:-1
+    },
   },
 
   /**
@@ -71,7 +75,11 @@ Component({
       if (currentconfig) {
         targetData[currentconfig][currentkey] = e.detail
       } else {
-        targetData[currentkey] = e.detail
+        if (currentkey == 'card_no') {
+          targetData[currentkey] = e.detail.replace(/(\s)/g, '').replace(/(\d{4})/g, '$1 ').replace(/\s*$/, '')
+        } else {
+          targetData[currentkey] = e.detail
+        }
       }
       if (e.detail) {
         this.setData({
@@ -122,7 +130,7 @@ Component({
         }
       } else if (validatetype && validatetype == 'phone') {
         let phone = targetData[currentkey]
-        if (!phone || phone.trim().length==0) {
+        if (!phone || phone.trim().length == 0) {
           // Toast("请输入您的手机号!");
           this.setData({
             errorMsg: '请输入您的手机号!'
@@ -139,7 +147,7 @@ Component({
         }
       } else if (validatetype && validatetype == 'ID_no') {
         let ID_no = targetData[currentkey]
-        if (!ID_no || ID_no.trim().length==0) {
+        if (!ID_no || ID_no.trim().length == 0) {
           // Toast("请输入您的身份证号码!");
           this.setData({
             errorMsg: '请输入您的身份证号码!'
@@ -157,7 +165,7 @@ Component({
       } else {
         // console.log(this.data);
         // console.log(e);
-        if (!e.detail.value || e.detail.value.trim().length==0 || e.detail.value == '') {
+        if (!e.detail.value || e.detail.value.trim().length == 0 || e.detail.value == '') {
           this.setData({
             errorMsg: `请输入您的${this.data.title}！`
           })
@@ -170,6 +178,6 @@ Component({
       // this.triggerEvent('validateData', myEventDetail, {})
     },
 
-    
+
   }
 })
