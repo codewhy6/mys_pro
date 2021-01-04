@@ -18,6 +18,26 @@ Component({
     currentkey: {
       type: String,
       value: ''
+    },
+    // 是否是红心标记
+    required: {
+      type: Boolean,
+      value: false
+    },
+    // 错误信息
+    errorMsg: {
+      type: String,
+      value: ''
+    },
+    // 是否显示错误信息
+    errorMsgFlag: {
+      type: Boolean,
+      value: false
+    },
+    // 是否显示错误模块
+    errFlag: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -76,10 +96,20 @@ Component({
       })
     },
     //关闭
-    closeDatePicker() {
+    closeDatePicker(e) {
       this.setData({
-        pickerDateVisible: false
+        pickerDateVisible: false,
+        errorMsg: `请填写${this.data.title}！`,
+        errorMsgFlag: true, //--第一次没有值，点击取消后显示错误提示信息
       })
+      let targetData = this.data.targetData
+      let currentkey = this.data.currentkey || e.currentTarget.dataset.currentkey
+      // console.log(currentkey); 有值之后第二次点击取消，不能显示错误信息
+      if (targetData[currentkey] && targetData[currentkey].value != '') {
+        this.setData({
+          errorMsgFlag: false
+        })
+      }
     },
     //选择
     onSelectDate(e) {
@@ -91,6 +121,13 @@ Component({
         targetData[currentconfig][currentkey] = this.data.formatTime(new Date(e.detail))
       } else {
         targetData[currentkey] = this.data.formatTime(new Date(e.detail))
+      }
+
+      // 点击确定，有值，不显示错误提示
+      if (e.detail.value) {
+        this.setData({
+          errorMsg: '',
+        })
       }
       // detail对象，提供给事件监听函数,将数据传送给父组件
       var myEventDetail = {
@@ -105,9 +142,9 @@ Component({
         targetData: targetData,
         pickerDateVisible: false,
         // 选中的值
-        value: this.data.formatTime(new Date(e.detail),'yyyy-mm-dd'),
-        value2: '0'
-
+        value: this.data.formatTime(new Date(e.detail), 'yyyy-mm-dd'),
+        value2: '0',
+        errorMsgFlag: false
       })
       // console.log(this.data, "onSelect")
     },

@@ -1,6 +1,13 @@
 <!--components/areaPicker/areaPicker.wxml-->
-<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}" value-class="{{value1==value2?'valCls':'valCls2'}}" 
-  bind:click="openAreaPicker" />
+<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}"
+  value-class="{{value1==value2?'valCls':'valCls2'}}" bind:click="openAreaPicker" data-prov_id="{{prov_id}}" data-area_id="{{area_id}}" data-district_id="{{district_id}}" required="{{required}}"
+  use-label-slot>
+  <block wx:if="{{errFlag}}">
+    <view slot="label" class="labelCls" wx:if="{{ errorMsgFlag }}">
+      <text>{{errorMsg}}</text>
+    </view>
+  </block>
+</van-cell>
 <!-- 区域选择器 企业地区选择-->
 <van-popup show="{{ pickerAreaVisible }}" position="bottom" round>
   <van-area area-list="{{ areaList }}" value="{{region}}" bind:change="onchange" bind:confirm="onSelectArea"

@@ -24,7 +24,7 @@ Component({
       maxBallTop: 80, //刷新球最大下拉距离
       top: 0, //刷新球位置
       show: true,
-      isLoading: false, //-是否为加载状态
+      isLoading: 0, //-是否为加载状态
       deg: 0, //旋转角度
       step: 1.8 //步长 
     },
@@ -71,7 +71,7 @@ Component({
         this.data.freshBall.top = this.data.touchMoveHeight > this.data.freshBall.maxBallTop * this.data.freshBall.step ? this.data.freshBall.maxBallTop : this.data.touchMoveHeight / this.data.freshBall.step;
         this.data.freshBall.deg = this.getDegByHeight(this.data.freshBall.top);
         // 手指滑动，加载的状态为false
-        this.data.freshBall.isLoading = false;
+        this.data.freshBall.isLoading = 0;
         this.setData({
           freshBall: this.data.freshBall
         });
@@ -87,9 +87,10 @@ Component({
       //console.log(isTop)
       //console.log(touchStartY)
       //console.log(touchEndY)
+
       if (!this.data.isBusy && isTop && touchEndY - this.data.freshBall.maxBallTop * this.data.freshBall.step > touchStartY) {
         console.log("触发下拉刷新");
-        this.data.freshBall.isLoading = true;
+        this.data.freshBall.isLoading = 1;
         this.setData({
           freshBall: this.data.freshBall
         });
@@ -100,6 +101,10 @@ Component({
           });
           timeId = setTimeout(() => {
             resolve();
+            // this.data.freshBall.isLoading = 2;
+            // this.setData({
+            //   freshBall: this.data.freshBall
+            // });
           }, timeout)
         }).then((data) => {
           if (!timeId) return;

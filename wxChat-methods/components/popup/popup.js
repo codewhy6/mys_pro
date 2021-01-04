@@ -28,6 +28,24 @@ Component({
     currentkey: {
       type: String,
       value: ''
+    },
+    // 是否是红心标记
+    required: {
+      type: Boolean,
+      value: false
+    },
+    // 错误信息
+    errorMsg: {
+      type: String,
+      value: ''
+    },
+    errorMsgFlag:{
+      type:Boolean,
+      value:false
+    },
+    errFlag:{
+      type:Boolean,
+      value:false
     }
   },
 
@@ -40,8 +58,8 @@ Component({
     pickertype: "", // 选择器的类型
     currentkey: '', // 当前选择的对象
     targetData: {}, // 选择器选中的新的数据的对象，需要传递给父组件
-    value1:'1',
-    value2:'1',
+    value1: '1',
+    value2: '1',
   },
 
   /**
@@ -66,13 +84,26 @@ Component({
       // console.log(this.data.pickerList);
     },
     // 关闭选择器 
-    closePicker() {
+    closePicker(e) {
+      // console.log(this.data);
       this.setData({
         pickerVisible: false,
+        errorMsg: `请填写${this.data.title}！`,
+        errorMsgFlag: true,//--第一次没有值，点击取消后显示错误提示信息
       })
+      let targetData = this.data.targetData
+      let currentkey = this.data.currentkey || e.currentTarget.dataset.currentkey
+      // console.log(currentkey); 有值之后第二次点击取消，不能显示错误信息
+      if (targetData[currentkey] && targetData[currentkey].value != ''  ) {
+        this.setData({
+          errorMsgFlag: false
+        })
+      }
     },
     // 选择器确认
     onSelect(e) { //公司类型
+      console.log(this.data);
+
       // console.log(e, 'e.detail');
       let targetData = this.data.targetData
       let currentkey = this.data.currentkey || e.currentTarget.dataset.currentkey
@@ -81,6 +112,12 @@ Component({
         targetData[currentconfig][currentkey] = e.detail.value.value
       } else {
         targetData[currentkey] = e.detail.value
+      }
+      // 点击确定，有值，不显示错误提示
+      if (e.detail.value) {
+        this.setData({
+          errorMsg: ''
+        })
       }
       // detail对象，提供给事件监听函数,将数据传送给父组件
       var myEventDetail = {
@@ -96,8 +133,8 @@ Component({
         pickerVisible: false,
         // 选中的值
         value: e.detail.value.text,
-        value2:'0'
-
+        value2: '0',
+        errorMsgFlag: false,//--点击确定不显示错误信息
       })
       // console.log(this.data, "onSelect")
     },

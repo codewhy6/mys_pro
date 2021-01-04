@@ -1,6 +1,6 @@
 # new methods
 
-### 一、滚动条新的样式
+### 1、滚动条新的样式
 
 ```css
 .intr_sed_txt::-webkit-scrollbar {
@@ -46,7 +46,7 @@
 
 ```
 
-### 二、隐藏滚动条
+### 2、隐藏滚动条
 
 ```css
 .sub-tab-wrap::-webkit-scrollbar {
@@ -54,13 +54,13 @@
 }
 ```
 
-### 三、判断是否为 IE 
+### 3、判断是否为 IE 
 
 ```js
  if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE", "")) < 10) {}
 ```
 
-### 四、重置轮播按钮
+### 4、重置轮播按钮
 
 ```html
 <!-- swiper-btns -->
@@ -101,7 +101,7 @@
 }
 ```
 
-### 五、轮播下的数字下标 
+### 5、轮播下的数字下标 
 
 ```html
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.5/css/swiper.css" rel="stylesheet">
@@ -149,8 +149,6 @@
   color: #ffffff;
 }
 ```
-
-
 
 ```js
 var proSwiper = new Swiper('.pro_index_swiper .swiper-container', {
@@ -208,7 +206,7 @@ $("body").on("click", ".my_swiperNums_btn_prev", function () {
 })
 ```
 
-### 六、更改轮播点样式
+### 6、更改轮播点样式
 
 ```css
 .swiper_home_container .swiper-pagination-bullet {
@@ -223,13 +221,13 @@ $("body").on("click", ".my_swiperNums_btn_prev", function () {
 }
 ```
 
-### 七、手机号码表单input
+### 7、手机号码表单input
 
 ```html
 <input type="number" maxlength="11" id="phone" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="您的电话" class="custo_right form_input" />
 ```
 
-### 八、单选按钮样式重置
+### 8、单选按钮样式重置
 
 ```css
 .customer_form input[type="radio"] {
@@ -296,11 +294,75 @@ input[type="checkbox"]:focus {
 .input{
     caret-color: #1478fc;
 }
+
+
+.customer_form input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border: solid 1px #818181;
+    border-radius: 50%;
+    margin: 0px 5px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.customer_form input[type="radio"]:checked {
+    position: relative;
+    border-color: #ff6d15;
+}
+
+.customer_form input[type="radio"]:checked::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #ff6d15;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    -o-transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.customer_form input[type="file"]:focus,
+.customer_form input[type="radio"]:focus,
+.customer_form input[type="checkbox"]:focus {
+    outline: none;
+    border: 1px solid #ff6d15;
+}
+.customer_form input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    border: solid 1px #818181;
+    border-radius: 19%;
+    background-color: #fff;
+    /* margin-right: 5px; */
+    -webkit-border-radius: 19%;
+    -moz-border-radius: 19%;
+    -ms-border-radius: 19%;
+    -o-border-radius: 19%;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.customer_form input[type="checkbox"]:checked {
+    background: url(./images/radoi_checkedhiolk.png) no-repeat;
+    background-size: cover;
+    border: 1px solid #ff6d15;
+}
 ```
 
 
 
-### 九、移动端横向可滚动栏
+### 9、移动端横向可滚动栏
 
 ```html
 <div class="join_detail_nav  ">
@@ -364,7 +426,7 @@ input[type="checkbox"]:focus {
 
 
 
-### 十、搜索框的键盘回车事件
+### 10、搜索框的键盘回车事件
 
 ```js
 /**
@@ -400,7 +462,7 @@ $(document).keydown(function (event) {
 
 ```
 
-### 十一、分页样式
+### 11、分页样式
 
 ```html
 <!-- 分页 start -->
@@ -469,7 +531,7 @@ $(document).keydown(function (event) {
 }
 ```
 
-### 十二、获取锚点参数
+### 12、获取锚点参数
 
 ```js
 var activeIndex = getUrlParams().activeIndex
@@ -501,7 +563,7 @@ function setTabActive(targetEle) {
 setTabActive();
 ```
 
-### 十三、返回顶部的按钮事件
+### 13、返回顶部的按钮事件
 
 ```js
 $("body").on("click", ".scrollTop_box", function () {
@@ -512,7 +574,7 @@ $("body").on("click", ".scrollTop_box", function () {
 
 ```
 
-### 十四、右箭头/叉号/三角形/加号-css样式
+### 14、右箭头/叉号/三角形/加号-css样式
 
 ```css
 /* 三角箭头的父元素 */
@@ -604,7 +666,7 @@ $("body").on("click", ".scrollTop_box", function () {
 
 ```
 
-### 十五、格式化时间
+### 15、格式化时间
 
 ```js
 //格式化时间
@@ -625,7 +687,7 @@ onDateConfirm(e) {
 add0(m){return m<10?'0'+m:m },
 ```
 
-### 十六、new js methods
+### 16、new js methods
 
 ```js
 // 首字母大写
@@ -766,9 +828,25 @@ export const objToArr = (obj) => {
     }
     return res
 }
+
+// 去除首位空字符
+function trimLeft(str) {
+    return str.replace(/^\s+/, '')
+}
+console.log(trimLeft(' hello word '));
+
+function trimRight(str) {
+    return str.replace(/\s+$/, '')
+}
+console.log(trimRight(' hello word '));
+
+function trim(str) {
+    return str.replace(/^\s+|\s+$/g, '')
+}
+console.log(trim(' hello word '));
 ```
 
-### 十七、动画animate函数
+### 17、动画animate函数
 
 ```js
 function animate(obj, target, callback) {
@@ -794,7 +872,7 @@ function animate(obj, target, callback) {
 }
 ```
 
-### 十八、点击复制文本
+### 18、点击复制文本
 
 ```html
 <span id="ptext1">NJ14206</span>
@@ -816,7 +894,7 @@ copyUrl() {
 },
 ```
 
-### 十九、双飞翼布局
+### 19、双飞翼布局
 
 ```html
 <main class="main">
@@ -877,7 +955,7 @@ section .right {
 }
 ```
 
-### 二十、绝对底部布局
+### 20、绝对底部布局
 
 ```html
 <main class="main">
@@ -932,7 +1010,7 @@ footer {
 }
 ```
 
-### 二十一、条纹背景进度条
+### 21、条纹背景进度条
 
 ```html
 <main>
@@ -988,7 +1066,7 @@ main {
 }
 ```
 
-### 二十二、金额保留两位小数
+### 22、金额保留两位小数
 
 ```js
 Money(value, num) {
@@ -1009,7 +1087,7 @@ Money(value, num) {
 /^(([1-9]{1}\d*)|(0{1}))(\.\d{1,2})?$/
 ```
 
-### 二十三、获取用户当前所在的城市
+### 23、获取用户当前所在的城市
 
 ```js
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
@@ -1035,7 +1113,7 @@ getIp().then((res) => {
 });
 ```
 
-### 二十四、自定义键盘，不弹起手机自带的软键盘
+### 24、自定义键盘，不弹起手机自带的软键盘
 
 ```html
 <div class="input-wrap">
@@ -1127,7 +1205,7 @@ changeStatus() {
 }
 ```
 
-### 二十五、解决iPhone手机底部留白问题
+### 25、解决iPhone手机底部留白问题
 
 ```html
 <!-- 在meta viewport标签里加属性：viewport-fit=cover；如下 -->
@@ -1135,7 +1213,7 @@ changeStatus() {
 
 ```
 
-### 二十六、参数列表自适应对其
+### 26、参数列表自适应对其
 
 ```html
 <div class="params-container">
@@ -1168,7 +1246,7 @@ changeStatus() {
 }
 ```
 
-### 二十七、节流(throttle)和防抖(debounce)
+### 27、节流(throttle)和防抖(debounce)
 
 ```js
 //--防抖：就是在规定的时间内只让你执行一次，如果在时间内又一次触发了此事件，则会重新计算时间，直到你不在触发此事件，并等待一定时间，才会执行事件中的函数。(只要不是最后一次触发，就不执行异步操作)

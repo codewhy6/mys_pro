@@ -1,4 +1,5 @@
 /* components/popup/popup.wxss */
+/* 右侧显示内容的样式 */
 .valCls {
   text-align: left !important;
   padding-left: 24rpx;
@@ -7,4 +8,15 @@
   text-align: left !important;
   padding-left: 24rpx;
   color: #333 !important;
+}
+
+.activeCls{
+  color: rgb(16, 68, 212);
+}
+
+/* 描述信息的样式 */
+.labelCls{
+  width: 462rpx;
+  color: #ee0a24;
+  margin-left: 224rpx;
 }

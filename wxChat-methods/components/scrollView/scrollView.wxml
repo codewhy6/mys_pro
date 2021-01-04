@@ -5,15 +5,21 @@
       <!-- 加载的小球 -->
       <view wx:if="{{ball}}" class="freshball" id="freshball"
         style="transform:translateY({{freshBall.top}}px);opacity:{{freshBall.top<=0?0:1}};">
-        <view wx:if="{{!freshBall.isLoading}}"
+        <view wx:if="{{freshBall.isLoading==0}}"
           style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
           <van-icon color="#1989fa" name="down" />
           <view style="font-size:18rpx;color:#1989fa;margin-top:5rpx;font-weight:700;">下拉刷新</view>
         </view>
-        <van-loading wx:else size="25px" type="spinner" color="#1989fa" />
+        <van-loading wx:if="{{freshBall.isLoading==1}}" size="25px" type="spinner" color="#1989fa" />
+        <!-- <view wx:if="{{freshBall.isLoading==2}}"
+          style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
+          <van-icon color="#1989fa" name="success" />
+          <view style="font-size:18rpx;color:#1989fa;margin-top:5rpx;font-weight:700;">刷新成功</view>
+        </view> -->
       </view>
       <!-- 内容区域 -->
       <slot />
+
     </view>
   </scroll-view>
 </view>

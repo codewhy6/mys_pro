@@ -8,3 +8,10 @@
   padding-left: 24rpx;
   color: #333 !important;
 }
+
+/* 描述信息的样式 */
+.labelCls{
+  width: 462rpx;
+  color: #ee0a24;
+  margin-left: 224rpx;
+}
