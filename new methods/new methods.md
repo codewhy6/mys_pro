@@ -690,6 +690,17 @@ add0(m){return m<10?'0'+m:m },
 ### 16、new js methods
 
 ```js
+/**
+ * @Description: 手机号码替换成星号
+ * @Author: zhangchen
+ * @Param: {String} phone:手机号码
+ * @Date: 2019-08-15 19:04:32
+ */
+let replaceTel = function (phone) {
+    var showPhone = phone.replace(/^(\d{3})\d{4}(\d+)/, "$1****$2");
+    return showPhone;
+};
+
 // 首字母大写
 function getUpperCase(str) {
     // replace每找到一个敏感词，就会调用一次回调函数
@@ -700,6 +711,28 @@ function getUpperCase(str) {
     });
     return str;
 }
+
+/**
+ * @Description: 名字中间转换成星号
+ * @Author: zhangchen
+ * @Date: 2020-04-23 10:39:46
+ * @param {string}name:名称
+ */
+const formatName = function (name) {
+    let newStr;
+    if (name.length === 2) {
+        newStr = name.substr(0, 1) + "*";
+    } else if (name.length > 2) {
+        let char = "";
+        for (let i = 0, len = name.length - 2; i < len; i++) {
+            char += "*";
+        }
+        newStr = name.substr(0, 1) + char + name.substr(-1, 1);
+    } else {
+        newStr = name;
+    }
+    return newStr;
+};
 
 // 将查询字符串变成一个对象的形式
 let str = '?uname=chen&email=1464481294@qq.com&favs=swimming&favs=running&favs=basketball';
