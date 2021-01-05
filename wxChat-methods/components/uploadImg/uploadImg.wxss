@@ -1,5 +1,5 @@
-
-.add-image, .up-pic image {
+/* , .up-pic image */
+.add-image {
   width:217rpx;
   height:217rpx;
   color: #ddd;
@@ -61,7 +61,7 @@
   font-size: 12px;
 }
 
-.picture_item image {
+.picture_item .up_img {
   width: 217rpx;
   height: 217rpx;
   border-radius: 8rpx;

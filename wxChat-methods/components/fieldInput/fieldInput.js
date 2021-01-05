@@ -48,9 +48,9 @@ Component({
       type: String,
       value: ''
     },
-    maxlength:{
-      type:Number,
-      value:-1
+    maxlength: {
+      type: Number,
+      value: -1
     },
   },
 
@@ -81,6 +81,7 @@ Component({
           targetData[currentkey] = e.detail
         }
       }
+      // 有输入，错误信息不显示
       if (e.detail) {
         this.setData({
           errorMsg: '',
@@ -111,65 +112,65 @@ Component({
       } = e.currentTarget.dataset
       // console.log(validatetype, 'validatetype');
       // console.log(targetData,'targetData');
-      if (validatetype && validatetype == 'email') {
-        let email = targetData[currentkey]
-        if (!email || email.trim().length == 0) {
-          // Toast("请输入您的邮箱！");
-          this.setData({
-            errorMsg: '请输入您的邮箱！'
-          })
-          return false;
-        } else if (!checkEmail(email)) {
-          // Toast("邮箱格式不正确，请重新输入！");
-          // 动态更新目标对应的数据
-          this.setData({
-            value: '',
-            errorMsg: '邮箱格式不正确，请重新输入！'
-          })
-          return false;
-        }
-      } else if (validatetype && validatetype == 'phone') {
-        let phone = targetData[currentkey]
-        if (!phone || phone.trim().length == 0) {
-          // Toast("请输入您的手机号!");
-          this.setData({
-            errorMsg: '请输入您的手机号!'
-          })
-          return false;
-        } else if (!checkTelphone(phone)) {
-          // Toast("手机号格式不正确，请重新输入!");
-          // 动态更新目标对应的数据
-          this.setData({
-            value: '',
-            errorMsg: '手机号格式不正确，请重新输入!'
-          })
-          return false;
-        }
-      } else if (validatetype && validatetype == 'ID_no') {
-        let ID_no = targetData[currentkey]
-        if (!ID_no || ID_no.trim().length == 0) {
-          // Toast("请输入您的身份证号码!");
-          this.setData({
-            errorMsg: '请输入您的身份证号码!'
-          })
-          return false;
-        } else if (!checkCode(ID_no)) {
-          // Toast("身份证号码不正确，重新输入!");
-          // 动态更新目标对应的数据
-          this.setData({
-            value: '',
-            errorMsg: '身份证号码不正确，重新输入!'
-          })
-          return false;
-        }
-      } else {
-        // console.log(this.data);
-        // console.log(e);
-        if (!e.detail.value || e.detail.value.trim().length == 0 || e.detail.value == '') {
-          this.setData({
-            errorMsg: `请输入您的${this.data.title}！`
-          })
-        }
+      // if (validatetype && validatetype == 'email') {
+      //   let email = this.data.value ? this.data.value : targetData[currentkey]
+      //   if (!email || email.trim().length == 0) {
+      //     // Toast("请输入您的邮箱！");
+      //     this.setData({
+      //       errorMsg: '请输入您的邮箱！'
+      //     })
+      //     return false;
+      //   } else if (!checkEmail(email)) {
+      //     // Toast("邮箱格式不正确，请重新输入！");
+      //     // 动态更新目标对应的数据
+      //     this.setData({
+      //       value: '',
+      //       errorMsg: '邮箱格式不正确，请重新输入！'
+      //     })
+      //     return false;
+      //   }
+      // } else if (validatetype && validatetype == 'phone') {
+      //   let phone = this.data.value ? this.data.value : targetData[currentkey]
+      //   if (!phone || phone.trim().length == 0) {
+      //     // Toast("请输入您的手机号!");
+      //     this.setData({
+      //       errorMsg: '请输入您的手机号!'
+      //     })
+      //     return false;
+      //   } else if (!checkTelphone(phone)) {
+      //     // Toast("手机号格式不正确，请重新输入!");
+      //     // 动态更新目标对应的数据
+      //     this.setData({
+      //       value: '',
+      //       errorMsg: '手机号格式不正确，请重新输入!'
+      //     })
+      //     return false;
+      //   }
+      // } else if (validatetype && validatetype == 'ID_no') {
+      //   let ID_no = this.data.value ? this.data.value : targetData[currentkey]
+      //   if (!ID_no || ID_no.trim().length == 0) {
+      //     // Toast("请输入您的身份证号码!");
+      //     this.setData({
+      //       errorMsg: '请输入您的身份证号码!'
+      //     })
+      //     return false;
+      //   } else if (!checkCode(ID_no)) {
+      //     // Toast("身份证号码不正确，重新输入!");
+      //     // 动态更新目标对应的数据
+      //     this.setData({
+      //       value: '',
+      //       errorMsg: '身份证号码不正确，重新输入!'
+      //     })
+      //     return false;
+      //   }
+      // } else {
+      // console.log(this.data);
+      // console.log(e);
+      if (!e.detail.value || e.detail.value.trim().length == 0 || e.detail.value == '') {
+        this.setData({
+          errorMsg: `请输入您的${this.data.title}！`
+        })
+        // }
       }
       // // detail对象，提供给事件监听函数,将数据传送给父组件
       // var myEventDetail = {

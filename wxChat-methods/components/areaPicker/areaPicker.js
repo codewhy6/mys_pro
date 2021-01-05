@@ -86,7 +86,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    // 打开区域选择器 区域的话好像一个页面只有一个
+    // 点击遮罩层，关闭弹窗
+    onCloseAreaPopup(e) {
+      this.setData({
+        pickerAreaVisible: false,
+      })
+      this.closeAreaPicker(e)
+    },
+    // 打开区域选择器 
     openAreaPicker(e) {
       let {
         prov_id,

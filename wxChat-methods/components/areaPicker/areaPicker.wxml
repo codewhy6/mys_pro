@@ -9,7 +9,7 @@
   </block>
 </van-cell>
 <!-- 区域选择器 企业地区选择-->
-<van-popup show="{{ pickerAreaVisible }}" position="bottom" round>
+<van-popup show="{{ pickerAreaVisible }}" position="bottom" round bind:close="onCloseAreaPopup">
   <van-area area-list="{{ areaList }}" value="{{region}}" bind:change="onchange" bind:confirm="onSelectArea"
     columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}" bind:cancel="closeAreaPicker" title="省/市/区" />
 </van-popup>

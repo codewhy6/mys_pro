@@ -8,7 +8,7 @@
     </view>
   </block>
 </van-cell>
-<van-popup show="{{ pickerDateVisible }}" position="bottom" round>
+<van-popup show="{{ pickerDateVisible }}" position="bottom" round bind:close="onCloseDatePopup">
   <van-datetime-picker type="date" formatter="{{formatter}}" value="{{ currentDate }}" min-date="{{0}}"
     max-date="{{70*365 * 24 * 3600 * 1000}}" bind:cancel="closeDatePicker" bind:confirm="onSelectDate"
     columns-placeholder="{{ ['请选择'] }}" />

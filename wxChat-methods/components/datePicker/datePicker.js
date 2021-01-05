@@ -82,6 +82,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 点击遮罩层，关闭弹窗
+    onCloseDatePopup(e) {
+      this.setData({
+        pickerDateVisible: false,
+      })
+      this.closeDatePicker(e)
+    },
     // 打开
     openDatePicker(e) {
       let {

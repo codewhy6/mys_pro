@@ -66,6 +66,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 点击遮罩层，关闭弹窗
+    onClosePopup(e){
+      this.setData({
+        pickerVisible: false,
+      })
+      this.closePicker(e)
+    },
     // 打开选择器 
     openPicker(e) {
       let {

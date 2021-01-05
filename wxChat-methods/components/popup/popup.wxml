@@ -10,7 +10,7 @@
   </block>
 </van-cell>
 <!-- 选择器 -->
-<van-popup show="{{ pickerVisible }}" position="bottom" round>
+<van-popup show="{{ pickerVisible }}" position="bottom" round bind:close="onClosePopup">
   <van-picker columns="{{ pickerList[pickertype].data }}" active-class="activeCls" bind:confirm="onSelect"
-    bind:cancel="closePicker" show-toolbar title="{{pickerList[pickertype].title}}" value-key="text" default-value="" />
+    bind:cancel="closePicker" show-toolbar title="{{pickerList[pickertype].title}}" value-key="text" />
 </van-popup>
