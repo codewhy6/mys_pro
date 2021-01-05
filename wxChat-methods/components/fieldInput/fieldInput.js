@@ -103,13 +103,18 @@ Component({
 
     // 表单失去焦点，校验数据格式
     validateData(e) {
+      if (!e.detail.value || e.detail.value.trim().length == 0 || e.detail.value == '') {
+        this.setData({
+          errorMsg: `请输入您的${this.data.title}！`
+        })
+      }
       // console.log(this.data);
       // console.log(e);
-      let targetData = this.data.targetData
-      let {
-        validatetype,
-        currentkey,
-      } = e.currentTarget.dataset
+      // let targetData = this.data.targetData
+      // let {
+      //   validatetype,
+      //   currentkey,
+      // } = e.currentTarget.dataset
       // console.log(validatetype, 'validatetype');
       // console.log(targetData,'targetData');
       // if (validatetype && validatetype == 'email') {
@@ -166,19 +171,13 @@ Component({
       // } else {
       // console.log(this.data);
       // console.log(e);
-      if (!e.detail.value || e.detail.value.trim().length == 0 || e.detail.value == '') {
-        this.setData({
-          errorMsg: `请输入您的${this.data.title}！`
-        })
-        // }
-      }
+
       // // detail对象，提供给事件监听函数,将数据传送给父组件
       // var myEventDetail = {
       //   targetData: targetData
       // }
       // this.triggerEvent('validateData', myEventDetail, {})
     },
-
 
   }
 })
