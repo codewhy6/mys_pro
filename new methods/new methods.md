@@ -577,12 +577,12 @@ $("body").on("click", ".scrollTop_box", function () {
 ### 14、右箭头/叉号/三角形/加号-css样式
 
 ```css
-/* 三角箭头的父元素 */
+/* 右箭头的父元素 */
 .arrow_jt {
     position: relative;
 }
 
-/* 三角箭头的css样式,伪元素 */
+/* 右箭头的css样式,伪元素 */
 .arrow_jt::after {
     content: '';
     width: 12px;

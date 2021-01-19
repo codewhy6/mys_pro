@@ -78,7 +78,7 @@ module.exports = {
                 target: "http://172.11.11.11:7071",
                 //允许跨域
                 changeOrigin: true,
-                // ws: true,//websocket支持
+                ws: true,// 是否启用websockets
                 secure: false,
                 pathRewrite: {
                     "^/api": "/",

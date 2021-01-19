@@ -95,7 +95,7 @@ showPwd(){
 
 ```html
 <van-field model:value="{{ phone}}" type="number" maxlength="11" size="large" custom-style="font-size:34rpx" placeholder-style="font-size:34rpx" placeholder="请输⼊⼿机号" border="{{ false }}" input-class="input-class" use-button-slot>
-    <van-button slot="button" size="small" type="primary" color="{{time != 0 ? '#cccccc' : '#1478FC'}}" disabled="{{time != 0}}" bind:click="phoneSubmit">
+    <van-button slot="button" size="small" type="primary" color="{{time != 0 ? '#999' : '#1478FC'}}" disabled="{{time != 0}}" bind:click="phoneSubmit">
         <text wx:if="{{time==0}}">发送验证码</text>
         <van-count-down wx:else time="{{ time }}" format="ss s" use-slot class="control-count-down" bind:finish="countDownFinished" bind:change="countDownOnChange">
             <van-button size="small" color="#999">{{ timeData.seconds }} s</van-button>
@@ -111,7 +111,7 @@ data:{
         yzm: "", // 验证码
             time: 0,//倒计时时间
                 timeData: {},//倒计时详细数据
-} 
+},
 
 // 获取手机验证码
 phoneSubmit() {
@@ -140,7 +140,7 @@ phoneSubmit() {
             }
         })
     }
-}
+},
 // 倒计时结束事件
 countDownFinished() {
     // Toast('倒计时结束！')
@@ -151,7 +151,7 @@ countDownFinished() {
             time: 0
         })
     }
-}
+},
 // 倒计时change事件，从而自定义样式(按需使用)
 countDownOnChange(e) {
     // console.log(e.detail);
@@ -159,7 +159,7 @@ countDownOnChange(e) {
     this.setData({
         timeData: e.detail,
     });
-}
+},
 ```
 
 ```css
