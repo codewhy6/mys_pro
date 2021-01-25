@@ -3,7 +3,7 @@
  * @Author: ZhangChen
  * @Date: 2021-01-12 10:21:13
  * @LastEditors: ZhangChen
- * @LastEditTime: 2021-01-15 13:55:22
+ * @LastEditTime: 2021-01-19 13:11:07
  * @FilePath: \testpro\src\components\areaPicker.vue
 -->
 <template>
@@ -190,6 +190,26 @@ export default {
     //     rotation: 45, //设置地图旋转角度
     //   });
     // },
+    getLocation() {
+      getIp({
+        key: "FKSBZ-LCQCW-OO5RF-RTN4E-XDQH3-Y7FHL",
+        ip: returnCitySN.cip,
+      }).then((res) => {
+        if (res.status == 0) {
+          // console.log(res.result);
+          this.region = res.result.ad_info.adcode + "";
+
+          // getMap({
+          //   key: "FKSBZ-LCQCW-OO5RF-RTN4E-XDQH3-Y7FHL",
+          //   location: `${res.result.location.lat},${res.result.location.lng}`,
+          // }).then((res) => {
+          //   if (res.status == 0) {
+          //     console.log(res.result);
+          //   }
+          // });
+        }
+      });
+    },
   },
   created() {
     // this.initMap();
@@ -206,6 +226,7 @@ export default {
     }
   },
   mounted() {
+    // this.getLocation();
     // this.$http
     //   .get("/api/ws/geocoder/v1", {
     //     params: {
@@ -219,25 +240,6 @@ export default {
     //       console.log(res.data.result, "l");
     //     }
     //   });
-    getIp({
-      key: "FKSBZ-LCQCW-OO5RF-RTN4E-XDQH3-Y7FHL",
-      ip: returnCitySN.cip,
-    }).then((res) => {
-      if (res.status == 0) {
-        // console.log(res.result);
-        this.region = res.result.ad_info.adcode + "";
-
-        // getMap({
-        //   key: "FKSBZ-LCQCW-OO5RF-RTN4E-XDQH3-Y7FHL",
-        //   location: `${res.result.location.lat},${res.result.location.lng}`,
-        // }).then((res) => {
-        //   if (res.status == 0) {
-        //     console.log(res.result);
-        //   }
-        // });
-      }
-    });
-
     // getAdress({
     //   key: "FKSBZ-LCQCW-OO5RF-RTN4E-XDQH3-Y7FHL",
     //   address: "江苏省南京市鼓楼区天目路29号院",

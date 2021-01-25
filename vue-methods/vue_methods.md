@@ -430,7 +430,11 @@ IsPC() {
         flag = true;
     }
     return flag;
-},
+}
+//-判断是不是 mobile
+isMobile ()  {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
 ```
 
 ```html

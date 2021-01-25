@@ -1,3 +1,6 @@
+// const { default: toast } = require("../../miniprogram_npm/@vant/weapp/toast/toast")
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+
 // components/popup/popup.js
 Component({
   /**
@@ -24,6 +27,10 @@ Component({
       type: String,
       value: ''
     },
+    placeholder: {
+      type: String,
+      value: ''
+    },
     // 选择器类型
     currentkey: {
       type: String,
@@ -39,13 +46,18 @@ Component({
       type: String,
       value: ''
     },
-    errorMsgFlag:{
-      type:Boolean,
-      value:false
+    errorMsgFlag: {
+      type: Boolean,
+      value: false
     },
-    errFlag:{
-      type:Boolean,
-      value:false
+    errFlag: {
+      type: Boolean,
+      value: false
+    },
+    // 是否显示--禁用
+    disabled: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -67,7 +79,7 @@ Component({
    */
   methods: {
     // 点击遮罩层，关闭弹窗
-    onClosePopup(e){
+    onClosePopup(e) {
       this.setData({
         pickerVisible: false,
       })
@@ -96,12 +108,12 @@ Component({
       this.setData({
         pickerVisible: false,
         errorMsg: `请填写${this.data.title}！`,
-        errorMsgFlag: true,//--第一次没有值，点击取消后显示错误提示信息
+        errorMsgFlag: true, //--第一次没有值，点击取消后显示错误提示信息
       })
       let targetData = this.data.targetData
       let currentkey = this.data.currentkey || e.currentTarget.dataset.currentkey
       // console.log(currentkey); 有值之后第二次点击取消，不能显示错误信息
-      if (targetData[currentkey] && targetData[currentkey].value != ''  ) {
+      if (targetData[currentkey] && targetData[currentkey].value != '') {
         this.setData({
           errorMsgFlag: false
         })
@@ -109,8 +121,6 @@ Component({
     },
     // 选择器确认
     onSelect(e) { //公司类型
-      console.log(this.data);
-
       // console.log(e, 'e.detail');
       let targetData = this.data.targetData
       let currentkey = this.data.currentkey || e.currentTarget.dataset.currentkey
@@ -141,10 +151,27 @@ Component({
         // 选中的值
         value: e.detail.value.text,
         value2: '0',
-        errorMsgFlag: false,//--点击确定不显示错误信息
+        errorMsgFlag: false, //--点击确定不显示错误信息
       })
       // console.log(this.data, "onSelect")
     },
     noop() {},
+  },
+  lifetimes: {
+    attached() {
+      // console.log(this.data.pickerList[this.data.pickertype].data);
+      if (!this.data.value || this.data.value.trim().length == 0 || this.data.value == '') {
+        return
+      } else {
+        this.data.pickerList[this.data.pickertype].data.forEach(item => {
+          if (item.value == this.data.value) {
+            this.setData({
+              value: item.text,
+              value2: '0'
+            })
+          }
+        });
+      }
+    },
   }
 })

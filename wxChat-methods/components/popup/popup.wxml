@@ -1,8 +1,8 @@
 <!--components/popup/popup.wxml-->
 <!-- label="描述信息描述信息描述信息描述信息" label-class="labelCls" -->
-<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}"
+<van-cell title="{{title}}" title-width="200rpx" is-link="{{!disabled}}" value="{{(!value || value=='') ? placeholder : value}}"
   value-class="{{value1==value2?'valCls':'valCls2'}}" data-pickertype="{{pickertype}}" data-currentkey="{{currentkey}}"
-  required="{{required}}" bind:click="openPicker" use-label-slot>
+  required="{{required}}" bind:click="{{(disabled && disabled) ? '' : 'openPicker'}}" use-label-slot>
   <block wx:if="{{errFlag}}">
     <view slot="label" class="labelCls" wx:if="{{ errorMsgFlag }}">
       <text>{{errorMsg}}</text>

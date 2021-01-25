@@ -1,5 +1,5 @@
 <!--components/datePicker/datePicker.wxml-->
-<van-cell title="{{title}}" title-width="200rpx" is-link value="{{value}}"
+<van-cell title="{{title}}" title-width="200rpx" is-link value="{{(!value || value=='') ? placeholder : value}}"
   value-class="{{value1==value2?'valCls':'valCls2'}}" data-currentkey="{{currentkey}}" bind:click="openDatePicker"
   required="{{required}}" use-label-slot>
   <block wx:if="{{errFlag}}">

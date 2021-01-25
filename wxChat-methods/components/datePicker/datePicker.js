@@ -1,3 +1,7 @@
+const {
+  default: toast
+} = require("../../miniprogram_npm/@vant/weapp/toast/toast");
+
 // components/datePicker/datePicker.js
 Component({
   /**
@@ -11,6 +15,10 @@ Component({
     },
     // 当前选中的值
     value: {
+      type: String,
+      value: ''
+    },
+    placeholder: {
       type: String,
       value: ''
     },
@@ -156,6 +164,34 @@ Component({
       // console.log(this.data, "onSelect")
     },
 
+    // 给字符串 添加/删除 修饰符
+    formatStrSign(str, type, sign, signLength) {
+      if (!str || str.trim().length == 0) return
+      // 20201231
+      if (type == 'del') {
+        str = str.replace(/[\.-\/]/g, '')
+        return str
+      } else if (type == 'add') {
+        str = str.replace(/[\.-\/]/g, '')
+        str = `${str.substring(0,signLength[0])}${sign}${str.substring(signLength[0],signLength[1])}${sign}${str.substr(signLength[1],8)}`
+        return str
+      }
+    },
     noop() {},
+  },
+  lifetimes: {
+    attached() {
+      // console.log(this.formatStrSign(this.data.value, 'add', '.', [4, 6]));
+      // console.log(this.formatStrSign('2020.12.23','del'));
+      if (!this.data.value || this.data.value.trim().length == 0 || this.data.value == '') {
+        return
+      } else {
+        let val=this.formatStrSign(this.data.value, 'add', '.', [4, 6])
+        this.setData({
+          value: this.data.formatTime(new Date(val), "yyyy-mm-dd"),
+          value2: '0'
+        })
+      }
+    },
   }
 })

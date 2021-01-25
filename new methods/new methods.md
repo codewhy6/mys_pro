@@ -663,7 +663,25 @@ $("body").on("click", ".scrollTop_box", function () {
     margin-top: -40px;
     border-left: 10px solid;
 }
-
+/* 加号-css样式2 */
+&::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    border-top: 2px solid;
+}
+&::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    border-left: 2px solid;
+}
 ```
 
 ### 15、格式化时间

@@ -1,5 +1,7 @@
 // components/areaPicker/areaPicker.js
 import areaList from './area'
+const QQMapWX = require('../../utils/qqmap-wx-jssdk')
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
 Component({
   /**
    * 组件的属性列表
@@ -23,6 +25,11 @@ Component({
         // })
         // console.log(this.data.flag);
       }
+    },
+    // 提示符
+    placeholder: {
+      type: String,
+      value: ''
     },
     // 选择器类型
     currentkey: {
@@ -54,15 +61,15 @@ Component({
       type: String,
       value: ''
     },
-    // 是否显示错误信息
-    errorMsgFlag: {
-      type: Boolean,
-      value: false
-    },
     // 是否显示错误模块
     errFlag: {
       type: Boolean,
       value: false
+    },
+    // 地址选择器的序号
+    areaNo: {
+      type: Number,
+      value: 1
     }
   },
 
@@ -77,9 +84,10 @@ Component({
     area_id: '', //--市
     district_id: '', //--区
     // 默认选中的省市区
-    region: '320100',
+    region: '',
     value1: '1',
     value2: '1',
+    qqmapsdk: '', //--腾讯地图第三方的sdk
   },
 
   /**
@@ -114,13 +122,19 @@ Component({
       this.setData({
         pickerAreaVisible: false,
         errorMsg: `请填写${this.data.title}！`,
-        errorMsgFlag: true, //--第一次没有值，点击取消后显示错误提示信息
+        // errorMsgFlag: true, //--第一次没有值，点击取消后显示错误提示信息
       })
       let targetData = this.data.targetData
       // console.log(currentkey); 有值之后第二次点击取消，不能显示错误信息
-      if ((targetData[this.data.prov_id] && targetData[this.data.prov_id] != '') || (targetData[this.data.area_id] && targetData[this.data.area_id] != '') || (targetData.district_id && targetData.district_id != '')) {
+      // if ((targetData.prov_id && targetData.prov_id != '') || (targetData.area_id && targetData.area_id != '') || (targetData.district_id && targetData.district_id != '')) {
+      //   this.setData({
+      //     errorMsgFlag: false
+      //   })
+      // }
+      // 父组件传递不参数有值，错误信息为空
+      if (this.data.prov_id != "" && this.data.area_id != "" && this.data.district_id != "") {
         this.setData({
-          errorMsgFlag: false
+          errorMsg: '',
         })
       }
     },
@@ -130,12 +144,18 @@ Component({
       // console.log(e, 'e.detail.values')
       // e.detail.values
       let targetData = this.data.targetData
-      targetData[this.data.prov_id] = e.detail.values[0]
-      targetData[this.data.area_id] = e.detail.values[1]
-      targetData[this.data.district_id] = e.detail.values[2]
 
+      if (this.data.areaNo == 1) {
+        targetData.prov_id = e.detail.values[0]
+        targetData.area_id = e.detail.values[1]
+        targetData.district_id = e.detail.values[2]
+      } else if (this.data.areaNo == 2) {
+        targetData.prov_id2 = e.detail.values[0]
+        targetData.area_id2 = e.detail.values[1]
+        targetData.district_id2 = e.detail.values[2]
+      }
       // 点击确定，有值，不显示错误提示
-      if (e.detail.value) {
+      if (e.detail.values[0] && e.detail.values[1] && e.detail.values[2]) {
         this.setData({
           errorMsg: '',
         })
@@ -152,7 +172,7 @@ Component({
       this.setData({
         targetData: targetData,
         pickerAreaVisible: false,
-        value: `${e.detail.values[0].name}/${e.detail.values[1].name}/${e.detail.values[2].name}`,
+        placeholder: `${e.detail.values[0].name}/${e.detail.values[1].name}/${e.detail.values[2].name}`,
         value2: '0',
         errorMsgFlag: false
 
@@ -162,16 +182,90 @@ Component({
   },
   lifetimes: {
     attached() {
+      // 实例化腾讯位置服务API核心类
+      this.data.qqmapsdk = new QQMapWX({
+        key: 'LKNBZ-TLVKU-6I5VT-B3PGY-WYCIO-FHBPX'
+      });
       // wx.getLocation({
       //   type: 'wgs84',
-      //   success (res) {
-      //     console.log(res,'getLocation');
+      //   success(res) {
+      //     console.log(res, 'getLocation');
       //     const latitude = res.latitude
       //     const longitude = res.longitude
       //     const speed = res.speed
       //     const accuracy = res.accuracy
       //   }
-      //  })
-    }
+      // })
+      // 父组件传递过来值，就默认选中
+      if (this.data.prov_id != "" && this.data.area_id != "" && this.data.district_id != "") {
+        this.setData({
+          placeholder: `${this.data.areaList.province_list[this.data.prov_id]}/${
+          this.data.areaList.city_list[this.data.area_id]
+        }/${this.data.areaList.county_list[this.data.district_id]}`,
+          value2: '0',
+        })
+      } 
+    },
+    ready() {
+      if (!this.data.prov_id2) {
+        Dialog.confirm({
+          title: '提示',
+          message: '创乐付需要获取您的地理位置！',
+        })
+        .then(() => {
+          // on confirm
+          let that = this
+          // 获取当前的地理位置
+          that.data.qqmapsdk.reverseGeocoder({
+            success: function (res) {
+              // console.log(res.result);
+              if (res.status == 0) {
+                // Toast(res.result.address)
+                that.setData({
+                  region: res.result.ad_info.adcode
+                })
+              }
+
+            }
+          });
+        })
+        .catch(() => {
+          // on cancel
+        });
+      }
+      // that.data.qqmapsdk.getCityList({
+      //   success: function (res) {
+      //     if (res.status == 0) {
+      //       let areaListData = {}
+      //       // 省
+      //       let province_list = {}
+      //       res.result[0].map((item) => {
+      //         province_list[item.id] = item.fullname
+      //       })
+      //       // 市
+      //       let city_list = {}
+      //       res.result[1].map((item) => {
+      //         city_list[item.id] = item.fullname
+      //       })
+      //       // 区
+      //       let county_list = {}
+      //       res.result[2].map((item) => {
+      //         county_list[item.id] = item.fullname
+      //       })
+      //       areaListData.province_list = province_list
+      //       areaListData.city_list = city_list
+      //       areaListData.county_list = county_list
+
+      //       that.setData({
+      //         areaList: areaListData
+      //       })
+      //       // console.log(res);
+      //       // console.log('省份数据：', res.result[0]); //打印省份数据
+      //       // console.log('城市数据：', res.result[1]); //打印城市数据
+      //       // console.log('区县数据：', res.result[2]); //打印区县数据
+      //     }
+      //   }
+      // })
+    },
   }
 })
