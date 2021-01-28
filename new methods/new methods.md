@@ -399,23 +399,23 @@ input[type="checkbox"]:focus {
 
 .join_detail_nav_item {
   position: relative;
-  padding: 0.2rem 0rem;
+  padding: 5px 0px;
   display: inline-block;
 }
 
 .join_detail_nav_item + .join_detail_nav_item {
-  margin-left: 0.3rem;
+  margin-left: 12px;
 }
 
 .join_detail_nav_item.jdn_item_active {
-  font-size: 0.3rem;
+  font-size: 17px;
   color: #ff6d15;
 }
 
 .join_detail_nav_item.jdn_item_active::after {
   content: "";
-  width: 0.4rem;
-  height: 0.05rem;
+  width: 100%;
+  height: 2px;
   background-color: #ff6d15;
   position: absolute;
   bottom: 0rem;
