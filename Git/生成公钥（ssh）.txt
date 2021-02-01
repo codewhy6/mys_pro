@@ -1,5 +1,5 @@
 配置用户信息：
-1、git config --global user.name "yangjianliang"
-2、git config --global user.email "526861348@qq.com"
+1、git config --global user.name "zhangchen"
+2、git config --global user.email "1464481294@qq.com"
 生成公钥：
-3、ssh-keygen -t rsa -C "526861348@qq.com"
+3、ssh-keygen -t rsa -C "1464481294@qq.com"
