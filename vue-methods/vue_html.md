@@ -472,5 +472,32 @@ lineColor="#03648f"
 
 
 
+### 4.表单带有手续费的watch监听
+
+```js
+watch: {
+    selSouer(val, old) {
+        if (val > this.score) {
+            this.selSouer = "";
+            this.selSouer2 = null;
+            Toast("提现金额不能大于六钻数量！");
+            return false;
+        } else {
+            let selSouer = Number(parseFloat(val));
+            // console.log(selSouer, "selSouer");
+            let rate = Number(parseFloat(this.rate)) / 100;
+            // console.log(rate, "rate");
+            let result = Number(selSouer - selSouer * rate);
+            if (result == 0 || !val) {
+                this.selSouer2 = "";
+            } else {
+                if (isNaN(result)) return;
+                this.selSouer2 = result;
+            }
+        }
+    }
+},
+```
+
 
 
