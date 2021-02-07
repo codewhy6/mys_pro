@@ -2,6 +2,7 @@
 import areaList from './area'
 const QQMapWX = require('../../utils/qqmap-wx-jssdk')
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog'
 Component({
   /**
    * 组件的属性列表
@@ -203,36 +204,25 @@ Component({
           this.data.areaList.city_list[this.data.area_id]
         }/${this.data.areaList.county_list[this.data.district_id]}`,
           value2: '0',
+          errFlag:false,
+          errorMsg: '',
         })
-      } 
+      }
     },
     ready() {
-      if (!this.data.prov_id2) {
-        Dialog.confirm({
-          title: '提示',
-          message: '创乐付需要获取您的地理位置！',
-        })
-        .then(() => {
-          // on confirm
-          let that = this
-          // 获取当前的地理位置
-          that.data.qqmapsdk.reverseGeocoder({
-            success: function (res) {
-              // console.log(res.result);
-              if (res.status == 0) {
-                // Toast(res.result.address)
-                that.setData({
-                  region: res.result.ad_info.adcode
-                })
-              }
-
-            }
-          });
-        })
-        .catch(() => {
-          // on cancel
-        });
-      }
+      let that = this
+      // 获取当前的地理位置
+      that.data.qqmapsdk.reverseGeocoder({
+        success: function (res) {
+          // console.log(res.result);
+          if (res.status == 0) {
+            // Toast(res.result.address)
+            that.setData({
+              region: res.result.ad_info.adcode
+            })
+          }
+        }
+      });
       // that.data.qqmapsdk.getCityList({
       //   success: function (res) {
       //     if (res.status == 0) {

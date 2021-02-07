@@ -189,7 +189,9 @@ Component({
         let val=this.formatStrSign(this.data.value, 'add', '.', [4, 6])
         this.setData({
           value: this.data.formatTime(new Date(val), "yyyy-mm-dd"),
-          value2: '0'
+          value2: '0',
+          errFlag:false,
+          errorMsg: '',
         })
       }
     },

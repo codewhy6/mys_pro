@@ -115,7 +115,7 @@ Component({
       // console.log(currentkey); 有值之后第二次点击取消，不能显示错误信息
       if (targetData[currentkey] && targetData[currentkey].value != '') {
         this.setData({
-          errorMsgFlag: false
+          errorMsgFlag: false,
         })
       }
     },
@@ -167,7 +167,11 @@ Component({
           if (item.value == this.data.value) {
             this.setData({
               value: item.text,
-              value2: '0'
+              value2: '0',
+              errorMsg: '',
+              errFlag: false
+
+
             })
           }
         });
